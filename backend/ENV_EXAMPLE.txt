@@ -1,0 +1,14 @@
+DATABASE_URL="file:./dev.db"
+JWT_SECRET="your-super-secret-jwt-key-change-in-production"
+PORT=5000
+NODE_ENV=development
+
+# Admin Authorization Settings
+# Comma-separated list of authorized admin emails (lowercase)
+ADMIN_ALLOWED_EMAILS="admin@studyabroad.com,manager@studyabroad.com"
+
+# Comma-separated list of authorized admin usernames (lowercase)
+ADMIN_ALLOWED_USERNAMES="zeeshanadmin,manager01"
+
+# Enable/disable admin signup (true/false)
+ADMIN_SIGNUP_ENABLED="true"
