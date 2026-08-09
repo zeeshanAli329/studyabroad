@@ -44,10 +44,21 @@ export default function CreateBlogPage() {
 
     try {
       const result = await api.createBlog(formData);
+      console.log('Blog created successfully:', result);
+      alert('Blog post created successfully!');
       router.push('/admin/blog');
     } catch (err) {
-      setError(`Failed to create blog post: ${err.message || 'Unknown error'}`);
       console.error('Blog creation error:', err);
+      
+      if (err.message === 'Failed to fetch') {
+        setError('Unable to connect to the server. Please ensure the backend is running on port 5000.');
+      } else if (err.message.includes('Authentication')) {
+        setError('Authentication required. Please log in again.');
+      } else if (err.message.includes('Admin access')) {
+        setError('Admin access required. You do not have permission to create blog posts.');
+      } else {
+        setError(`Failed to create blog post: ${err.message || 'Unknown error'}`);
+      }
     } finally {
       setLoading(false);
     }

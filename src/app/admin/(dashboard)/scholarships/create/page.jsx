@@ -82,11 +82,24 @@ export default function CreateScholarshipPage() {
 
     try {
       const result = await api.createScholarship(formData);
-      console.log('Scholarship created:', result);
+      console.log('Scholarship created successfully:', result);
+      
+      // Show success message
+      alert('Scholarship created successfully!');
       router.push('/admin/scholarships');
     } catch (err) {
-      setError(`Failed to create scholarship: ${err.message || 'Unknown error'}`);
       console.error('Scholarship creation error:', err);
+      
+      // Provide more specific error messages
+      if (err.message === 'Failed to fetch') {
+        setError('Unable to connect to the server. Please ensure the backend is running on port 5000.');
+      } else if (err.message.includes('Authentication')) {
+        setError('Authentication required. Please log in again.');
+      } else if (err.message.includes('Admin access')) {
+        setError('Admin access required. You do not have permission to create scholarships.');
+      } else {
+        setError(`Failed to create scholarship: ${err.message || 'Unknown error'}`);
+      }
     } finally {
       setLoading(false);
     }

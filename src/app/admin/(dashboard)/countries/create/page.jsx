@@ -43,10 +43,21 @@ export default function CreateCountryPage() {
 
     try {
       const result = await api.createCountry(formData);
+      console.log('Country created successfully:', result);
+      alert('Country created successfully!');
       router.push('/admin/countries');
     } catch (err) {
-      setError(`Failed to create country: ${err.message || 'Unknown error'}`);
       console.error('Country creation error:', err);
+      
+      if (err.message === 'Failed to fetch') {
+        setError('Unable to connect to the server. Please ensure the backend is running on port 5000.');
+      } else if (err.message.includes('Authentication')) {
+        setError('Authentication required. Please log in again.');
+      } else if (err.message.includes('Admin access')) {
+        setError('Admin access required. You do not have permission to create countries.');
+      } else {
+        setError(`Failed to create country: ${err.message || 'Unknown error'}`);
+      }
     } finally {
       setLoading(false);
     }

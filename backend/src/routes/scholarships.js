@@ -12,7 +12,7 @@ const { auth, adminAuth } = require('../middleware/auth');
 
 router.get('/', getAllScholarships);
 router.get('/:slug', getScholarshipBySlug);
-router.post('/', createScholarship);
+router.post('/', adminAuth, createScholarship);
 router.put('/:id', adminAuth, updateScholarship);
 router.delete('/:id', adminAuth, deleteScholarship);
 router.post('/:scholarshipId/save', auth, toggleSaveScholarship);
