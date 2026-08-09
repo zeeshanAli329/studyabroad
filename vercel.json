@@ -1,11 +1,25 @@
 {
   "services": {
     "frontend": {
-      "root": "frontend",
+      "root": ".",
       "framework": "nextjs"
     },
     "backend": {
       "root": "backend"
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": {
+        "service": "backend"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "frontend"
+      }
+    }
+  ]
 }
