@@ -16,6 +16,7 @@ export default function DashboardClient() {
     draftScholarships: 0,
     totalBlogs: 0,
     totalUsers: 0,
+    totalSubscribers: 0,
     totalInquiries: 0,
     totalAppointments: 0,
   });
@@ -40,12 +41,17 @@ export default function DashboardClient() {
   const fetchStats = async () => {
     try {
       setLoading(true);
-      const [scholarshipsData, blogsData, usersData, inquiriesData, appointmentsData] = await Promise.all([
+      const [scholarshipsData, blogsData, usersData, inquiriesData, appointmentsData, subscribersData] = await Promise.all([
         api.getScholarships({ limit: 100 }),
         api.getBlogs({ limit: 100 }),
         api.getUsers(),
         api.getContactSubmissions(),
         api.getAppointments(),
+        fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/subscribers/count`, {
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          }
+        }).then(res => res.json()),
       ]);
 
       const scholarships = scholarshipsData.scholarships || [];
@@ -53,6 +59,7 @@ export default function DashboardClient() {
       const users = usersData || [];
       const inquiries = inquiriesData || [];
       const appointments = appointmentsData || [];
+      const subscribersCount = subscribersData?.count || 0;
 
       setStats({
         totalScholarships: scholarships.length,
@@ -61,6 +68,7 @@ export default function DashboardClient() {
         draftScholarships: scholarships.filter(s => s.status === 'DRAFT').length,
         totalBlogs: blogs.length,
         totalUsers: users.length,
+        totalSubscribers: subscribersCount,
         totalInquiries: inquiries.length,
         totalAppointments: appointments.length,
       });
@@ -74,6 +82,7 @@ export default function DashboardClient() {
         draftScholarships: 0,
         totalBlogs: 0,
         totalUsers: 0,
+        totalSubscribers: 0,
         totalInquiries: 0,
         totalAppointments: 0,
       });
@@ -117,7 +126,7 @@ export default function DashboardClient() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                 <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200">
                   <h3 className="text-gray-500 text-sm font-medium mb-2">Total Blogs</h3>
                   <p className="text-3xl font-bold text-gray-900">{stats.totalBlogs}</p>
@@ -125,6 +134,10 @@ export default function DashboardClient() {
                 <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200">
                   <h3 className="text-gray-500 text-sm font-medium mb-2">Total Users</h3>
                   <p className="text-3xl font-bold text-gray-900">{stats.totalUsers}</p>
+                </div>
+                <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200">
+                  <h3 className="text-gray-500 text-sm font-medium mb-2">Total Subscribers</h3>
+                  <p className="text-3xl font-bold text-[#8CC63F]">{stats.totalSubscribers}</p>
                 </div>
               </div>
 

@@ -8,6 +8,9 @@ export default function AdminSettingsPage() {
   const [notificationSoundEnabled, setNotificationSoundEnabled] = useState(true);
   const [notificationTone, setNotificationTone] = useState('tone1');
   const [notificationVolume, setNotificationVolume] = useState(70);
+  const [newsletterEnabled, setNewsletterEnabled] = useState(true);
+  const [newsletterBlogs, setNewsletterBlogs] = useState(true);
+  const [newsletterScholarships, setNewsletterScholarships] = useState(true);
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
@@ -19,6 +22,14 @@ export default function AdminSettingsPage() {
       setNotificationTone(settings.tone ?? 'tone1');
       setNotificationVolume(settings.volume ?? 70);
     }
+
+    const newsletterSettings = localStorage.getItem('newsletterSettings');
+    if (newsletterSettings) {
+      const settings = JSON.parse(newsletterSettings);
+      setNewsletterEnabled(settings.enabled ?? true);
+      setNewsletterBlogs(settings.blogs ?? true);
+      setNewsletterScholarships(settings.scholarships ?? true);
+    }
   }, []);
 
   const handleSaveSettings = async () => {
@@ -29,6 +40,13 @@ export default function AdminSettingsPage() {
       volume: notificationVolume
     };
     localStorage.setItem('notificationSettings', JSON.stringify(settings));
+
+    const newsletterSettings = {
+      enabled: newsletterEnabled,
+      blogs: newsletterBlogs,
+      scholarships: newsletterScholarships
+    };
+    localStorage.setItem('newsletterSettings', JSON.stringify(newsletterSettings));
     
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 500));
@@ -142,6 +160,69 @@ export default function AdminSettingsPage() {
                   className="px-4 py-2 border border-[#8CC63F] text-[#8CC63F] rounded-xl font-medium hover:bg-[#8CC63F] hover:text-white transition-colors disabled:opacity-50"
                 >
                   Test Sound
+                </button>
+              </div>
+            </div>
+
+            {/* Newsletter Settings */}
+            <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
+              <h2 className="text-lg font-semibold text-gray-900 mb-6">Newsletter Settings</h2>
+              <div className="space-y-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Enable Newsletter Notifications
+                    </label>
+                    <p className="text-xs text-gray-500">Send email notifications when new content is published</p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setNewsletterEnabled(!newsletterEnabled)}
+                    className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+                      newsletterEnabled ? 'bg-[#8CC63F]' : 'bg-gray-200'
+                    }`}
+                  >
+                    <span
+                      className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                        newsletterEnabled ? 'translate-x-6' : 'translate-x-1'
+                      }`}
+                    />
+                  </button>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-3">Send notifications for:</label>
+                  <div className="space-y-3">
+                    <label className="flex items-center gap-3">
+                      <input
+                        type="checkbox"
+                        checked={newsletterBlogs}
+                        onChange={(e) => setNewsletterBlogs(e.target.checked)}
+                        disabled={!newsletterEnabled}
+                        className="w-4 h-4 text-[#8CC63F] rounded focus:ring-[#8CC63F] disabled:opacity-50"
+                      />
+                      <span className="text-sm text-gray-700 disabled:opacity-50">New Blogs</span>
+                    </label>
+                    <label className="flex items-center gap-3">
+                      <input
+                        type="checkbox"
+                        checked={newsletterScholarships}
+                        onChange={(e) => setNewsletterScholarships(e.target.checked)}
+                        disabled={!newsletterEnabled}
+                        className="w-4 h-4 text-[#8CC63F] rounded focus:ring-[#8CC63F] disabled:opacity-50"
+                      />
+                      <span className="text-sm text-gray-700 disabled:opacity-50">New Scholarships</span>
+                    </label>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => alert('Test email functionality requires email service configuration')}
+                  disabled={!newsletterEnabled}
+                  className="px-4 py-2 border border-[#8CC63F] text-[#8CC63F] rounded-xl font-medium hover:bg-[#8CC63F] hover:text-white transition-colors disabled:opacity-50"
+                >
+                  Test Newsletter Email
                 </button>
               </div>
             </div>

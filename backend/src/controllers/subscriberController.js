@@ -1,5 +1,6 @@
 const prisma = require('../config/database');
 const crypto = require('crypto');
+const { sendSubscriberWelcomeEmail, sendNewSubscriberNotification } = require('../utils/email');
 
 const subscribe = async (req, res) => {
   try {
@@ -43,6 +44,16 @@ const subscribe = async (req, res) => {
         status: 'ACTIVE',
         unsubscribeToken
       }
+    });
+
+    // Send welcome email to subscriber (non-blocking)
+    sendSubscriberWelcomeEmail(normalizedEmail).catch(err => {
+      console.error('Failed to send welcome email:', err);
+    });
+
+    // Send notification email to admin (non-blocking)
+    sendNewSubscriberNotification(subscriber).catch(err => {
+      console.error('Failed to send admin notification email:', err);
     });
 
     // Create notification for admin

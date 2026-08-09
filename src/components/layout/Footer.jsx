@@ -19,6 +19,9 @@ import { FiGlobe } from "react-icons/fi";
 const Footer = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [email, setEmail] = useState("");
+  const [subscribing, setSubscribing] = useState(false);
+  const [subscribeMessage, setSubscribeMessage] = useState(null);
+  const [subscribeError, setSubscribeError] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +40,10 @@ const Footer = () => {
     e.preventDefault();
     if (!email) return;
 
+    setSubscribing(true);
+    setSubscribeMessage(null);
+    setSubscribeError(null);
+
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/subscribers/subscribe`, {
         method: 'POST',
@@ -49,14 +56,16 @@ const Footer = () => {
       const data = await response.json();
 
       if (response.ok) {
-        alert(data.message || 'Thank you for subscribing to RouteX!');
+        setSubscribeMessage(data.message || 'Thank you for subscribing to RouteX!');
         setEmail("");
       } else {
-        alert(data.error || 'Failed to subscribe. Please try again.');
+        setSubscribeError(data.error || 'Failed to subscribe. Please try again.');
       }
     } catch (error) {
       console.error('Subscription error:', error);
-      alert('Failed to subscribe. Please try again.');
+      setSubscribeError('Failed to subscribe. Please try again.');
+    } finally {
+      setSubscribing(false);
     }
   };
 
@@ -226,11 +235,24 @@ const Footer = () => {
                 />
                 <button
                   type="submit"
-                  className="shrink-0 rounded-full bg-[var(--primary,#7bc043)] px-5 py-2.5 text-[14px] font-semibold whitespace-nowrap text-white transition hover:bg-[var(--primary-dark,#649c35)]"
+                  disabled={subscribing}
+                  className="shrink-0 rounded-full bg-[var(--primary,#7bc043)] px-5 py-2.5 text-[14px] font-semibold whitespace-nowrap text-white transition hover:bg-[var(--primary-dark,#649c35)] disabled:opacity-50"
                 >
-                  Subscribe
+                  {subscribing ? 'Subscribing...' : 'Subscribe'}
                 </button>
               </form>
+
+              {subscribeMessage && (
+                <p className="mt-3 text-sm text-green-400">
+                  {subscribeMessage}
+                </p>
+              )}
+
+              {subscribeError && (
+                <p className="mt-3 text-sm text-red-400">
+                  {subscribeError}
+                </p>
+              )}
             </div>
           </div>
         </div>

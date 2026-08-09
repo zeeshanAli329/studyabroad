@@ -20,17 +20,24 @@ const createAppointment = async (req, res) => {
       }
     });
 
-    // Create notification for admin
+    // Create notification for all admins
     try {
-      await prisma.notification.create({
-        data: {
-          title: 'New Appointment Booking',
-          message: `${name} booked an appointment for ${service || 'General'}`,
-          type: 'appointment',
-          resourceId: appointment.id,
-          resourceType: 'Appointment'
-        }
+      const admins = await prisma.user.findMany({
+        where: { role: { in: ['ADMIN', 'SUPER_ADMIN'] } }
       });
+
+      for (const admin of admins) {
+        await prisma.notification.create({
+          data: {
+            title: 'New Appointment Booking',
+            message: `${name} booked an appointment for ${service || 'General'}`,
+            type: 'appointment',
+            userId: admin.id,
+            resourceId: appointment.id,
+            resourceType: 'Appointment'
+          }
+        });
+      }
     } catch (notifError) {
       console.error('Failed to create notification:', notifError);
     }

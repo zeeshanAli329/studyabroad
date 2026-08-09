@@ -127,7 +127,115 @@ Submitted: ${new Date().toLocaleString()}
   });
 };
 
+// Send subscriber confirmation email
+const sendSubscriberWelcomeEmail = async (email) => {
+  const html = `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+      <h2 style="color: #8CC63F;">Welcome to RouteX Newsletter!</h2>
+      <p>Thank you for subscribing to the RouteX Study Abroad newsletter.</p>
+      <p>You will now receive updates about:</p>
+      <ul>
+        <li>New scholarship opportunities</li>
+        <li>Latest blog posts and study abroad tips</li>
+        <li>University and destination updates</li>
+        <li>Exclusive offers and events</li>
+      </ul>
+      <p style="margin-top: 20px;">
+        Stay connected with us and don't miss out on opportunities to study abroad!
+      </p>
+      <p style="margin-top: 30px; color: #666; font-size: 12px;">
+        If you didn't subscribe to this newsletter, please ignore this email.
+      </p>
+      <hr style="margin: 20px 0; border: none; border-top: 1px solid #eee;">
+      <p style="color: #666; font-size: 12px;">
+        RouteX Study Abroad<br>
+        Your gateway to international education
+      </p>
+    </div>
+  `;
+
+  const text = `
+Welcome to RouteX Newsletter!
+
+Thank you for subscribing to the RouteX Study Abroad newsletter.
+
+You will now receive updates about:
+- New scholarship opportunities
+- Latest blog posts and study abroad tips
+- University and destination updates
+- Exclusive offers and events
+
+Stay connected with us and don't miss out on opportunities to study abroad!
+
+If you didn't subscribe to this newsletter, please ignore this email.
+
+RouteX Study Abroad
+Your gateway to international education
+  `;
+
+  return sendEmail({
+    to: email,
+    subject: 'Welcome to RouteX Newsletter!',
+    html,
+    text,
+  });
+};
+
+// Send admin notification for new subscriber
+const sendNewSubscriberNotification = async (subscriberData) => {
+  const { email, subscribedAt } = subscriberData;
+  
+  const html = `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+      <h2 style="color: #8CC63F;">New Newsletter Subscriber</h2>
+      <p>A new user has subscribed to the RouteX newsletter.</p>
+      
+      <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+        <tr>
+          <td style="padding: 10px; border-bottom: 1px solid #ddd; font-weight: bold;">Email:</td>
+          <td style="padding: 10px; border-bottom: 1px solid #ddd;">${email}</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border-bottom: 1px solid #ddd; font-weight: bold;">Subscribed At:</td>
+          <td style="padding: 10px; border-bottom: 1px solid #ddd;">${new Date(subscribedAt).toLocaleString()}</td>
+        </tr>
+      </table>
+      
+      <p style="margin-top: 20px;">
+        <a href="${process.env.FRONTEND_URL || 'http://localhost:3000'}/admin/subscribers" 
+           style="background-color: #8CC63F; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+           View Subscribers
+        </a>
+      </p>
+      
+      <p style="margin-top: 20px; color: #666; font-size: 12px;">
+        This is an automated email from the RouteX Study Abroad website.
+      </p>
+    </div>
+  `;
+
+  const text = `
+New Newsletter Subscriber
+
+Email: ${email}
+Subscribed At: ${new Date(subscribedAt).toLocaleString()}
+
+View Subscribers: ${process.env.FRONTEND_URL || 'http://localhost:3000'}/admin/subscribers
+
+This is an automated email from the RouteX Study Abroad website.
+  `;
+
+  return sendEmail({
+    to: process.env.ADMIN_EMAIL || 'norvextechnologies@gmail.com',
+    subject: 'New Newsletter Subscriber',
+    html,
+    text,
+  });
+};
+
 module.exports = {
   sendEmail,
   sendInquiryEmail,
+  sendSubscriberWelcomeEmail,
+  sendNewSubscriberNotification,
 };

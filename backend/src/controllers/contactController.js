@@ -17,17 +17,24 @@ const createContactSubmission = async (req, res) => {
       }
     });
 
-    // Create notification for admin
+    // Create notification for all admins
     try {
-      await prisma.notification.create({
-        data: {
-          title: 'New Contact Form Submission',
-          message: `${name} submitted a new inquiry about "${subject || 'General inquiry'}"`,
-          type: 'contact',
-          resourceId: submission.id,
-          resourceType: 'ContactSubmission'
-        }
+      const admins = await prisma.user.findMany({
+        where: { role: { in: ['ADMIN', 'SUPER_ADMIN'] } }
       });
+
+      for (const admin of admins) {
+        await prisma.notification.create({
+          data: {
+            title: 'New Contact Form Submission',
+            message: `${name} submitted a new inquiry about "${subject || 'General inquiry'}"`,
+            type: 'contact',
+            userId: admin.id,
+            resourceId: submission.id,
+            resourceType: 'ContactSubmission'
+          }
+        });
+      }
     } catch (notifError) {
       console.error('Failed to create notification:', notifError);
     }

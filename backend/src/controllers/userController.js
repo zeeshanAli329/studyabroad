@@ -59,6 +59,24 @@ const createUser = async (req, res) => {
       }
     });
 
+    // Create notification for all admins about new user
+    const admins = await prisma.user.findMany({
+      where: { role: { in: ['ADMIN', 'SUPER_ADMIN'] } }
+    });
+
+    for (const admin of admins) {
+      await prisma.notification.create({
+        data: {
+          title: 'New User Created',
+          message: `${name} (${email}) has been added as ${role}.`,
+          type: 'user',
+          userId: admin.id,
+          resourceId: user.id,
+          resourceType: 'User'
+        }
+      });
+    }
+
     res.status(201).json(user);
   } catch (error) {
     console.error('Error creating user:', error);
@@ -202,6 +220,26 @@ const updateUser = async (req, res) => {
         updatedAt: true,
       }
     });
+
+    // Create notification for admins when user role is changed
+    if (role && role !== existingUser.role) {
+      const admins = await prisma.user.findMany({
+        where: { role: { in: ['ADMIN', 'SUPER_ADMIN'] } }
+      });
+
+      for (const admin of admins) {
+        await prisma.notification.create({
+          data: {
+            title: 'User Role Updated',
+            message: `${existingUser.name || existingUser.email} role changed from ${existingUser.role} to ${role}`,
+            type: 'user',
+            userId: admin.id,
+            resourceId: updatedUser.id,
+            resourceType: 'User'
+          }
+        });
+      }
+    }
 
     res.json(updatedUser);
   } catch (error) {
