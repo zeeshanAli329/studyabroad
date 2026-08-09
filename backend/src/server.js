@@ -11,6 +11,9 @@ const contactRoutes = require('./routes/contact');
 const appointmentRoutes = require('./routes/appointments');
 const universityRoutes = require('./routes/universities');
 const destinationRoutes = require('./routes/destinations');
+const userRoutes = require('./routes/users');
+const notificationRoutes = require('./routes/notifications');
+const subscriberRoutes = require('./routes/subscribers');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -36,6 +39,9 @@ app.use('/api/blog', blogRoutes);
 app.use('/api/countries', countryRoutes);
 app.use('/api/universities', universityRoutes);
 app.use('/api/destinations', destinationRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/notifications', notificationRoutes);
+app.use('/api/subscribers', subscriberRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/appointments', appointmentRoutes);
 

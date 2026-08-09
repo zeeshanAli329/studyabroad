@@ -19,7 +19,7 @@ const services = [
       "Professional guidance for business visas, documentation, applications and international business opportunities.",
     image:
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=700&h=500&fit=crop",
-    href: "/services/business-visa",
+    href: "/visa/business",
   },
   {
     icon: HardHat,
@@ -28,7 +28,7 @@ const services = [
       "Complete support for working abroad, from document preparation to visa application and approval.",
     image:
       "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&h=500&fit=crop",
-    href: "/services/working-visa",
+    href: "/visa/work",
   },
   {
     icon: GraduationCap,
@@ -37,7 +37,7 @@ const services = [
       "Personalized student visa assistance for universities, applications, scholarships and admissions.",
     image:
       "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=700&h=500&fit=crop",
-    href: "/services/student-visa",
+    href: "/visa/student",
   },
   {
     icon: Compass,
@@ -46,7 +46,7 @@ const services = [
       "Make your international travel easier with professional tourist visa consultation and documentation.",
     image:
       "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=700&h=500&fit=crop",
-    href: "/services/tourist-visa",
+    href: "/visa/tourist",
   },
 ];
 

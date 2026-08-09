@@ -1,9 +1,11 @@
 const prisma = require('../config/database');
+const { sendInquiryEmail } = require('../utils/email');
 
 const createContactSubmission = async (req, res) => {
   try {
     const { name, email, phone, subject, message } = req.body;
 
+    // Save to database first
     const submission = await prisma.contactSubmission.create({
       data: {
         name,
@@ -15,8 +17,34 @@ const createContactSubmission = async (req, res) => {
       }
     });
 
+    // Create notification for admin
+    try {
+      await prisma.notification.create({
+        data: {
+          title: 'New Contact Form Submission',
+          message: `${name} submitted a new inquiry about "${subject || 'General inquiry'}"`,
+          type: 'contact',
+          resourceId: submission.id,
+          resourceType: 'ContactSubmission'
+        }
+      });
+    } catch (notifError) {
+      console.error('Failed to create notification:', notifError);
+    }
+
+    // Send email notification (don't fail if email fails)
+    await sendInquiryEmail({
+      name,
+      email,
+      phone,
+      subject,
+      message,
+      type: 'Contact Form'
+    });
+
     res.status(201).json(submission);
   } catch (error) {
+    console.error('Error creating contact submission:', error);
     res.status(500).json({ error: 'Failed to submit contact form' });
   }
 };

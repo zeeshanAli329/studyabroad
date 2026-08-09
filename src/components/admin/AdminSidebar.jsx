@@ -58,6 +58,7 @@ export default function AdminSidebar() {
     { name: 'Countries', href: '/admin/countries' },
     { name: 'Universities', href: '/admin/universities' },
     { name: 'Destinations', href: '/admin/destinations' },
+    { name: 'Inquiries', href: '/admin/inquiries' },
     { name: 'Users', href: '/admin/users' },
     { name: 'Settings', href: '/admin/settings' },
   ];
@@ -130,7 +131,7 @@ export default function AdminSidebar() {
             <div className="px-4 py-2 mt-6 text-xs font-semibold text-gray-400 uppercase tracking-wider">
               Content
             </div>
-            {navItems.slice(1, 6).map((item) => (
+            {navItems.slice(1, 7).map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -147,7 +148,7 @@ export default function AdminSidebar() {
             <div className="px-4 py-2 mt-6 text-xs font-semibold text-gray-400 uppercase tracking-wider">
               System
             </div>
-            {navItems.slice(6).map((item) => (
+            {navItems.slice(7).map((item) => (
               <Link
                 key={item.href}
                 href={item.href}

@@ -1,9 +1,11 @@
 const prisma = require('../config/database');
+const { sendInquiryEmail } = require('../utils/email');
 
 const createAppointment = async (req, res) => {
   try {
     const { name, email, phone, preferredDate, preferredTime, service, country, message } = req.body;
 
+    // Save to database first
     const appointment = await prisma.appointment.create({
       data: {
         name,
@@ -18,8 +20,36 @@ const createAppointment = async (req, res) => {
       }
     });
 
+    // Create notification for admin
+    try {
+      await prisma.notification.create({
+        data: {
+          title: 'New Appointment Booking',
+          message: `${name} booked an appointment for ${service || 'General'}`,
+          type: 'appointment',
+          resourceId: appointment.id,
+          resourceType: 'Appointment'
+        }
+      });
+    } catch (notifError) {
+      console.error('Failed to create notification:', notifError);
+    }
+
+    // Send email notification (don't fail if email fails)
+    await sendInquiryEmail({
+      name,
+      email,
+      phone,
+      type: service || 'Appointment',
+      country,
+      preferredDate,
+      preferredTime,
+      message
+    });
+
     res.status(201).json(appointment);
   } catch (error) {
+    console.error('Error creating appointment:', error);
     res.status(500).json({ error: 'Failed to create appointment' });
   }
 };

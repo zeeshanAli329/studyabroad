@@ -19,7 +19,8 @@ export default function CreateUniversityPage() {
     description: '',
     website: '',
     image: '',
-    featured: false,
+    ranking: '',
+    founded: '',
     status: 'DRAFT',
   });
 
@@ -30,9 +31,15 @@ export default function CreateUniversityPage() {
   const fetchCountries = async () => {
     try {
       const data = await api.getCountries();
-      setCountries(data.countries || data || []);
+      const countriesList = data.countries || data || [];
+      setCountries(countriesList);
+      
+      if (countriesList.length === 0) {
+        setError('No countries available. Please create a country first before creating a university.');
+      }
     } catch (err) {
       console.error("Failed to fetch countries:", err);
+      setError('Failed to load countries. Please ensure the backend is running.');
     }
   };
 
@@ -58,11 +65,23 @@ export default function CreateUniversityPage() {
     setError(null);
 
     try {
+      console.log('UNIVERSITY: Creating with data:', formData);
       const result = await api.createUniversity(formData);
+      console.log('UNIVERSITY: Created successfully:', result);
+      alert('University created successfully!');
       router.push('/admin/universities');
     } catch (err) {
-      setError(`Failed to create university: ${err.message || 'Unknown error'}`);
-      console.error('University creation error:', err);
+      console.error('UNIVERSITY: Creation error:', err);
+      
+      if (err.message === 'Failed to fetch') {
+        setError('Unable to connect to the server. Please ensure the backend is running on port 5000.');
+      } else if (err.message.includes('Authentication')) {
+        setError('Authentication required. Please log in again.');
+      } else if (err.message.includes('Admin access')) {
+        setError('Admin access required. You do not have permission to create universities.');
+      } else {
+        setError(`Failed to create university: ${err.message || 'Unknown error'}`);
+      }
     } finally {
       setLoading(false);
     }
@@ -121,20 +140,24 @@ export default function CreateUniversityPage() {
 
           <div>
             <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
-              Country
+              Country *
             </label>
             <select
               value={formData.countryId}
               onChange={(e) => setFormData({ ...formData, countryId: e.target.value })}
               className="w-full px-4 py-3 border border-[var(--border)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
+              required
             >
-              <option value="">Select country</option>
+              <option value="">Select a country</option>
               {countries.map((country) => (
                 <option key={country.id} value={country.id}>
                   {country.name}
                 </option>
               ))}
             </select>
+            {countries.length === 0 && (
+              <p className="text-xs text-red-600 mt-1">No countries available. Please create a country first.</p>
+            )}
           </div>
 
           <div>
@@ -190,29 +213,45 @@ export default function CreateUniversityPage() {
             />
           </div>
 
-          <div className="flex items-center gap-6">
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                checked={formData.featured}
-                onChange={(e) => setFormData({ ...formData, featured: e.target.checked })}
-                className="w-4 h-4 text-[var(--primary)] border-gray-300 rounded focus:ring-[var(--primary)]"
-              />
-              <span className="text-[var(--text-primary)]">Featured University</span>
-            </label>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
-                Status
+                Ranking
               </label>
-              <select
-                value={formData.status}
-                onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                className="px-4 py-2 border border-[var(--border)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
-              >
-                <option value="DRAFT">Draft</option>
-                <option value="PUBLISHED">Published</option>
-              </select>
+              <input
+                type="number"
+                value={formData.ranking}
+                onChange={(e) => setFormData({ ...formData, ranking: e.target.value })}
+                className="w-full px-4 py-3 border border-[var(--border)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
+                placeholder="1"
+              />
             </div>
+            <div>
+              <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
+                Founded Year
+              </label>
+              <input
+                type="number"
+                value={formData.founded}
+                onChange={(e) => setFormData({ ...formData, founded: e.target.value })}
+                className="w-full px-4 py-3 border border-[var(--border)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
+                placeholder="1900"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
+              Status
+            </label>
+            <select
+              value={formData.status}
+              onChange={(e) => setFormData({ ...formData, status: e.target.value })}
+              className="px-4 py-2 border border-[var(--border)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
+            >
+              <option value="DRAFT">Draft</option>
+              <option value="PUBLISHED">Published</option>
+            </select>
           </div>
 
           <div className="flex items-center gap-4 pt-6 border-t">

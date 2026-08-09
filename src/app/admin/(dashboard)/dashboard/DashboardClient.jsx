@@ -25,7 +25,7 @@ export default function DashboardClient() {
   useEffect(() => {
     checkAuth();
     fetchStats();
-  }, []);
+  }, []); // Empty dependency array - only run once on mount
 
   const checkAuth = () => {
     const token = localStorage.getItem('token');
@@ -39,13 +39,20 @@ export default function DashboardClient() {
 
   const fetchStats = async () => {
     try {
-      const [scholarshipsData, blogsData] = await Promise.all([
+      setLoading(true);
+      const [scholarshipsData, blogsData, usersData, inquiriesData, appointmentsData] = await Promise.all([
         api.getScholarships({ limit: 100 }),
         api.getBlogs({ limit: 100 }),
+        api.getUsers(),
+        api.getContactSubmissions(),
+        api.getAppointments(),
       ]);
 
       const scholarships = scholarshipsData.scholarships || [];
       const blogs = blogsData.blogs || [];
+      const users = usersData || [];
+      const inquiries = inquiriesData || [];
+      const appointments = appointmentsData || [];
 
       setStats({
         totalScholarships: scholarships.length,
@@ -53,12 +60,23 @@ export default function DashboardClient() {
         featuredScholarships: scholarships.filter(s => s.featured).length,
         draftScholarships: scholarships.filter(s => s.status === 'DRAFT').length,
         totalBlogs: blogs.length,
-        totalUsers: 1,
-        totalInquiries: 0,
-        totalAppointments: 0,
+        totalUsers: users.length,
+        totalInquiries: inquiries.length,
+        totalAppointments: appointments.length,
       });
     } catch (error) {
       console.error("Failed to fetch stats:", error);
+      // Set default values when API fails
+      setStats({
+        totalScholarships: 0,
+        publishedScholarships: 0,
+        featuredScholarships: 0,
+        draftScholarships: 0,
+        totalBlogs: 0,
+        totalUsers: 0,
+        totalInquiries: 0,
+        totalAppointments: 0,
+      });
     } finally {
       setLoading(false);
     }

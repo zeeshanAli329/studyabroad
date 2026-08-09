@@ -16,7 +16,6 @@ export default function CreateCountryPage() {
     flag: '',
     description: '',
     image: '',
-    featured: false,
     status: 'DRAFT',
   });
 
@@ -42,12 +41,13 @@ export default function CreateCountryPage() {
     setError(null);
 
     try {
+      console.log('COUNTRY: Creating with data:', formData);
       const result = await api.createCountry(formData);
-      console.log('Country created successfully:', result);
+      console.log('COUNTRY: Created successfully:', result);
       alert('Country created successfully!');
       router.push('/admin/countries');
     } catch (err) {
-      console.error('Country creation error:', err);
+      console.error('COUNTRY: Creation error:', err);
       
       if (err.message === 'Failed to fetch') {
         setError('Unable to connect to the server. Please ensure the backend is running on port 5000.');
@@ -154,29 +154,18 @@ export default function CreateCountryPage() {
             />
           </div>
 
-          <div className="flex items-center gap-6">
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                checked={formData.featured}
-                onChange={(e) => setFormData({ ...formData, featured: e.target.checked })}
-                className="w-4 h-4 text-[var(--primary)] border-gray-300 rounded focus:ring-[var(--primary)]"
-              />
-              <span className="text-[var(--text-primary)]">Featured Country</span>
+          <div>
+            <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
+              Status
             </label>
-            <div>
-              <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">
-                Status
-              </label>
-              <select
-                value={formData.status}
-                onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                className="px-4 py-2 border border-[var(--border)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
-              >
-                <option value="DRAFT">Draft</option>
-                <option value="PUBLISHED">Published</option>
-              </select>
-            </div>
+            <select
+              value={formData.status}
+              onChange={(e) => setFormData({ ...formData, status: e.target.value })}
+              className="px-4 py-2 border border-[var(--border)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
+            >
+              <option value="DRAFT">Draft</option>
+              <option value="PUBLISHED">Published</option>
+            </select>
           </div>
 
           <div className="flex items-center gap-4 pt-6 border-t">

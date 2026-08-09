@@ -44,6 +44,25 @@ const getDestinationBySlug = async (req, res) => {
 const createDestination = async (req, res) => {
   try {
     const data = req.body;
+    console.log('DESTINATION CREATE - Request body keys:', Object.keys(data));
+
+    // Validate countryId - it's required by the schema
+    if (!data.countryId || data.countryId === '') {
+      return res.status(400).json({ 
+        error: 'Country is required. Please select a valid country.' 
+      });
+    }
+
+    // Verify the country exists
+    const country = await prisma.country.findUnique({
+      where: { id: data.countryId }
+    });
+
+    if (!country) {
+      return res.status(400).json({ 
+        error: 'Selected country does not exist. Please select a valid country.' 
+      });
+    }
 
     const destination = await prisma.destination.create({
       data,
@@ -52,9 +71,18 @@ const createDestination = async (req, res) => {
       }
     });
 
+    console.log('DESTINATION CREATE - Success:', destination.id);
     res.status(201).json(destination);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to create destination' });
+    console.error('DESTINATION CREATE ERROR:', error.message);
+    console.error('DESTINATION CREATE ERROR details:', error);
+    
+    // Provide specific error message
+    if (error.code === 'P2003') {
+      return res.status(400).json({ error: 'Invalid country selected. Please select a valid country.' });
+    }
+    
+    res.status(500).json({ error: error.message || 'Failed to create destination' });
   }
 };
 

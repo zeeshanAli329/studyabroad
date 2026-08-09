@@ -47,6 +47,7 @@ const getBlogBySlug = async (req, res) => {
 
     res.json(blog);
   } catch (error) {
+    console.error('Error fetching blog by slug:', error);
     res.status(500).json({ error: 'Failed to fetch blog post' });
   }
 };

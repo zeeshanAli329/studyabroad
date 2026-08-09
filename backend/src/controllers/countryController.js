@@ -53,14 +53,18 @@ const getCountryBySlug = async (req, res) => {
 const createCountry = async (req, res) => {
   try {
     const data = req.body;
+    console.log('COUNTRY CREATE - Request body keys:', Object.keys(data));
 
     const country = await prisma.country.create({
       data
     });
 
+    console.log('COUNTRY CREATE - Success:', country.id);
     res.status(201).json(country);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to create country' });
+    console.error('COUNTRY CREATE ERROR:', error.message);
+    console.error('COUNTRY CREATE ERROR details:', error);
+    res.status(500).json({ error: error.message || 'Failed to create country' });
   }
 };
 

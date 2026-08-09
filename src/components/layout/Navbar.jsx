@@ -68,6 +68,7 @@ const NavBar = () => {
               width={155}
               height={55}
               priority
+              loading="eager"
             />
           </Link>
 

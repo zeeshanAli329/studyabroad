@@ -1,8 +1,10 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/shared/Reveal";
+import { api } from "@/lib/api";
 import {
   Calendar,
   User,
@@ -11,34 +13,67 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const posts = [
-  {
-    title: "Journeys of Discovery Uncovering Hidden Treasures",
-    date: "July 26, 2024",
-    author: "Features",
-    image:
-      "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=900&h=700&fit=crop",
-    href: "/blog/journeys-of-discovery",
-  },
-  {
-    title: "The Road to Adventure Embarking on One",
-    date: "July 26, 2024",
-    author: "Features",
-    image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&h=700&fit=crop",
-    href: "/blog/road-to-adventure",
-  },
-  {
-    title: "Wonders of Ancient Civilizations A Journey",
-    date: "July 4, 2024",
-    author: "Features",
-    image:
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=900&h=700&fit=crop",
-    href: "/blog/wonders-of-ancient-civilizations",
-  },
-];
-
 export default function BlogSection() {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
+
+  const fetchBlogs = async () => {
+    try {
+      const data = await api.getBlogs({ limit: 3, status: 'PUBLISHED' });
+      const blogs = data.blogs || data || [];
+      setPosts(blogs.map(blog => ({
+        title: blog.title,
+        date: blog.publishedAt ? new Date(blog.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
+        author: blog.author || 'RouteX',
+        image: blog.image || 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=900&h=700&fit=crop',
+        href: `/blog/${blog.slug}`,
+      })));
+    } catch (error) {
+      console.error('Failed to fetch blogs:', error);
+      // Fallback to hardcoded blogs if API fails
+      setPosts([
+        {
+          title: "Journeys of Discovery Uncovering Hidden Treasures",
+          date: "July 26, 2024",
+          author: "Features",
+          image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=900&h=700&fit=crop",
+          href: "/blog/journeys-of-discovery",
+        },
+        {
+          title: "The Road to Adventure Embarking on One",
+          date: "July 26, 2024",
+          author: "Features",
+          image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&h=700&fit=crop",
+          href: "/blog/road-to-adventure",
+        },
+        {
+          title: "Wonders of Ancient Civilizations A Journey",
+          date: "July 4, 2024",
+          author: "Features",
+          image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=900&h=700&fit=crop",
+          href: "/blog/wonders-of-ancient-civilizations",
+        },
+      ]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <section className="relative overflow-hidden bg-[#f8faf5] py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-[1320px] px-6 lg:px-8">
+          <div className="text-center py-12">
+            <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--primary)]"></div>
+          </div>
+        </div>
+      </section>
+    );
+  }
   return (
     <section className="relative overflow-hidden bg-[#f8faf5] py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-[1320px] px-6 lg:px-8">

@@ -21,6 +21,7 @@ model User {
   savedBlogs       SavedBlog[]
   contactSubmissions ContactSubmission[]
   appointments     Appointment[]
+  notifications    Notification[]
 
   @@index([email])
   @@index([username])
@@ -37,6 +38,7 @@ model Country {
   currency    String?
   language    String?
   dialCode    String?
+  featured    Boolean  @default(false)
   status      String   @default("PUBLISHED")
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
@@ -47,6 +49,7 @@ model Country {
 
   @@index([slug])
   @@index([status])
+  @@index([featured])
 }
 
 model University {
@@ -61,6 +64,7 @@ model University {
   founded     Int?
   website     String?
   location    String?
+  featured    Boolean  @default(false)
   status      String   @default("PUBLISHED")
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
@@ -70,6 +74,7 @@ model University {
   @@index([countryId])
   @@index([slug])
   @@index([status])
+  @@index([featured])
 }
 
 model Scholarship {
@@ -144,6 +149,7 @@ model Destination {
   image       String?
   price       String?
   duration    String?
+  featured    Boolean  @default(false)
   status      String   @default("PUBLISHED")
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
@@ -151,6 +157,7 @@ model Destination {
   @@index([countryId])
   @@index([slug])
   @@index([status])
+  @@index([featured])
 }
 
 model Media {
@@ -275,6 +282,55 @@ model SiteSettings {
   footerText          String?
   defaultSeoTitle     String?
   defaultSeoDescription String?
+  notificationSoundEnabled Boolean @default(true)
+  notificationTone     String   @default("tone1")
+  notificationVolume   Int      @default(70)
   createdAt           DateTime @default(now())
   updatedAt           DateTime @updatedAt
+}
+
+model Notification {
+  id          String   @id @default(cuid())
+  title       String
+  message     String
+  type        String
+  isRead      Boolean  @default(false)
+  userId      String?
+  user        User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  resourceId  String?
+  resourceType String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([userId])
+  @@index([isRead])
+  @@index([createdAt])
+}
+
+model Subscriber {
+  id             String   @id @default(cuid())
+  email          String   @unique
+  status         String   @default("ACTIVE")
+  subscribedAt   DateTime @default(now())
+  unsubscribedAt DateTime?
+  unsubscribeToken String?
+  lastEmailSentAt DateTime?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([email])
+  @@index([status])
+}
+
+model NewsletterLog {
+  id          String   @id @default(cuid())
+  type        String
+  resourceId  String
+  resourceType String
+  sentAt      DateTime @default(now())
+  createdAt   DateTime @default(now())
+
+  @@index([type])
+  @@index([resourceId])
+  @@index([resourceType])
 }
