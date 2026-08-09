@@ -149,7 +149,7 @@ export default function AdminSidebar() {
             <div className="px-4 py-2 mt-6 text-xs font-semibold text-gray-400 uppercase tracking-wider">
               System
             </div>
-            {navItems.slice(7, 10).map((item) => (
+            {navItems.slice(7).map((item) => (
               <Link
                 key={item.href}
                 href={item.href}

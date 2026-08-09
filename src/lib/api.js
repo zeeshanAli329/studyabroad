@@ -53,7 +53,7 @@ class ApiClient {
       
       // Provide more specific error messages
       if (error.message === 'Failed to fetch') {
-        throw new Error(`Unable to connect to API server at ${API_URL}. Check that the backend is running on port 5000.`);
+        throw new Error(`Unable to connect to API server. Please try again.`);
       }
       
       throw error;
