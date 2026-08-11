@@ -1,14 +1,7 @@
-// next.config.mjs
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // ... any existing config like experimental or reactStrictMode ...
-  
   images: {
-    // 1. Optimize images even in production (required on Vercel)
-    unoptimized: false, 
-    
-    // 2. Allow specific remote images if you are using them
+    unoptimized: false,
     remotePatterns: [
       {
         protocol: "https",
@@ -16,19 +9,29 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "plus.unsplash.com",
+      },
+      {
+        protocol: "https",
         hostname: "wp.rrdevs.net",
+      },
+      // Backend domain / localhost support for dynamic uploads
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "5000",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "**", // Allows all external dynamic image sources
       },
     ],
   },
-  
-  // 3. Ensure trailingSlash is NOT true (can break relative paths)
   trailingSlash: false,
 };
 
 export default nextConfig;
-
-
-
 
 
 
