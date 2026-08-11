@@ -30,8 +30,9 @@ export default function InquiriesPage() {
     try {
       const token = localStorage.getItem('token');
       const params = filter !== 'all' ? `?status=${filter}` : '';
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined' && window.location.hostname === 'localhost' ? 'http://localhost:5000/api' : '/api');
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/contact${params}`,
+        `${API_URL}/contact${params}`,
         {
           headers: {
             'Authorization': `Bearer ${token}`
@@ -47,7 +48,7 @@ export default function InquiriesPage() {
       setInquiries(data || []);
       setError(null);
     } catch (err) {
-      setError('Failed to load inquiries. Check that the backend is running on port 5000.');
+      setError('Failed to load inquiries. Please try again.');
       console.error(err);
     } finally {
       setLoading(false);
@@ -57,8 +58,9 @@ export default function InquiriesPage() {
   const handleStatusChange = async (inquiryId, newStatus) => {
     try {
       const token = localStorage.getItem('token');
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined' && window.location.hostname === 'localhost' ? 'http://localhost:5000/api' : '/api');
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/contact/${inquiryId}/status`,
+        `${API_URL}/contact/${inquiryId}/status`,
         {
           method: 'PUT',
           headers: {
@@ -86,8 +88,9 @@ export default function InquiriesPage() {
 
     try {
       const token = localStorage.getItem('token');
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined' && window.location.hostname === 'localhost' ? 'http://localhost:5000/api' : '/api');
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/contact/${inquiryId}`,
+        `${API_URL}/contact/${inquiryId}`,
         {
           method: 'DELETE',
           headers: {

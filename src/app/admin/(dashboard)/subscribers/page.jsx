@@ -33,8 +33,9 @@ export default function SubscribersPage() {
       const params = {};
       if (statusFilter) params.status = statusFilter;
       if (search) params.search = search;
-      
-      const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/subscribers${new URLSearchParams(params).toString() ? '?' + new URLSearchParams(params).toString() : ''}`, {
+
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined' && window.location.hostname === 'localhost' ? 'http://localhost:5000/api' : '/api');
+      const data = await fetch(`${API_URL}/subscribers${new URLSearchParams(params).toString() ? '?' + new URLSearchParams(params).toString() : ''}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -57,7 +58,8 @@ export default function SubscribersPage() {
 
   const handleStatusChange = async (id, newStatus) => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/subscribers/${id}/status`, {
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined' && window.location.hostname === 'localhost' ? 'http://localhost:5000/api' : '/api');
+      const response = await fetch(`${API_URL}/subscribers/${id}/status`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -83,7 +85,8 @@ export default function SubscribersPage() {
     if (!confirm('Are you sure you want to delete this subscriber?')) return;
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/subscribers/${id}`, {
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined' && window.location.hostname === 'localhost' ? 'http://localhost:5000/api' : '/api');
+      const response = await fetch(`${API_URL}/subscribers/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`

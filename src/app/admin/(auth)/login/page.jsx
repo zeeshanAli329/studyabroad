@@ -22,7 +22,8 @@ export default function AdminLoginPage() {
     setError(null);
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/auth/admin/login`, {
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined' && window.location.hostname === 'localhost' ? 'http://localhost:5000/api' : '/api');
+      const response = await fetch(`${API_URL}/auth/admin/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -53,7 +54,7 @@ export default function AdminLoginPage() {
 
       router.push('/admin/dashboard');
     } catch (err) {
-      setError(err.message || 'Unable to connect to the server. Please make sure the backend is running on port 5000.');
+      setError(err.message || 'Unable to connect to the server. Please try again.');
       console.error('Login error:', err);
     } finally {
       setLoading(false);
