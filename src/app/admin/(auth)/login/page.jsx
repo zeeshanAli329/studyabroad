@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { api } from "@/lib/api";
+import { api, API_URL } from "@/lib/api";
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -22,7 +22,7 @@ export default function AdminLoginPage() {
     setError(null);
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/auth/admin/login`, {
+      const response = await fetch(`${API_URL}/auth/admin/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

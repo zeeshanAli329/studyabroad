@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import AdminHeader from "@/components/admin/AdminHeader";
-import { api } from "@/lib/api";
+import { api, API_URL } from "@/lib/api";
 
 export default function SubscribersPage() {
   const router = useRouter();
@@ -34,7 +34,7 @@ export default function SubscribersPage() {
       if (statusFilter) params.status = statusFilter;
       if (search) params.search = search;
       
-      const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/subscribers${new URLSearchParams(params).toString() ? '?' + new URLSearchParams(params).toString() : ''}`, {
+      const data = await fetch(`${API_URL}/subscribers${new URLSearchParams(params).toString() ? '?' + new URLSearchParams(params).toString() : ''}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -57,7 +57,7 @@ export default function SubscribersPage() {
 
   const handleStatusChange = async (id, newStatus) => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/subscribers/${id}/status`, {
+      const response = await fetch(`${API_URL}/subscribers/${id}/status`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ export default function SubscribersPage() {
     if (!confirm('Are you sure you want to delete this subscriber?')) return;
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/subscribers/${id}`, {
+      const response = await fetch(`${API_URL}/subscribers/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`

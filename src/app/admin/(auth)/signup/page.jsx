@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { api } from "@/lib/api";
+import { api, API_URL } from "@/lib/api";
 
 export default function AdminSignupPage() {
   const router = useRouter();
@@ -45,7 +45,7 @@ export default function AdminSignupPage() {
     }
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/auth/admin/signup`, {
+      const response = await fetch(`${API_URL}/auth/admin/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import AdminHeader from "@/components/admin/AdminHeader";
 import AdminSidebar from "@/components/admin/AdminSidebar";
+import { API_URL } from "@/lib/api";
 
 export default function InquiriesPage() {
   const router = useRouter();
@@ -31,7 +32,7 @@ export default function InquiriesPage() {
       const token = localStorage.getItem('token');
       const params = filter !== 'all' ? `?status=${filter}` : '';
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/contact${params}`,
+        `${API_URL}/contact${params}`,
         {
           headers: {
             'Authorization': `Bearer ${token}`
@@ -58,7 +59,7 @@ export default function InquiriesPage() {
     try {
       const token = localStorage.getItem('token');
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/contact/${inquiryId}/status`,
+        `${API_URL}/contact/${inquiryId}/status`,
         {
           method: 'PUT',
           headers: {
@@ -87,7 +88,7 @@ export default function InquiriesPage() {
     try {
       const token = localStorage.getItem('token');
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/contact/${inquiryId}`,
+        `${API_URL}/contact/${inquiryId}`,
         {
           method: 'DELETE',
           headers: {

@@ -9,15 +9,15 @@ import homeImages from "@/config/homeImages";
 const Hero = () => {
   return (
     <section className="relative overflow-hidden rounded-3xl mx-4 lg:mx-8 bg-[var(--secondary)] px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
-      {/* HERO IMAGE — REPLACE THIS IMAGE LATER */}
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <Image
           src={homeImages.hero}
           alt="Students studying abroad"
           fill
+          sizes="100vw"
           className="object-cover"
-          priority
+          priority={true}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[var(--secondary)]/95 via-[var(--secondary)]/80 to-[var(--secondary)]/60" />
       </div>
@@ -63,10 +63,11 @@ const Hero = () => {
           {/* student image */}
           <div className="relative h-full w-full">
             <Image
-              src="https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/banner-man-img.png"
+              src="/images/banner-man-img.png" // FIXED: Slash '/' added at the beginning
               alt="Student ready for study abroad journey"
               fill
-              priority
+              priority={true}
+              sizes="(max-width: 640px) 320px, (max-width: 1024px) 380px, 420px" // FIXED: Added sizes prop
               className="object-contain object-bottom"
             />
           </div>

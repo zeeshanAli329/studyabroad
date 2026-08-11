@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { API_URL } from "@/lib/api";
 
 import {
   FaFacebookF,
@@ -45,7 +46,7 @@ const Footer = () => {
     setSubscribeError(null);
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/subscribers/subscribe`, {
+      const response = await fetch(`${API_URL}/subscribers/subscribe`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import AdminHeader from "@/components/admin/AdminHeader";
 import AdminSidebar from "@/components/admin/AdminSidebar";
-import { api } from "@/lib/api";
+import { api, API_URL } from "@/lib/api";
 
 export default function DashboardClient() {
   const router = useRouter();
@@ -47,7 +47,7 @@ export default function DashboardClient() {
         api.getUsers(),
         api.getContactSubmissions(),
         api.getAppointments(),
-        fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/subscribers/count`, {
+        fetch(`${API_URL}/subscribers/count`, {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }

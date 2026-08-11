@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^python -c \"from pathlib import Path; lines=Path\\('src/lib/api\\.js'\\)\\.read_text\\(\\)\\.splitlines\\(\\); line=lines\\[28\\]; print\\(\\[hex\\(b\\) for b in line\\.encode\\('utf-8'\\)\\]\\);\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
