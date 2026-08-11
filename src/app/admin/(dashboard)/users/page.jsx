@@ -54,7 +54,7 @@ export default function UsersPage() {
       setUsers(usersData || []);
       setError(null);
     } catch (err) {
-      setError('Failed to load users. Check that the backend is running on port 5000.');
+      setError('Failed to load users. Please try again.');
       console.error(err);
     } finally {
       setLoading(false);
@@ -87,13 +87,11 @@ export default function UsersPage() {
 
   const handleSaveUser = async () => {
     try {
-      // Validate email
       if (!editForm.email) {
         setError('Email is required');
         return;
       }
 
-      // Validate password if provided
       if (editForm.password || editForm.confirmPassword) {
         if (!editForm.password || !editForm.confirmPassword) {
           setError('Both password fields are required when changing password');
@@ -127,10 +125,8 @@ export default function UsersPage() {
 
       const updatedUser = await response.json();
       
-      // Update users list
       setUsers(users.map(user => user.id === editingUser.id ? updatedUser : user));
       
-      // Update current user if editing self
       if (currentUser.id === editingUser.id) {
         setCurrentUser(updatedUser);
         localStorage.setItem('user', JSON.stringify(updatedUser));
@@ -171,7 +167,6 @@ export default function UsersPage() {
 
   const handleCreateUser = async () => {
     try {
-      // Validate
       if (!editForm.email || !editForm.username || !editForm.name || !editForm.role) {
         setError('All fields are required');
         return;
