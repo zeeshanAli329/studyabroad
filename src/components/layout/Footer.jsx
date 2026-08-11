@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { API_URL } from "@/lib/api";
 
 import {
   FaFacebookF,
@@ -45,7 +46,6 @@ const Footer = () => {
     setSubscribeError(null);
 
     try {
-      const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined' && window.location.hostname === 'localhost' ? 'http://localhost:5000/api' : '/api');
       const response = await fetch(`${API_URL}/subscribers/subscribe`, {
         method: 'POST',
         headers: {
@@ -130,15 +130,6 @@ const Footer = () => {
             'url("https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/footer1-bg-img.png")',
         }}
       >
-        {/* location/world dotted-map decorative image */}
-        {/* <Image
-          src="https://wp.rrdevs.net/routex/wp-content/themes/routex/assets/imgs/footer/footer1-bg-location-img.png"
-          alt=""
-          fill
-          className="pointer-events-none object-cover opacity-60 mix-blend-screen"
-          aria-hidden="true"
-        /> */}
-
         <div className="relative z-10 mx-auto max-w-[1320px] px-6 py-16 lg:px-8">
           <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
             {/* ===== BRAND COLUMN ===== */}

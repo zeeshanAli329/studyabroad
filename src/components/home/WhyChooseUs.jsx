@@ -180,7 +180,7 @@ export default function WhyChooseUs() {
                 <div className="pointer-events-none absolute inset-0 z-20 rounded-3xl border-2 border-transparent transition-all duration-500 group-hover:border-[var(--primary)]/70" />
 
                 <Image
-                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=800&fit=crop"
+                  src="/images/choose-us-right-img1.png"
                   alt="International student studying abroad"
                   fill
                   sizes="(max-width: 768px) 52vw, 25vw"
@@ -237,7 +237,7 @@ export default function WhyChooseUs() {
                 <div className="pointer-events-none absolute inset-0 z-30 rounded-3xl border-2 border-transparent transition-all duration-500 group-hover:border-white/70" />
 
                 <Image
-                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=750&fit=crop"
+                  src="/images/choose-us-left-img.png"
                   alt="Students collaborating"
                   fill
                   sizes="(max-width: 768px) 55vw, 28vw"
