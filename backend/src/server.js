@@ -15,7 +15,7 @@ const userRoutes = require('./routes/users');
 const notificationRoutes = require('./routes/notifications');
 const subscriberRoutes = require('./routes/subscribers');
 
-const app = express();
+const app = express();  
 const PORT = process.env.PORT || 5000;
 
 // Middleware
