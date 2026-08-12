@@ -38,12 +38,18 @@ class ApiClient {
       const contentType = response.headers.get("content-type");
       let data;
 
+      // if (contentType && contentType.includes("application/json")) {
+      //   data = await response.json();
+      // } else {
+      //   // For non-JSON responses, try to get text or return null
+      //   const text = await response.text();
+      //   data = text ? JSON.parse(text) : null;
+      // }
       if (contentType && contentType.includes("application/json")) {
         data = await response.json();
       } else {
-        // For non-JSON responses, try to get text or return null
         const text = await response.text();
-        data = text ? JSON.parse(text) : null;
+        data = text || null;
       }
 
       console.log(`API: Response status ${response.status}:`, data);
@@ -52,7 +58,7 @@ class ApiClient {
         throw new Error(
           data?.error ||
             data?.details ||
-            `HTTP ${response.status}: ${response.statusText}`
+            `HTTP ${response.status}: ${response.statusText}`,
         );
       }
 
@@ -351,7 +357,9 @@ class ApiClient {
   // Notifications
   async getNotifications(params = {}) {
     const queryString = new URLSearchParams(params).toString();
-    return this.request(`/notifications${queryString ? `?${queryString}` : ""}`);
+    return this.request(
+      `/notifications${queryString ? `?${queryString}` : ""}`,
+    );
   }
 
   async getUnreadCount() {

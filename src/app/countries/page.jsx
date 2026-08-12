@@ -9,125 +9,352 @@ export default function CountriesPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Professional fallback images for countries
-  const getCountryImage = (country) => {
-    if (country.image) return country.image;
-    
-    const countryImages = {
-      'USA': 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800&h=600&fit=crop',
-      'United States': 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800&h=600&fit=crop',
-      'UK': 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&h=600&fit=crop',
-      'United Kingdom': 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&h=600&fit=crop',
-      'Canada': 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=800&h=600&fit=crop',
-      'Australia': 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=800&h=600&fit=crop',
-      'Germany': 'https://images.unsplash.com/photo-1580136608260-4eb11f8b2df0?w=800&h=600&fit=crop',
-      'France': 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&h=600&fit=crop',
-      'Japan': 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&h=600&fit=crop',
-      'New Zealand': 'https://images.unsplash.com/photo-1507699622177-3888a5f755f8?w=800&h=600&fit=crop',
-      'Singapore': 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&h=600&fit=crop',
-      'Netherlands': 'https://images.unsplash.com/photo-1584467842683-76c5a1807c03?w=800&h=600&fit=crop',
-      'Sweden': 'https://images.unsplash.com/photo-1509356843151-3e7d96241e11?w=800&h=600&fit=crop',
-      'Switzerland': 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=800&h=600&fit=crop',
-      'Ireland': 'https://images.unsplash.com/photo-1558974476-1b80c7a46e30?w=800&h=600&fit=crop',
-      'Spain': 'https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=800&h=600&fit=crop',
-      'Italy': 'https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&h=600&fit=crop',
-    };
-    
-    return countryImages[country.name] || 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop';
-  };
+  const [typedCountry, setTypedCountry] = useState("");
+  const [countryIndex, setCountryIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
+  // ============================================================
+  // DYNAMIC TYPING EFFECT
+  // ============================================================
+  useEffect(() => {
+    if (!countries.length) return;
+
+    const typingCountries = countries
+      .map((country) => country.name)
+      .filter(Boolean);
+
+    if (!typingCountries.length) return;
+
+    if (countryIndex >= typingCountries.length) {
+      setCountryIndex(0);
+      return;
+    }
+
+    const currentCountry = typingCountries[countryIndex];
+
+    if (!currentCountry) return;
+
+    const typingSpeed = isDeleting ? 60 : 110;
+
+    const timer = setTimeout(() => {
+      if (!isDeleting) {
+        const nextText = currentCountry.substring(
+          0,
+          typedCountry.length + 1
+        );
+
+        setTypedCountry(nextText);
+
+        if (nextText === currentCountry) {
+          setTimeout(() => {
+            setIsDeleting(true);
+          }, 1200);
+        }
+      } else {
+        const nextText = currentCountry.substring(
+          0,
+          Math.max(typedCountry.length - 1, 0)
+        );
+
+        setTypedCountry(nextText);
+
+        if (nextText === "") {
+          setIsDeleting(false);
+
+          setCountryIndex(
+            (prev) => (prev + 1) % typingCountries.length
+          );
+        }
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [
+    typedCountry,
+    isDeleting,
+    countryIndex,
+    countries,
+  ]);
+
+  // ============================================================
+  // FETCH COUNTRIES
+  // ============================================================
   useEffect(() => {
     fetchCountries();
   }, []);
 
+  // ============================================================
+  // GET COUNTRIES
+  // ============================================================
   const fetchCountries = async () => {
     try {
       setLoading(true);
-      const data = await api.getCountries();
-      setCountries(data || []);
       setError(null);
+
+      const data = await api.getCountries();
+
+      console.log("COUNTRIES API RESPONSE:", data);
+
+      if (!Array.isArray(data)) {
+        console.error(
+          "Countries API did not return an array:",
+          data
+        );
+
+        setCountries([]);
+        setError("Invalid countries data received.");
+        return;
+      }
+
+      /*
+       * IMPORTANT:
+       *
+       * Do NOT add static images here.
+       *
+       * The image must come directly from:
+       *
+       * country.image
+       *
+       * This is the image saved in the database
+       * from the dashboard.
+       */
+      const formattedCountries = data.map((country) => {
+        console.log(
+          `COUNTRY: ${country.name}`,
+          "IMAGE:",
+          country.image
+        );
+
+        return {
+          ...country,
+          image: country.image || null,
+        };
+      });
+
+      setCountries(formattedCountries);
     } catch (err) {
+      console.error(
+        "Failed to load countries:",
+        err
+      );
+
       setError("Failed to load countries");
-      console.error(err);
     } finally {
       setLoading(false);
     }
   };
 
+  // ============================================================
+  // PAGE
+  // ============================================================
   return (
-    <main className="pt-24">
-      {/* Hero Section */}
+    <main className="overflow-x-hidden">
+      {/* ========================================================
+          HERO SECTION
+      ========================================================= */}
       <section
-        className="relative w-full overflow-hidden rounded-3xl mx-4 lg:mx-8 mb-8"
+        className="relative mx-4 mb-8 w-[calc(100%-2rem)] overflow-hidden rounded-3xl sm:mx-6 sm:w-[calc(100%-3rem)] lg:mx-8 lg:w-[calc(100%-4rem)]"
         style={{
-          backgroundImage: "linear-gradient(120deg, rgba(15,58,45,0.92), rgba(15,58,45,0.75)), url('https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/breadcrumb.png')",
+          backgroundImage:
+            "linear-gradient(120deg, rgba(15,58,45,0.94), rgba(15,58,45,0.78)), url('https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/breadcrumb.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 py-20 sm:py-28">
-          <h1 className="text-white text-4xl sm:text-5xl font-serif font-semibold tracking-tight mb-4">
+        {/* Soft green glow */}
+        <div className="pointer-events-none absolute -left-24 -top-24 h-64 w-64 rounded-full bg-lime-400/10 blur-3xl" />
+
+        <div className="pointer-events-none absolute -bottom-32 -right-20 h-72 w-72 rounded-full bg-lime-400/10 blur-3xl" />
+
+        {/* Subtle outline */}
+        <div className="pointer-events-none absolute inset-0 rounded-3xl border border-lime-300/20" />
+
+        <div className="relative mx-auto max-w-7xl px-6 py-20 sm:px-10 sm:py-28">
+          {/* Small label */}
+          <div className="mb-5 flex items-center gap-3">
+            <span className="h-px w-10 bg-lime-400/80" />
+
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-lime-300 sm:text-sm">
+              Global Opportunities
+            </span>
+
+            <span className="h-px w-10 bg-lime-400/80" />
+          </div>
+
+          {/* Main Heading */}
+          <h1 className="max-w-4xl font-serif text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
             Explore Study Destinations
           </h1>
-          <p className="text-white/90 text-lg sm:text-xl max-w-2xl">
-            Discover leading study destinations and find the right country for your international education journey.
+
+          {/* Dynamic typing text */}
+          <div className="mt-4 flex min-h-[44px] items-center text-2xl font-semibold text-lime-300 sm:text-3xl">
+            <span>Study in&nbsp;</span>
+
+            <span className="relative inline-block min-w-[10px]">
+              {typedCountry}
+
+              <span className="ml-1 inline-block h-7 w-[2px] translate-y-1 animate-pulse bg-lime-300 sm:h-8" />
+            </span>
+          </div>
+
+          <p className="mt-5 max-w-2xl text-base leading-7 text-white/80 sm:text-lg">
+            Discover leading study destinations and
+            find the right country for your international
+            education journey.
           </p>
+
+          {/* Small decorative line */}
+          <div className="mt-8 flex items-center gap-2">
+            <span className="h-1 w-12 rounded-full bg-lime-400/80" />
+            <span className="h-1 w-2 rounded-full bg-lime-300/40" />
+            <span className="h-1 w-2 rounded-full bg-lime-300/20" />
+          </div>
         </div>
       </section>
 
+      {/* ========================================================
+          COUNTRIES SECTION
+      ========================================================= */}
       <div className="mx-auto max-w-[1320px] px-6 py-8 lg:px-8">
-
+        {/* ======================================================
+            LOADING
+        ======================================================= */}
         {loading ? (
-          <div className="text-center py-12">
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--primary)]"></div>
-            <p className="mt-4 text-[var(--text-secondary)]">Loading countries...</p>
+          <div className="py-12 text-center">
+            <div className="mx-auto inline-block h-12 w-12 animate-spin rounded-full border-b-2 border-[var(--primary)]" />
+
+            <p className="mt-4 text-[var(--text-secondary)]">
+              Loading countries...
+            </p>
           </div>
         ) : error ? (
-          <div className="text-center py-12">
-            <p className="text-[var(--danger)]">{error}</p>
+          /* ====================================================
+             ERROR
+          ===================================================== */
+          <div className="py-12 text-center">
+            <p className="text-[var(--danger)]">
+              {error}
+            </p>
+
             <button
               onClick={fetchCountries}
-              className="mt-4 px-6 py-2 bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--primary-dark)]"
+              className="mt-4 rounded-lg bg-[var(--primary)] px-6 py-2 text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--primary-dark)] hover:shadow-lg"
             >
               Try Again
             </button>
           </div>
         ) : countries.length === 0 ? (
-          <div className="text-center py-12">
-            <p className="text-[var(--text-secondary)]">No countries available.</p>
+          /* ====================================================
+             NO COUNTRIES
+          ===================================================== */
+          <div className="py-12 text-center">
+            <p className="text-[var(--text-secondary)]">
+              No countries available.
+            </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          /* ====================================================
+             COUNTRY GRID
+          ===================================================== */
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {countries.map((country) => (
               <Link
                 key={country.id}
                 href={`/countries/${country.slug}`}
-                className="group"
+                className="group relative block h-full"
               >
-                <div className="bg-white rounded-xl shadow-sm overflow-hidden transition-all hover:shadow-lg">
-                  <div className="aspect-[4/3] relative bg-gray-100">
-                    <img
-                      src={getCountryImage(country)}
-                      alt={country.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
+                <div className="relative h-full overflow-hidden rounded-2xl border border-[var(--primary)]/10 bg-white p-1.5 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[var(--primary)]/40 hover:shadow-[0_18px_45px_rgba(107,181,43,0.12)]">
+                  {/* Soft hover fill */}
+                  <div className="pointer-events-none absolute inset-0 z-0 translate-y-full bg-gradient-to-b from-[var(--primary)]/[0.04] to-[var(--primary)]/[0.10] transition-transform duration-700 ease-out group-hover:translate-y-0" />
+
+                  {/* Outer glow */}
+                  <div className="pointer-events-none absolute -inset-px rounded-2xl border border-transparent transition-all duration-500 group-hover:border-[var(--primary)]/30" />
+
+                  {/* =================================================
+                      IMAGE
+                  ================================================== */}
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-gray-100">
+                    {country.image ? (
+                      <img
+                        src={country.image}
+                        alt={country.name}
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                        onError={(event) => {
+                          console.error(
+                            "IMAGE FAILED:",
+                            country.name,
+                            country.image
+                          );
+
+                          event.currentTarget.style.display =
+                            "none";
+
+                          const parent =
+                            event.currentTarget.parentElement;
+
+                          if (parent) {
+                            const message =
+                              document.createElement("div");
+
+                            message.className =
+                              "absolute inset-0 flex items-center justify-center text-sm text-gray-400";
+
+                            message.innerText =
+                              "Image not available";
+
+                            parent.appendChild(message);
+                          }
+                        }}
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center text-sm text-gray-400">
+                        No image available
+                      </div>
+                    )}
+
+                    {/* Image overlay */}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-60" />
+
+                    {/* Green glow */}
+                    <div className="pointer-events-none absolute -bottom-16 -right-16 h-36 w-36 rounded-full bg-lime-400/20 blur-3xl transition-all duration-500 group-hover:bg-lime-400/30" />
+
+                    {/* Country name badge */}
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white shadow-lg backdrop-blur-md">
+                        {country.name}
+                      </div>
+                    </div>
                   </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="text-4xl">{country.flag || '🌍'}</span>
-                      <h3 className="font-serif text-xl font-semibold text-[var(--text-primary)] group-hover:text-[var(--primary)] transition-colors">
+
+                  {/* =================================================
+                      CONTENT
+                  ================================================== */}
+                  <div className="relative z-10 p-5">
+                    <div className="mb-3">
+                      <h3 className="font-serif text-xl font-semibold text-[var(--text-primary)] transition-colors duration-300 group-hover:text-[var(--primary)]">
                         {country.name}
                       </h3>
                     </div>
+
                     {country.description && (
-                      <p className="text-[var(--text-secondary)] text-sm line-clamp-2 mb-4">
+                      <p className="mb-4 line-clamp-2 text-sm leading-6 text-[var(--text-secondary)]">
                         {country.description}
                       </p>
                     )}
-                    <button className="w-full py-2 border border-[var(--primary)] text-[var(--primary)] rounded-lg font-medium hover:bg-[var(--primary)] hover:text-white transition-colors">
-                      Explore Country
-                    </button>
+
+                    {/* Explore button */}
+                    <div className="relative mt-4 overflow-hidden rounded-xl border border-[var(--primary)]/20 bg-[var(--primary)]/[0.03] transition-all duration-300 group-hover:border-[var(--primary)]/40 group-hover:bg-[var(--primary)]/[0.06]">
+                      <div className="flex w-full items-center justify-center py-2.5 text-sm font-semibold text-[var(--primary)] transition-all duration-300 group-hover:tracking-wide">
+                        Explore Country
+                      </div>
+                    </div>
                   </div>
+
+                  {/* Professional corner outline */}
+                  <div className="pointer-events-none absolute left-3 top-3 h-8 w-8 rounded-tl-xl border-l-2 border-t-2 border-[var(--primary)]/0 transition-all duration-500 group-hover:border-[var(--primary)]/50" />
+
+                  <div className="pointer-events-none absolute bottom-3 right-3 h-8 w-8 rounded-br-xl border-b-2 border-r-2 border-[var(--primary)]/0 transition-all duration-500 group-hover:border-[var(--primary)]/50" />
                 </div>
               </Link>
             ))}
