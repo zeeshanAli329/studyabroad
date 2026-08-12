@@ -13,8 +13,8 @@ export default function Features() {
     {
       icon: Plane,
       title: "Travel Opportunities",
-      description: "Discover exciting travel destinations and opportunities around the world.",
-      link: "/destinations"
+      description: "Explore top countries for international education.",
+      link: "/countries"
     },
     {
       icon: BookOpen,

@@ -16,6 +16,31 @@ const getAllDestinations = async (req, res) => {
   }
 };
 
+// const getDestinationBySlug = async (req, res) => {
+//   try {
+//     const { slug } = req.params;
+
+//     const destination = await prisma.destination.findUnique({
+//       where: { slug },
+//       include: {
+//         country: true,
+//         universities: {
+//           where: { status: 'PUBLISHED' },
+//           take: 10
+//         }
+//       }
+//     });
+
+//     if (!destination) {
+//       return res.status(404).json({ error: 'Destination not found' });
+//     }
+
+//     res.json(destination);
+//   } catch (error) {
+//     res.status(500).json({ error: 'Failed to fetch destination' });
+//   }
+// };
+
 const getDestinationBySlug = async (req, res) => {
   try {
     const { slug } = req.params;
@@ -23,24 +48,26 @@ const getDestinationBySlug = async (req, res) => {
     const destination = await prisma.destination.findUnique({
       where: { slug },
       include: {
-        country: true,
-        universities: {
-          where: { status: 'PUBLISHED' },
-          take: 10
-        }
+        country: true
       }
     });
 
     if (!destination) {
-      return res.status(404).json({ error: 'Destination not found' });
+      return res.status(404).json({
+        error: 'Destination not found'
+      });
     }
 
     res.json(destination);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch destination' });
+    console.error('GET DESTINATION BY SLUG ERROR:', error);
+
+    res.status(500).json({
+      error: 'Failed to fetch destination',
+      details: error.message
+    });
   }
 };
-
 const createDestination = async (req, res) => {
   try {
     const data = req.body;
