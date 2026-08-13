@@ -216,7 +216,7 @@ export default function ScholarshipDetailPage() {
         )}
 
         {/* CTA */}
-        <div className="bg-[var(--secondary)] rounded-xl p-8 text-center">
+        {/* <div className="bg-[var(--secondary)] rounded-xl p-8 text-center">
           <h2 className="font-serif text-2xl text-white mb-4">
             Ready to Apply?
           </h2>
@@ -240,7 +240,7 @@ export default function ScholarshipDetailPage() {
           >
             Book Consultation
           </Link>
-        </div>
+        </div> */}
       </div>
     </main>
   );
