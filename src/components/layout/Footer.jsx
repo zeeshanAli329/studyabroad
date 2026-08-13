@@ -47,9 +47,9 @@ const Footer = () => {
 
     try {
       const response = await fetch(`${API_URL}/subscribers/subscribe`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ email }),
       });
@@ -57,14 +57,18 @@ const Footer = () => {
       const data = await response.json();
 
       if (response.ok) {
-        setSubscribeMessage(data.message || 'Thank you for subscribing to RouteX!');
+        setSubscribeMessage(
+          data.message || "Thank you for subscribing to RouteX!",
+        );
         setEmail("");
       } else {
-        setSubscribeError(data.error || 'Failed to subscribe. Please try again.');
+        setSubscribeError(
+          data.error || "Failed to subscribe. Please try again.",
+        );
       }
     } catch (error) {
-      console.error('Subscription error:', error);
-      setSubscribeError('Failed to subscribe. Please try again.');
+      console.error("Subscription error:", error);
+      setSubscribeError("Failed to subscribe. Please try again.");
     } finally {
       setSubscribing(false);
     }
@@ -135,14 +139,16 @@ const Footer = () => {
             {/* ===== BRAND COLUMN ===== */}
 
             <div>
-              <Link href="/" className="mb-5 flex items-center gap-2">
-                <Image
-              src="/logo2.png"
-              alt="Logo"
-              width={200}
-              height={200}
-                />
-              </Link>
+              {/* <Link href="/" className="mb-5 flex items-center shrink-0">
+  <Image
+    src="/logo2.png"
+    alt="Logo"
+    width={220}
+    height={130}
+    priority
+    className="w-[145px] h-[85px] sm:w-[170px] sm:h-[100px] lg:w-[210px] lg:h-[120px] object-contain"
+  />
+</Link> */}
 
               <p className="mb-5 max-w-[260px] text-[15px] leading-relaxed text-white/70">
                 Corporate business typically refers to large-scale mansola it
@@ -230,7 +236,7 @@ const Footer = () => {
                   disabled={subscribing}
                   className="shrink-0 rounded-full bg-[var(--primary,#7bc043)] px-5 py-2.5 text-[14px] font-semibold whitespace-nowrap text-white transition hover:bg-[var(--primary-dark,#649c35)] disabled:opacity-50"
                 >
-                  {subscribing ? 'Subscribing...' : 'Subscribe'}
+                  {subscribing ? "Subscribing..." : "Subscribe"}
                 </button>
               </form>
 
@@ -241,9 +247,7 @@ const Footer = () => {
               )}
 
               {subscribeError && (
-                <p className="mt-3 text-sm text-red-400">
-                  {subscribeError}
-                </p>
+                <p className="mt-3 text-sm text-red-400">{subscribeError}</p>
               )}
             </div>
           </div>

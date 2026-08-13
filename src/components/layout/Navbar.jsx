@@ -61,15 +61,11 @@ const NavBar = () => {
       >
         <div className="mx-auto flex h-[90px] max-w-[1320px] items-center justify-between px-6 lg:px-8">
           {/* ================= LOGO ================= */}
-          <Link href="/">
-            <Image
-              // src="https://wp.rrdevs.net/routex/wp-content/themes/routex/assets/imgs/logo/logo.svg"
+          <Link href="/" className="flex items-center shrink-0">
+            <img
               src="/logo2.png"
               alt="Logo"
-              width={200}
-              height={200}
-              priority
-              loading="eager"
+              className="w-[125px] h-[75px] sm:w-[145px] sm:h-[85px] lg:w-[180px] lg:h-[105px] object-contain"
             />
           </Link>
 
