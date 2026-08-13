@@ -63,10 +63,11 @@ const NavBar = () => {
           {/* ================= LOGO ================= */}
           <Link href="/">
             <Image
-              src="https://wp.rrdevs.net/routex/wp-content/themes/routex/assets/imgs/logo/logo.svg"
+              // src="https://wp.rrdevs.net/routex/wp-content/themes/routex/assets/imgs/logo/logo.svg"
+              src="/logo2.png"
               alt="Logo"
-              width={155}
-              height={55}
+              width={200}
+              height={200}
               priority
               loading="eager"
             />

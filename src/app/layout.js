@@ -16,10 +16,10 @@ const playfair = Playfair_Display({
 
 export const metadata = {
   title: {
-    default: "RouteX | Study Abroad",
+    default: "Study Abroad",
     template: "%s"
   },
-  description: "Explore study abroad opportunities, scholarships, universities, visas and international destinations with RouteX.",
+  description: "Explore study abroad opportunities, scholarships, universities, visas and international destinations with StudyAbroad.",
 };
 
 export default function RootLayout({ children }) {

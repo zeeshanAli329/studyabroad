@@ -137,10 +137,10 @@ const Footer = () => {
             <div>
               <Link href="/" className="mb-5 flex items-center gap-2">
                 <Image
-                  src="https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/logo.svg"
-                  alt="RouteX"
-                  width={140}
-                  height={40}
+              src="/logo2.png"
+              alt="Logo"
+              width={200}
+              height={200}
                 />
               </Link>
 
