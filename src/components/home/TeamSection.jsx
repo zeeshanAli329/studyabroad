@@ -175,14 +175,20 @@ export default function TeamSection() {
               <div className="absolute -inset-3 rounded-[2rem] border border-[var(--primary)]/20 transition-all duration-500 group-hover:-inset-5 group-hover:border-[var(--primary)]/40" />
 
               <div className="relative aspect-[4/5] overflow-hidden rounded-[1.7rem] bg-gray-100 shadow-2xl">
-                <Image
+                {/* <Image
                   key={activeMember.id}
                   src={activeMember.image}
                   alt={activeMember.name}
                   fill
                   priority
                   className="object-cover transition-all duration-700 group-hover:scale-105"
-                />
+                /> */}
+                <img
+  key={activeMember.id}
+  src={activeMember.image}
+  alt={activeMember.name}
+  className="w-full h-[220px] sm:h-[280px] md:h-[360px] lg:h-[420px] xl:h-[500px] object-cover transition-all duration-700 group-hover:scale-105"
+/>
 
                 {/* Image overlay fill */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />

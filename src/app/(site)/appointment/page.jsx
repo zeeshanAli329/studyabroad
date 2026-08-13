@@ -237,10 +237,10 @@ export default function AppointmentPage() {
               </p>
               <div className="space-y-3">
                 <a href="tel:+1234567890" className="block text-white hover:text-[var(--primary)]">
-                  📞 +1 234 567 890
+                   +1 234 567 890
                 </a>
                 <a href="mailto:info@studyabroad.com" className="block text-white hover:text-[var(--primary)]">
-                  ✉️ info@studyabroad.com
+                  info@studyabroad.com
                 </a>
               </div>
             </div>

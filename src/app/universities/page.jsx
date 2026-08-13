@@ -70,7 +70,7 @@ export default function UniversitiesPage() {
         if (displayText === "") {
           setIsDeleting(false);
           setCurrentUniversity(
-            (prev) => (prev + 1) % dynamicUniversities.length
+            (prev) => (prev + 1) % dynamicUniversities.length,
           );
         }
       }
@@ -87,9 +87,7 @@ export default function UniversitiesPage() {
       const data = await api.getUniversities();
 
       setUniversities(
-        Array.isArray(data)
-          ? data
-          : data?.universities || data?.data || []
+        Array.isArray(data) ? data : data?.universities || data?.data || [],
       );
     } catch (err) {
       console.error("Failed to load universities:", err);
@@ -251,16 +249,12 @@ export default function UniversitiesPage() {
                           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                           className="object-cover transition-transform duration-700 group-hover:scale-105"
                         /> */}
+                        <img
+                          src={university.image}
+                          alt={university.name}
+                          className="w-full h-[220px] sm:h-[240px] lg:h-[260px] object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
 
-<div className="relative w-full h-[220px] sm:h-[240px] lg:h-[260px] overflow-hidden">
-  <Image
-    src={university.image}
-    alt={university.name}
-    fill
-    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-    className="object-cover transition-transform duration-700 group-hover:scale-105"
-  />
-</div>
                         {/* Image overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
 

@@ -83,16 +83,11 @@ export default function FAQSection() {
                   lg:block
                 "
               >
-                <Image
-                  src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=600&fit=crop"
-                  alt="Consultant answering questions"
-                  fill
-                  className="
-                    object-cover
-                    transition-transform duration-700
-                    group-hover:scale-105
-                  "
-                />
+<img
+  src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=600&fit=crop"
+  alt="Consultant answering questions"
+  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-700 group-hover:scale-105"
+/>
 
                 {/* Image dark/light overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />

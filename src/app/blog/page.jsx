@@ -39,12 +39,17 @@ export default function BlogPage() {
       {/* Hero Section */}
       <section className="relative bg-[var(--secondary)] rounded-3xl py-20 lg:py-32 mx-4 lg:mx-8">
         <div className="absolute inset-0 opacity-20 rounded-3xl overflow-hidden">
-          <Image
+          {/* <Image
             src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1920&h=1080&fit=crop"
             alt="Blog"
             fill
             className="object-cover"
-          />
+          /> */}
+          <img
+  src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1920&h=1080&fit=crop"
+  alt="Blog"
+  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover"
+/>
         </div>
         <div className="relative mx-auto max-w-[1320px] px-6 lg:px-8 text-center">
           <span className="inline-block px-4 py-2 bg-[var(--primary)] text-white text-sm font-semibold rounded-full mb-6">
@@ -116,12 +121,17 @@ export default function BlogPage() {
                 <div className="bg-white rounded-xl shadow-sm overflow-hidden transition-all hover:shadow-lg">
                   {blog.image && (
                     <div className="aspect-[16/10] relative">
-                      <Image
+                      {/* <Image
                         src={blog.image}
                         alt={blog.title}
                         fill
                         className="object-cover"
-                      />
+                      /> */}
+                      <img
+  src={blog.image}
+  alt={blog.title}
+  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover"
+/>
                     </div>
                   )}
                   <div className="p-6">

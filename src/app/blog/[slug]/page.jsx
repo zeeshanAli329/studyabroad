@@ -415,13 +415,18 @@ export default function BlogDetailPage() {
         {blog.image ? (
           <figure className="relative overflow-hidden rounded-b-[26px] sm:rounded-[30px] lg:rounded-[36px]">
             <div className="relative aspect-[16/8] overflow-hidden bg-gray-100">
-              <Image
+              {/* <Image
                 src={blog.image}
                 alt={blog.title}
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 1240px"
                 className="object-cover"
+              /> */}
+              <img
+                src={blog.image}
+                alt={blog.title}
+                className="w-full h-[220px] sm:h-[280px] md:h-[360px] lg:h-[460px] xl:h-[520px] object-cover"
               />
             </div>
           </figure>

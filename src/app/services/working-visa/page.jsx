@@ -101,7 +101,7 @@ export default function WorkingVisaPage() {
             Build your international career with our work visa assistance. We help professionals navigate global employment opportunities.
           </p>
           <div className="flex items-center gap-2 text-white/80 text-sm mt-6">
-            <span>RouteX</span>
+            <span>StudyAbroad</span>
             <ChevronRight className="w-4 h-4" />
             <span className="text-lime-400">Working Visa</span>
           </div>

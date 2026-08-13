@@ -91,12 +91,17 @@ export default function DestinationsList() {
                 >
                   <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-lg">
                     <div className="aspect-[16/10] relative overflow-hidden">
-                      <Image
+                      {/* <Image
                         src={destination.image || homeImages.destinationFallback}
                         alt={destination.name}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
+                      /> */}
+                      <img
+  src={destination.image || homeImages.destinationFallback}
+  alt={destination.name}
+  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-500 group-hover:scale-110"
+/>
                     </div>
                     <div className="p-6">
                       <h3 className="font-serif text-2xl font-semibold text-[var(--text-primary)] mb-2 group-hover:text-[var(--primary)] transition-colors">

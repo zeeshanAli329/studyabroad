@@ -178,22 +178,15 @@ export default function CountryTabs() {
                   }}
                 >
                   {/* Image */}
-                  <Image
-                    src={country.image}
-                    alt={country.title}
-                    fill
-                    priority={index === 0}
-                    sizes="(max-width: 768px) 60vw, 40vw"
-                    className={`
-                      object-cover
-                      transition-all duration-700 ease-out
-                      ${
-                        isActive
-                          ? "scale-100 brightness-[0.92]"
-                          : "scale-105 brightness-[0.72]"
-                      }
-                    `}
-                  />
+               <img
+  src={country.image}
+  alt={country.title}
+  className={`w-full h-[220px] sm:h-[280px] md:h-[360px] lg:h-[420px] object-cover transition-all duration-700 ease-out ${
+    isActive
+      ? "scale-100 brightness-[0.92]"
+      : "scale-105 brightness-[0.72]"
+  }`}
+/>
 
                   {/* Very light image overlay */}
                   <div

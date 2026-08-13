@@ -179,14 +179,18 @@ export default function WhyChooseUs() {
                 {/* Animated Outline */}
                 <div className="pointer-events-none absolute inset-0 z-20 rounded-3xl border-2 border-transparent transition-all duration-500 group-hover:border-[var(--primary)]/70" />
 
-                <Image
+                {/* <Image
                   src="/images/choose-us-right-img1.png"
                   alt="International student studying abroad"
                   fill
                   sizes="(max-width: 768px) 52vw, 25vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-
+                /> */}
+<img
+  src="/images/choose-us-right-img1.png"
+  alt="International student studying abroad"
+  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-700 group-hover:scale-110"
+/>
                 {/* Fill Overlay */}
                 <div className="absolute inset-0 z-10 bg-gradient-to-t from-[var(--primary)]/80 via-[var(--primary)]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
@@ -236,13 +240,18 @@ export default function WhyChooseUs() {
                 {/* Outline Effect */}
                 <div className="pointer-events-none absolute inset-0 z-30 rounded-3xl border-2 border-transparent transition-all duration-500 group-hover:border-white/70" />
 
-                <Image
+                {/* <Image
                   src="/images/choose-us-left-img.png"
                   alt="Students collaborating"
                   fill
                   sizes="(max-width: 768px) 55vw, 28vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
+                /> */}
+                <img
+  src="/images/choose-us-left-img.png"
+  alt="Students collaborating"
+  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-700 group-hover:scale-110"
+/>
 
                 {/* Fill Effect */}
                 <div className="absolute inset-0 z-10 bg-[var(--primary)]/60 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />

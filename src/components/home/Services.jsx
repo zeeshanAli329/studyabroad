@@ -108,13 +108,18 @@ export default function Services() {
 
                   {/* Image */}
                   <div className="relative z-10 h-48 overflow-hidden rounded-2xl sm:h-52">
-                    <Image
+                    {/* <Image
                       src={service.image}
                       alt={service.title}
                       fill
                       sizes="(max-width: 768px) 100vw, 25vw"
                       className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                    />
+                    /> */}
+                    <img
+  src={service.image}
+  alt={service.title}
+  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+/>
 
                     {/* Light image overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-transparent transition-all duration-700 group-hover:from-black/45" />

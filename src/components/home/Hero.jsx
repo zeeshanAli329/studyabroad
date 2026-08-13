@@ -1,28 +1,25 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { FiArrowRight } from "react-icons/fi";
-import { FaPlay } from "react-icons/fa";
 import homeImages from "@/config/homeImages";
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden rounded-3xl mx-4 lg:mx-8 bg-[var(--secondary)] px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
-      {/* Background image with overlay */}
+    <section className="relative mx-0 overflow-hidden rounded-3xl bg-[var(--secondary)] px-4 py-8 sm:px-6 sm:py-10 lg:mx-8 lg:px-16 lg:py-12">
+      {/* Background image */}
       <div className="absolute inset-0">
-        <Image
+        <img
           src={homeImages.hero}
           alt="Students studying abroad"
-          fill
-          sizes="100vw"
-          className="object-cover"
-          priority={true}
+          className="h-full w-full object-cover"
         />
+
         <div className="absolute inset-0 bg-gradient-to-r from-[var(--secondary)]/95 via-[var(--secondary)]/80 to-[var(--secondary)]/60" />
       </div>
 
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center gap-12 lg:flex-row lg:justify-between">
+      {/* Main content */}
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center gap-8 sm:gap-10 lg:flex-row lg:justify-between lg:gap-12">
         {/* Left content */}
         <div className="max-w-xl text-center lg:text-left">
           <h1 className="font-serif text-4xl leading-[1.15] text-white sm:text-5xl lg:text-[3.4rem]">
@@ -34,10 +31,12 @@ const Hero = () => {
           </h1>
 
           <p className="mt-6 text-lg text-white/90 sm:text-xl">
-            Expert guidance for international education, visas, scholarships, and destinations. Your dream study abroad experience begins with RouteX.
+            Expert guidance for international education, visas, scholarships,
+            and destinations. Your dream study abroad experience begins with
+            RouteX.
           </p>
 
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 lg:justify-start">
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
             <Link
               href="/destinations"
               className="group inline-flex items-center gap-2 rounded-full bg-[var(--primary)] px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:bg-[var(--primary-dark)] hover:gap-3"
@@ -55,24 +54,40 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right image - student illustration */}
-        <div className="relative h-[380px] w-[320px] shrink-0 sm:h-[440px] sm:w-[380px] lg:h-[480px] lg:w-[420px]">
-          {/* green circle backdrop */}
-          <div className="absolute bottom-0 right-0 h-[300px] w-[300px] rounded-full bg-[var(--primary)]/30 sm:h-[340px] sm:w-[340px] lg:h-[380px] lg:w-[380px]" />
+        {/* Right student image */}
+        <div className="relative h-[360px] w-[300px] shrink-0 sm:h-[420px] sm:w-[360px] md:h-[470px] md:w-[400px] lg:h-[500px] lg:w-[420px]">
+          {/* Dark green circle */}
+          <div className="absolute bottom-0 right-0 h-[280px] w-[280px] rounded-full bg-[var(--primary)]/70 sm:h-[320px] sm:w-[320px] md:h-[350px] md:w-[350px] lg:h-[380px] lg:w-[380px]" />
 
-          {/* student image */}
-          <div className="relative h-full w-full">
-            <Image
-              src="/images/banner-man-img.png" // FIXED: Slash '/' added at the beginning
+          {/* Student */}
+          <div className="absolute inset-0 flex items-end justify-center overflow-visible">
+            <img
+              src="/images/banner-man-img.png"
               alt="Student ready for study abroad journey"
-              fill
-              priority={true}
-              sizes="(max-width: 640px) 320px, (max-width: 1024px) 380px, 420px" // FIXED: Added sizes prop
-              className="object-contain object-bottom"
+              className="h-full w-full object-contain object-bottom animate-float"
             />
           </div>
         </div>
       </div>
+
+      {/* Floating animation */}
+      <style jsx>{`
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+
+          50% {
+            transform: translateY(-18px);
+          }
+        }
+
+        .animate-float {
+          animation: float 4s ease-in-out infinite;
+          will-change: transform;
+        }
+      `}</style>
     </section>
   );
 };

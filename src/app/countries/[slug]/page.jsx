@@ -520,94 +520,103 @@ export default function CountryDetailPage() {
       {/* =========================================================
           UNIVERSITIES
       ========================================================= */}
-      {universities.length > 0 && (
-        <section className="relative overflow-hidden bg-white py-20 sm:py-28">
-          <div className="pointer-events-none absolute left-0 top-20 h-80 w-80 rounded-full bg-lime-400/10 blur-[110px]" />
+  {universities.length > 0 && (
+  <section className="relative overflow-hidden bg-white py-20 sm:py-28">
+    <div className="pointer-events-none absolute left-0 top-20 h-80 w-80 rounded-full bg-lime-400/10 blur-[110px]" />
 
-          <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
-            <div className="mb-12 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-lime-500/20 bg-lime-500/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-lime-700">
-                  <GraduationCap className="h-4 w-4" />
-                  Top Universities
+    <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
+      <div className="mb-12 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-lime-500/20 bg-lime-500/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-lime-700">
+            <GraduationCap className="h-4 w-4" />
+            Top Universities
+          </div>
+
+          <h2 className="font-serif text-4xl font-semibold text-emerald-950 sm:text-5xl">
+            Study at leading universities
+          </h2>
+
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-gray-600">
+            Explore universities and institutions available in{" "}
+            {country.name}.
+          </p>
+        </div>
+
+        <Link
+          href="/universities"
+          className="group hidden items-center gap-2 rounded-full border border-lime-500/20 bg-lime-500/5 px-5 py-3 text-sm font-semibold text-lime-700 transition-all hover:border-lime-500/40 hover:bg-lime-500 hover:text-white sm:inline-flex"
+        >
+          View All
+          <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+        </Link>
+      </div>
+
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {universities.slice(0, 6).map((university) => (
+          <Link
+            key={university.id}
+            href={`/universities/${university.slug}`}
+            className="group relative block overflow-hidden rounded-2xl border border-lime-500/15 bg-white shadow-[0_8px_30px_rgba(15,58,45,0.04)] transition-all duration-500 hover:-translate-y-2 hover:border-lime-500/40 hover:shadow-[0_20px_45px_rgba(107,181,43,0.13)]"
+          >
+            <div className="absolute inset-0 translate-y-full bg-gradient-to-t from-lime-500/[0.07] to-transparent transition-transform duration-700 group-hover:translate-y-0" />
+
+            <div className="absolute left-0 right-0 top-0 z-10 h-1 origin-left scale-x-0 bg-lime-500 transition-transform duration-500 group-hover:scale-x-100" />
+
+            {university.image && (
+              <div className="relative w-full h-[180px] sm:h-[200px] overflow-hidden">
+                <img
+                  src={university.image}
+                  alt={university.name}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+            )}
+
+            <div className="relative p-6">
+              <div className="mb-6 flex items-center justify-between">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-lime-500/20 bg-lime-500/10 text-lime-600 transition-all duration-500 group-hover:bg-lime-500 group-hover:text-white">
+                  <GraduationCap className="h-5 w-5" />
                 </div>
 
-                <h2 className="font-serif text-4xl font-semibold text-emerald-950 sm:text-5xl">
-                  Study at leading universities
-                </h2>
-
-                <p className="mt-4 max-w-2xl text-sm leading-7 text-gray-600">
-                  Explore universities and institutions available in{" "}
-                  {country.name}.
-                </p>
+                <div className="flex h-9 w-9 items-center justify-center rounded-full border border-lime-500/10 bg-lime-500/5 text-lime-600 opacity-0 transition-all duration-500 group-hover:opacity-100">
+                  <ArrowUpRight className="h-4 w-4" />
+                </div>
               </div>
 
-              <Link
-                href="/universities"
-                className="group hidden items-center gap-2 rounded-full border border-lime-500/20 bg-lime-500/5 px-5 py-3 text-sm font-semibold text-lime-700 transition-all hover:border-lime-500/40 hover:bg-lime-500 hover:text-white sm:inline-flex"
-              >
-                View All
-                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </Link>
-            </div>
+              <h3 className="font-serif text-xl font-semibold leading-7 text-emerald-950 group-hover:text-lime-600 transition-colors">
+                {university.name}
+              </h3>
 
-            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {universities.slice(0, 6).map((university) => (
-                <div
-                  key={university.id}
-                  className="group relative overflow-hidden rounded-2xl border border-lime-500/15 bg-white p-6 shadow-[0_8px_30px_rgba(15,58,45,0.04)] transition-all duration-500 hover:-translate-y-2 hover:border-lime-500/40 hover:shadow-[0_20px_45px_rgba(107,181,43,0.13)]"
-                >
-                  {/* Fill */}
-                  <div className="absolute inset-0 translate-y-full bg-gradient-to-t from-lime-500/[0.07] to-transparent transition-transform duration-700 group-hover:translate-y-0" />
+              {university.location && (
+                <p className="mt-4 flex items-center gap-2 text-sm text-gray-500">
+                  <MapPin className="h-4 w-4 text-lime-600" />
+                  {university.location}
+                </p>
+              )}
 
-                  {/* Top green line */}
-                  <div className="absolute left-0 right-0 top-0 h-1 origin-left scale-x-0 bg-lime-500 transition-transform duration-500 group-hover:scale-x-100" />
-
-                  <div className="relative">
-                    <div className="mb-6 flex items-center justify-between">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-lime-500/20 bg-lime-500/10 text-lime-600 transition-all duration-500 group-hover:bg-lime-500 group-hover:text-white">
-                        <GraduationCap className="h-5 w-5" />
-                      </div>
-
-                      <div className="flex h-9 w-9 items-center justify-center rounded-full border border-lime-500/10 bg-lime-500/5 text-lime-600 opacity-0 transition-all duration-500 group-hover:opacity-100">
-                        <ArrowUpRight className="h-4 w-4" />
-                      </div>
-                    </div>
-
-                    <h3 className="font-serif text-xl font-semibold leading-7 text-emerald-950">
-                      {university.name}
-                    </h3>
-
-                    {university.location && (
-                      <p className="mt-4 flex items-center gap-2 text-sm text-gray-500">
-                        <MapPin className="h-4 w-4 text-lime-600" />
-                        {university.location}
-                      </p>
-                    )}
-
-                    {university.rank && (
-                      <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-lime-500/15 bg-lime-500/5 px-3 py-1.5 text-xs font-semibold text-lime-700">
-                        <Award className="h-3.5 w-3.5" />
-                        World Rank #{university.rank}
-                      </div>
-                    )}
-
-                    <div className="mt-6 h-px bg-gradient-to-r from-lime-500/20 via-lime-500/5 to-transparent" />
-                  </div>
+              {university.rank && (
+                <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-lime-500/15 bg-lime-500/5 px-3 py-1.5 text-xs font-semibold text-lime-700">
+                  <Award className="h-3.5 w-3.5" />
+                  World Rank #{university.rank}
                 </div>
-              ))}
-            </div>
+              )}
 
-            <Link
-              href="/universities"
-              className="mx-auto mt-8 inline-flex items-center gap-2 rounded-full border border-lime-500/20 bg-lime-500/5 px-6 py-3 text-sm font-semibold text-lime-700 transition-all hover:border-lime-500 hover:bg-lime-500 hover:text-white sm:hidden"
-            >
-              View All Universities
-              <ChevronRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </section>
-      )}
+              <div className="mt-6 h-px bg-gradient-to-r from-lime-500/20 via-lime-500/5 to-transparent" />
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      <Link
+        href="/universities"
+        className="mx-auto mt-8 inline-flex items-center gap-2 rounded-full border border-lime-500/20 bg-lime-500/5 px-6 py-3 text-sm font-semibold text-lime-700 transition-all hover:border-lime-500 hover:bg-lime-500 hover:text-white sm:hidden"
+      >
+        View All Universities
+        <ChevronRight className="h-4 w-4" />
+      </Link>
+    </div>
+  </section>
+)}
 
       <section className="relative overflow-hidden px-6 py-20 sm:py-28">
         <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-lime-400/10 blur-[130px]" />

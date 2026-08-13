@@ -94,12 +94,17 @@ export default function Testimonial() {
               <div className="absolute -inset-2 rounded-[2.2rem] border border-[var(--primary)]/20 transition-all duration-500 group-hover:-inset-4 group-hover:border-[var(--primary)]/40" />
 
               <div className="relative h-full min-h-[320px] overflow-hidden rounded-[2rem]">
-                <Image
+                {/* <Image
                   src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&h=800&fit=crop"
                   alt="Education consultant"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+                /> */}
+                <img
+  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&h=800&fit=crop"
+  alt="Education consultant"
+  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-700 group-hover:scale-105"
+/>
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 

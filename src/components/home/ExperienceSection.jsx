@@ -147,13 +147,11 @@ export default function ExperienceSection() {
                   {/* Image */}
                   <div className="relative aspect-[4/3] overflow-hidden">
 
-                    <Image
-                      src={coaching.image}
-                      alt={coaching.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                    />
+<img
+  src={coaching.image}
+  alt={coaching.title}
+  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-1000 group-hover:scale-110"
+/>
 
                     {/* Gradient */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />

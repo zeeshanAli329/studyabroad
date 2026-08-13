@@ -400,12 +400,18 @@ export default function DestinationDetailPage() {
               <div className="absolute -inset-4 bg-lime-100 rounded-3xl -z-10 rotate-2" />
 
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
-                <Image
+                {/* <Image
                   src={destinationImage}
                   alt={`${destination.name} destination`}
                   fill
                   className="object-cover"
-                />
+                /> */}
+            <img
+  src={destinationImage}
+  alt={`${destination.name} destination`}
+  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover"
+/>
+            
               </div>
             </div>
           </Reveal>

@@ -28,7 +28,7 @@ export default function BlogSection() {
       setPosts(blogs.map(blog => ({
         title: blog.title,
         date: blog.publishedAt ? new Date(blog.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
-        author: blog.author || 'RouteX',
+        author: blog.author || 'StudyAbroad',
         image: blog.image || 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=900&h=700&fit=crop',
         href: `/blog/${blog.slug}`,
       })));
@@ -132,12 +132,11 @@ export default function BlogSection() {
 
                 {/* Image */}
                 <div className="relative mb-5 aspect-[4/3] overflow-hidden rounded-2xl bg-gray-200 shadow-sm">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
+<img
+  src={post.image}
+  alt={post.title}
+  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-700 group-hover:scale-110"
+/>
 
                   {/* Dark overlay */}
                   <div className="absolute inset-0 bg-black/0 transition-all duration-500 group-hover:bg-black/20" />

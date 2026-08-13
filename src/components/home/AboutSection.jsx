@@ -143,20 +143,17 @@ export default function AboutSection() {
           <div className="group relative h-[430px] overflow-hidden rounded-2xl sm:h-[520px] lg:col-span-4 lg:h-[570px]">
 
             {/* Image */}
-            <Image
-              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&h=1200&fit=crop"
-              alt="Student studying abroad"
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 33vw"
-              className="object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
-            />
+<img
+  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&h=1200&fit=crop"
+  alt="Student studying abroad"
+  className="w-full h-[320px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
+/>
 
             {/* Dark / Green Fill Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-70 transition-all duration-700 group-hover:opacity-100" />
 
             {/* Animated Green Fill */}
-            <div className="absolute inset-x-0 bottom-0 h-0 bg-[var(--primary)]/75 transition-all duration-700 ease-out group-hover:h-full mix-blend-multiply" />
+            {/* <div className="absolute inset-x-0 bottom-0 h-0 bg-[var(--primary)]/75 transition-all duration-700 ease-out group-hover:h-full mix-blend-multiply" /> */}
 
             {/* Outline */}
             <div className="pointer-events-none absolute inset-3 rounded-xl border border-white/0 transition-all duration-700 group-hover:border-white/60" />
@@ -176,10 +173,10 @@ export default function AboutSection() {
                 Turn Your Dreams Into Global Opportunities
               </h3>
 
-              <div className="mt-5 flex items-center gap-2 text-sm font-medium text-white opacity-0 transition-all duration-500 group-hover:opacity-100">
+              <Link href="/universities" className="mt-5 flex items-center gap-2 text-sm font-medium text-white opacity-0 transition-all duration-500 group-hover:opacity-100">
                 Explore opportunities
                 <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-              </div>
+              </Link>
             </div>
 
             {/* Top Badge */}
@@ -239,13 +236,11 @@ export default function AboutSection() {
               ================================================== */}
               <div className="absolute right-0 top-0 h-full w-[42%] overflow-hidden">
 
-                <Image
-                  src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=700&h=600&fit=crop"
-                  alt="Travel and study abroad"
-                  fill
-                  sizes="(max-width: 768px) 42vw, 30vw"
-                  className="object-cover object-center transition-transform duration-1000 group-hover:scale-110"
-                />
+<img
+  src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=700&h=600&fit=crop"
+  alt="Travel and study abroad"
+  className="w-full h-[220px] sm:h-[280px] md:h-[360px] lg:h-[420px] object-cover object-center transition-transform duration-1000 group-hover:scale-110"
+/>
 
                 {/* Image Fade */}
                 <div className="absolute inset-0 bg-gradient-to-r from-white via-white/20 to-transparent transition-opacity duration-500 group-hover:opacity-20" />

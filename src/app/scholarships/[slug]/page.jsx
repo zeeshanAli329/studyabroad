@@ -38,7 +38,9 @@ export default function ScholarshipDetailPage() {
         <div className="mx-auto max-w-[1320px] px-6 py-16 lg:px-8">
           <div className="text-center py-12">
             <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--primary)]"></div>
-            <p className="mt-4 text-[var(--text-secondary)]">Loading scholarship...</p>
+            <p className="mt-4 text-[var(--text-secondary)]">
+              Loading scholarship...
+            </p>
           </div>
         </div>
       </main>
@@ -50,7 +52,9 @@ export default function ScholarshipDetailPage() {
       <main className="pt-24">
         <div className="mx-auto max-w-[1320px] px-6 py-16 lg:px-8">
           <div className="text-center py-12">
-            <p className="text-[var(--danger)]">{error || "Scholarship not found"}</p>
+            <p className="text-[var(--danger)]">
+              {error || "Scholarship not found"}
+            </p>
             <Link
               href="/scholarships"
               className="inline-block mt-4 px-6 py-2 bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--primary-dark)]"
@@ -69,15 +73,23 @@ export default function ScholarshipDetailPage() {
         {/* Breadcrumb */}
         <nav className="mb-8">
           <ol className="flex items-center gap-2 text-sm">
-            <Link href="/" className="text-[var(--text-secondary)] hover:text-[var(--primary)]">
+            <Link
+              href="/"
+              className="text-[var(--text-secondary)] hover:text-[var(--primary)]"
+            >
               Home
             </Link>
             <span className="text-[var(--text-secondary)]">/</span>
-            <Link href="/scholarships" className="text-[var(--text-secondary)] hover:text-[var(--primary)]">
+            <Link
+              href="/scholarships"
+              className="text-[var(--text-secondary)] hover:text-[var(--primary)]"
+            >
               Scholarships
             </Link>
             <span className="text-[var(--text-secondary)]">/</span>
-            <span className="text-[var(--text-primary)]">{scholarship.title}</span>
+            <span className="text-[var(--text-primary)]">
+              {scholarship.title}
+            </span>
           </ol>
         </nav>
 
@@ -113,11 +125,10 @@ export default function ScholarshipDetailPage() {
         {/* Image */}
         {scholarship.image && (
           <div className="aspect-[16/9] rounded-2xl overflow-hidden mb-8 relative">
-            <Image
+            <img
               src={scholarship.image}
               alt={scholarship.title}
-              fill
-              className="object-cover"
+              className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover"
             />
           </div>
         )}
@@ -126,7 +137,9 @@ export default function ScholarshipDetailPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {scholarship.amount && (
             <div className="bg-[var(--background-light)] rounded-xl p-6">
-              <h3 className="font-semibold text-[var(--text-primary)] mb-2">Amount</h3>
+              <h3 className="font-semibold text-[var(--text-primary)] mb-2">
+                Amount
+              </h3>
               <p className="text-2xl font-bold text-[var(--primary)]">
                 {scholarship.amount} {scholarship.currency}
               </p>
@@ -134,7 +147,9 @@ export default function ScholarshipDetailPage() {
           )}
           {scholarship.deadline && (
             <div className="bg-[var(--background-light)] rounded-xl p-6">
-              <h3 className="font-semibold text-[var(--text-primary)] mb-2">Deadline</h3>
+              <h3 className="font-semibold text-[var(--text-primary)] mb-2">
+                Deadline
+              </h3>
               <p className="text-2xl font-bold text-[var(--text-primary)]">
                 {new Date(scholarship.deadline).toLocaleDateString()}
               </p>
@@ -142,7 +157,9 @@ export default function ScholarshipDetailPage() {
           )}
           {scholarship.funding && (
             <div className="bg-[var(--background-light)] rounded-xl p-6">
-              <h3 className="font-semibold text-[var(--text-primary)] mb-2">Funding Type</h3>
+              <h3 className="font-semibold text-[var(--text-primary)] mb-2">
+                Funding Type
+              </h3>
               <p className="text-2xl font-bold text-[var(--primary)]">
                 {scholarship.funding}
               </p>
@@ -153,7 +170,9 @@ export default function ScholarshipDetailPage() {
         {/* Description */}
         {scholarship.description && (
           <div className="bg-white rounded-xl p-8 shadow-sm mb-8">
-            <h2 className="font-serif text-2xl text-[var(--text-primary)] mb-4">Description</h2>
+            <h2 className="font-serif text-2xl text-[var(--text-primary)] mb-4">
+              Description
+            </h2>
             <div className="prose max-w-none text-[var(--text-secondary)]">
               <p>{scholarship.description}</p>
             </div>
@@ -163,7 +182,9 @@ export default function ScholarshipDetailPage() {
         {/* Eligibility */}
         {scholarship.eligibility && (
           <div className="bg-white rounded-xl p-8 shadow-sm mb-8">
-            <h2 className="font-serif text-2xl text-[var(--text-primary)] mb-4">Eligibility</h2>
+            <h2 className="font-serif text-2xl text-[var(--text-primary)] mb-4">
+              Eligibility
+            </h2>
             <div className="prose max-w-none text-[var(--text-secondary)]">
               <p>{scholarship.eligibility}</p>
             </div>
@@ -173,7 +194,9 @@ export default function ScholarshipDetailPage() {
         {/* Requirements */}
         {scholarship.requirements && (
           <div className="bg-white rounded-xl p-8 shadow-sm mb-8">
-            <h2 className="font-serif text-2xl text-[var(--text-primary)] mb-4">Requirements</h2>
+            <h2 className="font-serif text-2xl text-[var(--text-primary)] mb-4">
+              Requirements
+            </h2>
             <div className="prose max-w-none text-[var(--text-secondary)]">
               <p>{scholarship.requirements}</p>
             </div>
@@ -183,7 +206,9 @@ export default function ScholarshipDetailPage() {
         {/* Benefits */}
         {scholarship.benefits && (
           <div className="bg-white rounded-xl p-8 shadow-sm mb-8">
-            <h2 className="font-serif text-2xl text-[var(--text-primary)] mb-4">Benefits</h2>
+            <h2 className="font-serif text-2xl text-[var(--text-primary)] mb-4">
+              Benefits
+            </h2>
             <div className="prose max-w-none text-[var(--text-secondary)]">
               <p>{scholarship.benefits}</p>
             </div>
@@ -192,7 +217,9 @@ export default function ScholarshipDetailPage() {
 
         {/* CTA */}
         <div className="bg-[var(--secondary)] rounded-xl p-8 text-center">
-          <h2 className="font-serif text-2xl text-white mb-4">Ready to Apply?</h2>
+          <h2 className="font-serif text-2xl text-white mb-4">
+            Ready to Apply?
+          </h2>
           {scholarship.applicationUrl ? (
             <a
               href={scholarship.applicationUrl}
@@ -203,7 +230,9 @@ export default function ScholarshipDetailPage() {
               Apply Now
             </a>
           ) : (
-            <p className="text-white/80 mb-4">Application information coming soon</p>
+            <p className="text-white/80 mb-4">
+              Application information coming soon
+            </p>
           )}
           <Link
             href="/appointment"
