@@ -35,7 +35,9 @@ export default function DestinationsList() {
         <div className="mx-auto max-w-[1320px] px-6 lg:px-8">
           <div className="text-center py-20">
             <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--primary)]"></div>
-            <p className="mt-4 text-[var(--text-secondary)]">Loading destinations...</p>
+            <p className="mt-4 text-[var(--text-secondary)]">
+              Loading destinations...
+            </p>
           </div>
         </div>
       </div>
@@ -43,16 +45,17 @@ export default function DestinationsList() {
   }
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
+    <div className="min-h-screen pt-0 pb-16">
       {/* Hero Section */}
-      <div className="bg-[var(--secondary)] py-16 px-4 lg:px-8">
+      <div className="bg-[var(--secondary)] py-16 px-0 lg:px-8">
         <div className="mx-auto max-w-[1320px]">
           <Reveal>
             <h1 className="font-serif text-4xl lg:text-5xl text-white mb-4">
               Study Abroad Destinations
             </h1>
             <p className="text-lg text-white/80 max-w-2xl">
-              Explore our curated list of destinations perfect for international education. Find the right country for your academic journey.
+              Explore our curated list of destinations perfect for international
+              education. Find the right country for your academic journey.
             </p>
           </Reveal>
         </div>
@@ -75,7 +78,9 @@ export default function DestinationsList() {
         ) : destinations.length === 0 ? (
           <Reveal>
             <div className="text-center py-12 bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
-              <p className="text-[var(--text-secondary)] mb-4">No destinations available yet.</p>
+              <p className="text-[var(--text-secondary)] mb-4">
+                No destinations available yet.
+              </p>
               <p className="text-[var(--text-secondary)] text-sm">
                 Check back later as we add more study abroad destinations.
               </p>
@@ -98,10 +103,12 @@ export default function DestinationsList() {
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
                       /> */}
                       <img
-  src={destination.image || homeImages.destinationFallback}
-  alt={destination.name}
-  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-500 group-hover:scale-110"
-/>
+                        src={
+                          destination.image || homeImages.destinationFallback
+                        }
+                        alt={destination.name}
+                        className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
                     </div>
                     <div className="p-6">
                       <h3 className="font-serif text-2xl font-semibold text-[var(--text-primary)] mb-2 group-hover:text-[var(--primary)] transition-colors">

@@ -42,8 +42,7 @@ const team = [
 export default function TeamSection() {
   const [activeId, setActiveId] = useState(team[0].id);
 
-  const activeMember =
-    team.find((member) => member.id === activeId) || team[0];
+  const activeMember = team.find((member) => member.id === activeId) || team[0];
 
   return (
     <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-24">
@@ -54,24 +53,17 @@ export default function TeamSection() {
       <div className="mx-auto max-w-[1320px] px-6 lg:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
           {/* LEFT */}
-          <Reveal
-            direction="left"
-            delay={0}
-            className="lg:col-span-7"
-          >
+          <Reveal direction="left" delay={0} className="lg:col-span-7">
             <div>
               <span className="relative inline-block text-sm font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">
                 Our Coaching
-
                 <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[var(--primary)] transition-all duration-500 group-hover:w-full" />
               </span>
 
               <h2 className="mt-4 mb-8 font-serif text-3xl leading-tight text-[var(--text-primary)] sm:text-4xl lg:mb-10 lg:text-5xl">
                 Exploring the Unknown
                 <br />
-                <span className="text-[var(--primary)]">
-                  Voyages of Wonder
-                </span>
+                <span className="text-[var(--primary)]">Voyages of Wonder</span>
               </h2>
 
               <div className="space-y-3 sm:space-y-4">
@@ -165,11 +157,7 @@ export default function TeamSection() {
           </Reveal>
 
           {/* RIGHT IMAGE */}
-          <Reveal
-            direction="right"
-            delay={150}
-            className="lg:col-span-5"
-          >
+          <Reveal direction="right" delay={150} className="lg:col-span-5">
             <div className="group relative">
               {/* Outline decoration */}
               <div className="absolute -inset-3 rounded-[2rem] border border-[var(--primary)]/20 transition-all duration-500 group-hover:-inset-5 group-hover:border-[var(--primary)]/40" />
@@ -184,11 +172,11 @@ export default function TeamSection() {
                   className="object-cover transition-all duration-700 group-hover:scale-105"
                 /> */}
                 <img
-  key={activeMember.id}
-  src={activeMember.image}
-  alt={activeMember.name}
-  className="w-full h-[220px] sm:h-[280px] md:h-[360px] lg:h-[420px] xl:h-[500px] object-cover transition-all duration-700 group-hover:scale-105"
-/>
+                  key={activeMember.id}
+                  src={activeMember.image}
+                  alt={activeMember.name}
+                  className="w-full h-[220px] sm:h-[280px] md:h-[360px] lg:h-[420px] xl:h-[500px] object-cover transition-all duration-700 group-hover:scale-105"
+                />
 
                 {/* Image overlay fill */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />

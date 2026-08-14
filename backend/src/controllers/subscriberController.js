@@ -65,7 +65,7 @@ const subscribe = async (req, res) => {
       await prisma.notification.create({
         data: {
           title: 'New Newsletter Subscriber',
-          message: `${normalizedEmail} subscribed to the RouteX newsletter.`,
+          message: `${normalizedEmail} subscribed to the StudyAbroad newsletter.`,
           type: 'subscriber',
           userId: admin.id,
           resourceId: subscriber.id,
@@ -74,7 +74,7 @@ const subscribe = async (req, res) => {
       });
     }
 
-    res.status(201).json({ message: 'Thank you for subscribing to RouteX.', subscriber });
+    res.status(201).json({ message: 'Thank you for subscribing to StudyAbroad.', subscriber });
   } catch (error) {
     console.error('Subscription error:', error);
     res.status(500).json({ error: 'Failed to subscribe' });

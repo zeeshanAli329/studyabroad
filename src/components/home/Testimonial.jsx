@@ -3,12 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Reveal from "@/components/shared/Reveal";
-import {
-  Quote,
-  ArrowLeft,
-  ArrowRight,
-  Star,
-} from "lucide-react";
+import { Quote, ArrowLeft, ArrowRight, Star } from "lucide-react";
 
 const testimonials = [
   {
@@ -49,17 +44,13 @@ export default function Testimonial() {
   const goPrev = () => {
     setDirection("left");
 
-    setActiveIndex((prev) =>
-      prev === 0 ? testimonials.length - 1 : prev - 1
-    );
+    setActiveIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
   };
 
   const goNext = () => {
     setDirection("right");
 
-    setActiveIndex((prev) =>
-      prev === testimonials.length - 1 ? 0 : prev + 1
-    );
+    setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
   };
 
   return (
@@ -77,19 +68,13 @@ export default function Testimonial() {
           <h2 className="mt-3 font-serif text-3xl leading-tight text-[var(--text-primary)] sm:text-4xl lg:text-5xl">
             What Our Students
             <br />
-            <span className="text-[var(--primary)]">
-              Say About Us
-            </span>
+            <span className="text-[var(--primary)]">Say About Us</span>
           </h2>
         </div>
 
         <div className="grid items-stretch gap-6 lg:grid-cols-12 lg:gap-8">
           {/* IMAGE */}
-          <Reveal
-            direction="left"
-            delay={0}
-            className="lg:col-span-5"
-          >
+          <Reveal direction="left" delay={0} className="lg:col-span-5">
             <div className="group relative h-full min-h-[320px] overflow-hidden rounded-[2rem]">
               <div className="absolute -inset-2 rounded-[2.2rem] border border-[var(--primary)]/20 transition-all duration-500 group-hover:-inset-4 group-hover:border-[var(--primary)]/40" />
 
@@ -101,11 +86,11 @@ export default function Testimonial() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 /> */}
 
-<img
-  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&h=800&fit=crop"
-  alt="Education consultant"
-  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-700 group-hover:scale-105"
-/>
+                <img
+                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&h=800&fit=crop"
+                  alt="Education consultant"
+                  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-700 group-hover:scale-105"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
                 {/* Shine */}
@@ -119,11 +104,7 @@ export default function Testimonial() {
           </Reveal>
 
           {/* CONTENT */}
-          <Reveal
-            direction="right"
-            delay={150}
-            className="lg:col-span-7"
-          >
+          <Reveal direction="right" delay={150} className="lg:col-span-7">
             <div className="group relative h-full overflow-hidden rounded-[2rem] bg-[var(--primary)] p-7 shadow-xl sm:p-10 lg:p-12">
               {/* Animated outline */}
               <div className="pointer-events-none absolute inset-3 rounded-[1.5rem] border border-white/20 transition-all duration-500 group-hover:inset-5 group-hover:border-white/40" />
@@ -171,10 +152,10 @@ export default function Testimonial() {
                         className="object-cover"
                       /> */}
                       <img
-  src={active.avatar}
-  alt={active.name}
-  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover"
-/>
+                        src={active.avatar}
+                        alt={active.name}
+                        className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover"
+                      />
                     </div>
 
                     <div>
@@ -182,9 +163,7 @@ export default function Testimonial() {
                         {active.name}
                       </div>
 
-                      <div className="text-sm text-white/70">
-                        {active.role}
-                      </div>
+                      <div className="text-sm text-white/70">{active.role}</div>
                     </div>
                   </div>
 

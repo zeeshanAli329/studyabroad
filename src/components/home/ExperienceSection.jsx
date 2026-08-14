@@ -4,11 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/shared/Reveal";
-import {
-  ChevronLeft,
-  ChevronRight,
-  ArrowUpRight,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 
 const coachings = [
   {
@@ -41,23 +37,17 @@ export default function ExperienceSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const goPrev = () => {
-    setActiveIndex((prev) =>
-      prev === 0 ? coachings.length - 1 : prev - 1
-    );
+    setActiveIndex((prev) => (prev === 0 ? coachings.length - 1 : prev - 1));
   };
 
   const goNext = () => {
-    setActiveIndex((prev) =>
-      prev === coachings.length - 1 ? 0 : prev + 1
-    );
+    setActiveIndex((prev) => (prev === coachings.length - 1 ? 0 : prev + 1));
   };
 
   // Automatic slider
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex((prev) =>
-        prev === coachings.length - 1 ? 0 : prev + 1
-      );
+      setActiveIndex((prev) => (prev === coachings.length - 1 ? 0 : prev + 1));
     }, 4500);
 
     return () => clearInterval(interval);
@@ -65,25 +55,20 @@ export default function ExperienceSection() {
 
   return (
     <section className="relative overflow-hidden bg-[#f7f9f3] py-16 sm:py-20 lg:py-24">
-
       {/* Background */}
       <div className="pointer-events-none absolute -right-40 top-0 h-96 w-96 rounded-full bg-[var(--primary)]/5 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-
         {/* Header */}
         <Reveal direction="up" delay={0}>
           <div className="mb-10 flex items-end justify-between gap-5 sm:mb-14">
-
             <div>
               <div className="mb-4 flex items-center gap-3">
-
                 <span className="h-[2px] w-8 bg-[var(--primary)]" />
 
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--primary)] sm:text-sm">
                   Supporting Coaching
                 </span>
-
               </div>
 
               <h2 className="font-serif text-3xl leading-tight text-[var(--text-primary)] sm:text-4xl lg:text-5xl">
@@ -94,14 +79,13 @@ export default function ExperienceSection() {
               </h2>
 
               <p className="mt-4 max-w-xl text-sm leading-7 text-[var(--text-secondary)] sm:text-base">
-                Expert coaching programs designed to help you achieve
-                the scores and confidence you need for your future abroad.
+                Expert coaching programs designed to help you achieve the scores
+                and confidence you need for your future abroad.
               </p>
             </div>
 
             {/* Navigation */}
             <div className="hidden gap-3 sm:flex">
-
               <button
                 onClick={goPrev}
                 aria-label="Previous coaching"
@@ -117,14 +101,12 @@ export default function ExperienceSection() {
               >
                 <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </button>
-
             </div>
           </div>
         </Reveal>
 
         {/* Cards */}
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-6">
-
           {coachings.map((coaching, index) => {
             const isActive = index === activeIndex;
 
@@ -143,15 +125,13 @@ export default function ExperienceSection() {
                       : "shadow-sm hover:-translate-y-2 hover:shadow-xl"
                   }`}
                 >
-
                   {/* Image */}
                   <div className="relative aspect-[4/3] overflow-hidden">
-
-<img
-  src={coaching.image}
-  alt={coaching.title}
-  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-1000 group-hover:scale-110"
-/>
+                    <img
+                      src={coaching.image}
+                      alt={coaching.title}
+                      className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-1000 group-hover:scale-110"
+                    />
 
                     {/* Gradient */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
@@ -171,17 +151,14 @@ export default function ExperienceSection() {
                     <div className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur-md transition-all duration-500 group-hover:rotate-45 group-hover:bg-white group-hover:text-[var(--primary)]">
                       <ArrowUpRight className="h-5 w-5" />
                     </div>
-
                   </div>
 
                   {/* Content */}
                   <div className="relative overflow-hidden p-5 sm:p-6">
-
                     {/* Fill */}
                     <div className="absolute inset-0 translate-y-full bg-[var(--primary)] transition-transform duration-700 group-hover:translate-y-0" />
 
                     <div className="relative z-10">
-
                       <h3 className="mb-2 text-lg font-bold text-[var(--text-primary)] transition-colors duration-500 group-hover:text-white sm:text-xl">
                         {coaching.title}
                       </h3>
@@ -194,7 +171,6 @@ export default function ExperienceSection() {
                         Explore Coaching
                         <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                       </div>
-
                     </div>
                   </div>
 
@@ -204,17 +180,14 @@ export default function ExperienceSection() {
                       isActive ? "w-full" : "w-0"
                     }`}
                   />
-
                 </Link>
               </Reveal>
             );
           })}
-
         </div>
 
         {/* Mobile Navigation */}
         <div className="mt-7 flex justify-center gap-3 sm:hidden">
-
           <button
             onClick={goPrev}
             aria-label="Previous coaching"
@@ -230,7 +203,6 @@ export default function ExperienceSection() {
           >
             <ChevronRight className="h-5 w-5" />
           </button>
-
         </div>
       </div>
     </section>
