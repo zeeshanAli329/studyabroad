@@ -61,7 +61,7 @@ export default function AdminSidebar() {
     { name: 'Inquiries', href: '/admin/inquiries' },
     { name: 'Users', href: '/admin/users' },
     { name: 'Subscribers', href: '/admin/subscribers' },
-    { name: 'Images', href: '/admin/images' },
+    // { name: 'Images', href: '/admin/images' },
     { name: 'Settings', href: '/admin/settings' },
   ];
 
@@ -101,13 +101,14 @@ export default function AdminSidebar() {
           <div className="p-6 border-b border-gray-100">
             <Link href="/admin/dashboard" onClick={() => setMobileMenuOpen(false)}>
               <Image
-                src="https://wp.rrdevs.net/routex/wp-content/themes/routex/assets/imgs/logo/logo.svg"
+                src="/logo2.png"
                 alt="RouteX"
                 width={155}
                 height={55}
-                className="h-10 w-auto"
+                className="lg:h-20 h-10 md:h-20 w-auto"
+                priority
               />
-              <p className="text-xs text-gray-500 mt-2 font-medium">Study Abroad Admin</p>
+              {/* <p className="text-xs text-gray-500 mt-2 font-medium">Study Abroad Admin</p> */}
             </Link>
           </div>
 
