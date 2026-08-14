@@ -99,7 +99,7 @@ export default function AdminSidebar() {
         <div className="flex flex-col h-full">
           {/* Logo Section */}
           <div className="p-6 border-b border-gray-100">
-            <Link href="/admin/dashboard" onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/" onClick={() => setMobileMenuOpen(false)}>
               {/* <Image
                 src="/logo2.png"
                 alt="RouteX"
