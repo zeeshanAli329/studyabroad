@@ -100,15 +100,23 @@ export default function AdminSidebar() {
           {/* Logo Section */}
           <div className="p-6 border-b border-gray-100">
             <Link href="/admin/dashboard" onClick={() => setMobileMenuOpen(false)}>
-              <Image
+              {/* <Image
                 src="/logo2.png"
                 alt="RouteX"
                 width={155}
                 height={55}
                 className="lg:h-20 h-10 md:h-20 w-auto"
                 priority
-              />
-              {/* <p className="text-xs text-gray-500 mt-2 font-medium">Study Abroad Admin</p> */}
+              /> */}
+              <img
+  src="/logo2.png"
+  alt="RouteX"
+  width={155}
+  height={55}
+  className="lg:h-20 h-10 md:h-20 w-auto"
+/>
+              <p className="text-xs text-gray-500 mt-2 font-medium">Study Abroad Admin</p>
+
             </Link>
           </div>
 
