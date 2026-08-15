@@ -307,7 +307,7 @@ function HowWeHelp() {
 /* ============================================================
    6. SIMPLE PROCESS
    ============================================================ */
-function SimpleProcess() {
+export function SimpleProcess() {
   const steps = [
     {
       num: "01",

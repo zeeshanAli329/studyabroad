@@ -15,7 +15,7 @@ export default function AdminSidebar() {
 
   useEffect(() => {
     const loadUser = () => {
-      const userData = localStorage.getItem('user');
+      const userData = localStorage.getItem("user");
       if (userData) {
         setUser(JSON.parse(userData));
       } else {
@@ -30,46 +30,46 @@ export default function AdminSidebar() {
       loadUser();
     };
 
-    window.addEventListener('storage', handleStorageChange);
-    
+    window.addEventListener("storage", handleStorageChange);
+
     // Also listen for custom event for same-tab updates
-    window.addEventListener('user-auth-changed', handleStorageChange);
+    window.addEventListener("user-auth-changed", handleStorageChange);
 
     return () => {
-      window.removeEventListener('storage', handleStorageChange);
-      window.removeEventListener('user-auth-changed', handleStorageChange);
+      window.removeEventListener("storage", handleStorageChange);
+      window.removeEventListener("user-auth-changed", handleStorageChange);
     };
   }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
     setUser(null);
     // Dispatch custom event to notify other components
-    window.dispatchEvent(new Event('user-auth-changed'));
-    router.push('/admin/login');
+    window.dispatchEvent(new Event("user-auth-changed"));
+    router.push("/admin/login");
     setMobileMenuOpen(false);
   };
 
   const navItems = [
-    { name: 'Dashboard', href: '/admin/dashboard' },
-    { name: 'Scholarships', href: '/admin/scholarships' },
-    { name: 'Blogs', href: '/admin/blog' },
-    { name: 'Countries', href: '/admin/countries' },
-    { name: 'Universities', href: '/admin/universities' },
-    { name: 'Destinations', href: '/admin/destinations' },
-    { name: 'Inquiries', href: '/admin/inquiries' },
-    { name: 'Users', href: '/admin/users' },
-    { name: 'Subscribers', href: '/admin/subscribers' },
+    { name: "Dashboard", href: "/admin/dashboard" },
+    { name: "Scholarships", href: "/admin/scholarships" },
+    { name: "Blogs", href: "/admin/blog" },
+    { name: "Countries", href: "/admin/countries" },
+    { name: "Universities", href: "/admin/universities" },
+    { name: "Destinations", href: "/admin/destinations" },
+    { name: "Inquiries", href: "/admin/inquiries" },
+    { name: "Users", href: "/admin/users" },
+    { name: "Subscribers", href: "/admin/subscribers" },
     // { name: 'Images', href: '/admin/images' },
-    { name: 'Settings', href: '/admin/settings' },
+    { name: "Settings", href: "/admin/settings" },
   ];
 
   const isActive = (href) => {
-    if (href === '/admin/dashboard') {
-      return pathname === '/admin/dashboard' || pathname === '/admin';
+    if (href === "/admin/dashboard") {
+      return pathname === "/admin/dashboard" || pathname === "/admin";
     }
-    return pathname === href || pathname.startsWith(href + '/');
+    return pathname === href || pathname.startsWith(href + "/");
   };
 
   return (
@@ -93,7 +93,7 @@ export default function AdminSidebar() {
       {/* Sidebar */}
       <aside
         className={`fixed top-0 left-0 z-50 h-full w-72 bg-white border-r border-gray-200 transform transition-transform duration-300 ease-in-out ${
-          mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+          mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
         } lg:translate-x-0 lg:z-0`}
       >
         <div className="flex flex-col h-full">
@@ -109,14 +109,15 @@ export default function AdminSidebar() {
                 priority
               /> */}
               <img
-  src="/logo2.png"
-  alt="RouteX"
-  width={155}
-  height={55}
-  className="lg:h-20 h-10 md:h-20 w-auto"
-/>
-              <p className="text-xs text-gray-500 mt-2 font-medium">Study Abroad Admin</p>
-
+                src="/logo2.png"
+                alt="RouteX"
+                width={155}
+                height={55}
+                className="lg:h-20 h-10 md:h-20 w-auto"
+              />
+              <p className="text-xs text-gray-500 mt-2 font-medium">
+                Study Abroad Admin
+              </p>
             </Link>
           </div>
 
@@ -132,8 +133,8 @@ export default function AdminSidebar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block px-4 py-3 rounded-xl transition-all duration-200 text-sm font-medium ${
                   isActive(item.href)
-                    ? 'bg-[#8CC63F]/10 text-[#8CC63F] font-semibold'
-                    : 'text-gray-700 hover:bg-gray-50'
+                    ? "bg-[#8CC63F]/10 text-[#8CC63F] font-semibold"
+                    : "text-gray-700 hover:bg-gray-50"
                 }`}
               >
                 {item.name}
@@ -149,8 +150,8 @@ export default function AdminSidebar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block px-4 py-3 rounded-xl transition-all duration-200 text-sm font-medium ${
                   isActive(item.href)
-                    ? 'bg-[#8CC63F]/10 text-[#8CC63F] font-semibold'
-                    : 'text-gray-700 hover:bg-gray-50'
+                    ? "bg-[#8CC63F]/10 text-[#8CC63F] font-semibold"
+                    : "text-gray-700 hover:bg-gray-50"
                 }`}
               >
                 {item.name}
@@ -166,8 +167,8 @@ export default function AdminSidebar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block px-4 py-3 rounded-xl transition-all duration-200 text-sm font-medium ${
                   isActive(item.href)
-                    ? 'bg-[#8CC63F]/10 text-[#8CC63F] font-semibold'
-                    : 'text-gray-700 hover:bg-gray-50'
+                    ? "bg-[#8CC63F]/10 text-[#8CC63F] font-semibold"
+                    : "text-gray-700 hover:bg-gray-50"
                 }`}
               >
                 {item.name}

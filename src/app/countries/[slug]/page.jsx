@@ -426,7 +426,7 @@ export default function CountryDetailPage() {
 
               <p className="mt-6 text-base leading-8 text-gray-600">
                 {country.description ||
-                  `Studying in ${country.name} gives international students the opportunity to experience high-quality education, develop global connections and build a successful international career.`}
+                  `Studying in <strong>${country.name}</strong> gives international students the opportunity to experience high-quality education, develop global connections and build a successful international career.`}
               </p>
 
               <div className="mt-8 space-y-4">

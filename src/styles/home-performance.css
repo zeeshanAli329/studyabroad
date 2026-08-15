@@ -1,0 +1,49 @@
+/* =========================================================
+   RouteX Home Page Performance
+   ========================================================= */
+
+/*
+ * Allows the browser to skip rendering work for sections
+ * that are far below the current viewport.
+ */
+.home-performance-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 800px;
+}
+
+/*
+ * Prevent unnecessary paint work from decorative elements.
+ */
+.home-performance-decoration {
+  pointer-events: none;
+  user-select: none;
+}
+
+/*
+ * Avoid expensive animation calculations for users who
+ * prefer reduced motion.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .home-performance-section *,
+  .home-performance-section *::before,
+  .home-performance-section *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+ * Mobile devices have less GPU/CPU headroom.
+ * Keep the visual design but reduce expensive blur rendering.
+ */
+@media (max-width: 768px) {
+  .home-performance-section .blur-3xl {
+    filter: blur(24px);
+  }
+
+  .home-performance-section .blur-xl {
+    filter: blur(16px);
+  }
+}

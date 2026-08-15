@@ -10,7 +10,7 @@ const coachings = [
   {
     title: "TOEFL Coaching",
     description:
-      "Build your English proficiency with structured TOEFL preparation and expert guidance.",
+      "Build your English proficiency with structured TOEFL preparation and expert guidance for your study abroad goals.",
     image:
       "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&h=500&fit=crop",
     href: "/coaching/toefl",
@@ -18,7 +18,7 @@ const coachings = [
   {
     title: "IELTS Coaching",
     description:
-      "Prepare confidently for IELTS with experienced instructors and personalized learning.",
+      "Prepare confidently for IELTS with experienced instructors and personalized learning for international university admission.",
     image:
       "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=700&h=500&fit=crop",
     href: "/coaching/ielts",
@@ -26,7 +26,7 @@ const coachings = [
   {
     title: "OET Coaching",
     description:
-      "Improve your professional English skills with focused OET preparation.",
+      "Improve your professional English skills with focused OET preparation and expert guidance for your international career.",
     image:
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&h=500&fit=crop",
     href: "/coaching/oet",
@@ -41,7 +41,9 @@ export default function ExperienceSection() {
   };
 
   const goNext = () => {
-    setActiveIndex((prev) => (prev === coachings.length - 1 ? 0 : prev + 1));
+    setActiveIndex((prev) =>
+      prev === coachings.length - 1 ? 0 : prev + 1
+    );
   };
 
   // Automatic slider
@@ -54,7 +56,10 @@ export default function ExperienceSection() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f9f3] py-16 sm:py-20 lg:py-24">
+    <section
+      className="relative overflow-hidden bg-[#f7f9f3] py-16 sm:py-20 lg:py-24"
+      aria-labelledby="study-abroad-coaching-heading"
+    >
       {/* Background */}
       <div className="pointer-events-none absolute -right-40 top-0 h-96 w-96 rounded-full bg-[var(--primary)]/5 blur-3xl" />
 
@@ -67,20 +72,26 @@ export default function ExperienceSection() {
                 <span className="h-[2px] w-8 bg-[var(--primary)]" />
 
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--primary)] sm:text-sm">
-                  Supporting Coaching
+                  <strong>Studyabroad</strong> Coaching
                 </span>
               </div>
 
-              <h2 className="font-serif text-3xl leading-tight text-[var(--text-primary)] sm:text-4xl lg:text-5xl">
-                Prepare For Your
+              <h2
+                id="study-abroad-coaching-heading"
+                className="font-serif text-3xl leading-tight text-[var(--text-primary)] sm:text-4xl lg:text-5xl"
+              >
+                Prepare For Your{" "}
+                <strong>Study Abroad</strong>
                 <span className="block text-[var(--primary)]">
-                  Global Journey
+                  <strong>Global Journey</strong>
                 </span>
               </h2>
 
               <p className="mt-4 max-w-xl text-sm leading-7 text-[var(--text-secondary)] sm:text-base">
-                Expert coaching programs designed to help you achieve the scores
-                and confidence you need for your future abroad.
+                Get expert <strong>English language coaching</strong> designed
+                to help you achieve the scores and confidence you need for
+                <strong> international education</strong>, university admission,
+                and your future <strong>study abroad journey</strong>.
               </p>
             </div>
 
@@ -88,7 +99,7 @@ export default function ExperienceSection() {
             <div className="hidden gap-3 sm:flex">
               <button
                 onClick={goPrev}
-                aria-label="Previous coaching"
+                aria-label="Previous English language coaching program"
                 className="group flex h-11 w-11 items-center justify-center rounded-full border border-[var(--primary)]/30 bg-white text-[var(--primary)] transition-all duration-300 hover:bg-[var(--primary)] hover:text-white"
               >
                 <ChevronLeft className="h-5 w-5 transition-transform group-hover:-translate-x-1" />
@@ -96,7 +107,7 @@ export default function ExperienceSection() {
 
               <button
                 onClick={goNext}
-                aria-label="Next coaching"
+                aria-label="Next English language coaching program"
                 className="group flex h-11 w-11 items-center justify-center rounded-full border border-[var(--primary)]/30 bg-white text-[var(--primary)] transition-all duration-300 hover:bg-[var(--primary)] hover:text-white"
               >
                 <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -119,6 +130,7 @@ export default function ExperienceSection() {
                 <Link
                   href={coaching.href}
                   onMouseEnter={() => setActiveIndex(index)}
+                  aria-label={`Learn more about ${coaching.title} for study abroad`}
                   className={`group relative block overflow-hidden rounded-3xl bg-white transition-all duration-700 ${
                     isActive
                       ? "shadow-2xl ring-2 ring-[var(--primary)]"
@@ -129,7 +141,7 @@ export default function ExperienceSection() {
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <img
                       src={coaching.image}
-                      alt={coaching.title}
+                      alt={`${coaching.title} for study abroad and international university admission`}
                       className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-1000 group-hover:scale-110"
                     />
 
@@ -144,7 +156,7 @@ export default function ExperienceSection() {
 
                     {/* Top Badge */}
                     <div className="absolute left-4 top-4 rounded-full border border-white/30 bg-black/20 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur-md transition-all duration-500 group-hover:bg-white group-hover:text-[var(--primary)]">
-                      Expert Coaching
+                      <strong>Expert Coaching</strong>
                     </div>
 
                     {/* Arrow */}
@@ -160,7 +172,7 @@ export default function ExperienceSection() {
 
                     <div className="relative z-10">
                       <h3 className="mb-2 text-lg font-bold text-[var(--text-primary)] transition-colors duration-500 group-hover:text-white sm:text-xl">
-                        {coaching.title}
+                        <strong>{coaching.title}</strong>
                       </h3>
 
                       <p className="text-sm leading-6 text-[var(--text-secondary)] transition-colors duration-500 group-hover:text-white/80">
@@ -168,7 +180,7 @@ export default function ExperienceSection() {
                       </p>
 
                       <div className="mt-5 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[var(--primary)] transition-colors duration-500 group-hover:text-white">
-                        Explore Coaching
+                        <strong>Explore Coaching</strong>
                         <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                       </div>
                     </div>
@@ -190,7 +202,7 @@ export default function ExperienceSection() {
         <div className="mt-7 flex justify-center gap-3 sm:hidden">
           <button
             onClick={goPrev}
-            aria-label="Previous coaching"
+            aria-label="Previous English language coaching program"
             className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--primary)]/30 bg-white text-[var(--primary)]"
           >
             <ChevronLeft className="h-5 w-5" />
@@ -198,7 +210,7 @@ export default function ExperienceSection() {
 
           <button
             onClick={goNext}
-            aria-label="Next coaching"
+            aria-label="Next English language coaching program"
             className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--primary)]/30 bg-white text-[var(--primary)]"
           >
             <ChevronRight className="h-5 w-5" />

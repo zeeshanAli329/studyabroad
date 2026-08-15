@@ -23,7 +23,7 @@ export default function BrandLogos() {
         <Reveal direction="up" delay={0}>
           <div className="mb-6 text-center">
             <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[var(--text-secondary)] sm:text-xs">
-              Trusted By Partners Worldwide
+              <strong>Studyabroad</strong> Trusted By Partners Worldwide
             </span>
           </div>
         </Reveal>
@@ -46,7 +46,7 @@ export default function BrandLogos() {
                   <div className="absolute inset-0 scale-90 rounded-xl bg-[var(--primary)]/0 transition-all duration-500 group-hover:scale-100 group-hover:bg-[var(--primary)]/5" />
 
                   <span className="relative z-10 text-lg font-bold tracking-tight text-gray-400 grayscale transition-all duration-500 group-hover:scale-105 group-hover:text-[var(--primary)] group-hover:grayscale-0 sm:text-xl">
-                    {logo}
+                    <strong>{logo}</strong>
                   </span>
                 </div>
               </div>

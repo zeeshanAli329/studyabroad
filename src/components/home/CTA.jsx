@@ -178,7 +178,7 @@ export default function CTA() {
                 />
 
                 <span className="text-xs font-semibold uppercase tracking-[0.16em] text-white">
-                  Start Your Journey
+                  Start Your <strong>Study Abroad</strong> Journey
                 </span>
               </div>
 
@@ -196,7 +196,7 @@ export default function CTA() {
                 Ready to Start
                 <br />
                 <span className="text-white/85">
-                  Your Journey?
+                  Your <strong>Study Abroad Journey</strong>?
                 </span>
               </h2>
 
@@ -211,9 +211,14 @@ export default function CTA() {
                   lg:text-lg
                 "
               >
-                Take the first step towards your international education
-                goals. Our expert team is here to guide you every step of the
-                way.
+                Take the first step towards your{" "}
+                <strong>international education</strong> goals. Our expert team
+                at <strong>Studyabroad</strong> is here to guide you through{" "}
+                <strong>university applications</strong>,{" "}
+                <strong>scholarships</strong>,{" "}
+                <strong>student visas</strong>,{" "}
+                <strong>study abroad destinations</strong> and your complete{" "}
+                <strong>international education journey</strong>.
               </p>
 
               {/* =====================================================
@@ -242,7 +247,7 @@ export default function CTA() {
                     sm:px-8
                   "
                 >
-                  Book Consultation
+                  <strong>Book Study Abroad Consultation</strong>
 
                   <ArrowRight
                     className="
@@ -276,7 +281,7 @@ export default function CTA() {
                     sm:px-8 sm:py-3.5
                   "
                 >
-                  Explore Scholarships
+                  <strong>Explore Study Abroad Scholarships</strong>
 
                   <ArrowRight
                     className="

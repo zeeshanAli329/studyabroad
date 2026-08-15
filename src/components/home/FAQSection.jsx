@@ -9,27 +9,27 @@ const faqs = [
   {
     question: "What documents do I need to apply for a student visa?",
     answer:
-      "You'll typically need a valid passport, proof of admission from your institution, financial statements, academic transcripts, and passport-sized photos. Our consultants review your destination's specific requirements and help you prepare everything before submission.",
+      "You'll typically need a valid passport, proof of admission from your university or institution, financial statements, academic transcripts, and passport-sized photos. Studyabroad consultants review your destination's specific student visa requirements and help you prepare everything before submission.",
   },
   {
-    question: "How long does the visa approval process take?",
+    question: "How long does the student visa approval process take?",
     answer:
-      "Processing times vary by country and visa type, usually ranging from 2 to 8 weeks. We track your application status closely and keep you updated at every stage so there are no surprises.",
+      "Processing times vary by country and student visa type, usually ranging from 2 to 8 weeks. Studyabroad tracks your application status closely and keeps you updated at every stage of the international student visa process.",
   },
   {
-    question: "Can you help me choose the right country and university?",
+    question: "Can Studyabroad help me choose the right country and university?",
     answer:
-      "Yes. Our team walks you through options based on your budget, academic background, and career goals, then helps you narrow down the universities and countries that best fit your requirements.",
+      "Yes. Our study abroad consultants help you compare countries, universities, courses, tuition fees, and admission requirements based on your budget, academic background, and career goals. We then help you choose the destinations and universities that best fit your requirements.",
   },
   {
-    question: "Do you offer support after I arrive at my destination?",
+    question: "Does Studyabroad offer support after I arrive at my destination?",
     answer:
-      "We provide pre-departure briefings covering housing, local transport, and cultural orientation. Our consultants also remain reachable after you land in case you need additional guidance.",
+      "We provide pre-departure guidance covering accommodation, local transport, university preparation, and cultural orientation. Our Studyabroad consultants also remain reachable after you arrive in your destination country if you need additional guidance.",
   },
   {
-    question: "What happens if my visa application gets rejected?",
+    question: "What happens if my student visa application gets rejected?",
     answer:
-      "We review the rejection reasons with you, identify documentation or application issues, and guide you through reapplication or appeal options where possible.",
+      "We review the visa rejection reasons with you, identify documentation or application issues, and guide you through reapplication or appeal options where possible. Studyabroad helps students understand the next steps before submitting another application.",
   },
 ];
 
@@ -41,7 +41,10 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
+    <section
+      className="relative overflow-hidden py-16 sm:py-20 lg:py-24"
+      aria-labelledby="studyabroad-faq-heading"
+    >
       {/* Background light */}
       <div className="pointer-events-none absolute left-0 top-1/3 h-72 w-72 rounded-full bg-[var(--primary)]/5 blur-[100px]" />
 
@@ -55,21 +58,28 @@ export default function FAQSection() {
                 <span className="h-2 w-2 rounded-full bg-[var(--primary)] shadow-[0_0_12px_var(--primary)]" />
 
                 <span className="text-sm font-semibold uppercase tracking-[0.15em] text-[var(--primary)]">
-                  FAQs
+                  <strong>Studyabroad FAQs</strong>
                 </span>
               </div>
 
               {/* Heading */}
-              <h2 className="font-serif text-3xl leading-tight text-[var(--text-primary)] sm:text-4xl lg:text-5xl">
+              <h2
+                id="studyabroad-faq-heading"
+                className="font-serif text-3xl leading-tight text-[var(--text-primary)] sm:text-4xl lg:text-5xl"
+              >
                 Answers Before
                 <br />
-                <span className="text-[var(--primary)]">You Ask</span>
+                <span className="text-[var(--primary)]">
+                  <strong>You Ask</strong>
+                </span>
               </h2>
 
               <p className="mt-5 max-w-md text-sm leading-relaxed text-[var(--text-secondary)] sm:text-base">
-                Have questions about visas, universities, applications, or
-                studying abroad? Find quick answers to the questions our
-                students ask most often.
+                Have questions about{" "}
+                <strong>student visas, universities, applications, scholarships</strong>,
+                or studying abroad? Find answers to the questions students ask
+                most often about <strong>international education</strong> with
+                Studyabroad.
               </p>
 
               {/* Image */}
@@ -83,11 +93,11 @@ export default function FAQSection() {
                   lg:block
                 "
               >
-<img
-  src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=600&fit=crop"
-  alt="Consultant answering questions"
-  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-700 group-hover:scale-105"
-/>
+                <img
+                  src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=600&fit=crop"
+                  alt="Studyabroad consultant helping a student with international education and visa questions"
+                  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-700 group-hover:scale-105"
+                />
 
                 {/* Image dark/light overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
@@ -127,7 +137,7 @@ export default function FAQSection() {
                       Need more help?
                     </p>
                     <p className="text-[10px] text-[var(--text-secondary)]">
-                      Talk to our experts
+                      Talk to our <strong>study abroad experts</strong>
                     </p>
                   </div>
                 </div>
@@ -173,6 +183,7 @@ export default function FAQSection() {
                     <button
                       onClick={() => toggle(index)}
                       aria-expanded={isOpen}
+                      aria-controls={`faq-answer-${index}`}
                       className="flex w-full items-center justify-between gap-5 p-5 text-left sm:p-6"
                     >
                       <div className="flex items-start gap-4">
@@ -190,6 +201,7 @@ export default function FAQSection() {
                         >
                           0{index + 1}
                         </span>
+
                         <span
                           className={`
                             font-semibold leading-relaxed
@@ -202,7 +214,7 @@ export default function FAQSection() {
                             }
                           `}
                         >
-                          {faq.question}
+                          <strong>{faq.question}</strong>
                         </span>
                       </div>
 
@@ -229,6 +241,7 @@ export default function FAQSection() {
 
                     {/* Answer */}
                     <div
+                      id={`faq-answer-${index}`}
                       className="grid transition-all duration-500 ease-in-out"
                       style={{
                         gridTemplateRows: isOpen ? "1fr" : "0fr",

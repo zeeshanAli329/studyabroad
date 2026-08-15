@@ -143,11 +143,11 @@ export default function AboutSection() {
           <div className="group relative h-[430px] overflow-hidden rounded-2xl sm:h-[520px] lg:col-span-4 lg:h-[570px]">
 
             {/* Image */}
-<img
-  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&h=1200&fit=crop"
-  alt="Student studying abroad"
-  className="w-full h-[320px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
-/>
+            <img
+              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&h=1200&fit=crop"
+              alt="Student studying abroad with Studyabroad"
+              className="w-full h-[320px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
+            />
 
             {/* Dark / Green Fill Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-70 transition-all duration-700 group-hover:opacity-100" />
@@ -166,22 +166,25 @@ export default function AboutSection() {
               </div>
 
               <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-                Study Abroad
+                <strong>Studyabroad</strong> Study Abroad
               </p>
 
               <h3 className="max-w-xs text-2xl font-bold leading-tight text-white sm:text-3xl">
-                Turn Your Dreams Into Global Opportunities
+                Turn Your Dreams Into <strong>Global Study Opportunities</strong>
               </h3>
 
-              <Link href="/universities" className="mt-5 flex items-center gap-2 text-sm font-medium text-white opacity-0 transition-all duration-500 group-hover:opacity-100">
-                Explore opportunities
+              <Link
+                href="/universities"
+                className="mt-5 flex items-center gap-2 text-sm font-medium text-white opacity-0 transition-all duration-500 group-hover:opacity-100"
+              >
+                Explore <strong>Study Abroad Opportunities</strong>
                 <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
 
             {/* Top Badge */}
             <div className="absolute left-5 top-5 z-20 rounded-full border border-white/30 bg-white/15 px-4 py-2 text-xs font-semibold text-white backdrop-blur-md opacity-0 -translate-y-3 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-              Trusted Worldwide
+              Trusted <strong>Worldwide</strong>
             </div>
           </div>
 
@@ -211,14 +214,14 @@ export default function AboutSection() {
 
                 {/* Heading */}
                 <h2 className="mb-3 text-xl font-bold text-[#174c3c] transition-colors duration-500 group-hover:text-white sm:text-2xl">
-                  Get Our Best Offers Quickly
+                  Get Our Best <strong>Study Abroad Offers</strong> Quickly
                 </h2>
 
                 {/* Text */}
                 <p className="mb-5 max-w-md text-xs leading-6 text-gray-500 transition-colors duration-500 group-hover:text-white/80 sm:text-sm">
-                  We help students find the right universities,
-                  scholarships and destinations with personalized
-                  guidance throughout their international education journey.
+                  We help students find the right <strong>universities</strong>,
+                  <strong> scholarships</strong> and <strong>study abroad destinations</strong> with personalized
+                  guidance throughout their <strong>international education journey</strong>.
                 </p>
 
                 {/* Button */}
@@ -236,11 +239,11 @@ export default function AboutSection() {
               ================================================== */}
               <div className="absolute right-0 top-0 h-full w-[42%] overflow-hidden">
 
-<img
-  src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=700&h=600&fit=crop"
-  alt="Travel and study abroad"
-  className="w-full h-[220px] sm:h-[280px] md:h-[360px] lg:h-[420px] object-cover object-center transition-transform duration-1000 group-hover:scale-110"
-/>
+                <img
+                  src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=700&h=600&fit=crop"
+                  alt="Travel and study abroad with Studyabroad"
+                  className="w-full h-[220px] sm:h-[280px] md:h-[360px] lg:h-[420px] object-cover object-center transition-transform duration-1000 group-hover:scale-110"
+                />
 
                 {/* Image Fade */}
                 <div className="absolute inset-0 bg-gradient-to-r from-white via-white/20 to-transparent transition-opacity duration-500 group-hover:opacity-20" />
@@ -304,13 +307,13 @@ export default function AboutSection() {
           <div>
             <div className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[var(--primary)]">
               <span className="h-px w-8 bg-[var(--primary)]" />
-              About Our Agency
+              About Our <strong>Studyabroad Agency</strong>
             </div>
 
             <h2 className="font-serif text-3xl font-semibold leading-tight text-[var(--text-primary)] sm:text-4xl">
               Your Trusted Partner for{" "}
               <span className="text-[var(--primary)]">
-                Study Abroad Success
+                <strong>Studyabroad Success</strong>
               </span>
             </h2>
           </div>
@@ -318,16 +321,16 @@ export default function AboutSection() {
           <div>
             <p className="text-sm leading-7 text-[var(--text-secondary)] sm:text-base">
               With years of experience in international education consulting,
-              our expert team provides personalized guidance for university
-              selection, applications, scholarships, visas and everything
-              you need to begin your journey abroad.
+              our expert team provides personalized guidance for <strong>university
+              selection</strong>, applications, <strong>scholarships</strong>, <strong>student visas</strong> and everything
+              you need to begin your <strong>study abroad journey</strong>.
             </p>
 
             <Link
               href="/about"
               className="group mt-5 inline-flex items-center gap-2 rounded-full border-2 border-[var(--primary)] bg-[var(--primary)] px-6 py-3 text-sm font-semibold text-white transition-all duration-500 hover:bg-transparent hover:text-[var(--primary)] hover:shadow-lg"
             >
-              Learn More About Us
+              Learn More About <strong>Studyabroad</strong> Services
               <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>

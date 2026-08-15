@@ -2,9 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { API_URL } from "@/lib/api";
-
 import {
   FaFacebookF,
   FaInstagram,
@@ -16,6 +13,7 @@ import {
 } from "react-icons/fa";
 import { HiOutlineTicket } from "react-icons/hi2";
 import { FiGlobe } from "react-icons/fi";
+import { API_URL } from "@/lib/api";
 
 const Footer = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -78,6 +76,13 @@ const Footer = () => {
     { title: "Student Visa", link: "/visa/student" },
     { title: "Work Visa", link: "/visa/work" },
     { title: "Tourist Visa", link: "/visa/tourist" },
+    { title: "Business Visa", link: "/visa/business" },
+  ];
+
+  const destinationLinks = [
+    { title: "Countries", link: "/countries" },
+    { title: "Destinations", link: "/destinations" },
+    { title: "Universities", link: "/universities" },
     { title: "Scholarships", link: "/scholarships" },
   ];
 
@@ -98,15 +103,30 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative overflow-hidden bg-[var(--secondary,#0b3d2e)] text-white">
+    <footer
+      className="relative overflow-hidden bg-[var(--secondary,#0b3d2e)] text-white"
+      aria-label="RouteX footer"
+    >
+      {/* SEO Keywords / Semantic Information */}
+      <div className="sr-only">
+        RouteX is an international education and visa consultancy helping
+        students with student visas, work visas, tourist visas, business visas,
+        international universities, study abroad destinations, scholarships,
+        admissions, and overseas education opportunities.
+      </div>
+
       {/* ================= TOP SUPPORT STRIP ================= */}
 
       <div className="relative z-10 border-b border-white/10">
         <div className="mx-auto grid max-w-[1320px] grid-cols-1 gap-8 px-6 py-10 sm:grid-cols-2 lg:px-8">
           <div className="flex items-center gap-5">
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[var(--primary,#7bc043)] text-3xl text-white">
+            <div
+              className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[var(--primary,#7bc043)] text-3xl text-white"
+              aria-hidden="true"
+            >
               <HiOutlineTicket />
             </div>
+
             <h3 className="font-serif text-xl leading-snug font-semibold sm:text-2xl">
               Need Any Support For
               <br className="hidden sm:block" /> Tour And Visa?
@@ -114,9 +134,13 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center gap-5 sm:border-l sm:border-white/10 sm:pl-8">
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[var(--primary,#7bc043)] text-3xl text-white">
+            <div
+              className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[var(--primary,#7bc043)] text-3xl text-white"
+              aria-hidden="true"
+            >
               <FiGlobe />
             </div>
+
             <h3 className="font-serif text-xl leading-snug font-semibold sm:text-2xl">
               Are You Ready For Get
               <br className="hidden sm:block" /> Started Travelling?
@@ -135,33 +159,35 @@ const Footer = () => {
         }}
       >
         <div className="relative z-10 mx-auto max-w-[1320px] px-6 py-16 lg:px-8">
-          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8">
             {/* ===== BRAND COLUMN ===== */}
 
             <div>
-              {/* <Link href="/" className="mb-5 flex items-center shrink-0">
-  <Image
-    src="/logo2.png"
-    alt="Logo"
-    width={220}
-    height={130}
-    priority
-    className="w-[145px] h-[85px] sm:w-[170px] sm:h-[100px] lg:w-[210px] lg:h-[120px] object-contain"
-  />
-</Link> */}
+              <Link
+                href="/"
+                aria-label="RouteX Home"
+                className="mb-5 inline-block font-serif text-2xl font-bold text-white"
+              >
+                <strong>StudyAbroad</strong>
+              </Link>
 
               <p className="mb-5 max-w-[260px] text-[15px] leading-relaxed text-white/70">
-                Corporate business typically refers to large-scale mansola it
-                enterprises or organizat
+                StudyAbroad provides professional study abroad, visa consultancy,
+                university admission, scholarship, and international education
+                guidance for students worldwide.
               </p>
 
-              <div className="flex items-center gap-3">
+              <div
+                className="flex items-center gap-3"
+                aria-label="RouteX social media links"
+              >
                 {socialLinks.map((item, idx) => (
                   <a
                     key={idx}
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`RouteX social media ${idx + 1}`}
                     className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-[14px] transition hover:border-[var(--primary,#7bc043)] hover:bg-[var(--primary,#7bc043)]"
                   >
                     {item.icon}
@@ -172,10 +198,11 @@ const Footer = () => {
 
             {/* ===== SERVICES COLUMN ===== */}
 
-            <div>
+            <nav aria-label="RouteX visa services">
               <h4 className="mb-5 font-serif text-lg font-semibold">
-                Services
+                Visa Services
               </h4>
+
               <ul className="flex flex-col gap-3">
                 {servicesLinks.map((item, idx) => (
                   <li key={idx}>
@@ -183,20 +210,49 @@ const Footer = () => {
                       href={item.link}
                       className="flex items-center gap-2 text-[15px] text-white/80 transition hover:text-[var(--primary,#7bc043)]"
                     >
-                      <FaChevronRight className="text-[10px] text-[var(--primary,#7bc043)]" />
+                      <FaChevronRight
+                        className="text-[10px] text-[var(--primary,#7bc043)]"
+                        aria-hidden="true"
+                      />
                       {item.title}
                     </Link>
                   </li>
                 ))}
               </ul>
-            </div>
+            </nav>
+
+            {/* ===== COUNTRIES / DESTINATIONS / UNIVERSITIES ===== */}
+
+            <nav aria-label="RouteX study abroad destinations">
+              <h4 className="mb-5 font-serif text-lg font-semibold">
+                Study Abroad
+              </h4>
+
+              <ul className="flex flex-col gap-3">
+                {destinationLinks.map((item, idx) => (
+                  <li key={idx}>
+                    <Link
+                      href={item.link}
+                      className="flex items-center gap-2 text-[15px] text-white/80 transition hover:text-[var(--primary,#7bc043)]"
+                    >
+                      <FaChevronRight
+                        className="text-[10px] text-[var(--primary,#7bc043)]"
+                        aria-hidden="true"
+                      />
+                      {item.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
 
             {/* ===== USEFUL LINKS COLUMN ===== */}
 
-            <div>
+            <nav aria-label="RouteX useful links">
               <h4 className="mb-5 font-serif text-lg font-semibold">
-                Useful Link
+                Useful Links
               </h4>
+
               <ul className="flex flex-col gap-3">
                 {usefulLinks.map((item, idx) => (
                   <li key={idx}>
@@ -204,13 +260,16 @@ const Footer = () => {
                       href={item.link}
                       className="flex items-center gap-2 text-[15px] text-white/80 transition hover:text-[var(--primary,#7bc043)]"
                     >
-                      <FaChevronRight className="text-[10px] text-[var(--primary,#7bc043)]" />
+                      <FaChevronRight
+                        className="text-[10px] text-[var(--primary,#7bc043)]"
+                        aria-hidden="true"
+                      />
                       {item.title}
                     </Link>
                   </li>
                 ))}
               </ul>
-            </div>
+            </nav>
 
             {/* ===== NEWSLETTER COLUMN ===== */}
 
@@ -222,6 +281,7 @@ const Footer = () => {
               <form
                 onSubmit={handleSubscribe}
                 className="flex w-full max-w-[340px] items-center overflow-hidden rounded-full bg-white p-1.5"
+                aria-label="RouteX newsletter subscription"
               >
                 <input
                   type="email"
@@ -229,8 +289,10 @@ const Footer = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Email address"
+                  aria-label="Email address"
                   className="w-full min-w-0 bg-transparent px-4 py-2 text-[14px] text-gray-800 outline-none placeholder:text-gray-400"
                 />
+
                 <button
                   type="submit"
                   disabled={subscribing}
@@ -241,13 +303,21 @@ const Footer = () => {
               </form>
 
               {subscribeMessage && (
-                <p className="mt-3 text-sm text-green-400">
+                <p
+                  className="mt-3 text-sm text-green-400"
+                  role="status"
+                >
                   {subscribeMessage}
                 </p>
               )}
 
               {subscribeError && (
-                <p className="mt-3 text-sm text-red-400">{subscribeError}</p>
+                <p
+                  className="mt-3 text-sm text-red-400"
+                  role="alert"
+                >
+                  {subscribeError}
+                </p>
               )}
             </div>
           </div>
@@ -257,19 +327,34 @@ const Footer = () => {
 
         <div className="relative z-10 border-t border-white/10">
           <div className="mx-auto flex max-w-[1320px] flex-col items-center justify-between gap-4 px-6 py-6 text-[14px] text-white/70 sm:flex-row lg:px-8">
-            <p>Copyright © 2026 RRDevs. All Rights Reserved</p>
+            <p>
+              Copyright © 2026 <strong>StudyAbroad</strong>. All Rights Reserved.
+            </p>
 
-            <div className="flex items-center gap-6">
-              <Link href="/terms" className="transition hover:text-white">
-                Terms &amp; Condition
-              </Link>
-              <Link href="/privacy" className="transition hover:text-white">
-                Privacy Policy
-              </Link>
-              <Link href="/contact" className="transition hover:text-white">
-                Contact Us
-              </Link>
-            </div>
+            <nav aria-label="RouteX legal links">
+              <div className="flex items-center gap-6">
+                <Link
+                  href="/terms"
+                  className="transition hover:text-white"
+                >
+                  Terms &amp; Conditions
+                </Link>
+
+                <Link
+                  href="/privacy"
+                  className="transition hover:text-white"
+                >
+                  Privacy Policy
+                </Link>
+
+                <Link
+                  href="/contact"
+                  className="transition hover:text-white"
+                >
+                  Contact Us
+                </Link>
+              </div>
+            </nav>
           </div>
         </div>
       </div>

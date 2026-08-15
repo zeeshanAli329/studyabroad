@@ -1,0 +1,633 @@
+/* =========================================================
+   COUNTRIES SECTION
+   ========================================================= */
+
+.countries-section {
+  position: relative;
+  width: 100%;
+  padding: 65px 0;
+  overflow: hidden;
+  background: #f3f6ed;
+}
+
+.countries-section__container {
+  position: relative;
+  width: min(1450px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 52px 80px 55px;
+  overflow: hidden;
+  border-radius: 30px;
+  background: #00533d;
+}
+
+/* Background glow — swapped filter:blur for radial-gradient.
+   Same soft look, no GPU blur cost. */
+.countries-section__glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle,
+    rgba(138, 207, 24, 0.1) 0%,
+    rgba(138, 207, 24, 0.04) 45%,
+    rgba(138, 207, 24, 0) 70%
+  );
+}
+
+.countries-section__glow--one {
+  width: 420px;
+  height: 420px;
+  top: -190px;
+  right: 10%;
+}
+
+.countries-section__glow--two {
+  width: 380px;
+  height: 380px;
+  bottom: -180px;
+  left: 6%;
+}
+
+/* HEADER */
+
+.countries-section__header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 34px;
+}
+
+.countries-section__heading {
+  max-width: 700px;
+}
+
+.countries-section__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+}
+
+.countries-section__eyebrow span:first-child {
+  width: 20px;
+  height: 1px;
+  background: #8bd31c;
+}
+
+.countries-section__header h2 {
+  margin: 0;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 3.4vw, 52px);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -1.5px;
+}
+
+.countries-section__header h2 span {
+  color: #ffffff;
+}
+
+/* NAVIGATION */
+
+.countries-section__navigation {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.countries-section__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  transition:
+    background-color 250ms ease,
+    color 250ms ease,
+    border-color 250ms ease,
+    transform 250ms ease,
+    opacity 250ms ease;
+}
+
+.countries-section__arrow svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+}
+
+.countries-section__arrow:hover:not(:disabled) {
+  background: #8bd31c;
+  border-color: #8bd31c;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.countries-section__arrow:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+/* CARDS */
+
+.countries-section__cards {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  width: 100%;
+  height: 430px;
+  /* Scope layout recalculation to this box only —
+     stops the flex-grow animation from forcing a
+     reflow of the rest of the page every frame. */
+  contain: layout style paint;
+}
+
+.country-card {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 17px;
+  background: #dce7df;
+  cursor: pointer;
+  /* Only flex-grow actually changes value on hover —
+     flex-basis stays 0 in both states, so it's dropped
+     from the transition list (dead work removed). */
+  transition:
+    flex-grow 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 500ms ease;
+  will-change: flex-grow;
+}
+
+.country-card--active {
+  flex-grow: 2.65;
+  flex-basis: 0;
+  z-index: 20;
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.18),
+    0 0 0 1px rgba(139, 211, 28, 0.18);
+}
+
+/* IMAGE */
+
+.country-card__image-wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.country-card__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition:
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 700ms ease;
+  will-change: transform;
+}
+
+.country-card:hover .country-card__image {
+  transform: scale(1.04);
+}
+
+.country-card__image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.04) 0%,
+    rgba(0, 0, 0, 0.02) 40%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
+  transition: background 500ms ease;
+}
+
+.country-card--active .country-card__image-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.02) 0%,
+    rgba(0, 0, 0, 0.04) 38%,
+    rgba(0, 0, 0, 0.42) 100%
+  );
+}
+
+/* FLAG */
+
+.country-card__flag {
+  position: absolute;
+  z-index: 5;
+  top: 22px;
+  right: 22px;
+  width: 58px;
+  height: 58px;
+  padding: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition:
+    transform 400ms ease,
+    box-shadow 400ms ease;
+}
+
+.country-card__flag img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.country-card--active .country-card__flag {
+  transform: scale(1.04);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* IMAGE PLACEHOLDER */
+
+.country-card__image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #e7efe5, #cfded3);
+}
+
+.country-card__image-placeholder span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(139, 211, 28, 0.18);
+  border: 1px solid rgba(139, 211, 28, 0.35);
+  color: #00533d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* HOVER CONTENT
+   Card expansion: 650ms. Content reveal delayed 1150ms
+   (expansion time + pause) so it appears after the card
+   has finished growing. */
+
+.country-card__content {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  min-height: 190px;
+  padding: 28px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #8bd31c;
+  color: #ffffff;
+  opacity: 0;
+  transform: perspective(1000px) rotateX(-12deg) translateY(115px) scale(0.94);
+  transform-origin: center bottom;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.15);
+  transition:
+    opacity 450ms ease 1150ms,
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1) 1150ms;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.country-card--active .country-card__content {
+  opacity: 1;
+  transform: perspective(1000px) rotateX(0deg) translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.country-card__content-inner {
+  max-width: 430px;
+}
+
+.country-card__content-label {
+  margin-bottom: 7px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.country-card__content h3 {
+  margin: 0 0 9px;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.country-card__content h3 span {
+  color: #ffffff;
+}
+
+.country-card__content p {
+  margin: 0;
+  max-width: 400px;
+  color: rgba(255, 255, 255, 0.92);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+/* BUTTON */
+
+.country-card__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+  min-width: 140px;
+  height: 42px;
+  padding: 0 18px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  background: transparent;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  font-weight: 700;
+  transition:
+    background-color 250ms ease,
+    color 250ms ease,
+    transform 250ms ease;
+}
+
+.country-card__button svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 250ms ease;
+}
+
+.country-card__button:hover {
+  background: #ffffff;
+  color: #00533d;
+  transform: translateY(-2px);
+}
+
+.country-card__button:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* LOADING / ERROR / EMPTY */
+
+.countries-section__loading,
+.countries-section__empty,
+.countries-section__error {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+}
+
+.countries-section__loader {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 16px;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  border-top-color: #8bd31c;
+  border-radius: 50%;
+  animation: countries-loader 800ms linear infinite;
+}
+
+@keyframes countries-loader {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.countries-section__error p {
+  margin-bottom: 16px;
+}
+
+.countries-section__error button {
+  padding: 10px 22px;
+  border: 0;
+  border-radius: 999px;
+  background: #8bd31c;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+  .countries-section {
+    padding: 55px 0;
+  }
+
+  .countries-section__container {
+    width: min(100% - 32px, 1000px);
+    padding: 45px 45px 48px;
+  }
+
+  .countries-section__cards {
+    height: 400px;
+    gap: 12px;
+  }
+
+  .country-card--active {
+    flex-grow: 2.3;
+  }
+
+  .country-card__flag {
+    width: 50px;
+    height: 50px;
+    top: 17px;
+    right: 17px;
+  }
+
+  .country-card__content {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    min-height: 175px;
+    padding: 22px;
+  }
+
+  .country-card__content h3 {
+    font-size: 21px;
+  }
+
+  .country-card__content p {
+    font-size: 12px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .countries-section {
+    padding: 35px 0;
+  }
+
+  .countries-section__container {
+    width: calc(100% - 24px);
+    padding: 35px 20px 25px;
+    border-radius: 24px;
+  }
+
+  .countries-section__header {
+    align-items: flex-start;
+    gap: 25px;
+    margin-bottom: 25px;
+  }
+
+  .countries-section__header h2 {
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: -0.8px;
+  }
+
+  .countries-section__navigation {
+    gap: 7px;
+  }
+
+  .countries-section__arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .countries-section__arrow svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .countries-section__cards {
+    height: 390px;
+    gap: 0;
+  }
+
+  .country-card {
+    display: none;
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .country-card:first-child {
+    display: block;
+  }
+
+  .country-card--active {
+    flex: 1 1 100%;
+  }
+
+  .country-card__flag {
+    width: 52px;
+    height: 52px;
+    top: 16px;
+    right: 16px;
+  }
+
+  .country-card__content {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    min-height: 180px;
+    padding: 22px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 480px) {
+  .countries-section__container {
+    width: calc(100% - 16px);
+    padding: 30px 15px 20px;
+    border-radius: 20px;
+  }
+
+  .countries-section__header {
+    align-items: flex-end;
+  }
+
+  .countries-section__header h2 {
+    font-size: 28px;
+  }
+
+  .countries-section__eyebrow {
+    font-size: 9px;
+  }
+
+  .countries-section__eyebrow span:first-child {
+    width: 14px;
+  }
+
+  .countries-section__cards {
+    height: 365px;
+  }
+
+  .country-card__content {
+    min-height: 175px;
+    padding: 20px;
+  }
+
+  .country-card__content h3 {
+    font-size: 21px;
+  }
+
+  .country-card__content p {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .country-card__button {
+    height: 40px;
+    min-width: 130px;
+    margin-top: 14px;
+    font-size: 12px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .country-card,
+  .country-card__image,
+  .country-card__content,
+  .countries-section__arrow,
+  .country-card__button {
+    transition: none !important;
+  }
+
+  .countries-section__loader {
+    animation: none;
+  }
+}

@@ -1,39 +1,33 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Reveal from "@/components/shared/Reveal";
-import {
-  Plus,
-  Minus,
-  Facebook,
-  Twitter,
-  Instagram,
-  ArrowUpRight,
-} from "lucide-react";
+import Link from "next/link";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { Plus, Minus, ArrowUpRight } from "lucide-react";
 
 const team = [
   {
     id: "courtney",
     name: "Courtney Henry",
-    role: "Medical Assistant",
-    bio: "Our experienced consultants provide personalized guidance to help students choose the right destination, university, and visa pathway.",
+    role: "Study Abroad Consultant",
+    bio: "Our experienced study abroad consultants provide personalized guidance to help students choose the right country, university, course, and student visa pathway for international education.",
     image:
       "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&h=1000&fit=crop",
   },
   {
     id: "ronald",
     name: "Ronald Richards",
-    role: "Marketing Coordinator",
-    bio: "We help students understand international education opportunities and make confident decisions about their future.",
+    role: "International Education Consultant",
+    bio: "We help students understand international education opportunities, study abroad requirements, university admissions, scholarships, and visa processes so they can make confident decisions about their future.",
     image:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=1000&fit=crop",
   },
   {
     id: "albert",
     name: "Albert Flores",
-    role: "Web Designer",
-    bio: "From university selection to applications and pre-departure support, our team stays with students throughout their journey.",
+    role: "Student Visa Consultant",
+    bio: "From university selection and admission applications to student visa guidance and pre-departure support, our team assists students throughout their study abroad journey.",
     image:
       "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=800&h=1000&fit=crop",
   },
@@ -45,7 +39,10 @@ export default function TeamSection() {
   const activeMember = team.find((member) => member.id === activeId) || team[0];
 
   return (
-    <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-24">
+    <section
+      className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-24"
+      aria-labelledby="study-abroad-consultants-heading"
+    >
       {/* Decorative background outline */}
       <div className="pointer-events-none absolute -right-32 top-20 h-72 w-72 rounded-full border border-[var(--primary)]/10" />
       <div className="pointer-events-none absolute -right-20 top-32 h-52 w-52 rounded-full border border-[var(--primary)]/10" />
@@ -56,14 +53,19 @@ export default function TeamSection() {
           <Reveal direction="left" delay={0} className="lg:col-span-7">
             <div>
               <span className="relative inline-block text-sm font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">
-                Our Coaching
+                Our Expert Consultants
                 <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-[var(--primary)] transition-all duration-500 group-hover:w-full" />
               </span>
 
-              <h2 className="mt-4 mb-8 font-serif text-3xl leading-tight text-[var(--text-primary)] sm:text-4xl lg:mb-10 lg:text-5xl">
-                Exploring the Unknown
+              <h2
+                id="study-abroad-consultants-heading"
+                className="mt-4 mb-8 font-serif text-3xl leading-tight text-[var(--text-primary)] sm:text-4xl lg:mb-10 lg:text-5xl"
+              >
+                Expert Guidance for Your
                 <br />
-                <span className="text-[var(--primary)]">Voyages of Wonder</span>
+                <span className="text-[var(--primary)]">
+                  Study Abroad Journey
+                </span>
               </h2>
 
               <div className="space-y-3 sm:space-y-4">
@@ -89,6 +91,8 @@ export default function TeamSection() {
                       <button
                         type="button"
                         onClick={() => setActiveId(member.id)}
+                        aria-expanded={isActive}
+                        aria-controls={`consultant-bio-${member.id}`}
                         className="relative z-10 flex w-full items-center justify-between gap-4 p-4 text-left sm:p-5"
                       >
                         <div className="flex items-center gap-4">
@@ -99,6 +103,7 @@ export default function TeamSection() {
                                 ? "border-[var(--primary)] bg-[var(--primary)] text-white"
                                 : "border-[var(--primary)]/20 text-[var(--primary)] group-hover:border-[var(--primary)] group-hover:bg-[var(--primary)] group-hover:text-white"
                             }`}
+                            aria-hidden="true"
                           >
                             0{index + 1}
                           </span>
@@ -120,6 +125,7 @@ export default function TeamSection() {
                               ? "rotate-0 bg-[var(--primary)] text-white"
                               : "border border-[var(--primary)]/30 text-[var(--primary)] group-hover:bg-[var(--primary)] group-hover:text-white"
                           }`}
+                          aria-hidden="true"
                         >
                           {isActive ? (
                             <Minus className="h-4 w-4" />
@@ -131,6 +137,7 @@ export default function TeamSection() {
 
                       {/* Accordion */}
                       <div
+                        id={`consultant-bio-${member.id}`}
                         className="grid transition-all duration-500 ease-in-out"
                         style={{
                           gridTemplateRows: isActive ? "1fr" : "0fr",
@@ -148,6 +155,7 @@ export default function TeamSection() {
                         className={`absolute bottom-0 left-0 h-[3px] bg-[var(--primary)] transition-all duration-700 ${
                           isActive ? "w-full" : "w-0"
                         }`}
+                        aria-hidden="true"
                       />
                     </div>
                   );
@@ -163,19 +171,11 @@ export default function TeamSection() {
               <div className="absolute -inset-3 rounded-[2rem] border border-[var(--primary)]/20 transition-all duration-500 group-hover:-inset-5 group-hover:border-[var(--primary)]/40" />
 
               <div className="relative aspect-[4/5] overflow-hidden rounded-[1.7rem] bg-gray-100 shadow-2xl">
-                {/* <Image
-                  key={activeMember.id}
-                  src={activeMember.image}
-                  alt={activeMember.name}
-                  fill
-                  priority
-                  className="object-cover transition-all duration-700 group-hover:scale-105"
-                /> */}
                 <img
                   key={activeMember.id}
                   src={activeMember.image}
-                  alt={activeMember.name}
-                  className="w-full h-[220px] sm:h-[280px] md:h-[360px] lg:h-[420px] xl:h-[500px] object-cover transition-all duration-700 group-hover:scale-105"
+                  alt={`${activeMember.name}, ${activeMember.role} helping students with study abroad and international education`}
+                  className="h-[220px] w-full object-cover transition-all duration-700 group-hover:scale-105 sm:h-[280px] md:h-[360px] lg:h-[420px] xl:h-[500px]"
                 />
 
                 {/* Image overlay fill */}
@@ -199,20 +199,24 @@ export default function TeamSection() {
 
                 {/* Social pill */}
                 <div className="absolute left-4 top-4 flex -translate-x-3 items-center gap-1 rounded-full bg-white/95 p-1.5 opacity-0 shadow-lg backdrop-blur-md transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100 sm:left-5 sm:top-5">
-                  {[Facebook, Twitter, Instagram].map((Icon, index) => (
-                    <a
+                  {[FaFacebookF, FaTwitter, FaInstagram].map((Icon, index) => (
+                    <Link
                       key={index}
                       href="#"
-                      aria-label="Social media"
+                      aria-label={`${activeMember.name} social media profile`}
+                      rel="nofollow"
                       className="flex h-8 w-8 items-center justify-center rounded-full text-[var(--primary)] transition-all duration-300 hover:bg-[var(--primary)] hover:text-white"
                     >
                       <Icon className="h-3.5 w-3.5" />
-                    </a>
+                    </Link>
                   ))}
                 </div>
 
                 {/* Arrow */}
-                <div className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur-md transition-all duration-500 group-hover:rotate-45 group-hover:bg-[var(--primary)] group-hover:border-[var(--primary)]">
+                <div
+                  className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur-md transition-all duration-500 group-hover:rotate-45 group-hover:border-[var(--primary)] group-hover:bg-[var(--primary)]"
+                  aria-hidden="true"
+                >
                   <ArrowUpRight className="h-4 w-4" />
                 </div>
               </div>

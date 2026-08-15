@@ -74,7 +74,7 @@ export default function Newsletter() {
                 </h2>
 
                 <p className="mt-5 max-w-lg text-sm leading-relaxed text-white/65 sm:text-base">
-                  Join our newsletter for the latest visa news, destination
+                  Join <strong className="pl-1">StudyAbroad</strong> newsletter for the latest visa news, destination
                   guides, scholarship opportunities, and exclusive offers
                   delivered straight to your inbox.
                 </p>

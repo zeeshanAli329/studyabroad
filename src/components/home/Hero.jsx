@@ -32,8 +32,8 @@ const Hero = () => {
 
           <p className="mt-6 text-lg text-white/90 sm:text-xl">
             Expert guidance for international education, visas, scholarships,
-            and destinations. Your dream study abroad experience begins with
-            RouteX.
+            and destinations. Your dream study abroad experience begins with 
+            <strong className="pl-1">StudyAbroad</strong>.
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">

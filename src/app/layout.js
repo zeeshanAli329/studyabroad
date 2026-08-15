@@ -19,7 +19,7 @@ export const metadata = {
     default: "Study Abroad",
     template: "%s"
   },
-  description: "Explore study abroad opportunities, scholarships, universities, visas and international destinations with StudyAbroad.",
+  description: "Explore study abroad opportunities, scholarships, universities, visas and international destinations with <strong>StudyAbroad</strong>.",
 };
 
 export default function RootLayout({ children }) {

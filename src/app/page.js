@@ -9,6 +9,10 @@ import BlogSection from "@/components/home/BlogSection";
 import FAQSection from "@/components/home/FAQSection";
 import Testimonial from "@/components/home/Testimonial";
 import CTA from "@/components/home/CTA";
+import TeamSection from "@/components/home/TeamSection";
+import GlobalOfferSection from "@/components/home/GlobalOfferSection";
+import CoachingSection from "@/components/home/CoachingSection";
+import { SimpleProcess } from "./(site)/about/page";
 
 
 export default function Home() {
@@ -21,7 +25,11 @@ export default function Home() {
     <BrandLogos />
     <PopularCountries />
     <Services />
+    <GlobalOfferSection />
+    <CoachingSection />
     <BlogSection />
+    <SimpleProcess />
+    <TeamSection />
     <FAQSection />
     <Testimonial />
     <CTA />

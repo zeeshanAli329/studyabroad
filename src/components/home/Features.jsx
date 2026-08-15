@@ -6,45 +6,62 @@ export default function Features() {
   const features = [
     {
       icon: GraduationCap,
-      title: "Find Your Visa",
-      description: "Explore visa options for study, work, travel, and more with our comprehensive guides.",
-      link: "/visa"
+      title: "Find Your Student Visa",
+      description:
+        "Explore <strong>student visa options</strong> for studying abroad, including visa requirements, application guidance, and essential information for international students.",
+      link: "/visa",
     },
     {
       icon: Plane,
-      title: "Travel Opportunities",
-      description: "Explore top countries for international education.",
-      link: "/destinations"
+      title: "Explore Study Abroad Destinations",
+      description:
+        "Discover top <strong>study abroad destinations</strong>, countries, universities, and international education opportunities for your academic and career goals.",
+      link: "/destinations",
     },
     {
       icon: BookOpen,
       title: "Study Abroad Planning",
-      description: "Get expert guidance on universities, scholarships, and application processes.",
-      link: "/scholarships"
-    }
+      description:
+        "Get expert guidance on <strong>universities, scholarships, admissions, and applications</strong> to plan your international education journey with Studyabroad.",
+      link: "/scholarships",
+    },
   ];
 
   return (
-    <section className="bg-[var(--background-light)] py-12 sm:py-16 lg:py-20">
+    <section
+      className="bg-[var(--background-light)] py-12 sm:py-16 lg:py-20"
+      aria-label="Studyabroad services and opportunities"
+    >
       <div className="mx-auto max-w-[1320px] px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {features.map((feature, index) => (
             <Reveal key={index} delay={index * 100}>
               <Link
                 href={feature.link}
+                aria-label={`${feature.title} - Studyabroad`}
                 className="group rounded-2xl bg-white p-8 border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:bg-[var(--primary)]/5 block"
               >
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-[var(--primary)]/10 group-hover:bg-[var(--primary)]/20 transition-colors">
-                  <feature.icon className="h-7 w-7 text-[var(--primary)]" />
+                  <feature.icon
+                    className="h-7 w-7 text-[var(--primary)]"
+                    aria-hidden="true"
+                  />
                 </div>
+
                 <h3 className="mb-3 font-serif text-2xl font-semibold text-[var(--text-primary)] group-hover:text-[var(--primary)] transition-colors">
-                  {feature.title}
+                  <strong>{feature.title}</strong>
                 </h3>
-                <p className="mb-4 text-[var(--text-secondary)]">
-                  {feature.description}
-                </p>
+
+                <p
+                  className="mb-4 text-[var(--text-secondary)]"
+                  dangerouslySetInnerHTML={{
+                    __html: feature.description,
+                  }}
+                />
+
                 <span className="inline-flex items-center gap-2 text-[var(--primary)] font-medium group-hover:gap-3 transition-all">
-                  Learn More <ArrowRight className="h-4 w-4" />
+                  <strong>Learn More</strong>{" "}
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </span>
               </Link>
             </Reveal>

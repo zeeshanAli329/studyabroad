@@ -28,36 +28,13 @@ export default function BlogSection() {
       setPosts(blogs.map(blog => ({
         title: blog.title,
         date: blog.publishedAt ? new Date(blog.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
-        author: blog.author || 'StudyAbroad',
+        author: blog.author || 'Studyabroad',
         image: blog.image || 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=900&h=700&fit=crop',
         href: `/blog/${blog.slug}`,
       })));
     } catch (error) {
       console.error('Failed to fetch blogs:', error);
-      // Fallback to hardcoded blogs if API fails
-      setPosts([
-        {
-          title: "Journeys of Discovery Uncovering Hidden Treasures",
-          date: "July 26, 2024",
-          author: "Features",
-          image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=900&h=700&fit=crop",
-          href: "/blog/journeys-of-discovery",
-        },
-        {
-          title: "The Road to Adventure Embarking on One",
-          date: "July 26, 2024",
-          author: "Features",
-          image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&h=700&fit=crop",
-          href: "/blog/road-to-adventure",
-        },
-        {
-          title: "Wonders of Ancient Civilizations A Journey",
-          date: "July 4, 2024",
-          author: "Features",
-          image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=900&h=700&fit=crop",
-          href: "/blog/wonders-of-ancient-civilizations",
-        },
-      ]);
+      setPosts([]);
     } finally {
       setLoading(false);
     }
@@ -74,6 +51,7 @@ export default function BlogSection() {
       </section>
     );
   }
+
   return (
     <section className="relative overflow-hidden bg-[#f8faf5] py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-[1320px] px-6 lg:px-8">
@@ -82,11 +60,11 @@ export default function BlogSection() {
           <div className="mb-10 flex items-end justify-between gap-6 sm:mb-14">
             <div>
               <span className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">
-                Recent Blogs
+                <strong>Studyabroad</strong> Recent Blogs
               </span>
 
               <h2 className="mt-3 font-serif text-3xl leading-tight text-[var(--text-primary)] sm:text-4xl lg:text-5xl">
-                Journeys of Discovery
+                <strong>Study Abroad</strong> Journeys of Discovery
                 <br />
                 <span className="text-[var(--primary)]">
                   Uncovering Hidden Stories
@@ -132,11 +110,11 @@ export default function BlogSection() {
 
                 {/* Image */}
                 <div className="relative mb-5 aspect-[4/3] overflow-hidden rounded-2xl bg-gray-200 shadow-sm">
-<img
-  src={post.image}
-  alt={post.title}
-  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-700 group-hover:scale-110"
-/>
+                  <img
+                    src={post.image}
+                    alt={`${post.title} - Studyabroad`}
+                    className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
 
                   {/* Dark overlay */}
                   <div className="absolute inset-0 bg-black/0 transition-all duration-500 group-hover:bg-black/20" />
@@ -173,13 +151,13 @@ export default function BlogSection() {
 
                 {/* Title */}
                 <h3 className="mb-4 text-base font-bold leading-snug text-[var(--text-primary)] transition-all duration-300 group-hover:translate-x-1 group-hover:text-[var(--primary)] sm:text-lg">
-                  {post.title}
+                  <strong>{post.title}</strong>
                 </h3>
 
                 {/* Read More */}
                 <span className="relative inline-flex items-center gap-2 text-sm font-semibold text-[var(--primary)]">
                   <span className="relative">
-                    Read More
+                    Read More on <strong>Studyabroad</strong>
                     <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-[var(--primary)] transition-all duration-300 group-hover:w-full" />
                   </span>
 

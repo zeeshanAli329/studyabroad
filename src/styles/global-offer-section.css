@@ -1,0 +1,530 @@
+/* =========================================================
+   GLOBAL OFFER SECTION
+   ========================================================= */
+
+.global-offer-section {
+  width: 100%;
+  overflow: hidden;
+
+  padding: 85px 28px 75px;
+
+  background: #f7f9f1;
+}
+
+.global-offer-section__container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 355px minmax(0, 1fr);
+
+  gap: 30px;
+
+  align-items: stretch;
+}
+
+/* =========================================================
+   GIRL IMAGE
+   ========================================================= */
+
+.global-offer-section__girl {
+  position: relative;
+
+  min-height: 535px;
+
+  overflow: hidden;
+
+  /* FIX: all four corners rounded */
+  border-radius: 20px;
+}
+
+.global-offer-section__girl-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Small green dot */
+.global-offer-section__dot {
+  position: absolute;
+
+  top: 58px;
+  right: 47px;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #7ed218;
+}
+
+/* =========================================================
+   RIGHT SIDE
+   ========================================================= */
+
+.global-offer-section__right {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 26px;
+}
+
+/* =========================================================
+   OFFER CARD
+   ========================================================= */
+
+.global-offer-card {
+  position: relative;
+
+  min-height: 325px;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: stretch;
+
+  border-radius: 19px;
+
+  background: #ffffff;
+}
+
+/* Content */
+.global-offer-card__content {
+  position: relative;
+  z-index: 2;
+
+  width: 56%;
+
+  padding: 35px 20px 30px 53px;
+}
+
+/* =========================================================
+   GREEN ICON
+   ========================================================= */
+
+.global-offer-card__icon {
+  width: 70px;
+  height: 70px;
+
+  margin-bottom: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #7ed218;
+
+  color: #ffffff;
+}
+
+.global-offer-card__icon svg {
+  width: 38px;
+  height: 38px;
+
+  stroke-width: 1.35;
+}
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.global-offer-card__content h2 {
+  margin: 0 0 12px;
+
+  color: #07543f;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.global-offer-card__content p {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: #747671;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   CONTACT BUTTON
+   ========================================================= */
+
+.global-offer-card__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  min-width: 132px;
+  height: 56px;
+
+  margin-top: 22px;
+  padding: 0 25px;
+
+  border: 2px solid #e4ded8;
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: #07543f;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    border-color 200ms ease,
+    color 200ms ease;
+}
+
+.global-offer-card__button svg {
+  width: 17px;
+  height: 17px;
+
+  transition: transform 200ms ease;
+}
+
+.global-offer-card__button:hover {
+  border-color: #7ed218;
+  color: #07543f;
+}
+
+.global-offer-card__button:hover svg {
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   GLOBAL IMAGE
+   ========================================================= */
+
+.global-offer-card__image {
+  position: absolute;
+
+  right: 0;
+  top: 0;
+
+  width: 50%;
+  height: 100%;
+}
+
+.global-offer-card__global-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+/* =========================================================
+   STATISTICS
+   ========================================================= */
+
+.global-stats {
+  min-height: 175px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  align-items: center;
+
+  padding: 25px 42px;
+
+  border-radius: 19px;
+
+  background: #7ed218;
+}
+
+/* =========================================================
+   INDIVIDUAL STAT
+   ========================================================= */
+
+.global-stat {
+  min-width: 0;
+}
+
+.global-stat__number {
+  margin-bottom: 8px;
+
+  color: #ffffff;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 3vw, 47px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.global-stat__label {
+  color: #ffffff;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* =========================================================
+   LARGE LAPTOP
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .global-offer-section {
+    padding: 70px 24px 65px;
+  }
+
+  .global-offer-section__container {
+    grid-template-columns: 310px minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .global-offer-section__girl {
+    min-height: 500px;
+
+    /* Keep all corners rounded */
+    border-radius: 20px;
+  }
+
+  .global-offer-card {
+    min-height: 300px;
+  }
+
+  .global-offer-card__content {
+    padding-left: 40px;
+  }
+
+  .global-stats {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .global-offer-section {
+    padding: 60px 20px;
+  }
+
+  .global-offer-section__container {
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .global-offer-section__girl {
+    min-height: 475px;
+
+    /* Keep all corners rounded */
+    border-radius: 20px;
+  }
+
+  .global-offer-card {
+    min-height: 280px;
+  }
+
+  .global-offer-card__content {
+    width: 62%;
+    padding: 28px 15px 25px 30px;
+  }
+
+  .global-offer-card__icon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .global-offer-card__icon svg {
+    width: 31px;
+    height: 31px;
+  }
+
+  .global-offer-card__content h2 {
+    font-size: 19px;
+  }
+
+  .global-offer-card__content p {
+    font-size: 12px;
+  }
+
+  .global-offer-card__button {
+    height: 48px;
+    min-width: 115px;
+    margin-top: 17px;
+  }
+
+  .global-stats {
+    min-height: 155px;
+    padding: 20px 22px;
+  }
+
+  .global-stat__number {
+    font-size: 32px;
+  }
+
+  .global-stat__label {
+    font-size: 11px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .global-offer-section {
+    padding: 50px 16px;
+  }
+
+  .global-offer-section__container {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+  }
+
+  /* Girl first */
+  .global-offer-section__girl {
+    width: 100%;
+    height: 390px;
+    min-height: 0;
+
+    /* Keep all corners rounded */
+    border-radius: 16px;
+  }
+
+  .global-offer-section__dot {
+    top: 35px;
+    right: 30px;
+  }
+
+  /* Offer */
+  .global-offer-card {
+    min-height: 390px;
+
+    display: block;
+  }
+
+  .global-offer-card__content {
+    width: 100%;
+
+    padding: 27px 25px 20px;
+  }
+
+  .global-offer-card__icon {
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 14px;
+  }
+
+  .global-offer-card__content h2 {
+    font-size: 20px;
+  }
+
+  .global-offer-card__content p {
+    max-width: 100%;
+    font-size: 13px;
+  }
+
+  .global-offer-card__button {
+    height: 48px;
+    margin-top: 18px;
+  }
+
+  .global-offer-card__image {
+    top: auto;
+    bottom: 0;
+
+    width: 100%;
+    height: 190px;
+  }
+
+  .global-offer-card__global-image {
+    object-position: center bottom;
+  }
+
+  /* Stats */
+  .global-stats {
+    min-height: auto;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 28px 20px;
+
+    padding: 30px 25px;
+  }
+
+  .global-stat__number {
+    font-size: 35px;
+  }
+
+  .global-stat__label {
+    font-size: 12px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+  .global-offer-section {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .global-offer-section__girl {
+    height: 350px;
+
+    /* Keep all corners rounded */
+    border-radius: 16px;
+  }
+
+  .global-offer-card {
+    min-height: 365px;
+  }
+
+  .global-offer-card__content {
+    padding: 23px 20px 15px;
+  }
+
+  .global-offer-card__content h2 {
+    font-size: 18px;
+  }
+
+  .global-offer-card__content p {
+    font-size: 12px;
+  }
+
+  .global-stats {
+    gap: 24px 14px;
+    padding: 26px 20px;
+  }
+
+  .global-stat__number {
+    font-size: 30px;
+  }
+}   
