@@ -1,7 +1,7 @@
 import DashboardClient from "./DashboardClient";
 
 export const metadata = {
-  title: "STUDYABROAD | Dashboard",
+  title: "STUDYABROAD admin | Dashboard",
   description: "Manage and monitor your Study Abroad platform from one centralized dashboard.",
 };
 
