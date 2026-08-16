@@ -334,3 +334,22 @@ model NewsletterLog {
   @@index([resourceId])
   @@index([resourceType])
 }
+
+model Advertisement {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  image       String?
+  link        String?
+  placement   String
+  isActive    Boolean  @default(true)
+  startDate   DateTime?
+  endDate     DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([placement])
+  @@index([isActive])
+  @@index([startDate])
+  @@index([endDate])
+}

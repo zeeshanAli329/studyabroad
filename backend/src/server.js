@@ -13,6 +13,7 @@ const universityRoutes = require('./routes/universities');
 const destinationRoutes = require('./routes/destinations');
 const userRoutes = require('./routes/users');
 const notificationRoutes = require('./routes/notifications');
+const advertisementRoutes = require("./routes/advertisements");
 const subscriberRoutes = require('./routes/subscribers');
 
 const app = express();  
@@ -49,6 +50,7 @@ app.use('/api/notifications', notificationRoutes);
 app.use('/api/subscribers', subscriberRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/appointments', appointmentRoutes);
+app.use('/api/advertisements', advertisementRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
