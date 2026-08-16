@@ -1,8 +1,8 @@
 import DashboardClient from "./DashboardClient";
 
 export const metadata = {
-  title: "RouteX Admin | Dashboard",
-  description: "Manage the RouteX Study Abroad platform."
+  title: "STUDYABROAD | Dashboard",
+  description: "Manage and monitor your Study Abroad platform from one centralized dashboard.",
 };
 
 export default function DashboardPage() {
