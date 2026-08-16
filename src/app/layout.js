@@ -1,6 +1,7 @@
 import { Poppins, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import LayoutWrapper from "@/components/layout/LayoutWrapper";
+import GoogleAdSense from "@/components/ads/GoogleAdSense";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
       className={`${poppins.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <GoogleAdSense />
         <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>

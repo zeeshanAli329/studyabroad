@@ -61,7 +61,7 @@ export default function AdminSidebar() {
     { name: "Inquiries", href: "/admin/inquiries" },
     { name: "Users", href: "/admin/users" },
     { name: "Subscribers", href: "/admin/subscribers" },
-    // { name: 'Images', href: '/admin/images' },
+    { name: 'Advertisements', href: '/admin/advertisements' },
     { name: "Settings", href: "/admin/settings" },
   ];
 

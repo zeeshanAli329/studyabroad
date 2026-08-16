@@ -354,7 +354,7 @@ class ApiClient {
     });
   }
 
-  // Notifications
+    // Notifications
   async getNotifications(params = {}) {
     const queryString = new URLSearchParams(params).toString();
     return this.request(
@@ -377,6 +377,66 @@ class ApiClient {
       method: "PUT",
     });
   }
+
+  // Advertisements
+  async getAdvertisements() {
+    return this.request("/advertisements");
+  }
+
+  async getAllAdvertisements() {
+    return this.request("/advertisements/all");
+  }
+
+  async createAdvertisement(data) {
+    return this.request("/advertisements", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+  }
+
+  async updateAdvertisement(id, data) {
+    return this.request(`/advertisements/${id}`, {
+      method: "PUT",
+      body: JSON.stringify(data),
+    });
+  }
+
+  async deleteAdvertisement(id) {
+    return this.request(`/advertisements/${id}`, {
+      method: "DELETE",
+    });
+  }
+
+  async toggleAdvertisement(id) {
+    return this.request(`/advertisements/${id}/toggle`, {
+      method: "PUT",
+    });
+  }
 }
+
+  // Notifications
+//   async getNotifications(params = {}) {
+//     const queryString = new URLSearchParams(params).toString();
+//     return this.request(
+//       `/notifications${queryString ? `?${queryString}` : ""}`,
+//     );
+//   }
+
+//   async getUnreadCount() {
+//     return this.request("/notifications/unread-count");
+//   }
+
+//   async markNotificationAsRead(id) {
+//     return this.request(`/notifications/${id}/read`, {
+//       method: "PUT",
+//     });
+//   }
+
+//   async markAllNotificationsAsRead() {
+//     return this.request("/notifications/read-all", {
+//       method: "PUT",
+//     });
+//   }
+// }
 
 export const api = new ApiClient();
