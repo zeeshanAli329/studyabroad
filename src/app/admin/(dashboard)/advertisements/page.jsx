@@ -7,6 +7,7 @@ import {
   Trash2,
   Power,
   ExternalLink,
+  X,
 } from "lucide-react";
 import { api } from "@/lib/api";
 
@@ -158,7 +159,7 @@ export default function AdvertisementsPage() {
 
   const openCreateModal = () => {
     setEditingAd(null);
-    setForm(emptyForm);
+    setForm({ ...emptyForm });
     setShowModal(true);
   };
 
@@ -181,6 +182,14 @@ export default function AdvertisementsPage() {
     });
 
     setShowModal(true);
+  };
+
+  const closeModal = () => {
+    if (saving) return;
+
+    setShowModal(false);
+    setEditingAd(null);
+    setForm({ ...emptyForm });
   };
 
   const handleChange = (e) => {
@@ -220,7 +229,6 @@ export default function AdvertisementsPage() {
       const payload = {
         title: form.title.trim(),
 
-        // Included for backend support
         description:
           form.description.trim() || null,
 
@@ -251,7 +259,7 @@ export default function AdvertisementsPage() {
 
       setShowModal(false);
       setEditingAd(null);
-      setForm(emptyForm);
+      setForm({ ...emptyForm });
 
       await loadAds();
     } catch (error) {
@@ -333,12 +341,13 @@ export default function AdvertisementsPage() {
           </p>
         </div>
 
+        {/* BIGGER ADD BUTTON */}
         <button
           type="button"
           onClick={openCreateModal}
-          className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#8CC63F] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#79ad35]"
+          className="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-lg bg-[#8CC63F] px-5 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-[#79ad35] hover:shadow-md"
         >
-          <Plus size={18} />
+          <Plus size={20} />
           Add Advertisement
         </button>
       </div>
@@ -358,8 +367,9 @@ export default function AdvertisementsPage() {
             <button
               type="button"
               onClick={openCreateModal}
-              className="mt-4 rounded-lg bg-[#8CC63F] px-4 py-2 text-sm font-medium text-white"
+              className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[#8CC63F] px-5 py-3 text-base font-semibold text-white transition hover:bg-[#79ad35]"
             >
+              <Plus size={19} />
               Add Your First Advertisement
             </button>
           </div>
@@ -508,20 +518,40 @@ export default function AdvertisementsPage() {
 
       {/* MODAL */}
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-          <div className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-white shadow-2xl">
-            
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+          onMouseDown={(e) => {
+            if (e.target === e.currentTarget) {
+              closeModal();
+            }
+          }}
+        >
+          <div className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-white shadow-2xl">
             {/* MODAL HEADER */}
-            <div className="border-b px-6 py-5">
-              <h2 className="text-xl font-bold text-gray-900">
-                {editingAd
-                  ? "Edit Advertisement"
-                  : "Add Advertisement"}
-              </h2>
+            <div className="flex items-start justify-between border-b px-6 py-5">
+              <div>
+                <h2 className="text-xl font-bold text-gray-900">
+                  {editingAd
+                    ? "Edit Advertisement"
+                    : "Add Advertisement"}
+                </h2>
 
-              <p className="mt-1 text-sm text-gray-500">
-                Configure the advertisement placement.
-              </p>
+                <p className="mt-1 text-sm text-gray-500">
+                  Configure the advertisement placement.
+                </p>
+              </div>
+
+              {/* MODAL CROSS BUTTON */}
+              <button
+                type="button"
+                onClick={closeModal}
+                disabled={saving}
+                aria-label="Close"
+                title="Close"
+                className="ml-4 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-gray-200 text-gray-500 transition hover:border-gray-300 hover:bg-gray-100 hover:text-gray-900 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                <X size={20} />
+              </button>
             </div>
 
             <form
@@ -677,10 +707,9 @@ export default function AdvertisementsPage() {
               <div className="flex justify-end gap-3 border-t pt-5">
                 <button
                   type="button"
-                  onClick={() =>
-                    setShowModal(false)
-                  }
-                  className="rounded-lg border border-gray-300 px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                  onClick={closeModal}
+                  disabled={saving}
+                  className="rounded-lg border border-gray-300 px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   Cancel
                 </button>
