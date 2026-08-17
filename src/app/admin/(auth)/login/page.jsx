@@ -74,13 +74,13 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
       <div className="relative w-full max-w-md bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-10 animate-fade-in-up">
         {/* Logo */}
         <div className="text-center mb-8">
-          <Image
-            src="https://wp.rrdevs.net/routex/wp-content/themes/routex/assets/imgs/logo/logo.svg"
-            alt="RouteX"
-            width={155}
-            height={55}
-            className="h-10 w-auto mx-auto mb-6"
-          />
+<img
+  src="logo2.png"
+  alt="StudyAbroad"
+  width="155"
+  height="55"
+  className="h-10 w-auto mx-auto mb-6"
+/>
           <h1 className="text-2xl font-semibold text-[var(--text-primary)] mb-2">
             Admin Portal
           </h1>

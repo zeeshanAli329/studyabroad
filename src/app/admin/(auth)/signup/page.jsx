@@ -14,11 +14,11 @@ export default function AdminSignupPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [formData, setFormData] = useState({
-    fullName: '',
-    username: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
+    fullName: "",
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
 
   const handleSubmit = async (e) => {
@@ -26,30 +26,41 @@ export default function AdminSignupPage() {
     setLoading(true);
     setError(null);
 
-    if (!formData.fullName || !formData.username || !formData.email || !formData.password || !formData.confirmPassword) {
-      setError('All fields are required');
+    if (
+      !formData.fullName ||
+      !formData.username ||
+      !formData.email ||
+      !formData.password ||
+      !formData.confirmPassword
+    ) {
+      setError("All fields are required");
       setLoading(false);
       return;
     }
 
     if (formData.password !== formData.confirmPassword) {
-      setError('Passwords do not match');
+      setError("Passwords do not match");
       setLoading(false);
       return;
     }
 
     if (formData.password.length < 6) {
-      setError('Password must be at least 6 characters');
+      setError("Password must be at least 6 characters");
       setLoading(false);
       return;
     }
 
     try {
-const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined' && window.location.hostname === 'localhost' ? 'http://localhost:5000/api' : '/api');
+      const API_URL =
+        process.env.NEXT_PUBLIC_API_URL ||
+        (typeof window !== "undefined" &&
+        window.location.hostname === "localhost"
+          ? "http://localhost:5000/api"
+          : "/api");
       const response = await fetch(`${API_URL}/auth/admin/signup`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
@@ -58,25 +69,32 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
 
       if (!response.ok) {
         if (response.status === 403) {
-          throw new Error(data.error || 'You are not authorized to create an administrator account. Please contact the administrator.');
+          throw new Error(
+            data.error ||
+              "You are not authorized to create an administrator account. Please contact the administrator.",
+          );
         } else if (response.status === 409) {
-          throw new Error('An account with this email or username already exists');
+          throw new Error(
+            "An account with this email or username already exists",
+          );
         } else if (response.status === 400) {
-          throw new Error(data.error || 'Invalid input data');
+          throw new Error(data.error || "Invalid input data");
         } else if (response.status === 500) {
-          throw new Error('Server error. Please try again later');
+          throw new Error("Server error. Please try again later");
         } else {
-          throw new Error(data.error || 'Failed to create admin account');
+          throw new Error(data.error || "Failed to create admin account");
         }
       }
 
       setSuccess(true);
       setTimeout(() => {
-        router.push('/admin/login');
+        router.push("/admin/login");
       }, 2000);
     } catch (err) {
-      setError(err.message || 'Unable to connect to the server. Please try again.');
-      console.error('Signup error:', err);
+      setError(
+        err.message || "Unable to connect to the server. Please try again.",
+      );
+      console.error("Signup error:", err);
     } finally {
       setLoading(false);
     }
@@ -91,8 +109,18 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
         </div>
         <div className="relative w-full max-w-md bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-10 text-center animate-fade-in-up">
           <div className="w-16 h-16 bg-[#8CC63F] rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            <svg
+              className="w-8 h-8 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 13l4 4L19 7"
+              />
             </svg>
           </div>
           <h2 className="text-2xl font-semibold text-[var(--text-primary)] mb-4">
@@ -139,18 +167,19 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
       <div className="relative w-full max-w-md bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-10 animate-fade-in-up">
         {/* Logo */}
         <div className="text-center mb-8">
-          <Image
-            src="https://wp.rrdevs.net/routex/wp-content/themes/routex/assets/imgs/logo/logo.svg"
-            alt="RouteX"
-            width={155}
-            height={55}
+          <img
+            src="/logo2.png"
+            alt="StudyAbroad"
+            width="155"
+            height="55"
             className="h-10 w-auto mx-auto mb-6"
           />
           <h1 className="text-2xl font-semibold text-[var(--text-primary)] mb-2">
             Create Admin Account
           </h1>
           <p className="text-[var(--text-secondary)] text-sm">
-            Create your administrator account to manage the StudyAbroad platform.
+            Create your administrator account to manage the STUDYABROAD
+            platform.
           </p>
         </div>
 
@@ -169,7 +198,9 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
               type="text"
               required
               value={formData.fullName}
-              onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, fullName: e.target.value })
+              }
               className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F] focus:border-transparent transition-all duration-200 bg-[#F8F9F5]"
               placeholder="John Doe"
             />
@@ -183,7 +214,9 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
               type="text"
               required
               value={formData.username}
-              onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, username: e.target.value })
+              }
               className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F] focus:border-transparent transition-all duration-200 bg-[#F8F9F5]"
               placeholder="johndoe"
             />
@@ -197,7 +230,9 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
               type="email"
               required
               value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
               className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F] focus:border-transparent transition-all duration-200 bg-[#F8F9F5]"
               placeholder="admin@example.com"
             />
@@ -212,7 +247,9 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
                 type={showPassword ? "text" : "password"}
                 required
                 value={formData.password}
-                onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, password: e.target.value })
+                }
                 className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F] focus:border-transparent transition-all duration-200 pr-12 bg-[#F8F9F5]"
                 placeholder="••••••••"
               />
@@ -222,13 +259,38 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
               >
                 {showPassword ? (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                    />
                   </svg>
                 ) : (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"
+                    />
                   </svg>
                 )}
               </button>
@@ -244,7 +306,9 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
                 type={showConfirmPassword ? "text" : "password"}
                 required
                 value={formData.confirmPassword}
-                onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, confirmPassword: e.target.value })
+                }
                 className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F] focus:border-transparent transition-all duration-200 pr-12 bg-[#F8F9F5]"
                 placeholder="••••••••"
               />
@@ -254,13 +318,38 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
               >
                 {showConfirmPassword ? (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                    />
                   </svg>
                 ) : (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"
+                    />
                   </svg>
                 )}
               </button>
@@ -272,14 +361,17 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
             disabled={loading}
             className="w-full bg-[#8CC63F] text-white py-3 rounded-lg font-semibold hover:bg-[#6FA82F] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {loading ? 'Creating Account...' : 'Create Admin Account'}
+            {loading ? "Creating Account..." : "Create Admin Account"}
           </button>
         </form>
 
         <div className="mt-6 text-center text-sm text-[var(--text-secondary)]">
           <p>
-            Already have an account?{' '}
-            <Link href="/admin/login" className="text-[#8CC63F] font-semibold hover:underline transition-colors">
+            Already have an account?{" "}
+            <Link
+              href="/admin/login"
+              className="text-[#8CC63F] font-semibold hover:underline transition-colors"
+            >
               Sign In
             </Link>
           </p>
