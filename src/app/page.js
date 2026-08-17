@@ -12,7 +12,8 @@ import CTA from "@/components/home/CTA";
 import TeamSection from "@/components/home/TeamSection";
 import GlobalOfferSection from "@/components/home/GlobalOfferSection";
 import CoachingSection from "@/components/home/CoachingSection";
-import { SimpleProcess } from "./(site)/about/page";
+// import { SimpleProcess } from "./(site)/about/page";
+import { SimpleProcess } from "@/components/about_us/SimpleProcess";
 import AdBanner from "@/components/ads/AdBanner";
 
 // import AdBanner from "@/components/AdBanner";

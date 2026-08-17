@@ -1,5 +1,5 @@
 import next from "next";
-import { Reveal } from "@/app/(site)/about/page";
+import Reveal from "@/components/shared/Reveal";
 
 export function MissionVision() {
   return (

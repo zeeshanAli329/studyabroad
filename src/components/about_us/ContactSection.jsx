@@ -3,7 +3,7 @@
 import { useState } from "react";
 import next from "next";
 import { api } from "@/lib/api";
-import { Reveal } from "@/app/(site)/about/page";
+import Reveal from "@/components/shared/Reveal";
 import {
   ChevronRight,
   Phone,

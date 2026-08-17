@@ -1,4 +1,7 @@
 import next from "next";
+import  Reveal  from "@/components/shared/Reveal";
+
+
 
 function WhoWeAre() {
   return (
