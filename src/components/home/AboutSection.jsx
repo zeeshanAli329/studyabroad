@@ -20,23 +20,23 @@ export default function AboutSection() {
   const stats = [
     {
       number: 10,
-      suffix: "K+",
-      label: "Complete projects",
+      suffix: "00+",
+      label: "Students Guided",
     },
     {
       number: 20,
       suffix: "+",
-      label: "Team members",
+      label: "Countries Covered",
     },
     {
-      number: 5,
-      suffix: "K+",
-      label: "Winning award",
+      number: 50,
+      suffix: "0+",
+      label: "Scholarships Listed",
     },
     {
       number: 100,
       suffix: "+",
-      label: "Complete projects",
+      label: "Partner Universities",
     },
   ];
 
@@ -166,11 +166,11 @@ export default function AboutSection() {
               </div>
 
               <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-                <strong>Studyabroad</strong> Study Abroad
+                <strong>Studyabroad</strong>
               </p>
 
               <h3 className="max-w-xs text-2xl font-bold leading-tight text-white sm:text-3xl">
-                Turn Your Dreams Into <strong>Global Study Opportunities</strong>
+                Turn Your Dreams Into Global Study Opportunities
               </h3>
 
               <Link
@@ -219,9 +219,9 @@ export default function AboutSection() {
 
                 {/* Text */}
                 <p className="mb-5 max-w-md text-xs leading-6 text-gray-500 transition-colors duration-500 group-hover:text-white/80 sm:text-sm">
-                  We help students find the right <strong>universities</strong>,
-                  <strong> scholarships</strong> and <strong>study abroad destinations</strong> with personalized
-                  guidance throughout their <strong>international education journey</strong>.
+                  Get expert guidance on universities, 
+                  scholarships, admissions, and applications
+                  to plan your international education journey with confidence. 
                 </p>
 
                 {/* Button */}
@@ -249,10 +249,9 @@ export default function AboutSection() {
                 <div className="absolute inset-0 bg-gradient-to-r from-white via-white/20 to-transparent transition-opacity duration-500 group-hover:opacity-20" />
 
                 {/* Green Hover Overlay */}
-                <div className="absolute inset-0 bg-[var(--primary)]/40 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                {/* <div className="absolute inset-0 bg-[var(--primary)]/40 opacity-0 transition-opacity duration-500 group-hover:opacity-100" /> */}
 
-                {/* Image Outline */}
-                <div className="absolute inset-3 rounded-xl border border-white/0 transition-all duration-500 group-hover:border-white/70" />
+                {/* <div className="absolute inset-3 rounded-xl border border-white/0 transition-all duration-500 group-hover:border-white/70" /> */}
               </div>
 
               {/* Floating Passport / Globe Style Decoration */}
@@ -320,17 +319,15 @@ export default function AboutSection() {
 
           <div>
             <p className="text-sm leading-7 text-[var(--text-secondary)] sm:text-base">
-              With years of experience in international education consulting,
-              our expert team provides personalized guidance for <strong>university
-              selection</strong>, applications, <strong>scholarships</strong>, <strong>student visas</strong> and everything
-              you need to begin your <strong>study abroad journey</strong>.
+              With years of experience in international education consulting, our expert team provides personalized
+              guidance for university selection, applications, scholarships, student visas, and everything you need to begin your study abroad journey.
             </p>
 
             <Link
               href="/about"
               className="group mt-5 inline-flex items-center gap-2 rounded-full border-2 border-[var(--primary)] bg-[var(--primary)] px-6 py-3 text-sm font-semibold text-white transition-all duration-500 hover:bg-transparent hover:text-[var(--primary)] hover:shadow-lg"
             >
-              Learn More About <strong>Studyabroad</strong> Services
+              Learn More About Studyabroad.com.pk Services
               <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>

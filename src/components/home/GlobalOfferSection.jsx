@@ -9,13 +9,13 @@ import "@/styles/global-offer-section.css";
 const stats = [
   {
     value: 10,
-    suffix: "k+",
-    label: "Complete project",
+    suffix: "00+",
+    label: "Students Guided",
   },
   {
     value: 20,
     suffix: "+",
-    label: "Team member",
+    label: "Countries Covered",
   },
   {
     value: 5,
@@ -25,7 +25,7 @@ const stats = [
   {
     value: 100,
     suffix: "+",
-    label: "Complete project",
+    label: "Partner Universities",
   },
 ];
 

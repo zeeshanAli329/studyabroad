@@ -8,21 +8,21 @@ export default function Features() {
       icon: GraduationCap,
       title: "Find Your Student Visa",
       description:
-        "Explore <strong>student visa options</strong> for studying abroad, including visa requirements, application guidance, and essential information for international students.",
+        "Explore student visa options for studying abroad, including visa requirements, application guidance, and essential information for international students planning to study from Pakistan.",
       link: "/visa",
     },
     {
       icon: Plane,
       title: "Explore Study Abroad Destinations",
       description:
-        "Discover top <strong>study abroad destinations</strong>, countries, universities, and international education opportunities for your academic and career goals.",
+        "Discover top study abroad destinations, countries, universities, and international education opportunities matched to your academic background and career goals.",
       link: "/destinations",
     },
     {
       icon: BookOpen,
       title: "Study Abroad Planning",
       description:
-        "Get expert guidance on <strong>universities, scholarships, admissions, and applications</strong> to plan your international education journey with Studyabroad.",
+        "Get expert guidance on universities, scholarships, admissions, and applications to plan your international education journey with confidence.",
       link: "/scholarships",
     },
   ];

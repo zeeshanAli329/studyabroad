@@ -104,14 +104,14 @@ export default function WhyChooseUs() {
   }, []);
 
   const successStories = useCountUp(
-    700,
+    100,
     2000,
     statsVisible,
     prefersReducedMotion,
   );
 
   const yearsExperience = useCountUp(
-    25,
+    15,
     1500,
     statsVisible,
     prefersReducedMotion,
@@ -126,7 +126,7 @@ export default function WhyChooseUs() {
     },
     {
       icon: MapPin,
-      title: "International Education Support",
+      title: "International Education Support ",
       description:
         "Get dependable support from experienced consultants who understand international education, overseas university admissions, student visas, scholarships, and study abroad destinations.",
     },
@@ -249,7 +249,7 @@ export default function WhyChooseUs() {
                     </div>
 
                     <div className="text-[10px] uppercase tracking-[0.12em] text-[var(--text-secondary)] transition-colors duration-300 group-hover:text-white/80 sm:text-xs">
-                      Years of Experience
+                      Years of Combined Experience
                     </div>
                   </div>
                 </div>
@@ -285,12 +285,8 @@ export default function WhyChooseUs() {
 
               {/* Description */}
               <p className="mb-8 max-w-2xl text-base leading-relaxed text-[var(--text-secondary)] sm:mb-10 sm:text-lg">
-                We help students turn international study ambitions into
-                achievable journeys. From choosing the right study abroad
-                destination and university to student visa guidance,
-                scholarship opportunities, and pre-departure support, our
-                experienced education consultants are here to guide you at
-                every step.
+                We help students turn international education ambitions into achievable journeys. From choosing the right university and
+                destination to scholarship opportunities and pre-departure support, our experienced consultants guide you at every step.
               </p>
 
               {/* ==========================================
@@ -343,7 +339,7 @@ export default function WhyChooseUs() {
                 {/* Fill Animation */}
                 <span className="absolute inset-0 -translate-x-full bg-white transition-transform duration-500 group-hover:translate-x-0" />
 
-                <span className="relative z-10">Read More</span>
+                <span className="relative z-10">Start Your Free Education Journey Today</span>
 
                 <ArrowRight className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 sm:h-5 sm:w-5" />
               </Link>

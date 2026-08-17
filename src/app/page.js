@@ -17,6 +17,61 @@ import AdBanner from "@/components/ads/AdBanner";
 
 // import AdBanner from "@/components/AdBanner";
 
+export const metadata = {
+  title: "StudyAbroad Scholarships & Free Education for Pakistani Students",
+
+  description:
+    "Free education, fully funded scholarships & student visa guidance for Pakistani students. Trusted study abroad consultants, 100+ success stories.",
+
+  keywords: [
+    "scholarships for Pakistani students",
+    "fully funded scholarships",
+    "free education abroad",
+    "study abroad for Pakistani students",
+    "student visa guidance",
+    "study abroad consultants Pakistan",
+    "international scholarships",
+    "study abroad scholarships",
+  ],
+
+  authors: [{ name: "Study Abroad" }],
+
+  creator: "Study Abroad",
+
+  publisher: "Study Abroad",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  openGraph: {
+    title: "Scholarships & Free Education for Pakistani Students",
+    description:
+      "Free education, fully funded scholarships & student visa guidance for Pakistani students. Trusted study abroad consultants, 100+ success stories.",
+    type: "website",
+    locale: "en_PK",
+    siteName: "Study Abroad",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Scholarships & Free Education for Pakistani Students",
+    description:
+      "Free education, fully funded scholarships & student visa guidance for Pakistani students. Trusted study abroad consultants, 100+ success stories.",
+  },
+};
+
+
+
+
 export default function Home() {
   return (
     <>
