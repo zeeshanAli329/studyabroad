@@ -31,6 +31,8 @@ const NavBar = () => {
   }, []);
 
   const visaLinks = [
+
+    { title: "All Visa", link: "/visa" },
     { title: "Student Visa", link: "/visa/student" },
     { title: "Work Visa", link: "/visa/work" },
     { title: "Tourist Visa", link: "/visa/tourist" },
