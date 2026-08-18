@@ -192,7 +192,7 @@ const NavBar = () => {
 
             {/* FREE EDUCATION */}
             <Link
-              href="/free_education"
+              href="/free-education"
               className="text-[15px] font-serif font-bold uppercase text-[#034833] transition hover:text-[var(--primary)]"
             >
               Free Education
@@ -202,7 +202,7 @@ const NavBar = () => {
           {/* ================= CONTACT BUTTON ================= */}
           <div className="hidden lg:block">
             <Link
-              href="/appointment"
+              href="/contact"
               className="rounded-full bg-[var(--primary)] text-[#034833] px-6 py-3 text-white text-[14px] font-serif font-bold uppercase transition-all duration-300 hover:scale-105 hover:bg-[var(--primary-dark)]"
             >
               CONTACT US
@@ -339,7 +339,7 @@ const NavBar = () => {
           )}
 
           <Link
-            href="/free_education"
+            href="/free-education"
             onClick={() => setMenuOpen(false)}
             className="flex items-center text-[#034833] justify-between border-b px-6 py-5 text-[16px] font-serif font-bold uppercase"
           >
