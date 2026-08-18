@@ -1,326 +1,203 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import { ChevronRight, ShieldCheck, FileText, Clock, CheckCircle, AlertCircle } from "lucide-react";
+import VisaPageDesign from "@/components/visa/VisaPageDesign";
+import {
+  GraduationCap,
+  FileText,
+  MessageCircle,
+  DollarSign,
+} from "lucide-react";
 
 export default function StudentVisaPage() {
-  const [openFaq, setOpenFaq] = useState(null);
-
   const eligibilityRequirements = [
-    "Acceptance letter from a recognized educational institution",
-    "Proof of sufficient funds to cover tuition and living expenses",
-    "Valid passport with at least 6 months validity",
-    "No criminal record or security concerns",
-    "Good health and medical clearance if required",
-    "Intent to return to home country after studies",
-    "Proficiency in the language of instruction (IELTS/TOEFL scores)",
-    "Academic qualifications meeting program requirements"
+    "Valid passport with sufficient validity for international travel",
+    "Confirmed admission or offer letter from a recognized educational institution",
+    "Proof that you meet the academic requirements of your chosen study program",
+    "Proof of sufficient funds to cover tuition fees, living expenses, and travel costs",
+    "Valid sponsorship or financial support documents where applicable",
+    "Required English language or other language proficiency evidence",
+    "Medical examination or health certificate where required",
+    "Meet the student visa and immigration requirements of the destination country",
   ];
 
   const requiredDocuments = [
     "Valid passport",
-    "Visa application form",
-    "Passport-sized photographs",
-    "Letter of acceptance from educational institution",
-    "Proof of financial support (bank statements, scholarship letters)",
+    "CNIC or B-Form where applicable",
+    "University or college offer letter",
+    "Confirmation of enrollment or admission document",
     "Academic transcripts and certificates",
-    "Language proficiency test scores (IELTS, TOEFL, etc.)",
-    "Statement of purpose / study plan",
-    "Medical examination report",
-    "Police clearance certificate",
-    "Travel insurance",
-    "Proof of accommodation arrangements"
+    "HEC or IBCC attested educational documents where required",
+    "Proof of funds or financial sponsorship",
+    "Bank statements and financial documents",
+    "Sponsorship letter or affidavit where applicable",
+    "Medical certificate or health examination documents",
+    "Recent passport-sized photographs",
+    "Completed student visa application form",
   ];
 
   const applicationSteps = [
-    { step: "01", title: "Get Accepted", desc: "Secure admission to a recognized educational institution" },
-    { step: "02", title: "Gather Documents", desc: "Collect all required documents as per visa requirements" },
-    { step: "03", title: "Complete Application", desc: "Fill out the visa application form accurately" },
-    { step: "04", title: "Pay Fees", desc: "Pay visa application and processing fees" },
-    { step: "05", title: "Submit Application", desc: "Submit application at visa office or online" },
-    { step: "06", title: "Attend Interview", desc: "Attend visa interview if required" },
-    { step: "07", title: "Wait for Processing", desc: "Track your application status" },
-    { step: "08", title: "Receive Visa", desc: "Collect your visa and prepare for departure" }
+    {
+      step: "01",
+      title: "Check Student Visa Eligibility",
+      desc: "Review the student visa requirements for your destination and confirm that you meet the academic, financial, and immigration criteria.",
+    },
+    {
+      step: "02",
+      title: "Secure Your Admission",
+      desc: "Obtain an offer letter or admission confirmation from a recognized university, college, or educational institution.",
+    },
+    {
+      step: "03",
+      title: "Prepare Your Documents",
+      desc: "Organize your passport, academic records, admission documents, financial evidence, and other required student visa documents.",
+    },
+    {
+      step: "04",
+      title: "Prepare Financial Proof",
+      desc: "Prepare bank statements, sponsorship letters, and other financial evidence required to demonstrate that your study and living expenses can be covered.",
+    },
+    {
+      step: "05",
+      title: "Complete Visa Application",
+      desc: "Complete the student visa application form accurately and provide information that matches your admission and supporting documents.",
+    },
+    {
+      step: "06",
+      title: "Attend Biometrics & Interview",
+      desc: "Attend your visa appointment, provide biometrics, and prepare for a student visa interview if required by the destination country.",
+    },
+    {
+      step: "07",
+      title: "Student Visa Processing",
+      desc: "The relevant embassy or immigration authority reviews your application, academic background, financial evidence, and study plans.",
+    },
+    {
+      step: "08",
+      title: "Receive Your Visa & Prepare to Travel",
+      desc: "Receive your student visa decision and complete your final travel, accommodation, insurance, and pre-departure arrangements.",
+    },
   ];
 
-  const commonMistakes = [
-    "Submitting incomplete or incorrect application forms",
-    "Providing insufficient proof of financial support",
-    "Not demonstrating strong ties to home country",
-    "Poor preparation for visa interview",
-    "Submitting fake or fraudulent documents",
-    "Applying too close to program start date",
-    "Not having proper travel insurance",
-    "Failing to meet language proficiency requirements"
-  ];
-
-  const faqs = [
+  const studentVisaFaqs = [
+    {
+      question: "What is a student visa and who needs one?",
+      answer:
+        "A student visa allows an international student to study legally at an approved educational institution in another country. Pakistani students normally need a student visa or study permit when their chosen destination requires immigration permission for international students.",
+    },
+    {
+      question: "What documents are required for a student visa from Pakistan?",
+      answer:
+        "Common student visa documents include a valid passport, CNIC or B-Form where applicable, university offer letter, academic transcripts and certificates, financial evidence, sponsorship documents, photographs, medical documents, and a completed visa application form. Exact requirements depend on the destination country.",
+    },
+    {
+      question: "Do Pakistani students need to show bank statements for a student visa?",
+      answer:
+        "Many student visa applications require proof that the student can cover tuition fees and living expenses. This may include bank statements, sponsorship letters, education loans, scholarship documents, or other accepted financial evidence. The required amount and format vary by country.",
+    },
+    {
+      question: "Do I need an interview for a student visa?",
+      answer:
+        "Some countries and visa categories require student visa interviews or credibility interviews. Students may be asked about their university, chosen course, academic background, career plans, financial situation, and reasons for studying abroad.",
+    },
     {
       question: "How long does a student visa take to process?",
-      answer: "Processing times vary by country but typically range from 2-8 weeks. Some countries offer expedited processing for an additional fee. We recommend applying at least 3 months before your program start date."
+      answer:
+        "Student visa processing times vary by country, visa category, application centre, season, document verification, and individual circumstances. Pakistani students should apply well before their university intake and allow additional time for biometrics or interviews where required.",
     },
     {
-      question: "Can I work while studying on a student visa?",
-      answer: "Many countries allow students to work part-time (usually 20 hours per week) during semesters and full-time during breaks. Work permissions vary by country, so check specific regulations for your destination."
+      question: "Why do Pakistani student visa applications get rejected?",
+      answer:
+        "Student visa applications can be refused for different reasons, including insufficient financial evidence, inconsistent information, incomplete documentation, concerns about the genuine purpose of study, weak academic progression, or failure to meet specific immigration requirements. The exact reason depends on the individual application and destination country.",
     },
     {
-      question: "What happens if my visa application is rejected?",
-      answer: "If rejected, you'll receive a reason for the decision. You can reapply with improved documentation or appeal the decision if applicable. Our team helps analyze rejection reasons and strengthen your reapplication."
+      question: "Can I reapply after my student visa is refused?",
+      answer:
+        "In many cases, applicants can submit a new student visa application after a refusal, depending on the destination country's rules. Before reapplying, it is important to understand the refusal reasons, correct weaknesses in the previous application, and provide stronger or clearer supporting evidence.",
     },
     {
-      question: "Can I extend my student visa?",
-      answer: "Yes, most countries allow visa extensions if you continue your studies or pursue further education. You must apply before your current visa expires and show proof of continued enrollment and financial support."
+      question: "Can Studyabroad help Pakistani students with student visa applications?",
+      answer:
+        "Yes. Studyabroad can guide Pakistani students through student visa requirements, document preparation, financial proof, visa application forms, interview preparation, and pre-departure planning for studying abroad.",
     },
-    {
-      question: "Do I need a visa interview?",
-      answer: "Not all countries require interviews, but many do. If required, we help you prepare by conducting mock interviews and providing tips on common questions and appropriate responses."
-    }
   ];
 
   return (
-    <div className="w-full bg-white font-sans">
-      {/* Hero Section */}
-      <section
-        className="relative w-full overflow-hidden rounded-3xl mx-4 lg:mx-8"
-        style={{
-          backgroundImage: "linear-gradient(120deg, rgba(15,58,45,0.92), rgba(15,58,45,0.75)), url('https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/breadcrumb.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 py-20 sm:py-28">
-          <h1 className="text-white text-4xl sm:text-5xl font-serif font-semibold tracking-tight mb-4">
-            Student Visa
-          </h1>
-          <p className="text-white/90 text-lg sm:text-xl max-w-2xl">
-            Pursue your education abroad with confidence. Our expert guidance helps you navigate the student visa process for universities worldwide.
-          </p>
-          <div className="flex items-center gap-2 text-white/80 text-sm mt-6">
-            <span>RouteX</span>
-            <ChevronRight className="w-4 h-4" />
-            <span className="text-lime-400">Student Visa</span>
-          </div>
-        </div>
-      </section>
+    <VisaPageDesign
+      hero={{
+        badge: "Student Visa Assistance",
+        title: "Student Visa Guidance for",
+        highlight: "Pakistani Students",
+        description:
+          "Getting a student visa is often the most stressful part of studying abroad. Our consultants guide Pakistani students through every step, from document preparation and financial proof to visa interviews and final travel preparation, so nothing stands between you and your study abroad journey.",
+        image: "/studentvisa.jpg",
+      }}
 
-      {/* Overview */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="flex items-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide mb-4">
-              <ShieldCheck className="w-4 h-4" />
-              Overview
-            </div>
-            <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold leading-tight mb-6">
-              What is a Student Visa?
-            </h2>
-            <p className="text-gray-600 leading-relaxed mb-6">
-              A student visa is an official document issued by a country's government that allows international students to study at recognized educational institutions for a specified period. It is typically required for programs longer than 3-6 months, depending on the country.
-            </p>
-            <p className="text-gray-600 leading-relaxed mb-6">
-              Student visas not only permit you to study but often allow part-time work, travel within the country, and sometimes bring dependents. Each country has specific requirements, processing times, and conditions attached to their student visas.
-            </p>
-            <div className="bg-lime-50 border border-lime-200 rounded-xl p-6">
-              <h3 className="font-serif font-semibold text-emerald-900 mb-3">Popular Destinations</h3>
-              <div className="flex flex-wrap gap-2">
-                {["USA", "UK", "Canada", "Australia", "Germany", "France", "New Zealand", "Ireland"].map((country) => (
-                  <span key={country} className="bg-white px-3 py-1 rounded-full text-sm text-emerald-900 border border-lime-300">
-                    {country}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="relative">
-            <img
-              src="https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/choose-us-left-img.png"
-              alt="Students studying abroad"
-              className="rounded-2xl shadow-xl w-full"
-            />
-          </div>
-        </div>
-      </section>
+      overview={{
+        badgeText: "Student Visa Support",
+        badgeIcon: GraduationCap,
+        title: "Your Student Visa Journey,",
+        highlightTitle: "Made Simple & Clear",
+        description:
+          "Planning to study abroad from Pakistan? Our student visa consultants help you understand country-specific requirements, prepare your documents, organize financial evidence, and confidently navigate the visa application process.",
+        features: [
+          {
+            icon: FileText,
+            title: "Documents",
+            desc: "Prepare academic & visa documents",
+          },
+          {
+            icon: MessageCircle,
+            title: "Visa Interview",
+            desc: "Prepare for common interview questions",
+          },
+          {
+            icon: DollarSign,
+            title: "Financial Proof",
+            desc: "Prepare funds & sponsorship evidence",
+          },
+        ],
+        footerMainStat: "20+ countries",
+        footerSubStat: "covered",
+        footerNote: "For international study",
+        imageSrc: "/studentvisa.jpg",
+        imageAlt:
+          "Student visa consultation for Pakistani students planning to study abroad",
+        cardSubTitle: "Student Visa Guidance",
+        cardMainTitle: "From admission to visa approval",
+        badgeStatNumber: "20+",
+        badgeStatLabel: "Countries Covered",
+      }}
 
-      {/* Who Can Apply */}
-      <section className="bg-[#fafbf9] py-16 sm:py-24">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10">
-          <div className="text-center mb-14">
-            <div className="flex items-center justify-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide">
-              <ShieldCheck className="w-4 h-4" />
-              Who Can Apply
-            </div>
-            <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
-              Eligibility Requirements
-            </h2>
-          </div>
+      eligibility={{
+        title: "Who Can Apply for a Student Visa?",
+        description:
+          "Student visa eligibility depends on your academic background, university admission, financial situation, study plans, and the immigration requirements of your chosen destination.",
+        requirements: eligibilityRequirements,
+      }}
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {eligibilityRequirements.map((requirement, index) => (
-              <div key={index} className="bg-white rounded-xl p-5 shadow-md flex items-start gap-4">
-                <CheckCircle className="w-6 h-6 text-lime-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700">{requirement}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      documents={{
+        title: "Required Student Visa Documents Checklist",
+        description:
+          "Preparing the right documents is one of the most important parts of a successful student visa application. Pakistani students should ensure their academic, financial, personal, and admission documents are complete and consistent.",
+        items: requiredDocuments,
+      }}
 
-      {/* Required Documents */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
-        <div className="text-center mb-14">
-          <div className="flex items-center justify-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide">
-            <FileText className="w-4 h-4" />
-            Required Documents
-          </div>
-          <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
-            Documents You'll Need
-          </h2>
-        </div>
+      process={{
+        title: "Your Student Visa Application Journey",
+        description:
+          "From receiving your university offer letter to getting your student visa, follow a clear and organized application process designed to help you prepare with confidence.",
+        steps: applicationSteps,
+      }}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {requiredDocuments.map((doc, index) => (
-            <div key={index} className="bg-emerald-50 rounded-lg p-4 flex items-center gap-3">
-              <FileText className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-              <span className="text-gray-700 text-sm">{doc}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Application Process */}
-      <section className="bg-emerald-900 rounded-3xl py-16 sm:py-24 mx-4 lg:mx-8">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10">
-          <div className="text-center mb-14">
-            <div className="flex items-center justify-center gap-2 text-lime-400 font-semibold text-sm uppercase tracking-wide">
-              <Clock className="w-4 h-4" />
-              Application Process
-            </div>
-            <h2 className="font-serif text-white text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
-              Step-by-Step Guide
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {applicationSteps.map((step, index) => (
-              <div key={step.step} className="text-center">
-                <div className="w-14 h-14 rounded-full bg-lime-500 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-serif text-xl font-bold">{step.step}</span>
-                </div>
-                <h3 className="font-serif font-semibold text-white text-base mb-2">{step.title}</h3>
-                <p className="text-white/80 text-sm">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Processing Information */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
-            <div className="flex items-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide mb-4">
-              <Clock className="w-4 h-4" />
-              Processing Times
-            </div>
-            <h2 className="font-serif text-emerald-900 text-3xl font-semibold leading-tight mb-6">
-              How Long Does It Take?
-            </h2>
-            <div className="space-y-4">
-              {[
-                { country: "USA", time: "3-5 weeks (F-1 Visa)" },
-                { country: "UK", time: "3 weeks (Standard), 5 days (Priority)" },
-                { country: "Canada", time: "4-6 weeks" },
-                { country: "Australia", time: "4-8 weeks" },
-                { country: "Germany", time: "4-6 weeks" },
-                { country: "France", time: "2-4 weeks" }
-              ].map((item) => (
-                <div key={item.country} className="flex justify-between items-center bg-gray-50 rounded-lg p-4">
-                  <span className="font-medium text-emerald-900">{item.country}</span>
-                  <span className="text-gray-600 text-sm">{item.time}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div>
-            <div className="flex items-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide mb-4">
-              <AlertCircle className="w-4 h-4" />
-              Common Mistakes
-            </div>
-            <h2 className="font-serif text-emerald-900 text-3xl font-semibold leading-tight mb-6">
-              Avoid These Errors
-            </h2>
-            <ul className="space-y-3">
-              {commonMistakes.map((mistake, index) => (
-                <li key={index} className="flex items-start gap-3 text-gray-600">
-                  <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm">{mistake}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="bg-[#eef2e9] py-16 sm:py-24">
-        <div className="max-w-4xl mx-auto px-6 sm:px-10">
-          <div className="text-center mb-14">
-            <div className="flex items-center justify-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide">
-              <ShieldCheck className="w-4 h-4" />
-              FAQ
-            </div>
-            <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
-              Frequently Asked Questions
-            </h2>
-          </div>
-
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden">
-                <button
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full px-6 py-4 flex items-center justify-between text-left"
-                >
-                  <span className="font-semibold text-emerald-900">{faq.question}</span>
-                  <ChevronRight className={`w-5 h-5 text-gray-400 transition-transform ${openFaq === index ? 'rotate-90' : ''}`} />
-                </button>
-                {openFaq === index && (
-                  <div className="px-6 pb-4 pt-0">
-                    <p className="text-gray-600">{faq.answer}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-gradient-to-r from-emerald-900 to-emerald-800 py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 text-center">
-          <h2 className="font-serif text-white text-3xl sm:text-4xl font-semibold leading-tight mb-6">
-            Ready to Apply for Your Student Visa?
-          </h2>
-          <p className="text-white/90 text-lg max-w-2xl mx-auto mb-8">
-            Let our expert consultants guide you through the entire student visa application process.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-lime-500 hover:bg-lime-600 text-white font-medium px-8 py-4 rounded-full transition-colors"
-            >
-              Get Started <ChevronRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/appointment"
-              className="inline-flex items-center gap-2 bg-transparent border-2 border-white text-white font-medium px-8 py-4 rounded-full hover:bg-white hover:text-emerald-900 transition-colors"
-            >
-              Book Consultation
-            </Link>
-          </div>
-        </div>
-      </section>
-    </div>
+      faq={{
+        faqsData: studentVisaFaqs,
+        badgeText: "Student Visa FAQs",
+        title: "Got Questions About",
+        highlightTitle: "Student Visas?",
+        description:
+          "Find answers to common questions about student visa requirements for Pakistani students, documents, financial proof, visa interviews, processing times, refusals, and reapplications.",
+        imageSrc: "/studentvisa.jpg",
+      }}
+    />
   );
 }

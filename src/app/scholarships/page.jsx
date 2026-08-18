@@ -1,5 +1,4 @@
-"use client";
-
+'use client'
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -53,47 +52,73 @@ export default function ScholarshipsPage() {
   };
 
   return (
-    <main className="pt-24">
-      {/* Hero Section */}
-      <section className="relative bg-[var(--secondary)] rounded-3xl py-20 lg:py-32 mx-4 lg:mx-8">
-        <div className="absolute inset-0 opacity-20 rounded-3xl overflow-hidden">
-          {/* <Image
-            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&h=1080&fit=crop"
-            alt="Scholarships"
-            fill
-            className="object-cover"
-          /> */}
-          {/* ---------------------------------- */}
+    <main className="pt-0">
+      {/* =====================================================
+    SCHOLARSHIP HERO — ONLY HERO SECTION
+    ===================================================== */}
+
+      <section className="relative mx-4 overflow-hidden rounded-[22px] lg:mx-8">
+        {/* Background Image */}
+        <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&h=1080&fit=crop"
-            alt="Scholarships"
-            className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover"
+            src="/scalorship.jpg"
+            alt="Scholarships for Pakistani Students"
+            className="h-full w-full object-cover"
           />
         </div>
-        <div className="relative mx-auto max-w-[1320px] px-6 lg:px-8 text-center">
-          <span className="inline-block px-4 py-2 bg-[var(--primary)] text-white text-sm font-semibold rounded-full mb-6">
-            SCHOLARSHIPS
-          </span>
-          <h1 className="font-serif text-4xl lg:text-6xl text-white mb-6">
-            Find the Right Scholarship for Your Future
-          </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8">
-            Explore scholarships from universities and institutions around the
-            world and find opportunities that match your education goals.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="#scholarships"
-              className="px-8 py-4 bg-[var(--primary)] text-white rounded-full font-semibold hover:bg-[var(--primary-dark)] transition-colors"
-            >
-              Explore Scholarships
-            </Link>
-            <Link
-              href="/appointment"
-              className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-[var(--secondary)] transition-colors"
-            >
-              Get Guidance
-            </Link>
+
+        {/* Dark Green Theme Overlay */}
+        <div className="absolute inset-0 bg-[#003c2f]/40" />
+
+        {/* Subtle Green Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#003c2f]/95 via-[#003c2f]/90 to-[#003c2f]/75" />
+
+        {/* Decorative Circle — Top Right */}
+        <div className="absolute -right-10 -top-24 h-64 w-64 rounded-full border border-[var(--primary)]/20 sm:h-72 sm:w-72 lg:h-80 lg:w-80" />
+
+        {/* Decorative Circle — Bottom Right */}
+        <div className="absolute -bottom-28 right-16 h-72 w-72 rounded-full border border-[var(--primary)]/15 sm:h-80 sm:w-80 lg:right-24 lg:h-96 lg:w-96" />
+
+        {/* Content */}
+        <div className="relative mx-auto min-h-[500px] max-w-[1320px] px-8 py-20 sm:px-10 lg:flex lg:min-h-[520px] lg:items-center lg:px-12">
+          <div className="max-w-3xl text-left">
+            {/* Label */}
+            <div className="mb-6 inline-flex items-center rounded-full border border-[var(--primary)]/30 bg-[var(--primary)]/10 px-4 py-1.5">
+              <span className="mr-2 h-1.5 w-1.5 rounded-full bg-[var(--primary)]" />
+
+              <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--primary)]">
+                Scholarship Assistance
+              </span>
+            </div>
+
+            {/* H1 */}
+            <h1 className="font-serif text-4xl font-semibold leading-[1.05] text-white sm:text-5xl lg:text-6xl xl:text-[64px]">
+              Scholarships for
+              <br />
+              <span className="text-[var(--primary)]">Pakistani Students</span>
+            </h1>
+
+            {/* Intro Copy */}
+            <p className="mt-7 max-w-2xl text-sm leading-7 text-white/85 sm:text-base lg:text-[16px]">
+              Choosing the right country is as important as choosing the right
+              scholarship. Below, find country-specific scholarship guides
+              curated for Pakistani students, including funding coverage,
+              eligibility, and deadlines.
+            </p>
+
+            {/* Breadcrumb */}
+            <div className="mt-7 flex items-center gap-3 text-xs">
+              <Link
+                href="/"
+                className="text-white/60 transition-colors hover:text-white"
+              >
+                Studyabroad
+              </Link>
+
+              <span className="text-white/40">›</span>
+
+              <span className="text-[var(--primary)]">Scholarships</span>
+            </div>
           </div>
         </div>
       </section>

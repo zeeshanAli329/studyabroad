@@ -1,50 +1,46 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ChevronRight, ShieldCheck, FileText, Clock, CheckCircle } from "lucide-react";
+import {
+  ChevronRight,
+  ShieldCheck,
+  FileText,
+  Clock,
+  CheckCircle,
+  Globe,
+  MessageCircle,
+  DollarSign,
+  XCircle,
+  PlaneTakeoff,
+} from "lucide-react";
+import Services from "@/components/home/Services";
+import VisaSupportCard from "@/components/visa/VisaSupportCard";
+import VisaRequirements from "@/components/visa/VisaRequirements";
+import Faq from "@/components/visa/Faq";
 
 export default function VisaPage() {
   const [openFaq, setOpenFaq] = useState(null);
 
-  const visaCategories = [
-    {
-      title: "Student Visa",
-      description: "Pursue your education abroad with our student visa assistance",
-      icon: "🎓",
-      link: "/visa/student",
-      color: "from-blue-500 to-blue-600"
-    },
-    {
-      title: "Work Visa",
-      description: "Build your international career with work visa support",
-      icon: "💼",
-      link: "/visa/work",
-      color: "from-purple-500 to-purple-600"
-    },
-    {
-      title: "Tourist Visa",
-      description: "Explore the world with hassle-free tourist visa processing",
-      icon: "✈️",
-      link: "/visa/tourist",
-      color: "from-green-500 to-green-600"
-    },
-    {
-      title: "Business Visa",
-      description: "Expand your business globally with business visa services",
-      icon: "🤝",
-      link: "/visa/business",
-      color: "from-orange-500 to-orange-600"
-    },
-    {
-      title: "Family Visa",
-      description: "Bring your family together with family visa assistance",
-      icon: "👨‍👩‍👧‍👦",
-      link: "/visa/family",
-      color: "from-pink-500 to-pink-600"
-    }
-  ];
+  useEffect(() => {
+    document.title =
+      "Student Visa Guidance for Pakistani Students | Studyabroad.com.pk";
 
+    const description =
+      "Expert student visa guidance for Pakistani students — requirements, documents, interview tips, and country-specific visa processes explained.";
+
+    let meta = document.querySelector('meta[name="description"]');
+
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.name = "description";
+      document.head.appendChild(meta);
+    }
+
+    meta.setAttribute("content", description);
+  }, []);
+
+  
   const faqs = [
     {
       question: "What documents do I need for a visa application?",
@@ -55,7 +51,7 @@ export default function VisaPage() {
       answer: "Processing times vary significantly by country and visa type. Student visas typically take 2-8 weeks, work visas 4-12 weeks, and tourist visas 1-4 weeks. We provide estimated timelines based on current processing times."
     },
     {
-      question: "Can RouteX guarantee visa approval?",
+      question: "Can Studyabroad guarantee visa approval?",
       answer: "While we cannot guarantee visa approval as the final decision rests with immigration authorities, our expert guidance significantly improves your chances. We ensure your application is complete, accurate, and meets all requirements."
     },
     {
@@ -64,24 +60,68 @@ export default function VisaPage() {
     }
   ];
 
+  // 4.2 Required Documents Checklist
   const requiredDocuments = [
-    "Valid passport (minimum 6 months validity)",
-    "Completed visa application form",
-    "Recent passport-sized photographs",
-    "Proof of financial support",
-    "Acceptance letter (for student visas)",
-    "Employment offer (for work visas)",
-    "Travel itinerary (for tourist visas)",
-    "Medical examination report",
-    "Police clearance certificate",
-    "Travel insurance"
+    "Passport",
+    "CNIC / B-Form",
+    "Academic transcripts (HEC/IBCC attested)",
+    "Offer letter",
+    "Proof of funds / sponsorship",
+    "Medical certificate",
+    "Photographs",
+    "Visa application form",
+  ];
+
+  // 4.3 Visa Interview Preparation
+  const interviewTips = [
+    "Practice clear, confident answers about your chosen course and university",
+    "Be ready to explain how you'll fund your studies",
+    "Know your study plan and career goals after graduation",
+    "Be honest and consistent — avoid contradicting your application documents",
+    "Show genuine ties to Pakistan (family, property, future plans)",
+    "Avoid memorized, robotic answers — speak naturally",
+  ];
+
+  // 4.4 Financial Proof & Sponsorship Guidance
+  const financialGuidance = [
+    "Bank statements showing consistent balance over the required period",
+    "Sponsorship letters from parents/guardians clearly stating support",
+    "Salary slips or business proof for the sponsor's income source",
+    "Education loan documents, if applicable",
+    "Currency and amount matching the embassy's minimum funds requirement",
+  ];
+
+  // 4.5 Visa Rejection: Common Reasons & How to Reapply
+  const rejectionReasons = [
+    "Insufficient or unclear proof of funds",
+    "Weak or inconsistent study plan / statement of purpose",
+    "Missing or mismatched documents",
+    "Incomplete application form",
+    "Insufficient ties to home country",
+  ];
+
+  const reapplySteps = [
+    "Carefully review the rejection letter to identify the exact reason",
+    "Strengthen the weak area (funds, documents, or study plan)",
+    "Get your revised application reviewed by an expert before resubmitting",
+    "Follow the destination country's required waiting period, if any",
+  ];
+
+  // 4.6 Pre-Departure Checklist
+  const preDepartureChecklist = [
+    "Confirm and book your flight",
+    "Arrange accommodation before arrival",
+    "Get health/travel insurance sorted",
+    "Carry sufficient foreign currency and a valid debit/credit card",
+    "Pack according to your destination's climate and university requirements",
+    "Keep all original documents and their copies handy in carry-on luggage",
   ];
 
   return (
     <div className="w-full bg-white font-sans">
       {/* Hero Section */}
       <section
-        className="relative w-full overflow-hidden rounded-3xl mx-4 lg:mx-8"
+        className="relative w-[calc(100%-2rem)] lg:w-[calc(100%-4rem)] mx-auto overflow-hidden rounded-3xl"
         style={{
           backgroundImage: "linear-gradient(120deg, rgba(15,58,45,0.92), rgba(15,58,45,0.75)), url('https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/breadcrumb.png')",
           backgroundSize: "cover",
@@ -90,86 +130,25 @@ export default function VisaPage() {
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-10 py-20 sm:py-28">
           <h1 className="text-white text-4xl sm:text-5xl font-serif font-semibold tracking-tight mb-4">
-            Visa Services
+            Visa Guidance for Pakistani Students
           </h1>
           <p className="text-white/90 text-lg sm:text-xl max-w-2xl">
-            Expert guidance for all your visa needs. From student visas to work permits, we help you navigate the complex immigration process with confidence.
+            Getting a student visa is often the most stressful part of studying abroad. Our consultants guide Pakistani students through every step — from document preparation to visa interviews — so nothing stands between you and your offer letter.
           </p>
-          <div className="flex items-center gap-2 text-white/80 text-sm mt-6">
-            <span>RouteX</span>
+          <div className="flex items-center flex-wrap gap-2 text-white/80 text-sm mt-6">
+            <span>STUDYABROAD</span>
             <ChevronRight className="w-4 h-4" />
             <span className="text-lime-400">Visa Services</span>
           </div>
         </div>
       </section>
 
-      {/* Introduction */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="flex items-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide mb-4">
-              <ShieldCheck className="w-4 h-4" />
-              About Our Visa Services
-            </div>
-            <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold leading-tight mb-6">
-              Your Gateway to Global Opportunities
-            </h2>
-            <p className="text-gray-600 leading-relaxed mb-6">
-              RouteX provides comprehensive visa assistance for students, professionals, tourists, and families. Our experienced immigration consultants guide you through every step of the visa application process, ensuring your application has the best chance of success.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              We stay updated with the latest immigration policies and requirements for countries worldwide, providing you with accurate information and personalized guidance tailored to your specific situation.
-            </p>
-          </div>
-          <div className="relative">
-            <img
-              src="https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/choose-us-left-img.png"
-              alt="Visa consultation"
-              className="rounded-2xl shadow-xl w-full"
-            />
-          </div>
-        </div>
-      </section>
+      <VisaSupportCard /> 
+     
 
-      {/* Visa Categories */}
-      <section className="bg-[#fafbf9] py-16 sm:py-24">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10">
-          <div className="text-center mb-14">
-            <div className="flex items-center justify-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide">
-              <FileText className="w-4 h-4" />
-              Visa Categories
-            </div>
-            <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
-              Choose Your Visa Type
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {visaCategories.map((category, index) => (
-              <Link
-                key={category.title}
-                href={category.link}
-                className="group"
-              >
-                <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center text-3xl mb-4`}>
-                    {category.icon}
-                  </div>
-                  <h3 className="font-serif font-semibold text-emerald-900 text-xl mb-2">
-                    {category.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                    {category.description}
-                  </p>
-                  <div className="flex items-center text-lime-600 font-medium text-sm group-hover:gap-3 transition-all">
-                    Learn More <ChevronRight className="w-4 h-4" />
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+    <Services />
+    <VisaRequirements />
+ 
 
       {/* Application Process */}
       <section className="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
@@ -201,20 +180,20 @@ export default function VisaPage() {
         </div>
       </section>
 
-      {/* Required Documents */}
-      <section className="bg-emerald-900 rounded-3xl py-16 sm:py-24 mx-4 lg:mx-8">
+      {/* 4.2 Required Documents Checklist */}
+      <section id="required-documents-checklist" className="bg-emerald-900 rounded-3xl py-16 sm:py-24 mx-4 lg:mx-8">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="flex items-center gap-2 text-lime-400 font-semibold text-sm uppercase tracking-wide mb-4">
                 <FileText className="w-4 h-4" />
-                Required Documents
+                Required Documents Checklist
               </div>
               <h2 className="font-serif text-white text-3xl sm:text-4xl font-semibold leading-tight mb-6">
                 Documents You'll Need
               </h2>
               <p className="text-white/80 leading-relaxed mb-8">
-                While specific requirements vary by visa type and destination, here are the commonly required documents for most visa applications.
+                While specific requirements vary by visa type and destination, here are the commonly required documents for most student visa applications.
               </p>
               <ul className="space-y-3">
                 {requiredDocuments.map((doc, index) => (
@@ -241,15 +220,130 @@ export default function VisaPage() {
         </div>
       </section>
 
-      {/* Why Choose RouteX */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
+      {/* 4.3 Visa Interview Preparation */}
+      <section id="visa-interview-preparation" className="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div className="flex items-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide mb-4">
+              <MessageCircle className="w-4 h-4" />
+              Visa Interview Preparation
+            </div>
+            <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold leading-tight mb-6">
+              Walk Into Your Interview With Confidence
+            </h2>
+            <p className="text-gray-600 leading-relaxed">
+              Common visa interview questions Pakistani students face, how to answer confidently, and mistakes to avoid.
+            </p>
+          </div>
+          <ul className="space-y-3">
+            {interviewTips.map((tip, index) => (
+              <li key={index} className="flex items-start gap-3 bg-[#fafbf9] rounded-xl p-4 shadow-sm">
+                <CheckCircle className="w-5 h-5 text-lime-600 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-700 text-sm">{tip}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* 4.4 Financial Proof & Sponsorship Guidance */}
+      <section id="financial-proof-sponsorship" className="bg-[#fafbf9] py-16 sm:py-24">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10">
+          <div className="text-center mb-14">
+            <div className="flex items-center justify-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide">
+              <DollarSign className="w-4 h-4" />
+              Financial Proof & Sponsorship Guidance
+            </div>
+            <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
+              Get Your Financial Documents Right
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto mt-4">
+              How to prepare bank statements, sponsorship letters, and financial documents that satisfy embassy requirements.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {financialGuidance.map((item, index) => (
+              <div key={index} className="flex items-start gap-3 bg-white rounded-xl shadow-md p-5">
+                <CheckCircle className="w-5 h-5 text-lime-600 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-700 text-sm">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4.5 Visa Rejection: Common Reasons & How to Reapply */}
+      <section id="visa-rejection-reapply" className="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
+        <div className="text-center mb-14">
+          <div className="flex items-center justify-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide">
+            <XCircle className="w-4 h-4" />
+            Visa Rejection: Common Reasons & How to Reapply
+          </div>
+          <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
+            Turn a Rejection Into an Approval
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div>
+            <h3 className="font-serif font-semibold text-emerald-900 text-lg mb-4">Common Rejection Reasons</h3>
+            <ul className="space-y-3">
+              {rejectionReasons.map((reason, index) => (
+                <li key={index} className="flex items-start gap-3 text-gray-700 text-sm">
+                  <XCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                  <span>{reason}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-serif font-semibold text-emerald-900 text-lg mb-4">Steps to Reapply</h3>
+            <ul className="space-y-3">
+              {reapplySteps.map((step, index) => (
+                <li key={index} className="flex items-start gap-3 text-gray-700 text-sm">
+                  <CheckCircle className="w-5 h-5 text-lime-600 flex-shrink-0 mt-0.5" />
+                  <span>{step}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* 4.6 Pre-Departure Checklist */}
+      <section id="pre-departure-checklist" className="bg-emerald-900 rounded-3xl py-16 sm:py-24 mx-4 lg:mx-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10">
+          <div className="text-center mb-14">
+            <div className="flex items-center justify-center gap-2 text-lime-400 font-semibold text-sm uppercase tracking-wide">
+              <PlaneTakeoff className="w-4 h-4" />
+              Pre-Departure Checklist
+            </div>
+            <h2 className="font-serif text-white text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
+              Ready to Fly? Check This First
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {preDepartureChecklist.map((item, index) => (
+              <div key={index} className="flex items-start gap-3 bg-white/10 backdrop-blur rounded-xl p-5">
+                <CheckCircle className="w-5 h-5 text-lime-400 flex-shrink-0 mt-0.5" />
+                <span className="text-white/90 text-sm">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Studyabroad */}
+      {/* <section className="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
         <div className="text-center mb-14">
           <div className="flex items-center justify-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide">
             <ShieldCheck className="w-4 h-4" />
-            Why Choose RouteX
+            Why Choose Studyabroad
           </div>
           <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
-            Your Trusted Visa Partner
+            Your Trusted Student Visa Partner
           </h2>
         </div>
 
@@ -271,67 +365,13 @@ export default function VisaPage() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
-      {/* FAQ */}
-      <section className="bg-[#eef2e9] py-16 sm:py-24">
-        <div className="max-w-4xl mx-auto px-6 sm:px-10">
-          <div className="text-center mb-14">
-            <div className="flex items-center justify-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide">
-              <ShieldCheck className="w-4 h-4" />
-              FAQ
-            </div>
-            <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
-              Frequently Asked Questions
-            </h2>
-          </div>
-
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden">
-                <button
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full px-6 py-4 flex items-center justify-between text-left"
-                >
-                  <span className="font-semibold text-emerald-900">{faq.question}</span>
-                  <ChevronRight className={`w-5 h-5 text-gray-400 transition-transform ${openFaq === index ? 'rotate-90' : ''}`} />
-                </button>
-                {openFaq === index && (
-                  <div className="px-6 pb-4 pt-0">
-                    <p className="text-gray-600">{faq.answer}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Faq />
+   
 
       {/* CTA */}
-      <section className="bg-gradient-to-r from-emerald-900 to-emerald-800 py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 text-center">
-          <h2 className="font-serif text-white text-3xl sm:text-4xl font-semibold leading-tight mb-6">
-            Ready to Start Your Visa Application?
-          </h2>
-          <p className="text-white/90 text-lg max-w-2xl mx-auto mb-8">
-            Contact our expert visa consultants today and take the first step towards your international journey.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-lime-500 hover:bg-lime-600 text-white font-medium px-8 py-4 rounded-full transition-colors"
-            >
-              Get Started <ChevronRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/appointment"
-              className="inline-flex items-center gap-2 bg-transparent border-2 border-white text-white font-medium px-8 py-4 rounded-full hover:bg-white hover:text-emerald-900 transition-colors"
-            >
-              Book Consultation
-            </Link>
-          </div>
-        </div>
-      </section>
+    
     </div>
   );
 }
