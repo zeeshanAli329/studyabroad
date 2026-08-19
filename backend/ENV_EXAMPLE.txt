@@ -1,0 +1,25 @@
+DATABASE_URL="postgresql://neondb_owner:npg_ojcer3IK0XNT@ep-restless-boat-avwqx9g5-pooler.c-11.us-east-1.aws.neon.tech/neondb?channel_binding=require&sslmode=require"
+JWT_SECRET="your-super-secret-jwt-key-change-in-production"
+PORT=5000
+NODE_ENV=development
+
+# Admin Authorization Settings
+# Comma-separated list of authorized admin emails (lowercase)
+ADMIN_ALLOWED_EMAILS="admin@studyabroad.com,manager@studyabroad.com"
+
+# Comma-separated list of authorized admin usernames (lowercase)
+ADMIN_ALLOWED_USERNAMES="zeeshanadmin,manager01"
+
+# Enable/disable admin signup (true/false)
+ADMIN_SIGNUP_ENABLED="true"
+
+# Email Configuration (Gmail SMTP)
+SMTP_HOST="smtp.gmail.com"
+SMTP_PORT="465"
+SMTP_SECURE="true"
+SMTP_USER="your-email@gmail.com"
+SMTP_PASSWORD="your-app-password-here"
+ADMIN_EMAIL="admin@studyabroad.com"
+
+# Frontend URL
+FRONTEND_URL="http://localhost:3000"

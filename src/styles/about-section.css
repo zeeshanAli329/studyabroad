@@ -1,0 +1,66 @@
+/* About Section
+   Lightweight performance helpers.
+*/
+
+@media (prefers-reduced-motion: reduce) {
+  .group,
+  .group *,
+  .group\/btn,
+  .group\/btn *,
+  .group\/stat,
+  .group\/stat * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+/* =========================================================
+   ABOUT SECTION
+   Performance + accessibility helpers
+========================================================= */
+
+.about-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
+}
+
+/* Prevent unnecessary animation work for users
+   who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .about-section *,
+  .about-section *::before,
+  .about-section *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Smaller devices:
+   reduce expensive hover transformations */
+@media (max-width: 640px) {
+  .about-section .group:hover img {
+    transform: none;
+  }
+}
+
+/* Avoid excessive blur rendering on lower-powered devices */
+@media (max-width: 768px) {
+  .about-section .blur-3xl {
+    filter: blur(45px);
+  }
+}
+
+/* Keep images visually stable while loading */
+.about-section img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Improve text rendering */
+.about-section h2,
+.about-section h3,
+.about-section p {
+  text-wrap: pretty;
+}

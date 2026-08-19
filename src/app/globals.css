@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+:root {
+
+  /* ===========================
+      COLORS
+  ============================ */
+
+
+/* this is for  btns */
+--primary: #6FA82F;
+/* this for headings */
+--primary-dark: #034833;
+  /* this is for fill effects */
+  --primary-light: #A8D85B;
+
+
+
+
+
+  --secondary: #0E4A3A;
+  --secondary-light: #1D5D4A;
+
+  --accent: #F4F7EF;
+
+  --background: #FFFFFF;
+  --background-light: #F8F9F5;
+
+  --text-primary: #132A22;
+  --text-secondary: #6B7280;
+  --text-light: #FFFFFF;
+
+  --border: #E5E7EB;
+
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+
+  /* ===========================
+      FONT FAMILY
+  ============================ */
+
+  --font-primary: var(--font-poppins), sans-serif;
+  --font-heading: var(--font-playfair), serif;
+
+  /* ===========================
+      FONT SIZE
+  ============================ */
+
+  --fs-xs: 12px;
+  --fs-sm: 14px;
+  --fs-base: 16px;
+  --fs-lg: 18px;
+  --fs-nav: 16px;
+  --fs-btn: 16px;
+  --fs-h6: 18px;
+  --fs-h5: 20px;
+  --fs-h4: 24px;
+  --fs-h3: 32px;
+  --fs-h2: 42px;
+  --fs-h1: 58px;
+
+  /* ===========================
+      FONT WEIGHT
+  ============================ */
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ===========================
+      BORDER RADIUS
+  ============================ */
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 30px;
+  --radius-full: 999px;
+
+  /* ===========================
+      SPACING
+  ============================ */
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 48px;
+  --space-9: 64px;
+  --space-10: 80px;
+
+  /* ===========================
+      SHADOWS
+  ============================ */
+
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.06);
+  --shadow-md: 0 8px 20px rgba(0,0,0,.08);
+  --shadow-lg: 0 15px 40px rgba(0,0,0,.12);
+
+  /* ===========================
+      CONTAINER
+  ============================ */
+
+  --container: 1320px;
+}
+
+/* ===========================
+    UTILITY CLASSES (root ke bahar)
+============================ */
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card-hover:hover img {
+  transform: scale(1.05);
+}
+
+.button-hover {
+  transition: all 0.3s ease;
+}
+
+.button-hover:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(140, 198, 63, 0.3);
+}
+
+.button-hover:active {
+  transform: scale(0.98);
+}
+
+.image-zoom {
+  overflow: hidden;
+}
+
+.image-zoom img {
+  transition: transform 0.5s ease;
+}
+
+.image-zoom:hover img {
+  transform: scale(1.1);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: 2;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: 3;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+@import "../styles/home-performance.css";
