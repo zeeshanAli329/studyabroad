@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 
 import { HiBars3 } from "react-icons/hi2";
 import { IoClose } from "react-icons/io5";
@@ -233,7 +233,8 @@ const NavBar = () => {
         }`}
       >
         <div className="flex items-center justify-between border-b p-6">
-          <Image src="/logo2.png" alt="Logo" width={140} height={45} />
+          {/* <Image src="/logo2.png" alt="Logo" width={140} height={45} /> */}
+          <img src="/logo2.png" alt="Logo" width={140} height={45} />
 
           <button onClick={() => setMenuOpen(false)} className="text-3xl">
             <IoClose />
