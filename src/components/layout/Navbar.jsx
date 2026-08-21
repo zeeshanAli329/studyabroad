@@ -273,7 +273,7 @@ const NavBar = () => {
       >
         <div className="flex items-center justify-between border-b p-6">
           {/* <Image src="/logo2.png" alt="Logo" width={140} height={45} /> */}
-          <img src="/logo2.png" alt="Logo" width={140} height={45} />
+          <img src="/logo2.svg" alt="Logo" width={140} height={45} />
 
           <button onClick={() => setMenuOpen(false)} className="text-3xl">
             <IoClose />
