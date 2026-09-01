@@ -55,7 +55,8 @@ export function ContactSection() {
           {/* Illustration */}
           <Reveal y={30} className="flex justify-center lg:justify-start">
             <img
-              src="https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/contact-left-img.png"
+              // src="https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/contact-left-img.png"
+                src="contact-left-img2.png"
               alt="Travel planning illustration"
               className="w-full max-w-md object-contain"
             />
