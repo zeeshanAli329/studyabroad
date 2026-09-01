@@ -19,14 +19,14 @@ function WhoWeAre() {
 
         <div>
           <Reveal>
-            <div className="flex items-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide">
+            <div className="flex items-center gap-2 text-[var(--primary)] font-semibold text-sm uppercase tracking-wide">
               <ShieldCheck className="w-4 h-4" />
               Who We Are
             </div>
           </Reveal>
 
           <Reveal delay={100}>
-            <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
+            <h2 className="font-serif text-[var(--primary)] text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
               Your Trusted Partner in
               <br className="hidden sm:block" /> International Education
             </h2>

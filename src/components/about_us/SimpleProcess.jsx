@@ -37,7 +37,7 @@ export function SimpleProcess() {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-[#fafbf9]"
+      className="relative w-full overflow-hidden bg-[var(--background-light)]"
       style={{
         backgroundImage:
           "url('https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/process-bg.png')",
@@ -48,14 +48,14 @@ export function SimpleProcess() {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24 text-center">
         <Reveal>
-          <div className="flex items-center justify-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide">
+          <div className="flex items-center justify-center gap-2 text-[var(--primary)] font-semibold text-sm uppercase tracking-wide">
             <ShieldCheck className="w-4 h-4" />
             Our Process
           </div>
         </Reveal>
 
         <Reveal delay={100}>
-          <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold mt-4 leading-tight max-w-2xl mx-auto">
+          <h2 className="font-serif text-[var(--primary)] text-3xl sm:text-4xl font-semibold mt-4 leading-tight max-w-2xl mx-auto">
             Your Journey in Four Simple Steps
           </h2>
         </Reveal>
@@ -68,10 +68,10 @@ export function SimpleProcess() {
               y={30}
             >
               <div className="bg-white rounded-2xl shadow-md p-6 h-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                <span className="block font-serif text-4xl font-bold text-emerald-900 mb-4">
+                <span className="block font-serif text-4xl font-bold text-[var(--primary)] mb-4">
                   {step.num}
                 </span>
-                <h3 className="font-serif font-semibold text-emerald-900 text-lg mb-3">
+                <h3 className="font-serif font-semibold text-[var(--primary)] text-lg mb-3">
                   {step.title}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed">

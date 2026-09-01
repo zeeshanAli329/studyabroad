@@ -152,7 +152,7 @@ export default function AdminHeader({ title, subtitle }) {
                 <HiOutlineBell className="w-5 h-5" />
               )}
               {unreadCount > 0 && (
-                <span className="absolute top-1.5 right-1.5 w-5 h-5 bg-[#8CC63F] text-white text-xs rounded-full flex items-center justify-center font-semibold">
+                <span className="absolute top-1.5 right-1.5 w-5 h-5 bg-[var(--primary)] text-white text-xs rounded-full flex items-center justify-center font-semibold">
                   {unreadCount > 9 ? '9+' : unreadCount}
                 </span>
               )}
@@ -171,7 +171,7 @@ export default function AdminHeader({ title, subtitle }) {
                     {unreadCount > 0 && (
                       <button
                         onClick={handleMarkAllAsRead}
-                        className="text-xs text-[#8CC63F] hover:text-[#7AB32F] font-medium"
+                        className="text-xs text-[var(--primary)] hover:text-[var(--primary)] font-medium"
                       >
                         Mark all as read
                       </button>
@@ -189,7 +189,7 @@ export default function AdminHeader({ title, subtitle }) {
                         className="w-full px-4 py-3 text-left hover:bg-gray-50 transition-colors border-b border-gray-50 last:border-0"
                       >
                         <div className="flex items-start gap-3">
-                          <div className="w-2 h-2 mt-2 bg-[#8CC63F] rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 mt-2 bg-[var(--primary)] rounded-full flex-shrink-0"></div>
                           <div className="flex-1 min-w-0">
                             <p className="text-sm font-medium text-gray-900 truncate">{notification.title}</p>
                             <p className="text-xs text-gray-500 mt-1 line-clamp-2">{notification.message}</p>
@@ -218,7 +218,7 @@ export default function AdminHeader({ title, subtitle }) {
               onClick={() => setShowDropdown(!showDropdown)}
               className="flex items-center gap-3 p-2 hover:bg-gray-100 rounded-xl transition-all duration-200"
             >
-              <div className="w-9 h-9 bg-gradient-to-br from-[#8CC63F] to-[#7AB32F] rounded-xl flex items-center justify-center text-white text-sm font-semibold shadow-sm">
+              <div className="w-9 h-9 bg-gradient-to-br from-[var(--primary)] to-[var(--primary)] rounded-xl flex items-center justify-center text-white text-sm font-semibold shadow-sm">
                 {user?.fullName?.charAt(0) || user?.email?.charAt(0) || 'A'}
               </div>
               <div className="hidden md:block text-left">

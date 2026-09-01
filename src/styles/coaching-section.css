@@ -5,7 +5,7 @@
 .coaching-section {
   width: 100%;
   padding: 70px 19px 72px;
-  background: #f7f9f1;
+  background: var(--background-light);
   overflow: hidden;
 }
 
@@ -40,7 +40,7 @@
 
   margin-bottom: 10px;
 
-  color: #034833;
+  color: var(--primary-dark);
 
   font-family: Georgia, "Times New Roman", serif;
   font-size: 12px;
@@ -64,7 +64,7 @@
 .coaching-section__heading h2 {
   margin: 0;
 
-  color: #034833;
+  color: var(--primary-dark);
 
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(38px, 3.45vw, 54px);
@@ -97,11 +97,11 @@
 
   padding: 0;
 
-  border: 2px solid #e5dfd9;
+  border: 2px solid var(--border);
   border-radius: 50%;
 
   background: transparent;
-  color: #034833;
+  color: var(--primary-dark);
 
   cursor: pointer;
 
@@ -112,9 +112,9 @@
 }
 
 .coaching-section__arrow:hover {
-  background: #7ed218;
-  border-color: #7ed218;
-  color: #ffffff;
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--surface);
 }
 
 .coaching-section__arrow svg {
@@ -215,7 +215,7 @@
 
   padding: 20px 24px 20px 27px;
 
-  background: #ffffff;
+  background: var(--surface);
 
   border-radius: 21px 0 10px 0;
 }
@@ -231,7 +231,7 @@
 .coaching-card__text h3 {
   margin: 0 0 9px;
 
-  color: #034833;
+  color: var(--primary-dark);
 
   font-family: Georgia, "Times New Roman", serif;
   font-size: 20px;
@@ -246,7 +246,7 @@
 
   margin: 0;
 
-  color: #747671;
+  color: var(--text-secondary);
 
   font-family: Georgia, "Times New Roman", serif;
   font-size: 13px;
@@ -271,11 +271,11 @@
   margin-left: auto;
   padding: 0;
 
-  border: 2px solid #e5dfd9;
+  border: 2px solid var(--border);
   border-radius: 14px;
 
-  background: #ffffff;
-  color: #034833;
+  background: var(--surface);
+  color: var(--primary-dark);
 
   cursor: pointer;
 
@@ -292,9 +292,9 @@
 
 /* ONLY FILL EFFECT */
 .coaching-card__button:hover {
-  background: #7ed218;
-  border-color: #7ed218;
-  color: #ffffff;
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--surface);
 }
 
 /* =========================================================

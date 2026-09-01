@@ -322,7 +322,7 @@ export default function FundingCalculator({
           </div>
 
           {/* Result */}
-          <aside className="border-t border-gray-100 bg-[#f7faf8] p-6 lg:border-l lg:border-t-0 lg:p-8">
+          <aside className="border-t border-gray-100 bg-[var(--background-light)] p-6 lg:border-l lg:border-t-0 lg:p-8">
             <div className="sticky top-6">
               <p className="text-xs font-bold uppercase tracking-[.2em] text-[var(--primary)]">
                 Estimated Budget

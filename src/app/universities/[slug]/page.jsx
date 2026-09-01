@@ -45,7 +45,7 @@ export default function UniversityDetailPage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen bg-[#f8faf8] pt-24">
+      <main className="min-h-screen bg-[var(--background-light)] pt-24">
         <div className="flex min-h-[70vh] items-center justify-center px-6">
           <div className="text-center">
             <div className="mx-auto h-12 w-12 animate-spin rounded-full border-2 border-gray-200 border-b-[var(--primary)]" />
@@ -65,7 +65,7 @@ export default function UniversityDetailPage() {
 
   if (error || !university) {
     return (
-      <main className="min-h-screen bg-[#f8faf8] pt-24">
+      <main className="min-h-screen bg-[var(--background-light)] pt-24">
         <div className="mx-auto flex min-h-[70vh] max-w-3xl items-center px-6">
           <div className="w-full rounded-3xl border border-gray-200 bg-white p-10 text-center shadow-sm">
 
@@ -73,7 +73,7 @@ export default function UniversityDetailPage() {
               !
             </div>
 
-            <h1 className="mt-6 font-serif text-3xl font-semibold text-emerald-950">
+            <h1 className="mt-6 font-serif text-3xl font-semibold text-[var(--primary)]">
               University Not Found
             </h1>
 
@@ -83,7 +83,7 @@ export default function UniversityDetailPage() {
 
             <Link
               href="/universities"
-              className="mt-7 inline-flex items-center rounded-xl border border-emerald-900 bg-emerald-900 px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:border-lime-500 hover:bg-lime-500"
+              className="mt-7 inline-flex items-center rounded-xl border border-[var(--primary)] bg-[var(--primary)] px-6 py-3 text-sm font-medium text-white transition-all duration-300 hover:border-[var(--primary)] hover:bg-[var(--primary)]"
             >
               ← Back to Universities
             </Link>
@@ -94,7 +94,7 @@ export default function UniversityDetailPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#f8faf8]  pb-20">
+    <main className="min-h-screen bg-[var(--background-light)]  pb-20">
 
       {/* =====================================================
           TOP IMAGE SECTION
@@ -104,7 +104,7 @@ export default function UniversityDetailPage() {
 
 
         {/* IMAGE CARD */}
-        <div className="relative overflow-hidden rounded-[28px] border border-gray-200 bg-emerald-950 shadow-xl">
+        <div className="relative overflow-hidden rounded-[28px] border border-gray-200 bg-[var(--primary)] shadow-xl">
 
           <div className="relative h-[320px] sm:h-[420px] lg:h-[520px]">
 
@@ -123,7 +123,7 @@ export default function UniversityDetailPage() {
                 }}
               />
             ) : (
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-emerald-950 via-emerald-900 to-lime-900">
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[var(--primary-dark)] via-[var(--primary-dark)] to-[var(--primary-dark)]">
                 <div className="text-center text-white/70">
                   <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-white/20 bg-white/10 text-2xl">
                     🎓
@@ -142,7 +142,7 @@ export default function UniversityDetailPage() {
             <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10 lg:p-14">
 
               {university.country?.name && (
-                <span className="inline-flex rounded-full border border-lime-400/50 bg-emerald-950/70 px-4 py-2 text-xs font-semibold text-lime-300 backdrop-blur-md">
+                <span className="inline-flex rounded-full border border-[var(--primary)]/50 bg-[var(--primary)]/70 px-4 py-2 text-xs font-semibold text-white backdrop-blur-md">
                   {university.country.name}
                 </span>
               )}
@@ -180,16 +180,16 @@ export default function UniversityDetailPage() {
 
               <div className="flex items-start gap-4">
 
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-lime-200 bg-lime-50 text-lg">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--background-light)] text-lg">
                   🎓
                 </div>
 
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-lime-600">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--primary)]">
                     About University
                   </p>
 
-                  <h2 className="mt-1 font-serif text-2xl font-semibold text-emerald-950 sm:text-3xl">
+                  <h2 className="mt-1 font-serif text-2xl font-semibold text-[var(--primary)] sm:text-3xl">
                     {university.name}
                   </h2>
                 </div>
@@ -206,59 +206,59 @@ export default function UniversityDetailPage() {
             {/* LOCATION / EXPERIENCE */}
             <section className="rounded-3xl border border-gray-200 bg-white p-7 shadow-sm sm:p-9">
 
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-lime-600">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--primary)]">
                 University Information
               </p>
 
-              <h2 className="mt-2 font-serif text-2xl font-semibold text-emerald-950">
+              <h2 className="mt-2 font-serif text-2xl font-semibold text-[var(--primary)]">
                 Discover {university.name}
               </h2>
 
               <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2">
 
                 {university.country?.name && (
-                  <div className="rounded-2xl border border-gray-200 p-5 transition-all duration-300 hover:border-lime-400 hover:bg-lime-50/50">
+                  <div className="rounded-2xl border border-gray-200 p-5 transition-all duration-300 hover:border-[var(--primary)] hover:bg-[var(--background-light)]/50">
                     <p className="text-xs font-medium uppercase tracking-wide text-gray-400">
                       Country
                     </p>
 
-                    <p className="mt-2 font-medium text-emerald-950">
+                    <p className="mt-2 font-medium text-[var(--primary)]">
                       {university.country.name}
                     </p>
                   </div>
                 )}
 
                 {university.location && (
-                  <div className="rounded-2xl border border-gray-200 p-5 transition-all duration-300 hover:border-lime-400 hover:bg-lime-50/50">
+                  <div className="rounded-2xl border border-gray-200 p-5 transition-all duration-300 hover:border-[var(--primary)] hover:bg-[var(--background-light)]/50">
                     <p className="text-xs font-medium uppercase tracking-wide text-gray-400">
                       Location
                     </p>
 
-                    <p className="mt-2 font-medium text-emerald-950">
+                    <p className="mt-2 font-medium text-[var(--primary)]">
                       {university.location}
                     </p>
                   </div>
                 )}
 
                 {university.founded && (
-                  <div className="rounded-2xl border border-gray-200 p-5 transition-all duration-300 hover:border-lime-400 hover:bg-lime-50/50">
+                  <div className="rounded-2xl border border-gray-200 p-5 transition-all duration-300 hover:border-[var(--primary)] hover:bg-[var(--background-light)]/50">
                     <p className="text-xs font-medium uppercase tracking-wide text-gray-400">
                       Founded
                     </p>
 
-                    <p className="mt-2 font-medium text-emerald-950">
+                    <p className="mt-2 font-medium text-[var(--primary)]">
                       {university.founded}
                     </p>
                   </div>
                 )}
 
                 {university.ranking && (
-                  <div className="rounded-2xl border border-lime-300 bg-lime-50 p-5">
-                    <p className="text-xs font-medium uppercase tracking-wide text-lime-700">
+                  <div className="rounded-2xl border border-[var(--border)] bg-[var(--background-light)] p-5">
+                    <p className="text-xs font-medium uppercase tracking-wide text-[var(--primary)]">
                       World Ranking
                     </p>
 
-                    <p className="mt-2 text-2xl font-semibold text-emerald-950">
+                    <p className="mt-2 text-2xl font-semibold text-[var(--primary)]">
                       #{university.ranking}
                     </p>
                   </div>
@@ -278,10 +278,10 @@ export default function UniversityDetailPage() {
                     className="h-full w-full object-cover"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--primary-dark)]/60 to-transparent" />
 
                   <div className="absolute bottom-0 left-0 p-6 sm:p-8">
-                    <p className="text-sm font-medium text-lime-300">
+                    <p className="text-sm font-medium text-[var(--primary)]">
                       Study Abroad
                     </p>
 
@@ -304,59 +304,59 @@ export default function UniversityDetailPage() {
             {/* QUICK FACTS */}
             <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm sm:p-7">
 
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-lime-600">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--primary)]">
                 Quick Overview
               </p>
 
-              <h3 className="mt-2 font-serif text-2xl font-semibold text-emerald-950">
+              <h3 className="mt-2 font-serif text-2xl font-semibold text-[var(--primary)]">
                 University Facts
               </h3>
 
               <div className="mt-6 space-y-3">
 
                 {university.country?.name && (
-                  <div className="rounded-2xl border border-gray-100 p-4 transition-all hover:border-lime-300 hover:bg-lime-50">
+                  <div className="rounded-2xl border border-gray-100 p-4 transition-all hover:border-[var(--border)] hover:bg-[var(--background-light)]">
                     <p className="text-[10px] font-medium uppercase tracking-widest text-gray-400">
                       Country
                     </p>
 
-                    <p className="mt-1 text-sm font-medium text-emerald-950">
+                    <p className="mt-1 text-sm font-medium text-[var(--primary)]">
                       {university.country.name}
                     </p>
                   </div>
                 )}
 
                 {university.location && (
-                  <div className="rounded-2xl border border-gray-100 p-4 transition-all hover:border-lime-300 hover:bg-lime-50">
+                  <div className="rounded-2xl border border-gray-100 p-4 transition-all hover:border-[var(--border)] hover:bg-[var(--background-light)]">
                     <p className="text-[10px] font-medium uppercase tracking-widest text-gray-400">
                       Location
                     </p>
 
-                    <p className="mt-1 text-sm font-medium text-emerald-950">
+                    <p className="mt-1 text-sm font-medium text-[var(--primary)]">
                       {university.location}
                     </p>
                   </div>
                 )}
 
                 {university.ranking && (
-                  <div className="rounded-2xl border border-lime-300 bg-lime-50 p-4">
-                    <p className="text-[10px] font-medium uppercase tracking-widest text-lime-700">
+                  <div className="rounded-2xl border border-[var(--border)] bg-[var(--background-light)] p-4">
+                    <p className="text-[10px] font-medium uppercase tracking-widest text-[var(--primary)]">
                       World Ranking
                     </p>
 
-                    <p className="mt-1 text-xl font-semibold text-emerald-950">
+                    <p className="mt-1 text-xl font-semibold text-[var(--primary)]">
                       #{university.ranking}
                     </p>
                   </div>
                 )}
 
                 {university.founded && (
-                  <div className="rounded-2xl border border-gray-100 p-4 transition-all hover:border-lime-300 hover:bg-lime-50">
+                  <div className="rounded-2xl border border-gray-100 p-4 transition-all hover:border-[var(--border)] hover:bg-[var(--background-light)]">
                     <p className="text-[10px] font-medium uppercase tracking-widest text-gray-400">
                       Founded
                     </p>
 
-                    <p className="mt-1 text-sm font-medium text-emerald-950">
+                    <p className="mt-1 text-sm font-medium text-[var(--primary)]">
                       {university.founded}
                     </p>
                   </div>
@@ -367,9 +367,9 @@ export default function UniversityDetailPage() {
 
             {/* WEBSITE */}
             {university.website && (
-              <div className="rounded-3xl border border-emerald-800 bg-emerald-950 p-7 shadow-sm">
+              <div className="rounded-3xl border border-[var(--primary)] bg-[var(--primary)] p-7 shadow-sm">
 
-                <p className="text-xs font-medium uppercase tracking-[0.2em] text-lime-300">
+                <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/80">
                   Official Website
                 </p>
 
@@ -386,7 +386,7 @@ export default function UniversityDetailPage() {
                   href={university.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 flex w-full items-center justify-center rounded-xl border border-lime-400 bg-lime-400 px-5 py-3 text-sm font-semibold text-emerald-950 transition-all duration-300 hover:bg-transparent hover:text-lime-300"
+                  className="mt-6 flex w-full items-center justify-center rounded-xl border border-white/70 bg-white px-5 py-3 text-sm font-semibold text-[var(--primary)] transition-all duration-300 hover:bg-transparent hover:text-white"
                 >
                   Visit Official Website →
                 </a>
@@ -394,13 +394,13 @@ export default function UniversityDetailPage() {
             )}
 
             {/* CTA */}
-            <div className="rounded-3xl border border-lime-300 bg-lime-50 p-7">
+            <div className="rounded-3xl border border-[var(--border)] bg-[var(--background-light)] p-7">
 
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-lime-700">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--primary)]">
                 Start Your Journey
               </p>
 
-              <h3 className="mt-3 font-serif text-2xl font-semibold leading-tight text-emerald-950">
+              <h3 className="mt-3 font-serif text-2xl font-semibold leading-tight text-[var(--primary)]">
                 Interested in studying here?
               </h3>
 
@@ -411,7 +411,7 @@ export default function UniversityDetailPage() {
 
               <Link
                 href="/contact"
-                className="mt-6 flex w-full items-center justify-center rounded-xl border border-emerald-900 bg-emerald-900 px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:border-lime-500 hover:bg-lime-500"
+                className="mt-6 flex w-full items-center justify-center rounded-xl border border-[var(--primary)] bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:border-[var(--primary)] hover:bg-[var(--primary)]"
               >
                 Get Guidance
               </Link>

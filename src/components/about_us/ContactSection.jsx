@@ -49,7 +49,7 @@ export function ContactSection() {
   };
 
   return (
-    <section className="w-full bg-[#eef2e9]">
+    <section className="w-full bg-[var(--background-light)]">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Illustration */}
@@ -64,14 +64,14 @@ export function ContactSection() {
           {/* Form */}
           <div>
             <Reveal>
-              <div className="flex items-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide">
+              <div className="flex items-center gap-2 text-[var(--primary)] font-semibold text-sm uppercase tracking-wide">
                 <ChevronRight className="w-4 h-4 rotate-180" />
                 Contact Information
               </div>
             </Reveal>
 
             <Reveal delay={100}>
-              <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold mt-4 mb-8 leading-tight">
+              <h2 className="font-serif text-[var(--primary)] text-3xl sm:text-4xl font-semibold mt-4 mb-8 leading-tight">
                 Let Your Wanderlust
                 <br /> Guide You
               </h2>
@@ -92,7 +92,7 @@ export function ContactSection() {
                       name="name"
                       required
                       placeholder="Your Name"
-                      className="w-full border border-gray-200 rounded-full px-5 py-3 pr-11 text-sm outline-none focus:border-lime-500 transition-colors"
+                      className="w-full border border-gray-200 rounded-full px-5 py-3 pr-11 text-sm outline-none focus:border-[var(--primary)] transition-colors"
                     />
                   </div>
                 </div>
@@ -108,7 +108,7 @@ export function ContactSection() {
                         name="email"
                         required
                         placeholder="Your Email"
-                        className="w-full border border-gray-200 rounded-full px-5 py-3 pr-11 text-sm outline-none focus:border-lime-500 transition-colors"
+                        className="w-full border border-gray-200 rounded-full px-5 py-3 pr-11 text-sm outline-none focus:border-[var(--primary)] transition-colors"
                       />
                       <Mail className="w-4 h-4 text-gray-400 absolute right-4 top-1/2 -translate-y-1/2" />
                     </div>
@@ -122,7 +122,7 @@ export function ContactSection() {
                         type="tel"
                         name="phone"
                         placeholder="Your Phone"
-                        className="w-full border border-gray-200 rounded-full px-5 py-3 pr-11 text-sm outline-none focus:border-lime-500 transition-colors"
+                        className="w-full border border-gray-200 rounded-full px-5 py-3 pr-11 text-sm outline-none focus:border-[var(--primary)] transition-colors"
                       />
                       <Phone className="w-4 h-4 text-gray-400 absolute right-4 top-1/2 -translate-y-1/2" />
                     </div>
@@ -138,7 +138,7 @@ export function ContactSection() {
                       type="text"
                       name="subject"
                       placeholder="Subject"
-                      className="w-full border border-gray-200 rounded-full px-5 py-3 pr-11 text-sm outline-none focus:border-lime-500 transition-colors"
+                      className="w-full border border-gray-200 rounded-full px-5 py-3 pr-11 text-sm outline-none focus:border-[var(--primary)] transition-colors"
                     />
                     <MapPin className="w-4 h-4 text-gray-400 absolute right-4 top-1/2 -translate-y-1/2" />
                   </div>
@@ -154,7 +154,7 @@ export function ContactSection() {
                       required
                       placeholder="Write Message.."
                       rows={4}
-                      className="w-full border border-gray-200 rounded-2xl px-5 py-3 pr-11 text-sm outline-none focus:border-lime-500 transition-colors resize-none"
+                      className="w-full border border-gray-200 rounded-2xl px-5 py-3 pr-11 text-sm outline-none focus:border-[var(--primary)] transition-colors resize-none"
                     />
                     <Mail className="w-4 h-4 text-gray-400 absolute right-4 top-4" />
                   </div>
@@ -163,7 +163,7 @@ export function ContactSection() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full bg-lime-500 hover:bg-lime-600 text-white font-medium rounded-full py-3.5 flex items-center justify-center gap-2 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white font-medium rounded-full py-3.5 flex items-center justify-center gap-2 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {submitting ? 'Sending...' : (
                     <>
@@ -173,7 +173,7 @@ export function ContactSection() {
                 </button>
 
                 {successMessage && (
-                  <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg text-center font-medium">
+                  <div className="bg-[var(--success)]/10 border border-[var(--success)]/30 text-[var(--success)] px-4 py-3 rounded-lg text-center font-medium">
                     {successMessage}
                   </div>
                 )}

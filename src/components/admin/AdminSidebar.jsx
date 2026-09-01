@@ -77,7 +77,7 @@ export default function AdminSidebar() {
       {/* Mobile Menu Button */}
       <button
         onClick={() => setMobileMenuOpen(true)}
-        className="lg:hidden fixed top-4 left-4 z-50 bg-[#8CC63F] text-white p-3 rounded-xl shadow-lg hover:bg-[#7AB32F] transition-all duration-200"
+        className="lg:hidden fixed top-4 left-4 z-50 bg-[var(--primary)] text-white p-3 rounded-xl shadow-lg hover:bg-[var(--primary)] transition-all duration-200"
       >
         <HiBars3 className="w-6 h-6" />
       </button>
@@ -133,7 +133,7 @@ export default function AdminSidebar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block px-4 py-3 rounded-xl transition-all duration-200 text-sm font-medium ${
                   isActive(item.href)
-                    ? "bg-[#8CC63F]/10 text-[#8CC63F] font-semibold"
+                    ? "bg-[var(--primary)]/10 text-[var(--primary)] font-semibold"
                     : "text-gray-700 hover:bg-gray-50"
                 }`}
               >
@@ -150,7 +150,7 @@ export default function AdminSidebar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block px-4 py-3 rounded-xl transition-all duration-200 text-sm font-medium ${
                   isActive(item.href)
-                    ? "bg-[#8CC63F]/10 text-[#8CC63F] font-semibold"
+                    ? "bg-[var(--primary)]/10 text-[var(--primary)] font-semibold"
                     : "text-gray-700 hover:bg-gray-50"
                 }`}
               >
@@ -167,7 +167,7 @@ export default function AdminSidebar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block px-4 py-3 rounded-xl transition-all duration-200 text-sm font-medium ${
                   isActive(item.href)
-                    ? "bg-[#8CC63F]/10 text-[#8CC63F] font-semibold"
+                    ? "bg-[var(--primary)]/10 text-[var(--primary)] font-semibold"
                     : "text-gray-700 hover:bg-gray-50"
                 }`}
               >

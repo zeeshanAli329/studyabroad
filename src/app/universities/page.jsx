@@ -184,7 +184,7 @@ export default function UniversitiesPage() {
             </button>
           </div>
         ) : universities.length === 0 ? (
-          <div className="rounded-3xl border border-[var(--primary)]/10 bg-[#fafcf8] py-20 text-center">
+          <div className="rounded-3xl border border-[var(--primary)]/10 bg-[var(--background-light)] py-20 text-center">
             <GraduationCap className="mx-auto h-10 w-10 text-[var(--primary)]/50" />
 
             <p className="mt-4 text-[var(--text-secondary)]">
@@ -280,7 +280,7 @@ export default function UniversitiesPage() {
                         )}
                       </>
                     ) : (
-                      <div className="flex h-full items-center justify-center bg-gradient-to-br from-[#f5f8f1] to-white">
+                      <div className="flex h-full items-center justify-center bg-gradient-to-br from-[var(--background-light)] to-white">
                         <div className="flex h-16 w-16 items-center justify-center rounded-full border border-[var(--primary)]/20 bg-[var(--primary)]/10 transition-all duration-500 group-hover:scale-110 group-hover:bg-[var(--primary)]/20">
                           <GraduationCap className="h-7 w-7 text-[var(--primary)]" />
                         </div>

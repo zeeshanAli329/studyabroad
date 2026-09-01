@@ -228,7 +228,7 @@ export default function BlogDetailPage() {
 
   if (error || !blog) {
     return (
-      <main className="flex min-h-screen items-center justify-center bg-[#f8faf7] px-6">
+      <main className="flex min-h-screen items-center justify-center bg-[var(--background-light)] px-6">
         <div className="max-w-md text-center">
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[var(--primary)]/10">
             <span className="font-serif text-2xl text-[var(--primary)]">!</span>
@@ -333,7 +333,7 @@ export default function BlogDetailPage() {
           <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-5">
             {blog.author && (
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eaf3e5] text-sm font-bold text-[var(--primary)]">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--background-light)] text-sm font-bold text-[var(--primary)]">
                   {blog.author.charAt(0).toUpperCase()}
                 </div>
 
@@ -369,9 +369,9 @@ export default function BlogDetailPage() {
 
             <button
               onClick={handleShare}
-              className="group flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-600 transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--primary)] hover:bg-[var(--primary)]/5 hover:text-[var(--primary)] hover:shadow-[0_6px_20px_rgba(140,198,63,0.12)]"
+              className="group flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-600 transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--primary)] hover:bg-[var(--primary)]/5 hover:text-[var(--primary)] hover:shadow-[0_6px_20px_var(--primary)]"
             >
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--primary)] text-white transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_4px_12px_rgba(140,198,63,0.25)]">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--primary)] text-white transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_4px_12px_var(--primary)]">
                 <svg
                   width="15"
                   height="15"
@@ -431,7 +431,7 @@ export default function BlogDetailPage() {
             </div>
           </figure>
         ) : (
-          <div className="flex aspect-[16/8] items-center justify-center rounded-[30px] bg-[#f6f8f5]">
+          <div className="flex aspect-[16/8] items-center justify-center rounded-[30px] bg-[var(--background-light)]">
             <span className="text-sm text-gray-400">
               No featured image available
             </span>
@@ -495,7 +495,7 @@ export default function BlogDetailPage() {
 
               <button
                 onClick={handleShare}
-                className="rounded-full border border-gray-200 bg-white px-4 py-2 text-xs font-semibold text-gray-600 transition-all duration-300 hover:border-[var(--primary)] hover:bg-[var(--primary)] hover:text-white hover:shadow-[0_5px_16px_rgba(140,198,63,0.15)]"
+                className="rounded-full border border-gray-200 bg-white px-4 py-2 text-xs font-semibold text-gray-600 transition-all duration-300 hover:border-[var(--primary)] hover:bg-[var(--primary)] hover:text-white hover:shadow-[0_5px_16px_var(--primary)]"
               >
                 {copied ? "Link copied" : "Share article"}
               </button>

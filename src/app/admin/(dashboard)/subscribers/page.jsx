@@ -128,13 +128,13 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
                 placeholder="Search by email..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+                className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
               />
             </div>
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+              className="px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
             >
               <option value="">All Status</option>
               <option value="ACTIVE">Active</option>
@@ -142,7 +142,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
             </select>
             <button
               onClick={fetchSubscribers}
-              className="px-6 py-2 bg-[#8CC63F] text-white rounded-xl font-medium hover:bg-[#7AB32F]"
+              className="px-6 py-2 bg-[var(--primary)] text-white rounded-xl font-medium hover:bg-[var(--primary)]"
             >
               Filter
             </button>
@@ -153,7 +153,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
         <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
           {loading ? (
             <div className="text-center py-12">
-              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#8CC63F]"></div>
+              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--primary)]"></div>
               <p className="mt-4 text-gray-500">Loading subscribers...</p>
             </div>
           ) : error ? (
@@ -161,7 +161,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
               <p className="text-red-600">{error}</p>
               <button
                 onClick={fetchSubscribers}
-                className="mt-4 px-6 py-2 bg-[#8CC63F] text-white rounded-lg hover:bg-[#6FA82F]"
+                className="mt-4 px-6 py-2 bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--primary)]"
               >
                 Try Again
               </button>
@@ -191,7 +191,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
                       <td className="px-6 py-4">
                         <span className={`px-2 py-1 text-xs font-medium rounded-full ${
                           subscriber.status === 'ACTIVE' 
-                            ? 'bg-green-100 text-green-700' 
+                            ? 'bg-[var(--success)]/10 text-[var(--success)]' 
                             : 'bg-gray-100 text-gray-700'
                         }`}>
                           {subscriber.status}

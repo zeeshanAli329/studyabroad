@@ -72,7 +72,7 @@ export default function AdminBlogPage() {
           </div>
           <Link
             href="/admin/blog/create"
-            className="bg-[#8CC63F] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#7AB32F] transition-colors duration-200"
+            className="bg-[var(--primary)] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[var(--primary)] transition-colors duration-200"
           >
             Add Post
           </Link>
@@ -121,7 +121,7 @@ export default function AdminBlogPage() {
                     <td className="px-6 py-4">
                       <span className={`px-2 py-1 text-xs font-medium rounded-full ${
                         blog.status === 'PUBLISHED' 
-                          ? 'bg-green-100 text-green-700' 
+                          ? 'bg-[var(--success)]/10 text-[var(--success)]' 
                           : 'bg-yellow-100 text-yellow-700'
                       }`}>
                         {blog.status || 'DRAFT'}

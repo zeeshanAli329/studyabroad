@@ -59,7 +59,7 @@ export default function StudyFields() {
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {FIELDS.map((field, index) => (
             <Reveal key={field.title} delay={index * 50}>
-              <article className="group rounded-2xl border border-gray-100 bg-[#f8faf9] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--primary)]/30 hover:bg-white hover:shadow-lg">
+              <article className="group rounded-2xl border border-gray-100 bg-[var(--background-light)] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--primary)]/30 hover:bg-white hover:shadow-lg">
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--primary)]/8 text-xs font-bold text-[var(--primary)] transition-transform group-hover:scale-110">
                   {field.icon}
                 </div>

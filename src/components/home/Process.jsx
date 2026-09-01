@@ -65,7 +65,7 @@ export default function Testimonial() {
   return (
     <section
       aria-labelledby="student-testimonials-heading"
-      className="relative overflow-hidden bg-[#f8faf5] py-16 sm:py-20 lg:py-24"
+      className="relative overflow-hidden bg-[var(--background-light)] py-16 sm:py-20 lg:py-24"
     >
       {/* Background outlines */}
       <div

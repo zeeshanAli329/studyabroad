@@ -167,7 +167,7 @@ export default function AppointmentPage() {
               </button>
 
               {successMessage && (
-                <div className="text-green-600 text-center font-medium">
+                <div className="text-[var(--success)] text-center font-medium">
                   {successMessage}
                 </div>
               )}

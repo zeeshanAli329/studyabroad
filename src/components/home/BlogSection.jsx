@@ -42,7 +42,7 @@ export default function BlogSection() {
 
   if (loading) {
     return (
-      <section className="relative overflow-hidden bg-[#f8faf5] py-16 sm:py-20 lg:py-24">
+      <section className="relative overflow-hidden bg-[var(--background-light)] py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-8">
           <div className="text-center py-12">
             <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--primary)]"></div>
@@ -53,7 +53,7 @@ export default function BlogSection() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-[#f8faf5] py-16 sm:py-20 lg:py-24">
+    <section className="relative overflow-hidden bg-[var(--background-light)] py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-[1320px] px-6 lg:px-8">
         {/* HEADER */}
         <Reveal direction="up" delay={0}>

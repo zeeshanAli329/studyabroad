@@ -187,7 +187,7 @@ export default function DestinationDetailPage() {
           />
 
           {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/95 via-emerald-900/80 to-emerald-900/35" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--primary-dark)]/95 via-[var(--primary-dark)]/80 to-[var(--primary-dark)]/35" />
 
           <div className="relative z-10 max-w-[1320px] mx-auto px-6 lg:px-8 py-20 lg:py-28">
             {/* Breadcrumb */}
@@ -211,7 +211,7 @@ export default function DestinationDetailPage() {
 
                 <ChevronRight className="w-4 h-4 text-white/50" />
 
-                <span className="text-lime-400 font-medium">
+                <span className="text-[var(--primary)] font-medium">
                   {destination.name}
                 </span>
               </div>
@@ -221,7 +221,7 @@ export default function DestinationDetailPage() {
             {country?.name && (
               <Reveal delay={100}>
                 <div className="inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15">
-                  <MapPin className="w-4 h-4 text-lime-400" />
+                  <MapPin className="w-4 h-4 text-[var(--primary)]" />
 
                   <span className="text-white/90 text-sm font-medium">
                     {country.name}
@@ -251,7 +251,7 @@ export default function DestinationDetailPage() {
               <div className="flex flex-col sm:flex-row gap-4 mt-9">
                 <Link
                   href="/appointment"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-lime-500 hover:bg-lime-600 text-white font-semibold transition-all shadow-lg"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[var(--primary)] hover:bg-[var(--primary-light)] text-white font-semibold transition-all shadow-lg"
                 >
                   Book Consultation
                   <ArrowRight className="w-4 h-4" />
@@ -280,8 +280,8 @@ export default function DestinationDetailPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
               <div className="p-6 border-b sm:border-r lg:border-b-0 border-gray-100">
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-xl bg-lime-50 flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-lime-600" />
+                  <div className="w-11 h-11 rounded-xl bg-[var(--background-light)] flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-[var(--primary)]" />
                   </div>
 
                   <div>
@@ -289,7 +289,7 @@ export default function DestinationDetailPage() {
                       Country
                     </p>
 
-                    <p className="font-semibold text-emerald-950">
+                    <p className="font-semibold text-[var(--primary)]">
                       {country?.name || "International"}
                     </p>
                   </div>
@@ -298,8 +298,8 @@ export default function DestinationDetailPage() {
 
               <div className="p-6 border-b lg:border-b-0 lg:border-r border-gray-100">
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-xl bg-lime-50 flex items-center justify-center">
-                    <GraduationCap className="w-5 h-5 text-lime-600" />
+                  <div className="w-11 h-11 rounded-xl bg-[var(--background-light)] flex items-center justify-center">
+                    <GraduationCap className="w-5 h-5 text-[var(--primary)]" />
                   </div>
 
                   <div>
@@ -307,7 +307,7 @@ export default function DestinationDetailPage() {
                       Education
                     </p>
 
-                    <p className="font-semibold text-emerald-950">
+                    <p className="font-semibold text-[var(--primary)]">
                       World Class
                     </p>
                   </div>
@@ -316,8 +316,8 @@ export default function DestinationDetailPage() {
 
               <div className="p-6 border-b sm:border-b-0 sm:border-r border-gray-100">
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-xl bg-lime-50 flex items-center justify-center">
-                    <Globe2 className="w-5 h-5 text-lime-600" />
+                  <div className="w-11 h-11 rounded-xl bg-[var(--background-light)] flex items-center justify-center">
+                    <Globe2 className="w-5 h-5 text-[var(--primary)]" />
                   </div>
 
                   <div>
@@ -325,7 +325,7 @@ export default function DestinationDetailPage() {
                       Experience
                     </p>
 
-                    <p className="font-semibold text-emerald-950">
+                    <p className="font-semibold text-[var(--primary)]">
                       International
                     </p>
                   </div>
@@ -334,8 +334,8 @@ export default function DestinationDetailPage() {
 
               <div className="p-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-xl bg-lime-50 flex items-center justify-center">
-                    <BookOpen className="w-5 h-5 text-lime-600" />
+                  <div className="w-11 h-11 rounded-xl bg-[var(--background-light)] flex items-center justify-center">
+                    <BookOpen className="w-5 h-5 text-[var(--primary)]" />
                   </div>
 
                   <div>
@@ -343,7 +343,7 @@ export default function DestinationDetailPage() {
                       Study
                     </p>
 
-                    <p className="font-semibold text-emerald-950">
+                    <p className="font-semibold text-[var(--primary)]">
                       Multiple Options
                     </p>
                   </div>
@@ -362,14 +362,14 @@ export default function DestinationDetailPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <Reveal>
             <div>
-              <div className="flex items-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wider mb-4">
+              <div className="flex items-center gap-2 text-[var(--primary)] font-semibold text-sm uppercase tracking-wider mb-4">
                 <Globe2 className="w-4 h-4" />
                 Destination Overview
               </div>
 
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-emerald-950 leading-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-[var(--primary)] leading-tight">
                 Your journey starts in{" "}
-                <span className="text-lime-600">
+                <span className="text-[var(--primary)]">
                   {destination.name}
                 </span>
               </h2>
@@ -387,7 +387,7 @@ export default function DestinationDetailPage() {
 
               <Link
                 href="/appointment"
-                className="inline-flex items-center gap-2 mt-8 text-lime-600 font-semibold hover:gap-3 transition-all"
+                className="inline-flex items-center gap-2 mt-8 text-[var(--primary)] font-semibold hover:gap-3 transition-all"
               >
                 Get expert guidance
                 <ArrowRight className="w-4 h-4" />
@@ -397,7 +397,7 @@ export default function DestinationDetailPage() {
 
           <Reveal delay={150}>
             <div className="relative">
-              <div className="absolute -inset-4 bg-lime-100 rounded-3xl -z-10 rotate-2" />
+              <div className="absolute -inset-4 bg-[var(--background-light)] rounded-3xl -z-10 rotate-2" />
 
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
                 {/* <Image
@@ -422,16 +422,16 @@ export default function DestinationDetailPage() {
           WHY STUDY HERE
       ========================================================= */}
 
-      <section className="bg-[#fafbf9] py-20 lg:py-28">
+      <section className="bg-[var(--background-light)] py-20 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-14">
-              <div className="flex justify-center items-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wider mb-4">
+              <div className="flex justify-center items-center gap-2 text-[var(--primary)] font-semibold text-sm uppercase tracking-wider mb-4">
                 <ShieldCheck className="w-4 h-4" />
                 Why Choose {destination.name}
               </div>
 
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-emerald-950">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-[var(--primary)]">
                 Everything you need for your next chapter
               </h2>
 
@@ -449,11 +449,11 @@ export default function DestinationDetailPage() {
               return (
                 <Reveal key={index} delay={index * 80}>
                   <div className="h-full bg-white rounded-2xl border border-gray-100 p-7 shadow-sm hover:shadow-lg transition-all duration-300 group">
-                    <div className="w-12 h-12 rounded-xl bg-lime-50 flex items-center justify-center mb-5 group-hover:bg-lime-500 transition-colors">
-                      <Icon className="w-6 h-6 text-lime-600 group-hover:text-white transition-colors" />
+                    <div className="w-12 h-12 rounded-xl bg-[var(--background-light)] flex items-center justify-center mb-5 group-hover:bg-[var(--primary)] transition-colors">
+                      <Icon className="w-6 h-6 text-[var(--primary)] group-hover:text-white transition-colors" />
                     </div>
 
-                    <h3 className="font-serif text-xl font-semibold text-emerald-950 mb-3">
+                    <h3 className="font-serif text-xl font-semibold text-[var(--primary)] mb-3">
                       {benefit.title}
                     </h3>
 
@@ -478,12 +478,12 @@ export default function DestinationDetailPage() {
         <section className="max-w-[1200px] mx-auto px-6 lg:px-8 py-20 lg:py-28">
           <Reveal>
             <div className="mb-12">
-              <div className="flex items-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wider mb-4">
+              <div className="flex items-center gap-2 text-[var(--primary)] font-semibold text-sm uppercase tracking-wider mb-4">
                 <BookOpen className="w-4 h-4" />
                 Study Options
               </div>
 
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-emerald-950">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-[var(--primary)]">
                 Find the right program for you
               </h2>
             </div>
@@ -496,11 +496,11 @@ export default function DestinationDetailPage() {
             ).map((course, index) => (
               <Reveal key={course.id || index} delay={index * 80}>
                 <div className="p-6 rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-md transition-shadow">
-                  <div className="w-11 h-11 rounded-xl bg-emerald-50 flex items-center justify-center mb-5">
-                    <GraduationCap className="w-5 h-5 text-emerald-700" />
+                  <div className="w-11 h-11 rounded-xl bg-[var(--background-light)] flex items-center justify-center mb-5">
+                    <GraduationCap className="w-5 h-5 text-[var(--primary)]" />
                   </div>
 
-                  <h3 className="font-serif text-xl font-semibold text-emerald-950 mb-2">
+                  <h3 className="font-serif text-xl font-semibold text-[var(--primary)] mb-2">
                     {course.name || course.title}
                   </h3>
 
@@ -521,17 +521,17 @@ export default function DestinationDetailPage() {
       ========================================================= */}
 
       {universities.length > 0 && (
-        <section className="bg-[#fafbf9] py-20 lg:py-28">
+        <section className="bg-[var(--background-light)] py-20 lg:py-28">
           <div className="max-w-[1200px] mx-auto px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-12">
               <Reveal>
                 <div>
-                  <div className="flex items-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wider mb-3">
+                  <div className="flex items-center gap-2 text-[var(--primary)] font-semibold text-sm uppercase tracking-wider mb-3">
                     <Building2 className="w-4 h-4" />
                     Education
                   </div>
 
-                  <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-emerald-950">
+                  <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-[var(--primary)]">
                     Universities in {destination.name}
                   </h2>
                 </div>
@@ -539,7 +539,7 @@ export default function DestinationDetailPage() {
 
               <Link
                 href="/universities"
-                className="inline-flex items-center gap-2 text-lime-600 font-semibold hover:gap-3 transition-all"
+                className="inline-flex items-center gap-2 text-[var(--primary)] font-semibold hover:gap-3 transition-all"
               >
                 View all universities
                 <ArrowRight className="w-4 h-4" />
@@ -554,11 +554,11 @@ export default function DestinationDetailPage() {
                     className="group block h-full"
                   >
                     <div className="h-full bg-white rounded-2xl border border-gray-100 p-6 shadow-sm group-hover:shadow-lg transition-all">
-                      <div className="w-12 h-12 rounded-xl bg-lime-50 flex items-center justify-center mb-5">
-                        <GraduationCap className="w-6 h-6 text-lime-600" />
+                      <div className="w-12 h-12 rounded-xl bg-[var(--background-light)] flex items-center justify-center mb-5">
+                        <GraduationCap className="w-6 h-6 text-[var(--primary)]" />
                       </div>
 
-                      <h3 className="font-serif text-xl font-semibold text-emerald-950 group-hover:text-lime-600 transition-colors">
+                      <h3 className="font-serif text-xl font-semibold text-[var(--primary)] group-hover:text-[var(--primary)] transition-colors">
                         {university.name}
                       </h3>
 
@@ -569,7 +569,7 @@ export default function DestinationDetailPage() {
                         </div>
                       )}
 
-                      <div className="flex items-center gap-2 mt-5 text-lime-600 font-medium text-sm">
+                      <div className="flex items-center gap-2 mt-5 text-[var(--primary)] font-medium text-sm">
                         View university
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </div>
@@ -589,12 +589,12 @@ export default function DestinationDetailPage() {
       <section className="max-w-[1200px] mx-auto px-6 lg:px-8 py-20 lg:py-28">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <div className="flex justify-center items-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wider mb-4">
+            <div className="flex justify-center items-center gap-2 text-[var(--primary)] font-semibold text-sm uppercase tracking-wider mb-4">
               <Plane className="w-4 h-4" />
               Your Journey
             </div>
 
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-emerald-950">
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-[var(--primary)]">
               From planning to studying abroad
             </h2>
 
@@ -634,11 +634,11 @@ export default function DestinationDetailPage() {
           ].map((step, index) => (
             <Reveal key={step.number} delay={index * 80}>
               <div className="relative">
-                <div className="text-5xl font-serif font-semibold text-lime-100">
+                <div className="text-5xl font-serif font-semibold text-[var(--primary-light)]">
                   {step.number}
                 </div>
 
-                <h3 className="font-serif text-xl font-semibold text-emerald-950 mt-3 mb-3">
+                <h3 className="font-serif text-xl font-semibold text-[var(--primary)] mt-3 mb-3">
                   {step.title}
                 </h3>
 
@@ -657,13 +657,13 @@ export default function DestinationDetailPage() {
 
       <section className="px-4 lg:px-8 pb-16 lg:pb-24">
         <Reveal>
-          <div className="relative overflow-hidden max-w-[1320px] mx-auto rounded-3xl bg-emerald-950">
-            <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-lime-500/20 blur-3xl" />
-            <div className="absolute -bottom-32 -left-20 w-80 h-80 rounded-full bg-lime-500/10 blur-3xl" />
+          <div className="relative overflow-hidden max-w-[1320px] mx-auto rounded-3xl bg-[var(--primary)]">
+            <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-[var(--primary)]/20 blur-3xl" />
+            <div className="absolute -bottom-32 -left-20 w-80 h-80 rounded-full bg-[var(--primary)]/10 blur-3xl" />
 
             <div className="relative z-10 px-6 sm:px-12 lg:px-20 py-16 lg:py-20">
               <div className="max-w-3xl">
-                <div className="flex items-center gap-2 text-lime-400 font-semibold text-sm uppercase tracking-wider mb-5">
+                <div className="flex items-center gap-2 text-[var(--primary)] font-semibold text-sm uppercase tracking-wider mb-5">
                   <GraduationCap className="w-4 h-4" />
                   Start Your Journey
                 </div>
@@ -681,7 +681,7 @@ export default function DestinationDetailPage() {
                 <div className="flex flex-col sm:flex-row gap-4 mt-8">
                   <Link
                     href="/appointment"
-                    className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-lime-500 hover:bg-lime-600 text-white font-semibold transition-colors"
+                    className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[var(--primary)] hover:bg-[var(--primary-light)] text-white font-semibold transition-colors"
                   >
                     Book a Consultation
                     <ArrowRight className="w-4 h-4" />

@@ -8,7 +8,7 @@
 
   padding: 85px 28px 75px;
 
-  background: #f7f9f1;
+  background: var(--background-light);
 }
 
 .global-offer-section__container {
@@ -61,7 +61,7 @@
 
   border-radius: 50%;
 
-  background: #7ed218;
+  background: var(--primary);
 }
 
 /* =========================================================
@@ -93,7 +93,7 @@
 
   border-radius: 19px;
 
-  background: #ffffff;
+  background: var(--surface);
 }
 
 /* Content */
@@ -122,9 +122,9 @@
 
   border-radius: 50%;
 
-  background: #7ed218;
+  background: var(--primary);
 
-  color: #ffffff;
+  color: var(--surface);
 }
 
 .global-offer-card__icon svg {
@@ -141,7 +141,7 @@
 .global-offer-card__content h2 {
   margin: 0 0 12px;
 
-  color: #07543f;
+  color: var(--primary-dark);
 
   font-family: Georgia, "Times New Roman", serif;
   font-size: 21px;
@@ -158,7 +158,7 @@
 
   margin: 0;
 
-  color: #747671;
+  color: var(--text-secondary);
 
   font-family: Georgia, "Times New Roman", serif;
   font-size: 14px;
@@ -181,12 +181,12 @@
   margin-top: 22px;
   padding: 0 25px;
 
-  border: 2px solid #e4ded8;
+  border: 2px solid var(--border);
   border-radius: 999px;
 
   background: transparent;
 
-  color: #07543f;
+  color: var(--primary-dark);
 
   font-family: Georgia, "Times New Roman", serif;
   font-size: 13px;
@@ -207,8 +207,8 @@
 }
 
 .global-offer-card__button:hover {
-  border-color: #7ed218;
-  color: #07543f;
+  border-color: var(--primary);
+  color: var(--primary-dark);
 }
 
 .global-offer-card__button:hover svg {
@@ -255,7 +255,7 @@
 
   border-radius: 19px;
 
-  background: #7ed218;
+  background: var(--primary);
 }
 
 /* =========================================================
@@ -269,7 +269,7 @@
 .global-stat__number {
   margin-bottom: 8px;
 
-  color: #ffffff;
+  color: var(--surface);
 
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(36px, 3vw, 47px);
@@ -278,7 +278,7 @@
 }
 
 .global-stat__label {
-  color: #ffffff;
+  color: var(--surface);
 
   font-family: Georgia, "Times New Roman", serif;
   font-size: 13px;

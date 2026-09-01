@@ -110,7 +110,7 @@ export default function AdminSettingsPage() {
                     type="button"
                     onClick={() => setNotificationSoundEnabled(!notificationSoundEnabled)}
                     className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                      notificationSoundEnabled ? 'bg-[#8CC63F]' : 'bg-gray-200'
+                      notificationSoundEnabled ? 'bg-[var(--primary)]' : 'bg-gray-200'
                     }`}
                   >
                     <span
@@ -129,7 +129,7 @@ export default function AdminSettingsPage() {
                     value={notificationTone}
                     onChange={(e) => setNotificationTone(e.target.value)}
                     disabled={!notificationSoundEnabled}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8CC63F] focus:border-transparent transition disabled:opacity-50"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition disabled:opacity-50"
                   >
                     <option value="tone1">Tone 1 (High)</option>
                     <option value="tone2">Tone 2 (Medium)</option>
@@ -149,7 +149,7 @@ export default function AdminSettingsPage() {
                     value={notificationVolume}
                     onChange={(e) => setNotificationVolume(parseInt(e.target.value))}
                     disabled={!notificationSoundEnabled}
-                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#8CC63F] disabled:opacity-50"
+                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[var(--primary)] disabled:opacity-50"
                   />
                 </div>
 
@@ -157,7 +157,7 @@ export default function AdminSettingsPage() {
                   type="button"
                   onClick={handleTestSound}
                   disabled={!notificationSoundEnabled}
-                  className="px-4 py-2 border border-[#8CC63F] text-[#8CC63F] rounded-xl font-medium hover:bg-[#8CC63F] hover:text-white transition-colors disabled:opacity-50"
+                  className="px-4 py-2 border border-[var(--primary)] text-[var(--primary)] rounded-xl font-medium hover:bg-[var(--primary)] hover:text-white transition-colors disabled:opacity-50"
                 >
                   Test Sound
                 </button>
@@ -179,7 +179,7 @@ export default function AdminSettingsPage() {
                     type="button"
                     onClick={() => setNewsletterEnabled(!newsletterEnabled)}
                     className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                      newsletterEnabled ? 'bg-[#8CC63F]' : 'bg-gray-200'
+                      newsletterEnabled ? 'bg-[var(--primary)]' : 'bg-gray-200'
                     }`}
                   >
                     <span
@@ -199,7 +199,7 @@ export default function AdminSettingsPage() {
                         checked={newsletterBlogs}
                         onChange={(e) => setNewsletterBlogs(e.target.checked)}
                         disabled={!newsletterEnabled}
-                        className="w-4 h-4 text-[#8CC63F] rounded focus:ring-[#8CC63F] disabled:opacity-50"
+                        className="w-4 h-4 text-[var(--primary)] rounded focus:ring-[var(--primary)] disabled:opacity-50"
                       />
                       <span className="text-sm text-gray-700 disabled:opacity-50">New Blogs</span>
                     </label>
@@ -209,7 +209,7 @@ export default function AdminSettingsPage() {
                         checked={newsletterScholarships}
                         onChange={(e) => setNewsletterScholarships(e.target.checked)}
                         disabled={!newsletterEnabled}
-                        className="w-4 h-4 text-[#8CC63F] rounded focus:ring-[#8CC63F] disabled:opacity-50"
+                        className="w-4 h-4 text-[var(--primary)] rounded focus:ring-[var(--primary)] disabled:opacity-50"
                       />
                       <span className="text-sm text-gray-700 disabled:opacity-50">New Scholarships</span>
                     </label>
@@ -220,7 +220,7 @@ export default function AdminSettingsPage() {
                   type="button"
                   onClick={() => alert('Test email functionality requires email service configuration')}
                   disabled={!newsletterEnabled}
-                  className="px-4 py-2 border border-[#8CC63F] text-[#8CC63F] rounded-xl font-medium hover:bg-[#8CC63F] hover:text-white transition-colors disabled:opacity-50"
+                  className="px-4 py-2 border border-[var(--primary)] text-[var(--primary)] rounded-xl font-medium hover:bg-[var(--primary)] hover:text-white transition-colors disabled:opacity-50"
                 >
                   Test Newsletter Email
                 </button>

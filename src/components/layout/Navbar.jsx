@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy } from "react";
 import Link from "next/link";
 // import Image from "next/image";
 
@@ -82,9 +82,9 @@ const NavBar = () => {
           </Link> */}
           <Link href="/" className="flex items-center shrink-0">
             <img
-              src="/logo2.png"
+              src="/ch-logo.png"
               alt="Logo"
-              className="w-[125px] sm:w-[145px] lg:w-[180px] h-auto object-contain"
+              className="w-[125px] sm:w-[145px] lg:w-[200px] h-auto object-contain"
             />
           </Link>
 
@@ -93,7 +93,7 @@ const NavBar = () => {
             {/* HOME */}
             <Link
               href="/"
-              className="text-[15px] font-serif font-bold uppercase transition text-[#034833] hover:text-[var(--primary)]"
+              className="text-[15px] font-serif font-bold uppercase transition text-[var(--primary-dark)] hover:text-[var(--primary)]"
             >
               Home
             </Link>
@@ -101,7 +101,7 @@ const NavBar = () => {
             {/* ABOUT US */}
             <Link
               href="/about"
-              className="text-[15px] font-serif font-bold uppercase text-[#034833] transition hover:text-[var(--primary)]"
+              className="text-[15px] font-serif font-bold uppercase text-[var(--primary-dark)] transition hover:text-[var(--primary)]"
             >
               About Us
             </Link>
@@ -112,7 +112,7 @@ const NavBar = () => {
               onMouseEnter={() => setBlogOpen(true)}
               onMouseLeave={() => setBlogOpen(false)}
             >
-              <button className="flex text-[#034833] items-center gap-1.5 text-[15px] font-serif font-bold uppercase transition hover:text-[var(--primary)]">
+              <button className="flex text-[var(--primary-dark)] items-center gap-1.5 text-[15px] font-serif font-bold uppercase transition hover:text-[var(--primary)]">
                 Blog
                 <FaChevronDown
                   className={`text-[8px] transition ${
@@ -126,7 +126,7 @@ const NavBar = () => {
                   {blogLinks.map((item) => (
                     <Link
                       href={item.link}
-                      className="group relative block px-5 py-3 pl-12 text-[14px] font-serif font-bold uppercase text-[#034833] transition-all duration-300 hover:translate-x-2 hover:text-[var(--primary)]"
+                      className="group relative block px-5 py-3 pl-12 text-[14px] font-serif font-bold uppercase text-[var(--primary-dark)] transition-all duration-300 hover:translate-x-2 hover:text-[var(--primary)]"
                     >
                       {/* Hover Line */}
                       <span className="absolute left-5 top-1/2 h-[2px] w-0 -translate-y-1/2 bg-[var(--primary)] transition-all duration-300 group-hover:w-6" />
@@ -144,7 +144,7 @@ const NavBar = () => {
               onMouseEnter={() => setVisaOpen(true)}
               onMouseLeave={() => setVisaOpen(false)}
             >
-              <button className="flex items-center gap-1.5 text-[15px] text-[#034833] font-serif font-bold uppercase transition hover:text-[var(--primary)]">
+              <button className="flex items-center gap-1.5 text-[15px] text-[var(--primary-dark)] font-serif font-bold uppercase transition hover:text-[var(--primary)]">
                 Visa
                 <FaChevronDown
                   className={`text-[8px] transition ${
@@ -154,11 +154,11 @@ const NavBar = () => {
               </button>
 
               {visaOpen && (
-                <div className="absolute top-full left-0 text-[#034833] w-[240px] rounded-2xl bg-white shadow-2xl border border-gray-100 overflow-hidden pt-2">
+                <div className="absolute top-full left-0 text-[var(--primary-dark)] w-[240px] rounded-2xl bg-white shadow-2xl border border-gray-100 overflow-hidden pt-2">
                   {visaLinks.map((item) => (
                     <Link
                       href={item.link}
-                      className="group relative block px-5 py-3 pl-12 text-[14px] font-serif font-bold uppercase text-[#034833] transition-all duration-300 hover:translate-x-2 hover:text-[var(--primary)]"
+                      className="group relative block px-5 py-3 pl-12 text-[14px] font-serif font-bold uppercase text-[var(--primary-dark)] transition-all duration-300 hover:translate-x-2 hover:text-[var(--primary)]"
                     >
                       {/* Hover Line */}
                       <span className="absolute left-5 top-1/2 h-[2px] w-0 -translate-y-1/2 bg-[var(--primary)] transition-all duration-300 group-hover:w-6" />
@@ -176,7 +176,7 @@ const NavBar = () => {
               onMouseEnter={() => setScholarshipOpen(true)}
               onMouseLeave={() => setScholarshipOpen(false)}
             >
-              <button className="flex text-[#034833] items-center gap-1.5 text-[15px] font-serif font-bold uppercase transition hover:text-[var(--primary)]">
+              <button className="flex text-[var(--primary-dark)] items-center gap-1.5 text-[15px] font-serif font-bold uppercase transition hover:text-[var(--primary)]">
                 Scholarships
                 <FaChevronDown
                   className={`text-[8px] transition ${
@@ -186,11 +186,11 @@ const NavBar = () => {
               </button>
 
               {scholarshipOpen && (
-                <div className="absolute top-full left-0 w-[240px] text-[#034833] rounded-2xl bg-white shadow-2xl border border-gray-100 overflow-hidden pt-2">
+                <div className="absolute top-full left-0 w-[240px] text-[var(--primary-dark)] rounded-2xl bg-white shadow-2xl border border-gray-100 overflow-hidden pt-2">
                   {scholarshipLinks.map((item) => (
                     <Link
                       href={item.link}
-                      className="group relative block px-5 py-3 pl-12 text-[14px] font-serif font-bold uppercase text-[#034833] transition-all duration-300 hover:translate-x-2 hover:text-[var(--primary)]"
+                      className="group relative block px-5 py-3 pl-12 text-[14px] font-serif font-bold uppercase text-[var(--primary-dark)] transition-all duration-300 hover:translate-x-2 hover:text-[var(--primary)]"
                     >
                       {/* Hover Line */}
                       <span className="absolute left-5 top-1/2 h-[2px] w-0 -translate-y-1/2 bg-[var(--primary)] transition-all duration-300 group-hover:w-6" />
@@ -208,7 +208,7 @@ const NavBar = () => {
              onMouseEnter = {() => setFreeEducationOpen(true)}
              onMouseLeave={() => {setFreeEducationOpen(false)}}
              >
-              <button className="flex text-[#034833] items-center gap-1.5 text-[15px] font-serif font-bold uppercase transition hover:text-[var(--primary)]">
+              <button className="flex text-[var(--primary-dark)] items-center gap-1.5 text-[15px] font-serif font-bold uppercase transition hover:text-[var(--primary)]">
                 Free Education
                 <FaChevronDown 
                 className={`text-[8px] transition ${freeEducationOpen? "rotate-180" : " "
@@ -216,12 +216,12 @@ const NavBar = () => {
                 />
               </button>
               {freeEducationOpen && (
-                <div className="absolute top-full left-0 w-[240px] text-[#034833] rounded-2xl bg-white shadow-2xl border border-gray-100 overflow-hidden pt-2">
+                <div className="absolute top-full left-0 w-[240px] text-[var(--primary-dark)] rounded-2xl bg-white shadow-2xl border border-gray-100 overflow-hidden pt-2">
                   {FreeEducationLinks.map((item) => (
                   <Link 
                   key={item.title}
                   href={item.link}
-                  className="block border-b border-gray-100 px-5 py-3 text-[14px] font-serif font-bold uppercase text-[#034833] transition hover:bg-[var(--background-light)] hover:text-[var(--primary)]"
+                  className="block border-b border-gray-100 px-5 py-3 text-[14px] font-serif font-bold uppercase text-[var(--primary-dark)] transition hover:bg-[var(--background-light)] hover:text-[var(--primary)]"
                   >
                     {item.title}
                   </Link>
@@ -232,7 +232,7 @@ const NavBar = () => {
 
             <Link
               href="/free-education"
-              className="text-[15px] font-serif font-bold uppercase text-[#034833] transition hover:text-[var(--primary)]"
+              className="text-[15px] font-serif font-bold uppercase text-[var(--primary-dark)] transition hover:text-[var(--primary)]"
             >
               Free Education
             </Link>
@@ -242,7 +242,7 @@ const NavBar = () => {
           <div className="hidden lg:block">
             <Link
               href="/contact"
-              className="rounded-full bg-[var(--primary)] text-[#034833] px-6 py-3 text-white text-[14px] font-serif font-bold uppercase transition-all duration-300 hover:scale-105 hover:bg-[var(--primary-dark)]"
+              className="rounded-full bg-[var(--primary)] px-6 py-3 text-white text-[14px] font-serif font-bold uppercase transition-all duration-300 hover:scale-105 hover:bg-[var(--primary-dark)]"
             >
               CONTACT US
             </Link>
@@ -284,7 +284,7 @@ const NavBar = () => {
           <Link
             href="/"
             onClick={() => setMenuOpen(false)}
-            className="border-b px-6 py-5 text-[#034833] text-[16px] font-serif font-bold uppercase transition hover:bg-[var(--background-light)]"
+            className="border-b px-6 py-5 text-[var(--primary-dark)] text-[16px] font-serif font-bold uppercase transition hover:bg-[var(--background-light)]"
           >
             Home
           </Link>
@@ -292,14 +292,14 @@ const NavBar = () => {
           <Link
             href="/about"
             onClick={() => setMenuOpen(false)}
-            className="border-b px-6 text-[#034833] py-5 text-[16px] font-serif font-bold uppercase transition hover:bg-[var(--background-light)]"
+            className="border-b px-6 text-[var(--primary-dark)] py-5 text-[16px] font-serif font-bold uppercase transition hover:bg-[var(--background-light)]"
           >
             About Us
           </Link>
 
           <button
             onClick={() => setMobileBlog(!mobileBlog)}
-            className="flex items-center text-[#034833] justify-between border-b px-6 py-5 text-[16px] font-serif font-bold uppercase"
+            className="flex items-center text-[var(--primary-dark)] justify-between border-b px-6 py-5 text-[16px] font-serif font-bold uppercase"
           >
             Blog
             <FaChevronDown
@@ -316,7 +316,7 @@ const NavBar = () => {
                   key={item.title}
                   href={item.link}
                   onClick={() => setMenuOpen(false)}
-                  className="block px-10 py-4 font-serif font-bold uppercase transition text-[#034833] hover:text-[var(--primary)]"
+                  className="block px-10 py-4 font-serif font-bold uppercase transition text-[var(--primary-dark)] hover:text-[var(--primary)]"
                 >
                   {item.title}
                 </Link>
@@ -326,7 +326,7 @@ const NavBar = () => {
 
           <button
             onClick={() => setMobileVisa(!mobileVisa)}
-            className="flex items-center text-[#034833] justify-between border-b px-6 py-5 text-[16px] font-serif font-bold uppercase"
+            className="flex items-center text-[var(--primary-dark)] justify-between border-b px-6 py-5 text-[16px] font-serif font-bold uppercase"
           >
             Visa
             <FaChevronDown
@@ -343,7 +343,7 @@ const NavBar = () => {
                   key={item.title}
                   href={item.link}
                   onClick={() => setMenuOpen(false)}
-                  className="block px-10 py-4 font-serif font-bold uppercase text-[#034833] transition hover:text-[var(--primary)]"
+                  className="block px-10 py-4 font-serif font-bold uppercase text-[var(--primary-dark)] transition hover:text-[var(--primary)]"
                 >
                   {item.title}
                 </Link>
@@ -353,7 +353,7 @@ const NavBar = () => {
 
           <button
             onClick={() => setMobileScholarship(!mobileScholarship)}
-            className="flex text-[#034833] items-center justify-between border-b px-6 py-5 text-[16px] font-serif font-bold uppercase"
+            className="flex text-[var(--primary-dark)] items-center justify-between border-b px-6 py-5 text-[16px] font-serif font-bold uppercase"
           >
             Scholarships
             <FaChevronDown
@@ -370,7 +370,7 @@ const NavBar = () => {
                   key={item.title}
                   href={item.link}
                   onClick={() => setMenuOpen(false)}
-                  className="block px-10 py-4 font-serif font-bold uppercase text-[#034833] hover:text-[var(--primary)] transition"
+                  className="block px-10 py-4 font-serif font-bold uppercase text-[var(--primary-dark)] hover:text-[var(--primary)] transition"
                 >
                   {item.title}
                 </Link>
@@ -381,7 +381,7 @@ const NavBar = () => {
           <Link
             href="/free-education"
             onClick={() => setMenuOpen(false)}
-            className="flex items-center text-[#034833] justify-between border-b px-6 py-5 text-[16px] font-serif font-bold uppercase"
+            className="flex items-center text-[var(--primary-dark)] justify-between border-b px-6 py-5 text-[16px] font-serif font-bold uppercase"
           >
             Free Education
           </Link>

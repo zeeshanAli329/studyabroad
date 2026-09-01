@@ -28,7 +28,7 @@ export default function Newsletter() {
           <div
             className="
               group relative overflow-hidden rounded-[28px]
-              bg-[#0d3328]
+              bg-[var(--primary-dark)]
               border border-[var(--primary)]/20
               shadow-[0_20px_60px_rgba(0,0,0,0.12)]
               transition-all duration-500

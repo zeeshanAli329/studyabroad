@@ -68,10 +68,10 @@ export default function ScholarshipsPage() {
         </div>
 
         {/* Dark Green Theme Overlay */}
-        <div className="absolute inset-0 bg-[#003c2f]/40" />
+        <div className="absolute inset-0 bg-[var(--primary-dark)]/40" />
 
         {/* Subtle Green Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#003c2f]/95 via-[#003c2f]/90 to-[#003c2f]/75" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[var(--primary-dark)]/95 via-[var(--primary-dark)]/90 to-[var(--primary-dark)]/75" />
 
         {/* Decorative Circle — Top Right */}
         <div className="absolute -right-10 -top-24 h-64 w-64 rounded-full border border-[var(--primary)]/20 sm:h-72 sm:w-72 lg:h-80 lg:w-80" />

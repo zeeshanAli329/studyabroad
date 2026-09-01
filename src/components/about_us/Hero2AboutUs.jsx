@@ -25,7 +25,7 @@ export default function Hero2AboutUs() {
         ====================================================== */}
         <div className="flex flex-row lg:flex-col items-center gap-4 sm:gap-6 lg:gap-8 shrink-0">
 
-          <div className="rounded-[1.8rem] sm:rounded-[2rem] border-2 border-dashed border-lime-500 p-2">
+          <div className="rounded-[1.8rem] sm:rounded-[2rem] border-2 border-dashed border-[var(--primary)] p-2">
             <img
               src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=520&fit=crop"
               alt="Traveler with passport and suitcase"
@@ -57,7 +57,7 @@ export default function Hero2AboutUs() {
               <text
                 fontSize="11.5"
                 letterSpacing="2"
-                fill="#94a3b8"
+                fill="var(--text-secondary)"
                 fontWeight="500"
               >
                 <textPath href="#circlePath" startOffset="0%">
@@ -67,9 +67,9 @@ export default function Hero2AboutUs() {
             </svg>
 
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full border border-lime-400/60 flex items-center justify-center">
+              <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full border border-[var(--primary)]/60 flex items-center justify-center">
                 <Move
-                  className="w-4 h-4 sm:w-5 sm:h-5 text-lime-600"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--primary)]"
                   strokeWidth={1.75}
                 />
               </div>
@@ -84,7 +84,7 @@ export default function Hero2AboutUs() {
         ====================================================== */}
         <div className="flex flex-row lg:flex-col gap-4 sm:gap-6 shrink-0 items-center lg:items-start">
 
-          <div className="bg-[#8CC63F] rounded-2xl px-5 py-5 sm:px-6 sm:py-6 w-[155px] sm:w-[220px] text-white">
+          <div className="bg-[var(--primary)] rounded-2xl px-5 py-5 sm:px-6 sm:py-6 w-[155px] sm:w-[220px] text-white">
             <div className="text-3xl sm:text-4xl font-bold leading-none">
               25
             </div>
@@ -116,12 +116,12 @@ export default function Hero2AboutUs() {
         ====================================================== */}
         <div className="flex-1 w-full max-w-xl">
 
-          <div className="flex items-center gap-2 text-lime-600 font-semibold text-sm tracking-wide mb-4">
+          <div className="flex items-center gap-2 text-[var(--primary)] font-semibold text-sm tracking-wide mb-4">
             <Ticket className="w-4 h-4" strokeWidth={2} />
             <span>WHY CHOOSE US</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-bold text-emerald-950 leading-tight mb-5">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--primary)] leading-tight mb-5">
             Where Wanderlust Meets
             <br />
             Dream Destinations
@@ -141,14 +141,14 @@ export default function Hero2AboutUs() {
 
             <div className="border border-gray-200 rounded-2xl p-5">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full bg-[#8CC63F] flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[var(--primary)] flex items-center justify-center shrink-0">
                   <Ticket
                     className="w-4 h-4 text-white"
                     strokeWidth={2}
                   />
                 </div>
 
-                <h3 className="font-bold text-emerald-950 text-base">
+                <h3 className="font-bold text-[var(--primary)] text-base">
                   Passport Plus
                 </h3>
               </div>
@@ -156,7 +156,7 @@ export default function Hero2AboutUs() {
               <ul className="space-y-2">
                 <li className="flex items-center gap-2 text-sm text-gray-600">
                   <Check
-                    className="w-4 h-4 text-lime-600 shrink-0"
+                    className="w-4 h-4 text-[var(--primary)] shrink-0"
                     strokeWidth={2.5}
                   />
                   Beyond Border Immigration
@@ -164,7 +164,7 @@ export default function Hero2AboutUs() {
 
                 <li className="flex items-center gap-2 text-sm text-gray-600">
                   <Check
-                    className="w-4 h-4 text-lime-600 shrink-0"
+                    className="w-4 h-4 text-[var(--primary)] shrink-0"
                     strokeWidth={2.5}
                   />
                   Worldwide Visa Assistance
@@ -174,14 +174,14 @@ export default function Hero2AboutUs() {
 
             <div className="border border-gray-200 rounded-2xl p-5">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full bg-[#8CC63F] flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[var(--primary)] flex items-center justify-center shrink-0">
                   <Ticket
                     className="w-4 h-4 text-white"
                     strokeWidth={2}
                   />
                 </div>
 
-                <h3 className="font-bold text-emerald-950 text-base">
+                <h3 className="font-bold text-[var(--primary)] text-base">
                   Global Entry
                 </h3>
               </div>
@@ -189,7 +189,7 @@ export default function Hero2AboutUs() {
               <ul className="space-y-2">
                 <li className="flex items-center gap-2 text-sm text-gray-600">
                   <Check
-                    className="w-4 h-4 text-lime-600 shrink-0"
+                    className="w-4 h-4 text-[var(--primary)] shrink-0"
                     strokeWidth={2.5}
                   />
                   GlobeTrot Visa Services
@@ -197,7 +197,7 @@ export default function Hero2AboutUs() {
 
                 <li className="flex items-center gap-2 text-sm text-gray-600">
                   <Check
-                    className="w-4 h-4 text-lime-600 shrink-0"
+                    className="w-4 h-4 text-[var(--primary)] shrink-0"
                     strokeWidth={2.5}
                   />
                   Infinity Visa Solutions
@@ -211,7 +211,7 @@ export default function Hero2AboutUs() {
 
             <Link
               href={"/contact"}
-              className="flex items-center gap-2 border border-lime-500 text-emerald-950 font-semibold text-sm px-6 py-3 rounded-full hover:bg-lime-50 transition-colors"
+              className="flex items-center gap-2 border border-[var(--primary)] text-[var(--primary)] font-semibold text-sm px-6 py-3 rounded-full hover:bg-[var(--background-light)] transition-colors"
             >
               CONTACT US
 
@@ -222,7 +222,7 @@ export default function Hero2AboutUs() {
             </Link>
 
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-full bg-[#8CC63F] flex items-center justify-center shrink-0">
+              <div className="w-11 h-11 rounded-full bg-[var(--primary)] flex items-center justify-center shrink-0">
                 <Phone
                   className="w-5 h-5 text-white"
                   strokeWidth={2}
@@ -234,7 +234,7 @@ export default function Hero2AboutUs() {
                   Need help?
                 </div>
 
-                <div className="text-sm font-bold text-emerald-950">
+                <div className="text-sm font-bold text-[var(--primary)]">
                   (808) 555-0111
                 </div>
               </div>

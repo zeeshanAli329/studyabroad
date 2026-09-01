@@ -57,7 +57,7 @@ export default function ExperienceSection() {
 
   return (
     <section
-      className="relative overflow-hidden bg-[#f7f9f3] py-16 sm:py-20 lg:py-24"
+      className="relative overflow-hidden bg-[var(--background-light)] py-16 sm:py-20 lg:py-24"
       aria-labelledby="study-abroad-coaching-heading"
     >
       {/* Background */}

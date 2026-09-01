@@ -276,7 +276,7 @@
 //                   type="text"
 //                   value={editForm.name}
 //                   onChange={(e) => setEditForm({ ...editForm, name: e.target.value })}
-//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
 //                   required
 //                 />
 //               </div>
@@ -286,7 +286,7 @@
 //                   type="text"
 //                   value={editForm.username}
 //                   onChange={(e) => setEditForm({ ...editForm, username: e.target.value })}
-//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
 //                   required
 //                 />
 //               </div>
@@ -296,7 +296,7 @@
 //                   type="email"
 //                   value={editForm.email}
 //                   onChange={(e) => setEditForm({ ...editForm, email: e.target.value })}
-//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
 //                   required
 //                 />
 //               </div>
@@ -305,7 +305,7 @@
 //                 <select
 //                   value={editForm.role}
 //                   onChange={(e) => setEditForm({ ...editForm, role: e.target.value })}
-//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
 //                   required
 //                 >
 //                   <option value="USER">USER</option>
@@ -319,7 +319,7 @@
 //                   type="password"
 //                   value={editForm.password}
 //                   onChange={(e) => setEditForm({ ...editForm, password: e.target.value })}
-//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
 //                   required
 //                   minLength={6}
 //                 />
@@ -330,7 +330,7 @@
 //                   type="password"
 //                   value={editForm.confirmPassword}
 //                   onChange={(e) => setEditForm({ ...editForm, confirmPassword: e.target.value })}
-//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
 //                   required
 //                   minLength={6}
 //                 />
@@ -339,7 +339,7 @@
 //             <div className="flex gap-4 mt-6">
 //               <button
 //                 onClick={handleCreateUser}
-//                 className="px-6 py-2 bg-[#8CC63F] text-white rounded-lg hover:bg-[#7AB32F]"
+//                 className="px-6 py-2 bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--primary)]"
 //               >
 //                 Create User
 //               </button>
@@ -368,7 +368,7 @@
 //                   type="email"
 //                   value={editForm.email}
 //                   onChange={(e) => setEditForm({ ...editForm, email: e.target.value })}
-//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
 //                 />
 //               </div>
 //               <div>
@@ -377,7 +377,7 @@
 //                   type="text"
 //                   value={editForm.username}
 //                   onChange={(e) => setEditForm({ ...editForm, username: e.target.value })}
-//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
 //                 />
 //               </div>
 //               <div>
@@ -386,7 +386,7 @@
 //                   type="text"
 //                   value={editForm.name}
 //                   onChange={(e) => setEditForm({ ...editForm, name: e.target.value })}
-//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
 //                 />
 //               </div>
 //               <div>
@@ -394,7 +394,7 @@
 //                 <select
 //                   value={editForm.role}
 //                   onChange={(e) => setEditForm({ ...editForm, role: e.target.value })}
-//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
 //                 >
 //                   <option value="USER">USER</option>
 //                   <option value="ADMIN">ADMIN</option>
@@ -408,7 +408,7 @@
 //                   value={editForm.password}
 //                   onChange={(e) => setEditForm({ ...editForm, password: e.target.value })}
 //                   placeholder="Leave empty to keep current password"
-//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
 //                 />
 //               </div>
 //               <div>
@@ -418,14 +418,14 @@
 //                   value={editForm.confirmPassword}
 //                   onChange={(e) => setEditForm({ ...editForm, confirmPassword: e.target.value })}
 //                   placeholder="Leave empty to keep current password"
-//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+//                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
 //                 />
 //               </div>
 //             </div>
 //             <div className="flex gap-4 mt-6">
 //               <button
 //                 onClick={handleSaveUser}
-//                 className="px-6 py-2 bg-[#8CC63F] text-white rounded-lg hover:bg-[#7AB32F]"
+//                 className="px-6 py-2 bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--primary)]"
 //               >
 //                 Save Changes
 //               </button>
@@ -445,7 +445,7 @@
 //             {!creatingUser && !editingUser && (
 //               <button
 //                 onClick={handleStartCreate}
-//                 className="px-4 py-2 bg-[#8CC63F] text-white rounded-lg hover:bg-[#7AB32F] text-sm font-medium"
+//                 className="px-4 py-2 bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--primary)] text-sm font-medium"
 //               >
 //                 Create User
 //               </button>
@@ -453,46 +453,46 @@
 //           </div>
 //           {loading ? (
 //             <div className="text-center py-12">
-//               <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#8CC63F]"></div>
-//               <p className="mt-4 text-[#6B7280]">Loading users...</p>
+//               <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--primary)]"></div>
+//               <p className="mt-4 text-[var(--text-secondary)]">Loading users...</p>
 //             </div>
 //           ) : error ? (
 //             <div className="text-center py-12">
 //               <p className="text-red-600">{error}</p>
 //               <button
 //                 onClick={fetchUsers}
-//                 className="mt-4 px-6 py-2 bg-[#8CC63F] text-white rounded-lg hover:bg-[#6FA82F]"
+//                 className="mt-4 px-6 py-2 bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--primary)]"
 //               >
 //                 Try Again
 //               </button>
 //             </div>
 //           ) : users.length === 0 ? (
 //             <div className="text-center py-12">
-//               <p className="text-[#6B7280]">No users found</p>
+//               <p className="text-[var(--text-secondary)]">No users found</p>
 //             </div>
 //           ) : (
 //             <div className="overflow-x-auto">
 //               <table className="w-full">
 //                 <thead className="bg-gray-50">
 //                   <tr>
-//                     <th className="px-6 py-4 text-left text-sm font-semibold text-[#132A22]">Name</th>
-//                     <th className="px-6 py-4 text-left text-sm font-semibold text-[#132A22]">Email</th>
-//                     <th className="px-6 py-4 text-left text-sm font-semibold text-[#132A22]">Username</th>
-//                     <th className="px-6 py-4 text-left text-sm font-semibold text-[#132A22]">Role</th>
-//                     <th className="px-6 py-4 text-left text-sm font-semibold text-[#132A22]">Created</th>
-//                     <th className="px-6 py-4 text-left text-sm font-semibold text-[#132A22]">Actions</th>
+//                     <th className="px-6 py-4 text-left text-sm font-semibold text-[var(--text-primary)]">Name</th>
+//                     <th className="px-6 py-4 text-left text-sm font-semibold text-[var(--text-primary)]">Email</th>
+//                     <th className="px-6 py-4 text-left text-sm font-semibold text-[var(--text-primary)]">Username</th>
+//                     <th className="px-6 py-4 text-left text-sm font-semibold text-[var(--text-primary)]">Role</th>
+//                     <th className="px-6 py-4 text-left text-sm font-semibold text-[var(--text-primary)]">Created</th>
+//                     <th className="px-6 py-4 text-left text-sm font-semibold text-[var(--text-primary)]">Actions</th>
 //                   </tr>
 //                 </thead>
 //                 <tbody>
 //                   {users.map((user) => (
 //                     <tr key={user.id} className="border-t border-gray-100">
 //                       <td className="px-6 py-4">
-//                         <div className="font-medium text-[#132A22]">{user.name || '-'}</div>
+//                         <div className="font-medium text-[var(--text-primary)]">{user.name || '-'}</div>
 //                       </td>
-//                       <td className="px-6 py-4 text-[#6B7280]">
+//                       <td className="px-6 py-4 text-[var(--text-secondary)]">
 //                         {user.email}
 //                       </td>
-//                       <td className="px-6 py-4 text-[#6B7280]">
+//                       <td className="px-6 py-4 text-[var(--text-secondary)]">
 //                         {user.username || '-'}
 //                       </td>
 //                       <td className="px-6 py-4">
@@ -500,7 +500,7 @@
 //                           {user.role}
 //                         </span>
 //                       </td>
-//                       <td className="px-6 py-4 text-[#6B7280]">
+//                       <td className="px-6 py-4 text-[var(--text-secondary)]">
 //                         {formatDate(user.createdAt)}
 //                       </td>
 //                       <td className="px-6 py-4">
@@ -1034,7 +1034,7 @@ export default function UsersPage() {
                       name: e.target.value,
                     })
                   }
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
                   required
                 />
               </div>
@@ -1053,7 +1053,7 @@ export default function UsersPage() {
                       username: e.target.value,
                     })
                   }
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
                   required
                 />
               </div>
@@ -1072,7 +1072,7 @@ export default function UsersPage() {
                       email: e.target.value,
                     })
                   }
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
                   required
                 />
               </div>
@@ -1090,7 +1090,7 @@ export default function UsersPage() {
                       role: e.target.value,
                     })
                   }
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
                   required
                 >
                   <option value="USER">USER</option>
@@ -1119,7 +1119,7 @@ export default function UsersPage() {
                       password: e.target.value,
                     })
                   }
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
                   required
                   minLength={6}
                 />
@@ -1139,7 +1139,7 @@ export default function UsersPage() {
                       confirmPassword: e.target.value,
                     })
                   }
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
                   required
                   minLength={6}
                 />
@@ -1149,7 +1149,7 @@ export default function UsersPage() {
             <div className="flex gap-4 mt-6">
               <button
                 onClick={handleCreateUser}
-                className="px-6 py-2 bg-[#8CC63F] text-white rounded-lg hover:bg-[#7AB32F]"
+                className="px-6 py-2 bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--primary)]"
               >
                 Create User
               </button>
@@ -1195,7 +1195,7 @@ export default function UsersPage() {
                       email: e.target.value,
                     })
                   }
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
                 />
               </div>
 
@@ -1213,7 +1213,7 @@ export default function UsersPage() {
                       username: e.target.value,
                     })
                   }
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
                 />
               </div>
 
@@ -1231,7 +1231,7 @@ export default function UsersPage() {
                       name: e.target.value,
                     })
                   }
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
                 />
               </div>
 
@@ -1251,7 +1251,7 @@ export default function UsersPage() {
                   disabled={
                     currentUser?.role !== "SUPER_ADMIN"
                   }
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F] disabled:bg-gray-100 disabled:text-gray-500"
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)] disabled:bg-gray-100 disabled:text-gray-500"
                 >
                   <option value="USER">USER</option>
                   <option value="ADMIN">ADMIN</option>
@@ -1276,7 +1276,7 @@ export default function UsersPage() {
                     })
                   }
                   placeholder="Leave empty to keep current password"
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
                 />
               </div>
 
@@ -1295,7 +1295,7 @@ export default function UsersPage() {
                     })
                   }
                   placeholder="Leave empty to keep current password"
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F]"
+                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
                 />
               </div>
             </div>
@@ -1303,7 +1303,7 @@ export default function UsersPage() {
             <div className="flex gap-4 mt-6">
               <button
                 onClick={handleSaveUser}
-                className="px-6 py-2 bg-[#8CC63F] text-white rounded-lg hover:bg-[#7AB32F]"
+                className="px-6 py-2 bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--primary)]"
               >
                 Save Changes
               </button>
@@ -1328,7 +1328,7 @@ export default function UsersPage() {
             {!creatingUser && !editingUser && (
               <button
                 onClick={handleStartCreate}
-                className="px-4 py-2 bg-[#8CC63F] text-white rounded-lg hover:bg-[#7AB32F] text-sm font-medium"
+                className="px-4 py-2 bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--primary)] text-sm font-medium"
               >
                 Create User
               </button>
@@ -1337,9 +1337,9 @@ export default function UsersPage() {
 
           {loading ? (
             <div className="text-center py-12">
-              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#8CC63F]"></div>
+              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--primary)]"></div>
 
-              <p className="mt-4 text-[#6B7280]">
+              <p className="mt-4 text-[var(--text-secondary)]">
                 Loading users...
               </p>
             </div>
@@ -1349,14 +1349,14 @@ export default function UsersPage() {
 
               <button
                 onClick={fetchUsers}
-                className="mt-4 px-6 py-2 bg-[#8CC63F] text-white rounded-lg hover:bg-[#6FA82F]"
+                className="mt-4 px-6 py-2 bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--primary)]"
               >
                 Try Again
               </button>
             </div>
           ) : users.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-[#6B7280]">
+              <p className="text-[var(--text-secondary)]">
                 No users found
               </p>
             </div>
@@ -1365,27 +1365,27 @@ export default function UsersPage() {
               <table className="w-full">
                 <thead className="bg-gray-50">
                   <tr>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#132A22]">
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[var(--text-primary)]">
                       Name
                     </th>
 
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#132A22]">
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[var(--text-primary)]">
                       Email
                     </th>
 
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#132A22]">
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[var(--text-primary)]">
                       Username
                     </th>
 
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#132A22]">
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[var(--text-primary)]">
                       Role
                     </th>
 
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#132A22]">
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[var(--text-primary)]">
                       Created
                     </th>
 
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#132A22]">
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[var(--text-primary)]">
                       Actions
                     </th>
                   </tr>
@@ -1398,16 +1398,16 @@ export default function UsersPage() {
                       className="border-t border-gray-100"
                     >
                       <td className="px-6 py-4">
-                        <div className="font-medium text-[#132A22]">
+                        <div className="font-medium text-[var(--text-primary)]">
                           {user.name || "-"}
                         </div>
                       </td>
 
-                      <td className="px-6 py-4 text-[#6B7280]">
+                      <td className="px-6 py-4 text-[var(--text-secondary)]">
                         {user.email}
                       </td>
 
-                      <td className="px-6 py-4 text-[#6B7280]">
+                      <td className="px-6 py-4 text-[var(--text-secondary)]">
                         {user.username || "-"}
                       </td>
 
@@ -1421,7 +1421,7 @@ export default function UsersPage() {
                         </span>
                       </td>
 
-                      <td className="px-6 py-4 text-[#6B7280]">
+                      <td className="px-6 py-4 text-[var(--text-secondary)]">
                         {formatDate(user.createdAt)}
                       </td>
 

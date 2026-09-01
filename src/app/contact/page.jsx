@@ -93,9 +93,9 @@ export default function ContactPage() {
           />
         </div>
 
-        <div className="absolute inset-0 bg-[#003c2f]/90" />
+        <div className="absolute inset-0 bg-[var(--primary-dark)]/90" />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-[#003c2f]/95 via-[#003c2f]/90 to-[#003c2f]/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[var(--primary-dark)]/95 via-[var(--primary-dark)]/90 to-[var(--primary-dark)]/70" />
 
         <div className="absolute -right-20 -top-32 h-72 w-72 rounded-full border border-[var(--primary)]/20 lg:h-96 lg:w-96" />
 
@@ -160,7 +160,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-[var(--primary-dark)]/60" />
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[var(--primary-)] via-[var(--primary-dark)]/40 to-[var(--primary-dark)]/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[var(--primary-dark)] via-[var(--primary-dark)]/40 to-[var(--primary-dark)]/50" />
 
         {/* Decorative Circles */}
         <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full border border-[var(--primary)]/20 sm:h-96 sm:w-96" />
@@ -247,7 +247,7 @@ export default function ContactPage() {
                   className="
                     group relative overflow-hidden
                     rounded-[18px]
-                    border border-[#dfe7e3]
+                    border border-[var(--border)]
                     bg-white
                     p-7
                     shadow-[0_4px_20px_rgba(0,0,0,0.035)]
@@ -267,8 +267,8 @@ export default function ContactPage() {
                       flex h-12 w-12
                       items-center justify-center
                       rounded-xl
-                      border border-[#d8e2dd]
-                      bg-[#fafcfb]
+                      border border-[var(--border)]
+                      bg-[var(--background-light)]
                       transition-all duration-300
                       group-hover:border-[var(--primary)]/50
                       group-hover:bg-[var(--primary)]/5
@@ -435,7 +435,7 @@ export default function ContactPage() {
 
                 {/* Success */}
                 {successMessage && (
-                  <div className="flex items-center gap-3 rounded-xl border border-green-200 bg-green-50 px-4 py-4 text-sm font-medium text-green-700">
+                  <div className="flex items-center gap-3 rounded-xl border border-[var(--success)]/30 bg-[var(--success)]/10 px-4 py-4 text-sm font-medium text-[var(--success)]">
                     <CheckCircle2 className="h-5 w-5 shrink-0" />
                     <span>{successMessage}</span>
                   </div>
@@ -481,7 +481,7 @@ export default function ContactPage() {
 
                 {/* Address underneath map */}
                 <div className="flex items-start gap-4 border-t border-[var(--border)] bg-white p-6">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#d8e2dd] bg-[#fafcfb]">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--background-light)]">
                     <MapPin
                       className="h-[19px] w-[19px] text-[var(--secondary)]"
                       strokeWidth={1.6}

@@ -92,7 +92,7 @@ export default function AdminScholarshipsPage() {
           </div>
           <Link
             href="/admin/scholarships/create"
-            className="bg-[#8CC63F] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#7AB32F] transition-colors duration-200"
+            className="bg-[var(--primary)] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[var(--primary)] transition-colors duration-200"
           >
             Add Scholarship
           </Link>
@@ -100,7 +100,7 @@ export default function AdminScholarshipsPage() {
 
           {loading ? (
             <div className="text-center py-12">
-              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#8CC63F]"></div>
+              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--primary)]"></div>
               <p className="mt-4 text-gray-500">Loading scholarships...</p>
             </div>
           ) : error ? (
@@ -108,7 +108,7 @@ export default function AdminScholarshipsPage() {
               <p className="text-red-600">{error}</p>
               <button
                 onClick={fetchScholarships}
-                className="mt-4 px-6 py-2 bg-[#8CC63F] text-white rounded-xl hover:bg-[#7AB32F] transition-colors duration-200"
+                className="mt-4 px-6 py-2 bg-[var(--primary)] text-white rounded-xl hover:bg-[var(--primary)] transition-colors duration-200"
               >
                 Try Again
               </button>
@@ -118,7 +118,7 @@ export default function AdminScholarshipsPage() {
               <p className="text-gray-500 mb-4">No scholarships found</p>
               <Link
                 href="/admin/scholarships/create"
-                className="inline-block px-6 py-3 bg-[#8CC63F] text-white rounded-xl hover:bg-[#7AB32F] transition-colors duration-200"
+                className="inline-block px-6 py-3 bg-[var(--primary)] text-white rounded-xl hover:bg-[var(--primary)] transition-colors duration-200"
               >
                 Create First Scholarship
               </Link>
@@ -156,7 +156,7 @@ export default function AdminScholarshipsPage() {
                         <td className="px-6 py-4">
                           <span className={`px-3 py-1 rounded-full text-xs font-medium ${
                             scholarship.status === 'PUBLISHED' 
-                              ? 'bg-green-100 text-green-800' 
+                              ? 'bg-[var(--success)]/10 text-[var(--success)]' 
                               : 'bg-yellow-100 text-yellow-800'
                           }`}>
                             {scholarship.status}
@@ -179,7 +179,7 @@ export default function AdminScholarshipsPage() {
                             <Link
                               href={`/scholarships/${scholarship.slug}`}
                               target="_blank"
-                              className="text-[#8CC63F] hover:text-[#7AB32F] text-sm font-medium transition-colors"
+                              className="text-[var(--primary)] hover:text-[var(--primary)] text-sm font-medium transition-colors"
                             >
                               View
                             </Link>

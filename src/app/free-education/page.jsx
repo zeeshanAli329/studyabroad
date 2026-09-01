@@ -121,7 +121,7 @@ export default function FreeEducationPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#f8faf9] text-[var(--text-primary)]">
+    <main className="min-h-screen bg-[var(--background-light)] text-[var(--text-primary)]">
       <FreeEducationHero />
 
       <EducationHighlights />

@@ -4,7 +4,7 @@ import Reveal from "@/components/shared/Reveal";
 
 export default function FinancialNeedSection() {
   return (
-    <section className="border-y border-gray-100 bg-[#f7faf8] py-16">
+    <section className="border-y border-gray-100 bg-[var(--background-light)] py-16">
       <div className="mx-auto max-w-[1320px] px-6 lg:px-8">
         <div className="grid gap-5 lg:grid-cols-2">
           <Reveal>

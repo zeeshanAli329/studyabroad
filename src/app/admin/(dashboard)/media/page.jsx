@@ -14,7 +14,7 @@ export default function AdminMediaPage() {
       />
       <div>
         <div className="flex justify-between items-center mb-8">
-          <button className="bg-[#8CC63F] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#6FA82F] transition">
+          <button className="bg-[var(--primary)] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[var(--primary)] transition">
             Upload Media
           </button>
         </div>

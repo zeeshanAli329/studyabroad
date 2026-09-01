@@ -7,7 +7,7 @@
   width: 100%;
   padding: 65px 0;
   overflow: hidden;
-  background: #f3f6ed;
+  background: var(--background-light);
 }
 
 .countries-section__container {
@@ -17,7 +17,7 @@
   padding: 52px 80px 55px;
   overflow: hidden;
   border-radius: 30px;
-  background: #00533d;
+  background: var(--primary-dark);
 }
 
 /* Background glow — swapped filter:blur for radial-gradient.
@@ -28,9 +28,9 @@
   border-radius: 999px;
   background: radial-gradient(
     circle,
-    rgba(138, 207, 24, 0.1) 0%,
-    rgba(138, 207, 24, 0.04) 45%,
-    rgba(138, 207, 24, 0) 70%
+    color-mix(in srgb, var(--primary-light) 10%, transparent) 0%,
+    color-mix(in srgb, var(--primary-light) 4%, transparent) 45%,
+    color-mix(in srgb, var(--primary-light) 0%, transparent) 70%
   );
 }
 
@@ -79,12 +79,12 @@
 .countries-section__eyebrow span:first-child {
   width: 20px;
   height: 1px;
-  background: #8bd31c;
+  background: var(--primary);
 }
 
 .countries-section__header h2 {
   margin: 0;
-  color: #ffffff;
+  color: var(--surface);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(32px, 3.4vw, 52px);
   font-weight: 700;
@@ -93,7 +93,7 @@
 }
 
 .countries-section__header h2 span {
-  color: #ffffff;
+  color: var(--surface);
 }
 
 /* NAVIGATION */
@@ -115,7 +115,7 @@
   border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: 50%;
   background: transparent;
-  color: #ffffff;
+  color: var(--surface);
   cursor: pointer;
   transition:
     background-color 250ms ease,
@@ -132,9 +132,9 @@
 }
 
 .countries-section__arrow:hover:not(:disabled) {
-  background: #8bd31c;
-  border-color: #8bd31c;
-  color: #ffffff;
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--surface);
   transform: translateY(-2px);
 }
 
@@ -166,7 +166,7 @@
   height: 100%;
   overflow: hidden;
   border-radius: 17px;
-  background: #dce7df;
+  background: var(--background-light);
   cursor: pointer;
   /* Only flex-grow actually changes value on hover —
      flex-basis stays 0 in both states, so it's dropped
@@ -184,7 +184,7 @@
   z-index: 20;
   box-shadow:
     0 20px 45px rgba(0, 0, 0, 0.18),
-    0 0 0 1px rgba(139, 211, 28, 0.18);
+    0 0 0 1px color-mix(in srgb, var(--primary-light) 18%, transparent);
 }
 
 /* IMAGE */
@@ -271,7 +271,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(145deg, #e7efe5, #cfded3);
+  background: linear-gradient(145deg, var(--background-light), var(--border));
 }
 
 .country-card__image-placeholder span {
@@ -281,9 +281,9 @@
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background: rgba(139, 211, 28, 0.18);
-  border: 1px solid rgba(139, 211, 28, 0.35);
-  color: #00533d;
+  background: color-mix(in srgb, var(--primary-light) 18%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary-light) 35%, transparent);
+  color: var(--primary-dark);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 28px;
   font-weight: 700;
@@ -303,8 +303,8 @@
   padding: 28px;
   overflow: hidden;
   border-radius: 20px;
-  background: #8bd31c;
-  color: #ffffff;
+  background: var(--primary);
+  color: var(--surface);
   opacity: 0;
   transform: perspective(1000px) rotateX(-12deg) translateY(115px) scale(0.94);
   transform-origin: center bottom;
@@ -337,7 +337,7 @@
 
 .country-card__content h3 {
   margin: 0 0 9px;
-  color: #ffffff;
+  color: var(--surface);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 24px;
   font-weight: 700;
@@ -345,7 +345,7 @@
 }
 
 .country-card__content h3 span {
-  color: #ffffff;
+  color: var(--surface);
 }
 
 .country-card__content p {
@@ -375,7 +375,7 @@
   border: 1px solid rgba(255, 255, 255, 0.9);
   border-radius: 999px;
   background: transparent;
-  color: #ffffff;
+  color: var(--surface);
   text-decoration: none;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 13px;
@@ -393,8 +393,8 @@
 }
 
 .country-card__button:hover {
-  background: #ffffff;
-  color: #00533d;
+  background: var(--surface);
+  color: var(--primary-dark);
   transform: translateY(-2px);
 }
 
@@ -412,7 +412,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: var(--surface);
   text-align: center;
 }
 
@@ -421,7 +421,7 @@
   height: 42px;
   margin-bottom: 16px;
   border: 3px solid rgba(255, 255, 255, 0.15);
-  border-top-color: #8bd31c;
+  border-top-color: var(--primary);
   border-radius: 50%;
   animation: countries-loader 800ms linear infinite;
 }
@@ -440,8 +440,8 @@
   padding: 10px 22px;
   border: 0;
   border-radius: 999px;
-  background: #8bd31c;
-  color: #ffffff;
+  background: var(--primary);
+  color: var(--surface);
   font-weight: 600;
   cursor: pointer;
 }

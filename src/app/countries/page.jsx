@@ -156,29 +156,29 @@
 //         className="relative mx-4 mb-8 w-[calc(100%-2rem)] overflow-hidden rounded-3xl sm:mx-6 sm:w-[calc(100%-3rem)] lg:mx-8 lg:w-[calc(100%-4rem)]"
 //         style={{
 //           backgroundImage:
-//             "linear-gradient(120deg, rgba(15,58,45,0.94), rgba(15,58,45,0.78)), url('https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/breadcrumb.png')",
+//             "linear-gradient(120deg, var(--primary-dark), var(--primary-dark)), url('https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/breadcrumb.png')",
 //           backgroundSize: "cover",
 //           backgroundPosition: "center",
 //         }}
 //       >
 //         {/* Soft green glow */}
-//         <div className="pointer-events-none absolute -left-24 -top-24 h-64 w-64 rounded-full bg-lime-400/10 blur-3xl" />
+//         <div className="pointer-events-none absolute -left-24 -top-24 h-64 w-64 rounded-full bg-[var(--primary)]/10 blur-3xl" />
 
-//         <div className="pointer-events-none absolute -bottom-32 -right-20 h-72 w-72 rounded-full bg-lime-400/10 blur-3xl" />
+//         <div className="pointer-events-none absolute -bottom-32 -right-20 h-72 w-72 rounded-full bg-[var(--primary)]/10 blur-3xl" />
 
 //         {/* Subtle outline */}
-//         <div className="pointer-events-none absolute inset-0 rounded-3xl border border-lime-300/20" />
+//         <div className="pointer-events-none absolute inset-0 rounded-3xl border border-[var(--border)]/20" />
 
 //         <div className="relative mx-auto max-w-7xl px-6 py-20 sm:px-10 sm:py-28">
 //           {/* Small label */}
 //           <div className="mb-5 flex items-center gap-3">
-//             <span className="h-px w-10 bg-lime-400/80" />
+//             <span className="h-px w-10 bg-[var(--primary)]/80" />
 
-//             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-lime-300 sm:text-sm">
+//             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--primary)] sm:text-sm">
 //               Global Opportunities
 //             </span>
 
-//             <span className="h-px w-10 bg-lime-400/80" />
+//             <span className="h-px w-10 bg-[var(--primary)]/80" />
 //           </div>
 
 //           {/* Main Heading */}
@@ -187,13 +187,13 @@
 //           </h1>
 
 //           {/* Dynamic typing text */}
-//           <div className="mt-4 flex min-h-[44px] items-center text-2xl font-semibold text-lime-300 sm:text-3xl">
+//           <div className="mt-4 flex min-h-[44px] items-center text-2xl font-semibold text-[var(--primary)] sm:text-3xl">
 //             <span>Study in&nbsp;</span>
 
 //             <span className="relative inline-block min-w-[10px]">
 //               {typedCountry}
 
-//               <span className="ml-1 inline-block h-7 w-[2px] translate-y-1 animate-pulse bg-lime-300 sm:h-8" />
+//               <span className="ml-1 inline-block h-7 w-[2px] translate-y-1 animate-pulse bg-[var(--primary-light)] sm:h-8" />
 //             </span>
 //           </div>
 
@@ -205,9 +205,9 @@
 
 //           {/* Small decorative line */}
 //           <div className="mt-8 flex items-center gap-2">
-//             <span className="h-1 w-12 rounded-full bg-lime-400/80" />
-//             <span className="h-1 w-2 rounded-full bg-lime-300/40" />
-//             <span className="h-1 w-2 rounded-full bg-lime-300/20" />
+//             <span className="h-1 w-12 rounded-full bg-[var(--primary)]/80" />
+//             <span className="h-1 w-2 rounded-full bg-[var(--primary-light)]/40" />
+//             <span className="h-1 w-2 rounded-full bg-[var(--primary-light)]/20" />
 //           </div>
 //         </div>
 //       </section>
@@ -263,7 +263,7 @@
 //                 href={`/countries/${country.slug}`}
 //                 className="group relative block h-full"
 //               >
-//                 <div className="relative h-full overflow-hidden rounded-2xl border border-[var(--primary)]/10 bg-white p-1.5 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[var(--primary)]/40 hover:shadow-[0_18px_45px_rgba(107,181,43,0.12)]">
+//                 <div className="relative h-full overflow-hidden rounded-2xl border border-[var(--primary)]/10 bg-white p-1.5 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[var(--primary)]/40 hover:shadow-[0_18px_45px_var(--primary)]">
 //                   {/* Soft hover fill */}
 //                   <div className="pointer-events-none absolute inset-0 z-0 translate-y-full bg-gradient-to-b from-[var(--primary)]/[0.04] to-[var(--primary)]/[0.10] transition-transform duration-700 ease-out group-hover:translate-y-0" />
 
@@ -317,7 +317,7 @@
 //                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-60" />
 
 //                     {/* Green glow */}
-//                     <div className="pointer-events-none absolute -bottom-16 -right-16 h-36 w-36 rounded-full bg-lime-400/20 blur-3xl transition-all duration-500 group-hover:bg-lime-400/30" />
+//                     <div className="pointer-events-none absolute -bottom-16 -right-16 h-36 w-36 rounded-full bg-[var(--primary)]/20 blur-3xl transition-all duration-500 group-hover:bg-[var(--primary-light)]/30" />
 
 //                     {/* Country name badge */}
 //                     <div className="absolute bottom-4 left-4 right-4">
@@ -522,30 +522,30 @@ export default function CountriesPage() {
         className="relative mx-4 mb-8 w-[calc(100%-2rem)] overflow-hidden rounded-3xl sm:mx-6 sm:w-[calc(100%-3rem)] lg:mx-8 lg:w-[calc(100%-4rem)]"
         style={{
           backgroundImage:
-            "linear-gradient(120deg, rgba(15,58,45,0.94), rgba(15,58,45,0.78)), url('https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/breadcrumb.png')",
+            "linear-gradient(120deg, var(--primary-dark), var(--primary-dark)), url('https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/breadcrumb.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
         {/* Soft green glow */}
-        <div className="pointer-events-none absolute -left-24 -top-24 h-64 w-64 rounded-full bg-lime-400/10 blur-3xl" />
+        <div className="pointer-events-none absolute -left-24 -top-24 h-64 w-64 rounded-full bg-[var(--primary)]/10 blur-3xl" />
 
-        <div className="pointer-events-none absolute -bottom-32 -right-20 h-72 w-72 rounded-full bg-lime-400/10 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-32 -right-20 h-72 w-72 rounded-full bg-[var(--primary)]/10 blur-3xl" />
 
         {/* Subtle outline */}
-        <div className="pointer-events-none absolute inset-0 rounded-3xl border border-lime-300/20" />
+        <div className="pointer-events-none absolute inset-0 rounded-3xl border border-[var(--border)]/20" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-20 sm:px-10 sm:py-28">
 
           {/* Small label */}
           <div className="mb-5 flex items-center gap-3">
-            <span className="h-px w-10 bg-lime-400/80" />
+            <span className="h-px w-10 bg-[var(--primary)]/80" />
 
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-lime-300 sm:text-sm">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--primary)] sm:text-sm">
               Global Opportunities
             </span>
 
-            <span className="h-px w-10 bg-lime-400/80" />
+            <span className="h-px w-10 bg-[var(--primary)]/80" />
           </div>
 
           {/* Main Heading */}
@@ -554,13 +554,13 @@ export default function CountriesPage() {
           </h1>
 
           {/* Dynamic typing text */}
-          <div className="mt-4 flex min-h-[44px] items-center text-2xl font-semibold text-lime-300 sm:text-3xl">
+          <div className="mt-4 flex min-h-[44px] items-center text-2xl font-semibold text-[var(--primary)] sm:text-3xl">
             <span>Study in&nbsp;</span>
 
             <span className="relative inline-block min-w-[10px]">
               {typedCountry}
 
-              <span className="ml-1 inline-block h-7 w-[2px] translate-y-1 animate-pulse bg-lime-300 sm:h-8" />
+              <span className="ml-1 inline-block h-7 w-[2px] translate-y-1 animate-pulse bg-[var(--primary-light)] sm:h-8" />
             </span>
           </div>
 
@@ -572,9 +572,9 @@ export default function CountriesPage() {
 
           {/* Small decorative line */}
           <div className="mt-8 flex items-center gap-2">
-            <span className="h-1 w-12 rounded-full bg-lime-400/80" />
-            <span className="h-1 w-2 rounded-full bg-lime-300/40" />
-            <span className="h-1 w-2 rounded-full bg-lime-300/20" />
+            <span className="h-1 w-12 rounded-full bg-[var(--primary)]/80" />
+            <span className="h-1 w-2 rounded-full bg-[var(--primary-light)]/40" />
+            <span className="h-1 w-2 rounded-full bg-[var(--primary-light)]/20" />
           </div>
         </div>
       </section>
@@ -629,7 +629,7 @@ export default function CountriesPage() {
                 href={`/countries/${country.slug}`}
                 className="group relative block h-full"
               >
-                <div className="relative h-full overflow-hidden rounded-2xl border border-[var(--primary)]/10 bg-white p-1.5 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[var(--primary)]/40 hover:shadow-[0_18px_45px_rgba(107,181,43,0.12)]">
+                <div className="relative h-full overflow-hidden rounded-2xl border border-[var(--primary)]/10 bg-white p-1.5 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[var(--primary)]/40 hover:shadow-[0_18px_45px_var(--primary)]">
 
                   {/* Soft hover fill */}
                   <div className="pointer-events-none absolute inset-0 z-0 translate-y-full bg-gradient-to-b from-[var(--primary)]/[0.04] to-[var(--primary)]/[0.10] transition-transform duration-700 ease-out group-hover:translate-y-0" />
@@ -683,7 +683,7 @@ export default function CountriesPage() {
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-60" />
 
                     {/* Green glow */}
-                    <div className="pointer-events-none absolute -bottom-16 -right-16 h-36 w-36 rounded-full bg-lime-400/20 blur-3xl transition-all duration-500 group-hover:bg-lime-400/30" />
+                    <div className="pointer-events-none absolute -bottom-16 -right-16 h-36 w-36 rounded-full bg-[var(--primary)]/20 blur-3xl transition-all duration-500 group-hover:bg-[var(--primary-light)]/30" />
 
                     {/* Country name badge */}
                     <div className="absolute bottom-4 left-4 right-4">

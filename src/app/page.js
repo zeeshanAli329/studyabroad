@@ -15,6 +15,7 @@ import CoachingSection from "@/components/home/CoachingSection";
 // import { SimpleProcess } from "./(site)/about/page";
 import { SimpleProcess } from "@/components/about_us/SimpleProcess";
 import AdBanner from "@/components/ads/AdBanner";
+import Hero1 from "@/components/home/Hero1";
 
 // import AdBanner from "@/components/AdBanner";
 
@@ -83,6 +84,7 @@ export default function Home() {
       />
 
       <Hero />
+      {/* <Hero1 /> */}
 
       {/* Ad: Between Hero and Features */}
       <AdBanner

@@ -184,7 +184,7 @@ export default function DashboardClient() {
       <div className="p-6 lg:p-8">
         {loading ? (
           <div className="py-12 text-center">
-            <div className="inline-block h-12 w-12 animate-spin rounded-full border-b-2 border-[#8CC63F]"></div>
+            <div className="inline-block h-12 w-12 animate-spin rounded-full border-b-2 border-[var(--primary)]"></div>
 
             <p className="mt-4 text-gray-500">
               Loading dashboard...
@@ -209,7 +209,7 @@ export default function DashboardClient() {
                   Published
                 </h3>
 
-                <p className="text-3xl font-bold text-[#8CC63F]">
+                <p className="text-3xl font-bold text-[var(--primary)]">
                   {stats.publishedScholarships}
                 </p>
               </div>
@@ -284,11 +284,11 @@ export default function DashboardClient() {
                   Active Advertisements
                 </h3>
 
-                <p className="text-3xl font-bold text-[#8CC63F]">
+                <p className="text-3xl font-bold text-[var(--primary)]">
                   {stats.activeAdvertisements}
                 </p>
 
-                <p className="mt-2 text-xs text-green-600">
+                <p className="mt-2 text-xs text-[var(--success)]">
                   Currently active
                 </p>
               </div>
@@ -318,7 +318,7 @@ export default function DashboardClient() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/admin/scholarships/create"
-                  className="rounded-xl bg-[#8CC63F] px-6 py-3 font-medium text-white transition-colors duration-200 hover:bg-[#7AB32F]"
+                  className="rounded-xl bg-[var(--primary)] px-6 py-3 font-medium text-white transition-colors duration-200 hover:bg-[var(--primary)]"
                 >
                   Add Scholarship
                 </Link>
@@ -347,7 +347,7 @@ export default function DashboardClient() {
 
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <div className="h-3 w-3 rounded-full bg-green-500"></div>
+                  <div className="h-3 w-3 rounded-full bg-[var(--success)]/100"></div>
 
                   <span className="text-gray-600">
                     Backend API: Online
@@ -355,7 +355,7 @@ export default function DashboardClient() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="h-3 w-3 rounded-full bg-green-500"></div>
+                  <div className="h-3 w-3 rounded-full bg-[var(--success)]/100"></div>
 
                   <span className="text-gray-600">
                     Database: Connected
@@ -363,7 +363,7 @@ export default function DashboardClient() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="h-3 w-3 rounded-full bg-green-500"></div>
+                  <div className="h-3 w-3 rounded-full bg-[var(--success)]/100"></div>
 
                   <span className="text-gray-600">
                     Authentication: Active

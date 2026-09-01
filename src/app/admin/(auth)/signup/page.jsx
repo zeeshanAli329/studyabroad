@@ -102,13 +102,13 @@ export default function AdminSignupPage() {
 
   if (success) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#F8FAF7] via-[#EEF5E9] to-[#F9FAF8] relative overflow-hidden p-4 md:p-8">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[var(--background-light)] via-[var(--background-light)] to-[var(--background-light)] relative overflow-hidden p-4 md:p-8">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#8CC63F] opacity-5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#0E4A3A] opacity-3 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[var(--primary)] opacity-5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[var(--primary-dark)] opacity-3 rounded-full blur-3xl"></div>
         </div>
         <div className="relative w-full max-w-md bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-10 text-center animate-fade-in-up">
-          <div className="w-16 h-16 bg-[#8CC63F] rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="w-16 h-16 bg-[var(--primary)] rounded-full flex items-center justify-center mx-auto mb-6">
             <svg
               className="w-8 h-8 text-white"
               fill="none"
@@ -155,12 +155,12 @@ export default function AdminSignupPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#F8FAF7] via-[#EEF5E9] to-[#F9FAF8] relative overflow-hidden p-4 md:p-8">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[var(--background-light)] via-[var(--background-light)] to-[var(--background-light)] relative overflow-hidden p-4 md:p-8">
       {/* Subtle background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#8CC63F] opacity-5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#0E4A3A] opacity-3 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#8CC63F] opacity-3 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[var(--primary)] opacity-5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[var(--primary-dark)] opacity-3 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--primary)] opacity-3 rounded-full blur-3xl"></div>
       </div>
 
       {/* Authentication Card */}
@@ -201,7 +201,7 @@ export default function AdminSignupPage() {
               onChange={(e) =>
                 setFormData({ ...formData, fullName: e.target.value })
               }
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F] focus:border-transparent transition-all duration-200 bg-[#F8F9F5]"
+              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all duration-200 bg-[var(--background-light)]"
               placeholder="John Doe"
             />
           </div>
@@ -217,7 +217,7 @@ export default function AdminSignupPage() {
               onChange={(e) =>
                 setFormData({ ...formData, username: e.target.value })
               }
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F] focus:border-transparent transition-all duration-200 bg-[#F8F9F5]"
+              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all duration-200 bg-[var(--background-light)]"
               placeholder="johndoe"
             />
           </div>
@@ -233,7 +233,7 @@ export default function AdminSignupPage() {
               onChange={(e) =>
                 setFormData({ ...formData, email: e.target.value })
               }
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F] focus:border-transparent transition-all duration-200 bg-[#F8F9F5]"
+              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all duration-200 bg-[var(--background-light)]"
               placeholder="admin@example.com"
             />
           </div>
@@ -250,7 +250,7 @@ export default function AdminSignupPage() {
                 onChange={(e) =>
                   setFormData({ ...formData, password: e.target.value })
                 }
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F] focus:border-transparent transition-all duration-200 pr-12 bg-[#F8F9F5]"
+                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all duration-200 pr-12 bg-[var(--background-light)]"
                 placeholder="••••••••"
               />
               <button
@@ -309,7 +309,7 @@ export default function AdminSignupPage() {
                 onChange={(e) =>
                   setFormData({ ...formData, confirmPassword: e.target.value })
                 }
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F] focus:border-transparent transition-all duration-200 pr-12 bg-[#F8F9F5]"
+                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all duration-200 pr-12 bg-[var(--background-light)]"
                 placeholder="••••••••"
               />
               <button
@@ -359,7 +359,7 @@ export default function AdminSignupPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-[#8CC63F] text-white py-3 rounded-lg font-semibold hover:bg-[#6FA82F] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-[var(--primary)] text-white py-3 rounded-lg font-semibold hover:bg-[var(--primary)] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? "Creating Account..." : "Create Admin Account"}
           </button>
@@ -370,7 +370,7 @@ export default function AdminSignupPage() {
             Already have an account?{" "}
             <Link
               href="/admin/login"
-              className="text-[#8CC63F] font-semibold hover:underline transition-colors"
+              className="text-[var(--primary)] font-semibold hover:underline transition-colors"
             >
               Sign In
             </Link>

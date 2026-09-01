@@ -17,7 +17,7 @@ export function HeroBreadcrumb() {
   className="relative w-full overflow-hidden"
   style={{
     backgroundImage:
-      "linear-gradient(120deg, rgba(15,58,45,0.92), rgba(15,58,45,0.75)), url('https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/breadcrumb.png')",
+      "linear-gradient(120deg, var(--primary-dark), var(--primary-dark)), url('https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/breadcrumb.png')",
     backgroundSize: "cover",
     backgroundPosition: "center",
   }}
@@ -33,7 +33,7 @@ export function HeroBreadcrumb() {
       <div className="flex items-center gap-2 text-white/80 text-sm mt-6">
         <span>STUDYABROAD</span>
         <ChevronRight className="w-4 h-4" />
-        <span className="text-lime-400">About Us</span>
+        <span className="text-[var(--primary)]">About Us</span>
       </div>
     </Reveal>
   </div>

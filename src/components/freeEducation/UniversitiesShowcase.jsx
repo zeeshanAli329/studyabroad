@@ -42,7 +42,7 @@ export default function UniversitiesShowcase({
             {[1, 2, 3].map((item) => (
               <div
                 key={item}
-                className="h-[220px] animate-pulse rounded-[1.5rem] bg-[#f7faf8]"
+                className="h-[220px] animate-pulse rounded-[1.5rem] bg-[var(--background-light)]"
               />
             ))}
           </div>
@@ -57,7 +57,7 @@ export default function UniversitiesShowcase({
                 }
                 delay={index * 50}
               >
-                <article className="group grid overflow-hidden rounded-[1.5rem] border border-gray-100 bg-[#fafcfb] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--primary)]/30 hover:bg-white hover:shadow-xl md:grid-cols-[300px_1fr]">
+                <article className="group grid overflow-hidden rounded-[1.5rem] border border-gray-100 bg-[var(--background-light)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--primary)]/30 hover:bg-white hover:shadow-xl md:grid-cols-[300px_1fr]">
                   <div className="relative min-h-[220px] overflow-hidden">
                     <img
                       src={getImage(university)}

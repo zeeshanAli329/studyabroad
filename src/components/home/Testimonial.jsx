@@ -54,7 +54,7 @@ export default function Testimonial() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#f8faf5] py-16 sm:py-20 lg:py-24">
+    <section className="relative overflow-hidden bg-[var(--background-light)] py-16 sm:py-20 lg:py-24">
       {/* Background outlines */}
       <div className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full border border-[var(--primary)]/10" />
       <div className="pointer-events-none absolute -left-20 top-24 h-56 w-56 rounded-full border border-[var(--primary)]/10" />

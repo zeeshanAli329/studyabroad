@@ -135,7 +135,7 @@ const faqs = [
       <section
         className="relative w-[calc(100%-2rem)] lg:w-[calc(100%-4rem)] mx-auto overflow-hidden rounded-3xl"
         style={{
-          backgroundImage: "linear-gradient(120deg, rgba(15,58,45,0.92), rgba(15,58,45,0.75)), url('https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/breadcrumb.png')",
+          backgroundImage: "linear-gradient(120deg, var(--primary-dark), var(--primary-dark)), url('https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/breadcrumb.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -150,7 +150,7 @@ const faqs = [
           <div className="flex items-center flex-wrap gap-2 text-white/80 text-sm mt-6">
             <span>STUDYABROAD</span>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-lime-400">Visa Services</span>
+            <span className="text-[var(--primary)]">Visa Services</span>
           </div>
         </div>
       </section>
@@ -165,11 +165,11 @@ const faqs = [
       {/* Application Process */}
       <section className="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
         <div className="text-center mb-14">
-          <div className="flex items-center justify-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide">
+          <div className="flex items-center justify-center gap-2 text-[var(--primary)] font-semibold text-sm uppercase tracking-wide">
             <Clock className="w-4 h-4" />
             Application Process
           </div>
-          <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
+          <h2 className="font-serif text-[var(--primary)] text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
             How It Works
           </h2>
         </div>
@@ -182,10 +182,10 @@ const faqs = [
             { step: "04", title: "Approval", desc: "Track your application and receive your visa" }
           ].map((item, index) => (
             <div key={item.step} className="text-center">
-              <div className="w-16 h-16 rounded-full bg-emerald-900 flex items-center justify-center mx-auto mb-4">
-                <span className="text-lime-400 font-serif text-2xl font-bold">{item.step}</span>
+              <div className="w-16 h-16 rounded-full bg-[var(--primary)] flex items-center justify-center mx-auto mb-4">
+                <span className="text-white font-serif text-2xl font-bold">{item.step}</span>
               </div>
-              <h3 className="font-serif font-semibold text-emerald-900 text-lg mb-2">{item.title}</h3>
+              <h3 className="font-serif font-semibold text-[var(--primary)] text-lg mb-2">{item.title}</h3>
               <p className="text-gray-600 text-sm">{item.desc}</p>
             </div>
           ))}
@@ -193,11 +193,11 @@ const faqs = [
       </section>
 
       {/* 4.2 Required Documents Checklist */}
-      <section id="required-documents-checklist" className="bg-emerald-900 rounded-3xl py-16 sm:py-24 mx-4 lg:mx-8">
+      <section id="required-documents-checklist" className="bg-[var(--primary)] rounded-3xl py-16 sm:py-24 mx-4 lg:mx-8">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="flex items-center gap-2 text-lime-400 font-semibold text-sm uppercase tracking-wide mb-4">
+              <div className="flex items-center gap-2 text-[var(--primary-light)] font-semibold text-sm uppercase tracking-wide mb-4">
                 <FileText className="w-4 h-4" />
                 Required Documents Checklist
               </div>
@@ -210,7 +210,7 @@ const faqs = [
               <ul className="space-y-3">
                 {requiredDocuments.map((doc, index) => (
                   <li key={index} className="flex items-start gap-3 text-white/90">
-                    <CheckCircle className="w-5 h-5 text-lime-400 flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-white flex-shrink-0 mt-0.5" />
                     <span>{doc}</span>
                   </li>
                 ))}
@@ -223,7 +223,7 @@ const faqs = [
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-lime-500 hover:bg-lime-600 text-white font-medium px-6 py-3 rounded-full transition-colors"
+                className="inline-flex items-center gap-2 bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white font-medium px-6 py-3 rounded-full transition-colors"
               >
                 Get Document Assistance <ChevronRight className="w-4 h-4" />
               </Link>
@@ -236,11 +236,11 @@ const faqs = [
       <section id="visa-interview-preparation" className="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="flex items-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide mb-4">
+            <div className="flex items-center gap-2 text-[var(--primary)] font-semibold text-sm uppercase tracking-wide mb-4">
               <MessageCircle className="w-4 h-4" />
               Visa Interview Preparation
             </div>
-            <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold leading-tight mb-6">
+            <h2 className="font-serif text-[var(--primary)] text-3xl sm:text-4xl font-semibold leading-tight mb-6">
               Walk Into Your Interview With Confidence
             </h2>
             <p className="text-gray-600 leading-relaxed">
@@ -249,8 +249,8 @@ const faqs = [
           </div>
           <ul className="space-y-3">
             {interviewTips.map((tip, index) => (
-              <li key={index} className="flex items-start gap-3 bg-[#fafbf9] rounded-xl p-4 shadow-sm">
-                <CheckCircle className="w-5 h-5 text-lime-600 flex-shrink-0 mt-0.5" />
+              <li key={index} className="flex items-start gap-3 bg-[var(--background-light)] rounded-xl p-4 shadow-sm">
+                <CheckCircle className="w-5 h-5 text-[var(--primary)] flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700 text-sm">{tip}</span>
               </li>
             ))}
@@ -259,14 +259,14 @@ const faqs = [
       </section>
 
       {/* 4.4 Financial Proof & Sponsorship Guidance */}
-      <section id="financial-proof-sponsorship" className="bg-[#fafbf9] py-16 sm:py-24">
+      <section id="financial-proof-sponsorship" className="bg-[var(--background-light)] py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="text-center mb-14">
-            <div className="flex items-center justify-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide">
+            <div className="flex items-center justify-center gap-2 text-[var(--primary-light)] font-semibold text-sm uppercase tracking-wide">
               <DollarSign className="w-4 h-4" />
               Financial Proof & Sponsorship Guidance
             </div>
-            <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
+            <h2 className="font-serif text-[var(--primary)] text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
               Get Your Financial Documents Right
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto mt-4">
@@ -277,7 +277,7 @@ const faqs = [
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {financialGuidance.map((item, index) => (
               <div key={index} className="flex items-start gap-3 bg-white rounded-xl shadow-md p-5">
-                <CheckCircle className="w-5 h-5 text-lime-600 flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-5 h-5 text-white flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700 text-sm">{item}</span>
               </div>
             ))}
@@ -288,18 +288,18 @@ const faqs = [
       {/* 4.5 Visa Rejection: Common Reasons & How to Reapply */}
       <section id="visa-rejection-reapply" className="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
         <div className="text-center mb-14">
-          <div className="flex items-center justify-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide">
+          <div className="flex items-center justify-center gap-2 text-[var(--primary)] font-semibold text-sm uppercase tracking-wide">
             <XCircle className="w-4 h-4" />
             Visa Rejection: Common Reasons & How to Reapply
           </div>
-          <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
+          <h2 className="font-serif text-[var(--primary)] text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
             Turn a Rejection Into an Approval
           </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div>
-            <h3 className="font-serif font-semibold text-emerald-900 text-lg mb-4">Common Rejection Reasons</h3>
+            <h3 className="font-serif font-semibold text-[var(--primary)] text-lg mb-4">Common Rejection Reasons</h3>
             <ul className="space-y-3">
               {rejectionReasons.map((reason, index) => (
                 <li key={index} className="flex items-start gap-3 text-gray-700 text-sm">
@@ -310,11 +310,11 @@ const faqs = [
             </ul>
           </div>
           <div>
-            <h3 className="font-serif font-semibold text-emerald-900 text-lg mb-4">Steps to Reapply</h3>
+            <h3 className="font-serif font-semibold text-[var(--primary)] text-lg mb-4">Steps to Reapply</h3>
             <ul className="space-y-3">
               {reapplySteps.map((step, index) => (
                 <li key={index} className="flex items-start gap-3 text-gray-700 text-sm">
-                  <CheckCircle className="w-5 h-5 text-lime-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 text-[var(--primary)] flex-shrink-0 mt-0.5" />
                   <span>{step}</span>
                 </li>
               ))}
@@ -324,10 +324,10 @@ const faqs = [
       </section>
 
       {/* 4.6 Pre-Departure Checklist */}
-      <section id="pre-departure-checklist" className="bg-emerald-900 rounded-3xl py-16 sm:py-24 mx-4 lg:mx-8">
+      <section id="pre-departure-checklist" className="bg-[var(--primary)] rounded-3xl py-16 sm:py-24 mx-4 lg:mx-8">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="text-center mb-14">
-            <div className="flex items-center justify-center gap-2 text-lime-400 font-semibold text-sm uppercase tracking-wide">
+            <div className="flex items-center justify-center gap-2 text-[var(--primary)] font-semibold text-sm uppercase tracking-wide">
               <PlaneTakeoff className="w-4 h-4" />
               Pre-Departure Checklist
             </div>
@@ -339,7 +339,7 @@ const faqs = [
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {preDepartureChecklist.map((item, index) => (
               <div key={index} className="flex items-start gap-3 bg-white/10 backdrop-blur rounded-xl p-5">
-                <CheckCircle className="w-5 h-5 text-lime-400 flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-5 h-5 text-[var(--primary)] flex-shrink-0 mt-0.5" />
                 <span className="text-white/90 text-sm">{item}</span>
               </div>
             ))}

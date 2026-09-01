@@ -14,7 +14,7 @@ export default function LayoutWrapper({ children }) {
     <>
       {!isAdminRoute && <NavBar />}
       <main className="flex-1">
-        {!isAdminRoute && <div className="pt-8 lg:pt-12"></div>}
+        {!isAdminRoute && <div className="pt-0 lg:pt-8"></div>}
         {children}
       </main>
       {!isAdminRoute && <Footer />}

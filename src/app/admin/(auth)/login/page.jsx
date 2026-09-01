@@ -62,12 +62,12 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#F8FAF7] via-[#EEF5E9] to-[#F9FAF8] relative overflow-hidden p-4 md:p-8">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[var(--background-light)] via-[var(--background-light)] to-[var(--background-light)] relative overflow-hidden p-4 md:p-8">
       {/* Subtle background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#8CC63F] opacity-5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#0E4A3A] opacity-3 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#8CC63F] opacity-3 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[var(--primary)] opacity-5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[var(--primary-dark)] opacity-3 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--primary)] opacity-3 rounded-full blur-3xl"></div>
       </div>
 
       {/* Authentication Card */}
@@ -105,7 +105,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
               required
               value={formData.emailOrUsername}
               onChange={(e) => setFormData({ ...formData, emailOrUsername: e.target.value })}
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F] focus:border-transparent transition-all duration-200 bg-[#F8F9F5]"
+              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all duration-200 bg-[var(--background-light)]"
               placeholder="admin@example.com or admin"
             />
           </div>
@@ -120,7 +120,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
                 required
                 value={formData.password}
                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8CC63F] focus:border-transparent transition-all duration-200 pr-12 bg-[#F8F9F5]"
+                className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition-all duration-200 pr-12 bg-[var(--background-light)]"
                 placeholder="••••••••"
               />
               <button
@@ -144,10 +144,10 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
 
           <div className="flex items-center justify-between">
             <label className="flex items-center text-sm text-[var(--text-secondary)] cursor-pointer">
-              <input type="checkbox" className="mr-2 rounded border-gray-300 text-[#8CC63F] focus:ring-[#8CC63F]" />
+              <input type="checkbox" className="mr-2 rounded border-gray-300 text-[var(--primary)] focus:ring-[var(--primary)]" />
               Remember me
             </label>
-            <Link href="/forgot-password" className="text-sm text-[#8CC63F] hover:underline transition-colors">
+            <Link href="/forgot-password" className="text-sm text-[var(--primary)] hover:underline transition-colors">
               Forgot password?
             </Link>
           </div>
@@ -155,7 +155,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-[#8CC63F] text-white py-3 rounded-lg font-semibold hover:bg-[#6FA82F] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-[var(--primary)] text-white py-3 rounded-lg font-semibold hover:bg-[var(--primary)] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? 'Signing in...' : 'Sign In'}
           </button>
@@ -164,7 +164,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined
         <div className="mt-6 text-center text-sm text-[var(--text-secondary)]">
           <p>
             Don't have an admin account?{' '}
-            <Link href="/admin/signup" className="text-[#8CC63F] font-semibold hover:underline transition-colors">
+            <Link href="/admin/signup" className="text-[var(--primary)] font-semibold hover:underline transition-colors">
               Create Admin Account
             </Link>
           </p>

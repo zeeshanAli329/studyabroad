@@ -6,33 +6,27 @@
       COLORS
   ============================ */
 
+  --btn:  #C98B1D;
+  --primary: #1557A6;
+  --primary-dark: #0B1F3A;
+  --primary-light: #4DA9E8;
 
-/* this is for  btns */
---primary: #6FA82F;
-/* this for headings */
---primary-dark: #034833;
-  /* this is for fill effects */
-  --primary-light: #A8D85B;
+  --secondary: var(--primary-dark);
+  --secondary-light: var(--primary);
 
-
-
-
-
-  --secondary: #0E4A3A;
-  --secondary-light: #1D5D4A;
-
-  --accent: #F4F7EF;
+  --accent: #F4B942;
 
   --background: #FFFFFF;
-  --background-light: #F8F9F5;
+  --background-light: #F4F8FC;
+  --surface: #FFFFFF;
 
-  --text-primary: #132A22;
-  --text-secondary: #6B7280;
+  --text-primary: #172033;
+  --text-secondary: #64748B;
   --text-light: #FFFFFF;
 
-  --border: #E5E7EB;
+  --border: #E2E8F0;
 
-  --success: #22C55E;
+  --success: #3FA66B;
   --warning: #F59E0B;
   --danger: #EF4444;
 
@@ -133,7 +127,7 @@
 
 .button-hover:hover {
   transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(140, 198, 63, 0.3);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--primary) 30%, transparent);
 }
 
 .button-hover:active {

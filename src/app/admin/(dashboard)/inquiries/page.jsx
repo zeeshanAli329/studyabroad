@@ -130,7 +130,7 @@ export default function InquiriesPage() {
       case 'read':
         return 'bg-gray-100 text-gray-800';
       case 'replied':
-        return 'bg-green-100 text-green-800';
+        return 'bg-[var(--success)]/10 text-[var(--success)]';
       default:
         return 'bg-gray-100 text-gray-800';
     }
@@ -148,25 +148,25 @@ export default function InquiriesPage() {
           <div className="flex gap-4">
             <button
               onClick={() => setFilter('all')}
-              className={`px-4 py-2 rounded-lg ${filter === 'all' ? 'bg-[#8CC63F] text-white' : 'bg-gray-100 text-gray-700'}`}
+              className={`px-4 py-2 rounded-lg ${filter === 'all' ? 'bg-[var(--primary)] text-white' : 'bg-gray-100 text-gray-700'}`}
             >
               All
             </button>
             <button
               onClick={() => setFilter('new')}
-              className={`px-4 py-2 rounded-lg ${filter === 'new' ? 'bg-[#8CC63F] text-white' : 'bg-gray-100 text-gray-700'}`}
+              className={`px-4 py-2 rounded-lg ${filter === 'new' ? 'bg-[var(--primary)] text-white' : 'bg-gray-100 text-gray-700'}`}
             >
               New
             </button>
             <button
               onClick={() => setFilter('read')}
-              className={`px-4 py-2 rounded-lg ${filter === 'read' ? 'bg-[#8CC63F] text-white' : 'bg-gray-100 text-gray-700'}`}
+              className={`px-4 py-2 rounded-lg ${filter === 'read' ? 'bg-[var(--primary)] text-white' : 'bg-gray-100 text-gray-700'}`}
             >
               Read
             </button>
             <button
               onClick={() => setFilter('replied')}
-              className={`px-4 py-2 rounded-lg ${filter === 'replied' ? 'bg-[#8CC63F] text-white' : 'bg-gray-100 text-gray-700'}`}
+              className={`px-4 py-2 rounded-lg ${filter === 'replied' ? 'bg-[var(--primary)] text-white' : 'bg-gray-100 text-gray-700'}`}
             >
               Replied
             </button>
@@ -177,50 +177,50 @@ export default function InquiriesPage() {
         <div className="bg-white rounded-xl shadow-sm overflow-hidden">
           {loading ? (
             <div className="text-center py-12">
-              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#8CC63F]"></div>
-              <p className="mt-4 text-[#6B7280]">Loading inquiries...</p>
+              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--primary)]"></div>
+              <p className="mt-4 text-[var(--text-secondary)]">Loading inquiries...</p>
             </div>
           ) : error ? (
             <div className="text-center py-12">
               <p className="text-red-600">{error}</p>
               <button
                 onClick={fetchInquiries}
-                className="mt-4 px-6 py-2 bg-[#8CC63F] text-white rounded-lg hover:bg-[#6FA82F]"
+                className="mt-4 px-6 py-2 bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--primary)]"
               >
                 Try Again
               </button>
             </div>
           ) : inquiries.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-[#6B7280]">No inquiries found</p>
+              <p className="text-[var(--text-secondary)]">No inquiries found</p>
             </div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead className="bg-gray-50">
                   <tr>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#132A22]">Name</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#132A22]">Email</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#132A22]">Phone</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#132A22]">Subject</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#132A22]">Status</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#132A22]">Date</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#132A22]">Actions</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[var(--text-primary)]">Name</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[var(--text-primary)]">Email</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[var(--text-primary)]">Phone</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[var(--text-primary)]">Subject</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[var(--text-primary)]">Status</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[var(--text-primary)]">Date</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-[var(--text-primary)]">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   {inquiries.map((inquiry) => (
                     <tr key={inquiry.id} className="border-t border-gray-100">
                       <td className="px-6 py-4">
-                        <div className="font-medium text-[#132A22]">{inquiry.name}</div>
+                        <div className="font-medium text-[var(--text-primary)]">{inquiry.name}</div>
                       </td>
-                      <td className="px-6 py-4 text-[#6B7280]">
+                      <td className="px-6 py-4 text-[var(--text-secondary)]">
                         {inquiry.email}
                       </td>
-                      <td className="px-6 py-4 text-[#6B7280]">
+                      <td className="px-6 py-4 text-[var(--text-secondary)]">
                         {inquiry.phone || '-'}
                       </td>
-                      <td className="px-6 py-4 text-[#6B7280]">
+                      <td className="px-6 py-4 text-[var(--text-secondary)]">
                         {inquiry.subject || '-'}
                       </td>
                       <td className="px-6 py-4">
@@ -234,7 +234,7 @@ export default function InquiriesPage() {
                           <option value="replied">Replied</option>
                         </select>
                       </td>
-                      <td className="px-6 py-4 text-[#6B7280]">
+                      <td className="px-6 py-4 text-[var(--text-secondary)]">
                         {formatDate(inquiry.createdAt)}
                       </td>
                       <td className="px-6 py-4">

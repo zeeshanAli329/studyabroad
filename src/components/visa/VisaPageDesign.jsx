@@ -26,7 +26,7 @@ export default function VisaPageDesign({
           HERO
       ========================================================= */}
       <section className="relative px-4 pt-6 sm:px-6 lg:px-8">
-        <div className="relative mx-auto max-w-[1400px] overflow-hidden rounded-[28px] bg-emerald-950">
+        <div className="relative mx-auto max-w-[1400px] overflow-hidden rounded-[28px] bg-[var(--primary)]">
 
           {/* Background Image */}
           {hero?.image && (
@@ -38,23 +38,23 @@ export default function VisaPageDesign({
           )}
 
           {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-950 via-emerald-950/95 to-emerald-900/75" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary-dark)] via-[var(--primary-dark)]/95 to-[var(--primary-dark)]/75" />
 
           {/* Decorative Circles */}
-          <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border border-lime-300/10" />
-          <div className="absolute -bottom-32 -right-10 h-96 w-96 rounded-full border border-lime-300/10" />
+          <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border border-[var(--border)]/10" />
+          <div className="absolute -bottom-32 -right-10 h-96 w-96 rounded-full border border-[var(--border)]/10" />
 
           <div className="relative mx-auto max-w-7xl px-6 py-20 sm:px-10 sm:py-28 lg:py-32">
             <div className="max-w-3xl">
 
               {/* Badge */}
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-lime-300/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-lime-300 backdrop-blur-sm">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--border)]/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[var(--primary-light)] backdrop-blur-sm">
                 {hero?.badgeIcon && (
                   <hero.badgeIcon className="h-4 w-4" />
                 )}
 
                 {!hero?.badgeIcon && (
-                  <span className="h-2 w-2 rounded-full bg-lime-300" />
+                  <span className="h-2 w-2 rounded-full bg-[var(--primary-light)]" />
                 )}
 
                 {hero?.badge}
@@ -65,7 +65,7 @@ export default function VisaPageDesign({
                 {hero?.title}
 
                 {hero?.highlight && (
-                  <span className="block text-lime-300">
+                  <span className="block text-[var(--primary-light)]">
                     {hero.highlight}
                   </span>
                 )}
@@ -89,7 +89,7 @@ export default function VisaPageDesign({
 
                 <ChevronRight className="h-4 w-4" />
 
-                <span className="text-lime-300">
+                <span className="text-[var(--primary-light)]">
                   {hero?.breadcrumb || hero?.badge}
                 </span>
               </div>
@@ -128,9 +128,9 @@ export default function VisaPageDesign({
           ELIGIBILITY
       ========================================================= */}
       {eligibility && (
-        <section className="relative bg-[#f7faf8] py-20 sm:py-24">
+        <section className="relative bg-[var(--background-light)] py-20 sm:py-24">
 
-          <div className="absolute left-0 top-20 h-64 w-64 rounded-full bg-lime-200/20 blur-3xl" />
+          <div className="absolute left-0 top-20 h-64 w-64 rounded-full bg-[var(--background-light)]/20 blur-3xl" />
 
           <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
 
@@ -138,18 +138,18 @@ export default function VisaPageDesign({
             <div className="mx-auto mb-14 max-w-3xl text-center">
 
               {eligibility.badge !== false && (
-                <div className="inline-flex items-center gap-2 rounded-full border border-emerald-900/10 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-emerald-800 shadow-sm">
+                <div className="inline-flex items-center gap-2 rounded-full border border-[var(--primary)]/10 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-[var(--primary)] shadow-sm">
                   {eligibility.badgeIcon ? (
-                    <eligibility.badgeIcon className="h-4 w-4 text-lime-600" />
+                    <eligibility.badgeIcon className="h-4 w-4 text-[var(--primary)]" />
                   ) : (
-                    <CheckCircle className="h-4 w-4 text-lime-600" />
+                    <CheckCircle className="h-4 w-4 text-[var(--primary)]" />
                   )}
 
                   {eligibility.badge || "Eligibility"}
                 </div>
               )}
 
-              <h2 className="mt-5 font-serif text-3xl font-semibold text-emerald-950 sm:text-4xl lg:text-5xl">
+              <h2 className="mt-5 font-serif text-3xl font-semibold text-[var(--primary)] sm:text-4xl lg:text-5xl">
                 {eligibility.title}
               </h2>
 
@@ -168,16 +168,16 @@ export default function VisaPageDesign({
               {eligibility.requirements?.map((requirement, index) => (
                 <div
                   key={index}
-                  className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-6 shadow-[0_8px_30px_rgba(15,58,45,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-lime-200 hover:shadow-[0_16px_40px_rgba(15,58,45,0.1)]"
+                  className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-6 shadow-[0_8px_30px_var(--primary-dark)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--border)] hover:shadow-[0_16px_40px_var(--primary-dark)]"
                 >
 
                   <div className="flex items-center justify-between">
 
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-950 text-lime-300">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--primary)] text-white">
                       <CheckCircle className="h-5 w-5" />
                     </div>
 
-                    <span className="font-serif text-3xl font-bold text-emerald-900/10">
+                    <span className="font-serif text-3xl font-bold text-[var(--primary)]/10">
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
@@ -187,7 +187,7 @@ export default function VisaPageDesign({
                     {requirement}
                   </p>
 
-                  <div className="mt-5 h-1 w-8 rounded-full bg-lime-400 transition-all duration-300 group-hover:w-14" />
+                  <div className="mt-5 h-1 w-8 rounded-full bg-[var(--primary)] transition-all duration-300 group-hover:w-14" />
 
                 </div>
               ))}
@@ -210,13 +210,13 @@ export default function VisaPageDesign({
 
             <div className="max-w-2xl">
 
-              <div className="mb-5 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-lime-700">
+              <div className="mb-5 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-[var(--primary)]">
                 <FileText className="h-4 w-4" />
 
                 {documents.badge || "Required Documents"}
               </div>
 
-              <h2 className="font-serif text-3xl font-semibold leading-tight text-emerald-950 sm:text-4xl">
+              <h2 className="font-serif text-3xl font-semibold leading-tight text-[var(--primary)] sm:text-4xl">
                 {documents.title}
               </h2>
 
@@ -237,10 +237,10 @@ export default function VisaPageDesign({
             {documents.items?.map((doc, index) => (
               <div
                 key={index}
-                className="group flex items-center gap-4 rounded-2xl border border-gray-100 bg-white p-5 shadow-[0_6px_25px_rgba(15,58,45,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-emerald-900/10 hover:shadow-[0_14px_35px_rgba(15,58,45,0.08)]"
+                className="group flex items-center gap-4 rounded-2xl border border-gray-100 bg-white p-5 shadow-[0_6px_25px_var(--primary-dark)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--primary)]/10 hover:shadow-[0_14px_35px_var(--primary-dark)]"
               >
 
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-800 transition-colors group-hover:bg-emerald-950 group-hover:text-lime-300">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--background-light)] text-[var(--primary)] transition-colors group-hover:bg-[var(--primary-light)] group-hover:text-[var(--primary)]">
                   <FileText className="h-5 w-5" />
                 </div>
 
@@ -250,7 +250,7 @@ export default function VisaPageDesign({
                     Document {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  <p className="text-sm font-medium leading-5 text-emerald-950">
+                  <p className="text-sm font-medium leading-5 text-[var(--primary)]">
                     {doc}
                   </p>
 
@@ -269,14 +269,14 @@ export default function VisaPageDesign({
           APPLICATION PROCESS
       ========================================================= */}
       {process && (
-        <section className="mx-4 overflow-hidden rounded-[28px] bg-emerald-950 py-20 sm:mx-6 sm:py-24 lg:mx-8">
+        <section className="mx-4 overflow-hidden rounded-[28px] bg-[var(--primary)] py-20 sm:mx-6 sm:py-24 lg:mx-8">
 
           <div className="mx-auto max-w-7xl px-6 sm:px-10">
 
             {/* Heading */}
             <div className="mx-auto mb-16 max-w-3xl text-center">
 
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-lime-300">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-[var(--primary-light)]">
                 {process.badgeIcon ? (
                   <process.badgeIcon className="h-4 w-4" />
                 ) : (
@@ -305,10 +305,10 @@ export default function VisaPageDesign({
               {process.steps?.map((step, index) => (
                 <div
                   key={step.step || index}
-                  className="group relative rounded-2xl border border-white/10 bg-white/[0.045] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-lime-300/30 hover:bg-white/[0.08]"
+                  className="group relative rounded-2xl border border-white/10 bg-white/[0.045] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--border)]/30 hover:bg-white/[0.08]"
                 >
 
-                  <span className="font-serif text-4xl font-bold text-lime-300/30 transition-colors group-hover:text-lime-300/60">
+                  <span className="font-serif text-4xl font-bold text-[var(--primary-light)]/50 transition-colors group-hover:text-[var(--primary-light)]/70">
                     {step.step || String(index + 1).padStart(2, "0")}
                   </span>
 

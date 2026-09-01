@@ -64,7 +64,7 @@ export default function ChangePassword() {
       <h3 className="text-lg font-semibold text-gray-900 mb-4">Change Password</h3>
       
       {success && (
-        <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg text-green-600">
+        <div className="mb-4 p-4 bg-[var(--success)]/10 border border-[var(--success)]/30 rounded-lg text-[var(--success)]">
           Password changed successfully!
         </div>
       )}
@@ -84,7 +84,7 @@ export default function ChangePassword() {
             type="password"
             value={formData.currentPassword}
             onChange={(e) => setFormData({ ...formData, currentPassword: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8CC63F] focus:border-transparent transition"
+            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition"
             required
           />
         </div>
@@ -97,7 +97,7 @@ export default function ChangePassword() {
             type="password"
             value={formData.newPassword}
             onChange={(e) => setFormData({ ...formData, newPassword: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8CC63F] focus:border-transparent transition"
+            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition"
             required
             minLength={6}
           />
@@ -112,7 +112,7 @@ export default function ChangePassword() {
             type="password"
             value={formData.confirmPassword}
             onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
-            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8CC63F] focus:border-transparent transition"
+            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent transition"
             required
             minLength={6}
           />
@@ -121,7 +121,7 @@ export default function ChangePassword() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-[#8CC63F] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#7AB32F] transition-colors duration-200 disabled:opacity-50"
+          className="w-full bg-[var(--primary)] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[var(--primary)] transition-colors duration-200 disabled:opacity-50"
         >
           {loading ? 'Changing...' : 'Change Password'}
         </button>

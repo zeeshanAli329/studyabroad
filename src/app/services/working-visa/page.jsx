@@ -85,13 +85,13 @@ export default function WorkingVisaPage() {
       <section
         className="relative w-full overflow-hidden rounded-3xl mx-4 lg:mx-8"
         style={{
-          backgroundImage: "linear-gradient(120deg, rgba(15,58,45,0.92), rgba(15,58,45,0.75)), url('https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/breadcrumb.png')",
+          backgroundImage: "linear-gradient(120deg, var(--primary-dark), var(--primary-dark)), url('https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/breadcrumb.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-10 py-20 sm:py-28">
-          <div className="flex items-center gap-2 text-lime-400 font-semibold text-sm uppercase tracking-wide mb-4">
+          <div className="flex items-center gap-2 text-[var(--primary)] font-semibold text-sm uppercase tracking-wide mb-4">
             <span>WORK VISA</span>
           </div>
           <h1 className="text-white text-4xl sm:text-5xl font-serif font-semibold tracking-tight mb-4">
@@ -103,7 +103,7 @@ export default function WorkingVisaPage() {
           <div className="flex items-center gap-2 text-white/80 text-sm mt-6">
             <span>StudyAbroad</span>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-lime-400">Working Visa</span>
+            <span className="text-[var(--primary)]">Working Visa</span>
           </div>
         </div>
       </section>
@@ -112,11 +112,11 @@ export default function WorkingVisaPage() {
       <section className="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="flex items-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide mb-4">
+            <div className="flex items-center gap-2 text-[var(--primary)] font-semibold text-sm uppercase tracking-wide mb-4">
               <ShieldCheck className="w-4 h-4" />
               Overview
             </div>
-            <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold leading-tight mb-6">
+            <h2 className="font-serif text-[var(--primary)] text-3xl sm:text-4xl font-semibold leading-tight mb-6">
               What is a Work Visa?
             </h2>
             <p className="text-gray-600 leading-relaxed mb-6">
@@ -125,11 +125,11 @@ export default function WorkingVisaPage() {
             <p className="text-gray-600 leading-relaxed mb-6">
               Work visas enable professionals to pursue international career opportunities, gain global experience, and often lead to permanent residency pathways. Each country has different work visa categories based on skill levels, job types, and duration.
             </p>
-            <div className="bg-lime-50 border border-lime-200 rounded-xl p-6">
-              <h3 className="font-serif font-semibold text-emerald-900 mb-3">Popular Work Destinations</h3>
+            <div className="bg-[var(--background-light)] border border-[var(--border)] rounded-xl p-6">
+              <h3 className="font-serif font-semibold text-[var(--primary)] mb-3">Popular Work Destinations</h3>
               <div className="flex flex-wrap gap-2">
                 {["USA", "Canada", "UK", "Australia", "Germany", "UAE", "Singapore", "Japan"].map((country) => (
-                  <span key={country} className="bg-white px-3 py-1 rounded-full text-sm text-emerald-900 border border-lime-300">
+                  <span key={country} className="bg-white px-3 py-1 rounded-full text-sm text-[var(--primary)] border border-[var(--border)]">
                     {country}
                   </span>
                 ))}
@@ -147,14 +147,14 @@ export default function WorkingVisaPage() {
       </section>
 
       {/* Who Can Apply */}
-      <section className="bg-[#fafbf9] py-16 sm:py-24">
+      <section className="bg-[var(--background-light)] py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="text-center mb-14">
-            <div className="flex items-center justify-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide">
+            <div className="flex items-center justify-center gap-2 text-[var(--primary)] font-semibold text-sm uppercase tracking-wide">
               <Briefcase className="w-4 h-4" />
               Who Can Apply
             </div>
-            <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
+            <h2 className="font-serif text-[var(--primary)] text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
               Eligibility Requirements
             </h2>
           </div>
@@ -162,7 +162,7 @@ export default function WorkingVisaPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {eligibilityRequirements.map((requirement, index) => (
               <div key={index} className="bg-white rounded-xl p-5 shadow-md flex items-start gap-4">
-                <CheckCircle className="w-6 h-6 text-lime-500 flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-6 h-6 text-[var(--primary)] flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700">{requirement}</span>
               </div>
             ))}
@@ -173,11 +173,11 @@ export default function WorkingVisaPage() {
       {/* Required Documents */}
       <section className="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
         <div className="text-center mb-14">
-          <div className="flex items-center justify-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide">
+          <div className="flex items-center justify-center gap-2 text-[var(--primary)] font-semibold text-sm uppercase tracking-wide">
             <FileText className="w-4 h-4" />
             Required Documents
           </div>
-          <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
+          <h2 className="font-serif text-[var(--primary)] text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
             Documents You'll Need
           </h2>
         </div>
@@ -185,7 +185,7 @@ export default function WorkingVisaPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {requiredDocuments.map((doc, index) => (
             <div key={index} className="bg-gray-50 rounded-lg p-4 flex items-center gap-3">
-              <div className="w-2 h-2 bg-lime-500 rounded-full flex-shrink-0" />
+              <div className="w-2 h-2 bg-[var(--primary)] rounded-full flex-shrink-0" />
               <span className="text-gray-700 text-sm">{doc}</span>
             </div>
           ))}
@@ -193,14 +193,14 @@ export default function WorkingVisaPage() {
       </section>
 
       {/* Application Process */}
-      <section className="bg-[#fafbf9] py-16 sm:py-24">
+      <section className="bg-[var(--background-light)] py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="text-center mb-14">
-            <div className="flex items-center justify-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide">
+            <div className="flex items-center justify-center gap-2 text-[var(--primary)] font-semibold text-sm uppercase tracking-wide">
               <Clock className="w-4 h-4" />
               Application Process
             </div>
-            <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
+            <h2 className="font-serif text-[var(--primary)] text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
               Step-by-Step Guide
             </h2>
           </div>
@@ -208,12 +208,12 @@ export default function WorkingVisaPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {applicationSteps.map((step, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-md relative">
-                <div className="text-3xl font-bold text-lime-200 mb-4">{step.step}</div>
-                <h3 className="font-semibold text-emerald-900 mb-2">{step.title}</h3>
+                <div className="text-3xl font-bold text-[var(--primary)] mb-4">{step.step}</div>
+                <h3 className="font-semibold text-[var(--primary)] mb-2">{step.title}</h3>
                 <p className="text-sm text-gray-600">{step.desc}</p>
                 {index < applicationSteps.length - 1 && (
                   <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2">
-                    <ChevronRight className="w-6 h-6 text-lime-300" />
+                    <ChevronRight className="w-6 h-6 text-[var(--primary)]" />
                   </div>
                 )}
               </div>
@@ -229,7 +229,7 @@ export default function WorkingVisaPage() {
             <AlertCircle className="w-4 h-4" />
             Common Mistakes
           </div>
-          <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
+          <h2 className="font-serif text-[var(--primary)] text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
             Avoid These Errors
           </h2>
         </div>
@@ -245,14 +245,14 @@ export default function WorkingVisaPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[#fafbf9] py-16 sm:py-24">
+      <section className="bg-[var(--background-light)] py-16 sm:py-24">
         <div className="max-w-4xl mx-auto px-6 sm:px-10">
           <div className="text-center mb-14">
-            <div className="flex items-center justify-center gap-2 text-lime-600 font-semibold text-sm uppercase tracking-wide">
+            <div className="flex items-center justify-center gap-2 text-[var(--primary)] font-semibold text-sm uppercase tracking-wide">
               <FileText className="w-4 h-4" />
               FAQ
             </div>
-            <h2 className="font-serif text-emerald-900 text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
+            <h2 className="font-serif text-[var(--primary)] text-3xl sm:text-4xl font-semibold mt-4 leading-tight">
               Frequently Asked Questions
             </h2>
           </div>
@@ -264,9 +264,9 @@ export default function WorkingVisaPage() {
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                   className="w-full px-6 py-4 text-left flex items-center justify-between"
                 >
-                  <span className="font-semibold text-emerald-900">{faq.question}</span>
+                  <span className="font-semibold text-[var(--primary)]">{faq.question}</span>
                   <ChevronRight
-                    className={`w-5 h-5 text-lime-600 transition-transform ${
+                    className={`w-5 h-5 text-[var(--primary)] transition-transform ${
                       openFaq === index ? 'rotate-90' : ''
                     }`}
                   />
@@ -284,7 +284,7 @@ export default function WorkingVisaPage() {
 
       {/* CTA */}
       <section className="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
-        <div className="bg-gradient-to-r from-emerald-900 to-emerald-800 rounded-2xl p-8 sm:p-12 text-center">
+        <div className="bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary)] rounded-2xl p-8 sm:p-12 text-center">
           <h2 className="font-serif text-3xl sm:text-4xl text-white font-semibold mb-4">
             Ready to Start Your International Career?
           </h2>
@@ -294,13 +294,13 @@ export default function WorkingVisaPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/appointment"
-              className="px-8 py-4 bg-lime-500 text-white rounded-full font-semibold hover:bg-lime-600 transition-colors"
+              className="px-8 py-4 bg-[var(--primary)] text-white rounded-full font-semibold hover:bg-[var(--primary-light)] transition-colors"
             >
               Book Appointment
             </Link>
             <Link
               href="/contact"
-              className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-emerald-900 transition-colors"
+              className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-[var(--primary)] transition-colors"
             >
               Contact Us
             </Link>
