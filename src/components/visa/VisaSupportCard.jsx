@@ -178,8 +178,8 @@ export default function VisaSupportCard({
   badgeStatLabel = 'Study Destinations',
 }) {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
-      <div className="relative overflow-hidden rounded-[2rem] border border-[var(--primary)]/10 bg-gradient-to-br from-[var(--background-light)] via-white to-[var(--background-light)] shadow-[0_20px_60px_var(--primary-dark)]">
+    <section className="max-w-[1320px] mx-auto px-0 lg:px-8 py-12 sm:py-20">
+      <div className="relative overflow-hidden lg:rounded-[2rem] rounded-none border border-[var(--primary)]/10 bg-gradient-to-br from-[var(--background-light)] via-white to-[var(--background-light)] shadow-[0_20px_60px_var(--primary-dark)]">
         <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-[var(--background-light)]/30 blur-3xl pointer-events-none" />
         <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-[var(--primary-light)]/20 blur-3xl pointer-events-none" />
 
@@ -267,9 +267,9 @@ export default function VisaSupportCard({
                     </p>
                   </div>
 
-                  <div className="w-11 h-11 rounded-full bg-[var(--primary)] flex items-center justify-center flex-shrink-0">
+                  {/* <div className="w-11 h-11 rounded-full bg-[var(--primary)] flex items-center justify-center flex-shrink-0">
                     <ChevronRight className="w-5 h-5 text-white" />
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

@@ -125,14 +125,14 @@ export default function AboutSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-[var(--background-light)] py-16 sm:py-20 lg:py-24"
+      className="relative overflow-hidden bg-[var(--background-light)] py-16 sm:py-20 lg:py-24  "
     >
       {/* Background Decoration */}
-      <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-[var(--primary)]/5 blur-3xl" />
+      <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 lg:rounded-full rounded-none  bg-[var(--primary-dark)]/5 blur-3xl" />
 
-      <div className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-[var(--primary)]/5 blur-3xl" />
+      <div className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-[var(--primary-dark)]/5 blur-3xl " />
 
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-[1320px] px-0 lg:px-8">
 
         {/* MAIN GRID */}
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
@@ -140,33 +140,33 @@ export default function AboutSection() {
           {/* =====================================================
               LEFT IMAGE
           ====================================================== */}
-          <div className="group relative h-[430px] overflow-hidden rounded-2xl sm:h-[520px] lg:col-span-4 lg:h-[570px]">
+          <div className="group relative h-[430px] overflow-hidden lg:rounded-2xl rounded-none sm:h-[520px] lg:col-span-4 lg:h-[506px]">
 
             {/* Image */}
             <img
               src="/hero-about-left-img.jpg"
               alt="Student studying abroad with Studyabroad"
-              className="w-full h-[320px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
+              className="w-full h-[430px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
             />
 
             {/* Dark / Green Fill Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-70 transition-all duration-700 group-hover:opacity-100" />
+            <div className="  absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent  opacity-70 transition-all duration-700 group-hover:opacity-100" />
+            
 
-            {/* Animated Green Fill */}
-            {/* <div className="absolute inset-x-0 bottom-0 h-0 bg-[var(--primary)]/75 transition-all duration-700 ease-out group-hover:h-full mix-blend-multiply" /> */}
+            
 
             {/* Outline */}
-            <div className="pointer-events-none absolute inset-3 rounded-xl border border-white/0 transition-all duration-700 group-hover:border-white/60" />
+            <div className="pointer-events-none absolute inset-3 rounded-xl border py-4 border-white/60 lg:border-white/0 transition-all duration-700 lg:group-hover:border-white/60 " />
 
             {/* Hover Content */}
-            <div className="absolute inset-x-0 bottom-0 z-20 p-6 translate-y-4 transition-all duration-700 group-hover:translate-y-0 sm:p-8">
+            <div className="absolute inset-x-0 bottom-0   z-20 p-6 translate-y-0 lg:translate-y-4 transition-all duration-700 group-hover:translate-y-0 sm:p-8">
 
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur-md transition-all duration-500 group-hover:scale-110 group-hover:bg-white group-hover:text-[var(--primary)]">
                 <FiGlobe className="h-6 w-6" />
               </div>
 
               <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-                <strong>Studyabroad</strong>
+                <strong>Studyabroad</strong>  
               </p>
 
               <h3 className="max-w-xs text-2xl font-bold leading-tight text-white sm:text-3xl">
@@ -175,7 +175,7 @@ export default function AboutSection() {
 
               <Link
                 href="/universities"
-                className="mt-5 flex items-center gap-2 text-sm font-medium text-white opacity-0 transition-all duration-500 group-hover:opacity-100"
+                className="mt-5 flex items-center gap-2 text-sm font-medium text-white opacity-100 lg:opacity-0 transition-all duration-500  lg:group-hover:opacity-100"
               >
                 Explore <strong>Study Abroad Opportunities</strong>
                 <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -183,7 +183,7 @@ export default function AboutSection() {
             </div>
 
             {/* Top Badge */}
-            <div className="absolute left-5 top-5 z-20 rounded-full border border-white/30 bg-white/15 px-4 py-2 text-xs font-semibold text-white backdrop-blur-md opacity-0 -translate-y-3 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+            <div className="absolute left-5 top-8 z-20 rounded-full border border-white/30 bg-white/15 px-4 py-2 text-xs font-semibold text-white backdrop-blur-md opacity-100 lg:opacity-0 -translate-y-3 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
               Trusted <strong>Worldwide</strong>
             </div>
           </div>
@@ -196,13 +196,13 @@ export default function AboutSection() {
             {/* =================================================
                 TOP CONTENT CARD
             ================================================== */}
-            <div className="group relative min-h-[270px] overflow-hidden rounded-2xl bg-white p-7 shadow-sm sm:p-9 lg:min-h-[285px]">
+            <div className="group relative min-h-[270px] overflow-hidden lg:rounded-2xl rounded-none bg-white p-7 shadow-sm sm:p-9 lg:min-h-[285px]">
 
               {/* Animated Fill */}
               <div className="absolute inset-0 translate-y-full bg-[var(--primary)] transition-transform duration-700 ease-out group-hover:translate-y-0" />
 
               {/* Border */}
-              <div className="pointer-events-none absolute inset-0 rounded-2xl border border-[var(--primary)]/10 transition-all duration-500 group-hover:border-[var(--primary)]" />
+              <div className="pointer-events-none absolute inset-0 lg:rounded-2xl rounded-none border border-[var(--primary)]/10 transition-all duration-500 group-hover:border-[var(--primary)]" />
 
               {/* Content */}
               <div className="relative z-10 max-w-[58%] sm:max-w-[60%]">
@@ -246,7 +246,7 @@ export default function AboutSection() {
                 />
 
                 {/* Image Fade */}
-                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/20 to-transparent transition-opacity duration-500 group-hover:opacity-20" />
+                <div className="absolute inset-0 bg-none lg:bg-gradient-to-r from-white via-white/20 to-transparent transition-opacity duration-500 group-hover:opacity-20" />
 
                 {/* Green Hover Overlay */}
                 {/* <div className="absolute inset-0 bg-[var(--primary)]/40 opacity-0 transition-opacity duration-500 group-hover:opacity-100" /> */}
@@ -255,7 +255,7 @@ export default function AboutSection() {
               </div>
 
               {/* Floating Passport / Globe Style Decoration */}
-              <div className="absolute bottom-5 right-[25%] z-20 hidden h-14 w-14 rotate-6 items-center justify-center rounded-xl bg-white/90 text-[var(--primary)] shadow-lg backdrop-blur-sm transition-all duration-700 group-hover:-translate-y-3 group-hover:rotate-0 sm:flex">
+              <div className="absolute bottom-5 right-[25%] z-20 hidden lg:hidden h-14 w-14 rotate-6 items-center justify-center rounded-xl bg-white/90 text-[var(--primary)] shadow-lg backdrop-blur-sm transition-all duration-700 group-hover:-translate-y-3 group-hover:rotate-0 sm:flex">
                 <FiGlobe className="h-7 w-7" />
               </div>
             </div>
@@ -263,7 +263,7 @@ export default function AboutSection() {
             {/* =================================================
                 STATS BAR
             ================================================== */}
-            <div className="relative overflow-hidden rounded-2xl bg-[var(--primary)] px-5 py-7 shadow-lg sm:px-8 sm:py-8 lg:px-10">
+            <div className="relative overflow-hidden lg:rounded-2xl rounded-none bg-[var(--primary)] px-5 py-7 shadow-lg sm:px-8 sm:py-8 lg:px-10">
 
               {/* Background Fill */}
               <div className="absolute inset-0 bg-[var(--primary-dark)] translate-y-full transition-transform duration-700 hover:translate-y-0" />
@@ -301,7 +301,7 @@ export default function AboutSection() {
         {/* =====================================================
             OPTIONAL BOTTOM CONTENT
         ====================================================== */}
-        <div className="mt-10 grid grid-cols-1 items-center gap-6 md:grid-cols-2">
+        <div className="mt-10 grid grid-cols-1 items-center gap-6 md:grid-cols-2 px-4">
 
           <div>
             <div className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[var(--primary)]">

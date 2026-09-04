@@ -14,7 +14,7 @@ import {
 export function HeroBreadcrumb() {
   return (
    <section
-  className="relative w-full overflow-hidden"
+  className="relative w-full overflow-hidden -top-3"
   style={{
     backgroundImage:
       "linear-gradient(120deg, var(--primary-dark), var(--primary-dark)), url('https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/breadcrumb.png')",
@@ -22,7 +22,7 @@ export function HeroBreadcrumb() {
     backgroundPosition: "center",
   }}
 >
-  <div className="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
+  <div className="max-w-[1320px] mx-auto px-6 lg:px-8 py-16 sm:py-24">
     <Reveal>
       <h1 className="text-white text-4xl sm:text-5xl font-heading font-semibold tracking-tight">
         Your Journey Abroad Starts Here

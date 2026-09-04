@@ -7,51 +7,29 @@ import { ArrowRight, Sparkles } from "lucide-react";
 export default function CTA() {
   return (
     <section className="relative overflow-hidden pt-16 pb-24 sm:pt-20 sm:pb-28 lg:pt-24 lg:pb-32">
-      {/* Soft background glow */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--primary)]/10 blur-[120px]" />
+      
 
-        <div className="absolute -left-32 top-10 h-72 w-72 rounded-full bg-[var(--primary)]/5 blur-[90px]" />
 
-        <div className="absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-[var(--primary)]/10 blur-[100px]" />
-      </div>
-
-      <div className="mx-auto max-w-[1320px] px-6 lg:px-8">
+      <div className="mx-auto max-w-[1320px] px-0 lg:px-0">
         <Reveal direction="up" delay={0}>
           <div
             className="
               group relative overflow-hidden
-              rounded-[28px] sm:rounded-[34px]
-              bg-[var(--primary)]
+              lg:rounded-[28px] rounded-none 
+              bg-[var(--primary-dark)]
               px-6 py-14
               sm:px-10 sm:py-16
               lg:px-16 lg:py-20
               text-center
-              shadow-[0_25px_70px_rgba(0,0,0,0.12)]
-              transition-all duration-500
-              hover:shadow-[0_30px_90px_rgba(0,0,0,0.18)]
+       
+           
             "
           >
             {/* =====================================================
                 ANIMATED LIGHT EFFECT
             ====================================================== */}
 
-            {/* Large center glow */}
-            <div
-              className="
-                pointer-events-none absolute
-                left-1/2 top-1/2
-                h-[280px] w-[280px]
-                -translate-x-1/2 -translate-y-1/2
-                rounded-full
-                bg-white/15
-                blur-[100px]
-                transition-all duration-1000
-                group-hover:h-[400px]
-                group-hover:w-[400px]
-                group-hover:bg-white/20
-              "
-            />
+        
 
             {/* Moving light */}
             <div

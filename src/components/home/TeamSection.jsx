@@ -175,7 +175,7 @@ export default function TeamSection() {
                   key={activeMember.id}
                   src={activeMember.image}
                   alt={`${activeMember.name}, ${activeMember.role} helping students with study abroad and international education`}
-                  className="h-[220px] w-full object-cover transition-all duration-700 group-hover:scale-105 sm:h-[280px] md:h-[360px] lg:h-[420px] xl:h-[500px]"
+                  className="h-[490px] w-full object-cover transition-all duration-700 group-hover:scale-105 sm:h-[280px] md:h-[460px] lg:h-[620px] xl:h-[620px]"
                 />
 
                 {/* Image overlay fill */}
@@ -198,7 +198,7 @@ export default function TeamSection() {
                 </div>
 
                 {/* Social pill */}
-                <div className="absolute left-4 top-4 flex -translate-x-3 items-center gap-1 rounded-full bg-white/95 p-1.5 opacity-0 shadow-lg backdrop-blur-md transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100 sm:left-5 sm:top-5">
+                <div className="absolute left-4 top-4 flex -translate-x-3 items-center gap-1 rounded-full bg-white/95 p-1.5 opacity-100 shadow-lg backdrop-blur-md transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100 sm:left-5 sm:top-5">
                   {[FaFacebookF, FaTwitter, FaInstagram].map((Icon, index) => (
                     <Link
                       key={index}
@@ -213,12 +213,12 @@ export default function TeamSection() {
                 </div>
 
                 {/* Arrow */}
-                <div
-                  className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur-md transition-all duration-500 group-hover:rotate-45 group-hover:border-[var(--primary)] group-hover:bg-[var(--primary)]"
+                {/* <div
+                  className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-[var(--primary)] text-white cursor-pointer transition-all duration-500 lg:bg-white/10 lg:text-white lg:backdrop-blur-md lg:hover:rotate-45 lg:hover:border-[var(--primary)] lg:hover:bg-[var(--primary)]"
                   aria-hidden="true"
                 >
                   <ArrowUpRight className="h-4 w-4" />
-                </div>
+                </div> */}
               </div>
             </div>
           </Reveal>

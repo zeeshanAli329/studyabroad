@@ -99,7 +99,7 @@ export default function BlogPage() {
       {/* =====================================================
           HERO
       ===================================================== */}
-      <section className="relative mx-4 lg:mx-8 rounded-3xl overflow-hidden">
+      <section className="relative mx-0 -top-4 rounded-none overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1920&h=1080&fit=crop"
@@ -107,7 +107,7 @@ export default function BlogPage() {
             className="w-full h-full object-cover"
           />
 
-          <div className="absolute inset-0 bg-[var(--secondary)]/85" />
+          <div className="absolute inset-0 bg-[var(--primary-dark)]" />
         </div>
 
         <div className="relative max-w-[1320px] mx-auto px-6 lg:px-8 py-20 lg:py-28">
@@ -215,7 +215,7 @@ export default function BlogPage() {
 
                     {/* Title */}
                     <Link href={`/blog/${blog.slug}`}>
-                      <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] font-semibold leading-[1.12] text-[var(--text-primary)] mt-4 mb-4 group-hover:text-[var(--primary)] transition-colors">
+                      <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] font-semibold leading-[1.12] lg:text-[var(--text-primary)] text-[#1557A6] mt-4 mb-4 group-hover:text-[var(--primary)] transition-colors">
                         {blog.title}
                       </h2>
                     </Link>
@@ -248,7 +248,7 @@ export default function BlogPage() {
                 <button
                   onClick={() => goToPage(page - 1)}
                   disabled={page === 1}
-                  className="w-11 h-11 rounded-lg border border-gray-200 flex items-center justify-center text-[var(--text-primary)] disabled:opacity-40 disabled:cursor-not-allowed hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors"
+                  className="w-11 h-11 rounded-lg border border-gray-200 cursor-pointer flex items-center justify-center text-[var(--text-primary)] disabled:opacity-40 disabled:cursor-not-allowed hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors"
                 >
                   <ChevronLeft size={18} />
                 </button>
@@ -260,7 +260,7 @@ export default function BlogPage() {
                     <button
                       key={pageNumber}
                       onClick={() => goToPage(pageNumber)}
-                      className={`w-11 h-11 rounded-lg border flex items-center justify-center text-sm font-medium transition-colors ${
+                      className={`w-11 h-11 rounded-lg border cursor-pointer flex items-center justify-center text-sm font-medium transition-colors ${
                         page === pageNumber
                           ? "border-[var(--primary)] bg-[var(--primary)] text-white"
                           : "border-gray-200 text-[var(--text-primary)] hover:border-[var(--primary)] hover:text-[var(--primary)]"
@@ -274,7 +274,7 @@ export default function BlogPage() {
                 <button
                   onClick={() => goToPage(page + 1)}
                   disabled={page === totalPages}
-                  className="w-11 h-11 rounded-lg border border-gray-200 flex items-center justify-center text-[var(--text-primary)] disabled:opacity-40 disabled:cursor-not-allowed hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors"
+                  className="w-11 h-11 rounded-lg border cursor-pointer border-gray-200 flex items-center justify-center text-[var(--text-primary)] disabled:opacity-40 disabled:cursor-not-allowed hover:border-[var(--primary)] hover:text-[var(--primary)] transition-colors"
                 >
                   <ChevronRight size={18} />
                 </button>

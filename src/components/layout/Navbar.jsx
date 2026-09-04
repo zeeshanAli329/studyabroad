@@ -44,12 +44,12 @@ const NavBar = () => {
 
   const scholarshipLinks = [
     { title: "All Scholarships", link: "/scholarships" },
-    { title: "Latest Scholarships", link: "/scholarships" },
+    { title: "Latest Scholarships", link: "/scholarships/latest-scholarships" },
     {
       title: "Featured Scholarships",
-      link: "/scholarships?featured=true",
+      link: "/scholarships/featured-scholarships",
     },
-    { title: "Scholarship Guide", link: "/scholarships" },
+    { title: "Scholarship Guide", link: "/scholarship-guide" },
   ];
 
   const blogLinks = [
@@ -202,33 +202,6 @@ const NavBar = () => {
               )}
             </div>
 
-            {/* FREE EDUCATION */}
-            {/* <div
-             className="relative flex items-center"
-             onMouseEnter = {() => setFreeEducationOpen(true)}
-             onMouseLeave={() => {setFreeEducationOpen(false)}}
-             >
-              <button className="flex text-[var(--primary-dark)] items-center gap-1.5 text-[15px] font-serif font-bold uppercase transition hover:text-[var(--primary)]">
-                Free Education
-                <FaChevronDown 
-                className={`text-[8px] transition ${freeEducationOpen? "rotate-180" : " "
-                }`}
-                />
-              </button>
-              {freeEducationOpen && (
-                <div className="absolute top-full left-0 w-[240px] text-[var(--primary-dark)] rounded-2xl bg-white shadow-2xl border border-gray-100 overflow-hidden pt-2">
-                  {FreeEducationLinks.map((item) => (
-                  <Link 
-                  key={item.title}
-                  href={item.link}
-                  className="block border-b border-gray-100 px-5 py-3 text-[14px] font-serif font-bold uppercase text-[var(--primary-dark)] transition hover:bg-[var(--background-light)] hover:text-[var(--primary)]"
-                  >
-                    {item.title}
-                  </Link>
-                  ))}
-                </div>
-              )}
-            </div> */}
 
             <Link
               href="/free-education"

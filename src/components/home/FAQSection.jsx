@@ -48,7 +48,7 @@ export default function FAQSection() {
       {/* Background light */}
       <div className="pointer-events-none absolute left-0 top-1/3 h-72 w-72 rounded-full bg-[var(--primary)]/5 blur-[100px]" />
 
-      <div className="mx-auto max-w-[1320px] px-6 lg:px-8">
+      <div className="mx-auto max-w-[1320px] px-3 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-16">
           {/* LEFT SIDE */}
           <Reveal direction="left" delay={0} className="lg:col-span-5">

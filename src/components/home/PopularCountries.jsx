@@ -868,19 +868,25 @@ export default function CountriesSection() {
      LOADING
   ========================================================= */
 
-  if (loading) {
-    return (
-      <section className="countries-section">
-        <div className="countries-section__container">
-          <div className="countries-section__loading">
-            <div className="countries-section__loader" />
+if (loading) {
+  return (
+    <section className="countries-section">
+      <div className="countries-section__container">
+        <div className="countries-section__loading">
+          <span className="skeleton skeleton--eyebrow" />
+          <span className="skeleton skeleton--title-line" />
+          <span className="skeleton skeleton--title-line skeleton--title-line-short" />
 
-            <p>Loading countries...</p>
+          <div className="countries-section__cards">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div className="skeleton skeleton--card" key={i} />
+            ))}
           </div>
         </div>
-      </section>
-    );
-  }
+      </div>
+    </section>
+  );
+}
 
   /* =========================================================
      ERROR

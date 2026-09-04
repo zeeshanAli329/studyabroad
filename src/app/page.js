@@ -142,6 +142,8 @@ export default function Home() {
         className="mx-auto my-8 h-[180px] w-[90%] max-w-7xl rounded-2xl sm:h-[220px] lg:h-[280px]"
       />
 
+      <CTA />
+
     </>
   );
 }

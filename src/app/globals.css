@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+
+body {
+  min-height: 100%;
+  /* background: url("/whole-bg.jpg") center center / cover fixed no-repeat; */
+  background-color: black;
+}
+
+
 :root {
 
   /* ===========================
@@ -7,6 +15,7 @@
   ============================ */
 
   --btn:  #C98B1D;
+  /* --primary: #0b1c33; */
   --primary: #1557A6;
   --primary-dark: #0B1F3A;
   --primary-light: #4DA9E8;

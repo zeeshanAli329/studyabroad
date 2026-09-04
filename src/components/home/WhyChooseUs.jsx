@@ -141,7 +141,7 @@ export default function WhyChooseUs() {
 
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--primary)]/10" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-[1320px] px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
           {/* ==================================================
               LEFT SIDE - IMAGE COMPOSITION
@@ -155,26 +155,26 @@ export default function WhyChooseUs() {
               <div className="absolute left-0 top-0 h-3 w-3 rounded-full bg-[var(--primary)] shadow-lg shadow-[var(--primary)]/40" />
 
               {/* Decorative Outline */}
-              <div className="absolute left-6 top-8 h-[70%] w-[45%] -rotate-3 rounded-3xl border border-[var(--primary)]/20" />
+              {/* <div className=" lg:flex hiddens. absolute left-6 top-8 h-[70%] w-[45%] -rotate-3 rounded-3xl border border-[var(--primary)]/20" /> */}
 
               {/* ==========================================
                   MAIN IMAGE
               =========================================== */}
               <div className="group absolute left-0 top-10 z-10 aspect-[3/4] w-[52%] overflow-hidden rounded-3xl border border-[var(--primary)]/30 bg-white shadow-2xl sm:w-[48%]">
                 {/* Animated Outline */}
-                <div className="pointer-events-none absolute inset-0 z-20 rounded-3xl border-2 border-transparent transition-all duration-500 group-hover:border-[var(--primary)]/70" />
+                <div className="pointer-events-none absolute inset-0 z-20 rounded-3xl border-2 border-transparent transition-all duration-500 " />
 
                 <img
                   src="/images/choose-us-right-img1.png"
                   alt="International student receiving study abroad guidance"
-                  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-[280px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
                 {/* Fill Overlay */}
-                <div className="absolute inset-0 z-10 bg-gradient-to-t from-[var(--primary)]/80 via-[var(--primary)]/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="absolute inset-0 z-10 bg-gradient-to-t from-[var(--primary)]/80 via-[var(--primary)]/10 to-transparent lg:opacity-0 opacity-100 transition-opacity duration-500 group-hover:opacity-100" />
 
                 {/* Image Content */}
-                <div className="absolute bottom-4 left-4 right-4 z-30 translate-y-5 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                <div className="absolute bottom-4 left-4 right-4 z-30  lg:opacity-0 opacity-100 lg:translate-y-0 translate-y-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                   <div className="text-sm font-semibold text-white">
                     Your Global Study Journey
                   </div>
@@ -208,21 +208,20 @@ export default function WhyChooseUs() {
               {/* ==========================================
                   SECONDARY IMAGE
               =========================================== */}
-              <div className="group absolute right-0 top-[43%] z-20 aspect-[4/5] w-[55%] overflow-hidden rounded-3xl border-4 border-white shadow-2xl sm:w-[52%]">
+              <div className="group absolute right-0 top-[43%] z-20 aspect-[4/5] w-[55%] overflow-hidden rounded-3xl border-0 border-[#1557A6] shadow-2xl sm:w-[52%]">
                 {/* Outline Effect */}
                 <div className="pointer-events-none absolute inset-0 z-30 rounded-3xl border-2 border-transparent transition-all duration-500 group-hover:border-white/70" />
 
                 <img
                   src="/images/choose-us-left-img.png"
                   alt="Students collaborating on international education opportunities"
-                  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-[280px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
                 {/* Fill Effect */}
                 <div className="absolute inset-0 z-10 bg-[var(--primary)]/60 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-                {/* Center Content */}
-                <div className="absolute inset-0 z-20 flex scale-90 items-center justify-center opacity-0 transition-all duration-500 group-hover:scale-100 group-hover:opacity-100">
+                <div className="absolute inset-0 z-20 flex scale-90 items-end lg:justify-center justify-center opacity-0 transition-all duration-500 group-hover:scale-100 group-hover:opacity-100">
                   <div className="text-center text-white">
                     <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full border border-white/60 bg-white/10 backdrop-blur-sm">
                       <CheckCircle className="h-7 w-7" />
@@ -285,8 +284,10 @@ export default function WhyChooseUs() {
 
               {/* Description */}
               <p className="mb-8 max-w-2xl text-base leading-relaxed text-[var(--text-secondary)] sm:mb-10 sm:text-lg">
-                We help students turn international education ambitions into achievable journeys. From choosing the right university and
-                destination to scholarship opportunities and pre-departure support, our experienced consultants guide you at every step.
+                We help students turn international education ambitions into
+                achievable journeys. From choosing the right university and
+                destination to scholarship opportunities and pre-departure
+                support, our experienced consultants guide you at every step.
               </p>
 
               {/* ==========================================
@@ -302,7 +303,7 @@ export default function WhyChooseUs() {
                       delay={400 + index * 100}
                       disabled={prefersReducedMotion}
                     >
-                      <div className="group relative flex cursor-pointer gap-4 overflow-hidden rounded-2xl border border-transparent p-4 transition-all duration-500 hover:border-[var(--primary)]/20 hover:bg-[var(--primary)]/5 hover:shadow-lg sm:p-5">
+                      <div className="group relative flex cursor-pointer gap-4 overflow-hidden rounded-2xl border border-transparent py-4 transition-all duration-500 hover:border-[var(--primary)]/20 hover:bg-[var(--primary)]/5 hover:shadow-lg sm:p-5">
                         {/* Animated Fill */}
                         <div className="absolute inset-0 -translate-x-full bg-[var(--primary)]/[0.04] transition-transform duration-500 group-hover:translate-x-0" />
 
@@ -339,7 +340,9 @@ export default function WhyChooseUs() {
                 {/* Fill Animation */}
                 <span className="absolute inset-0 -translate-x-full bg-white transition-transform duration-500 group-hover:translate-x-0" />
 
-                <span className="relative z-10">Start Your Free Education Journey Today</span>
+                <span className="relative z-10">
+                  Start Your Free Education Journey Today
+                </span>
 
                 <ArrowRight className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 sm:h-5 sm:w-5" />
               </Link>

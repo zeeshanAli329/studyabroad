@@ -50,12 +50,11 @@ export function ContactSection() {
 
   return (
     <section className="w-full bg-[var(--background-light)]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
+      <div className="max-w-[1320px] mx-auto px-0 lg:px-8 py-16 sm:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Illustration */}
           <Reveal y={30} className="flex justify-center lg:justify-start">
             <img
-              // src="https://wp.rrdevs.net/routex/wp-content/uploads/2024/07/contact-left-img.png"
                 src="contact-left-img2.png"
               alt="Travel planning illustration"
               className="w-full max-w-md object-contain"
@@ -65,14 +64,14 @@ export function ContactSection() {
           {/* Form */}
           <div>
             <Reveal>
-              <div className="flex items-center gap-2 text-[var(--primary)] font-semibold text-sm uppercase tracking-wide">
+              <div className="flex items-center gap-2 text-[var(--primary)] font-semibold text-sm uppercase tracking-wide lg:px-0 px-3">
                 <ChevronRight className="w-4 h-4 rotate-180" />
                 Contact Information
               </div>
             </Reveal>
 
             <Reveal delay={100}>
-              <h2 className="font-serif text-[var(--primary)] text-3xl sm:text-4xl font-semibold mt-4 mb-8 leading-tight">
+              <h2 className="font-serif text-[var(--primary)] text-3xl sm:text-4xl font-semibold mt-4 mb-8 leading-tight lg:px-0 px-3">
                 Let Your Wanderlust
                 <br /> Guide You
               </h2>
@@ -164,7 +163,7 @@ export function ContactSection() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white font-medium rounded-full py-3.5 flex items-center justify-center gap-2 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-[var(--primary)] hover:bg-[var(--primary-dark)] cursor-pointer text-white font-medium rounded-full py-3.5 flex items-center justify-center gap-2 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {submitting ? 'Sending...' : (
                     <>

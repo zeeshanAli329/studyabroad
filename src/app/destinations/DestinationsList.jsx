@@ -48,7 +48,7 @@ export default function DestinationsList() {
     <div className="min-h-screen pt-0 pb-16">
       {/* Hero Section */}
       <div className="bg-[var(--secondary)] py-16 px-0 lg:px-8">
-        <div className="mx-auto max-w-[1320px]">
+        <div className="mx-auto max-w-[1320px] px-6 lg:px-8">
           <Reveal>
             <h1 className="font-serif text-4xl lg:text-5xl text-white mb-4">
               Study Abroad Destinations

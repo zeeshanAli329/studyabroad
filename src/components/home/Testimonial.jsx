@@ -59,7 +59,7 @@ export default function Testimonial() {
       <div className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full border border-[var(--primary)]/10" />
       <div className="pointer-events-none absolute -left-20 top-24 h-56 w-56 rounded-full border border-[var(--primary)]/10" />
 
-      <div className="mx-auto max-w-[1320px] px-6 lg:px-8">
+      <div className="mx-auto max-w-[1320px] px-0 lg:px-8">
         <div className="mb-10 text-center sm:mb-14">
           <span className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">
             Testimonials
@@ -75,10 +75,10 @@ export default function Testimonial() {
         <div className="grid items-stretch gap-6 lg:grid-cols-12 lg:gap-8">
           {/* IMAGE */}
           <Reveal direction="left" delay={0} className="lg:col-span-5">
-            <div className="group relative h-full min-h-[320px] overflow-hidden rounded-[2rem]">
-              <div className="absolute -inset-2 rounded-[2.2rem] border border-[var(--primary)]/20 transition-all duration-500 group-hover:-inset-4 group-hover:border-[var(--primary)]/40" />
+            <div className="group relative h-full min-h-[320px] overflow-hidden lg:rounded-[2rem] rounded-none">
+              <div className="absolute -inset-2 lg:rounded-[2.2rem] rounded-none border border-[var(--primary)]/20 transition-all duration-500 group-hover:-inset-4 group-hover:border-[var(--primary)]/40" />
 
-              <div className="relative h-full min-h-[320px] overflow-hidden rounded-[2rem]">
+              <div className="relative h-full min-h-[320px] overflow-hidden rounded-none lg:rounded-[2rem]">
                 {/* <Image
                   src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&h=800&fit=crop"
                   alt="Education consultant"
@@ -89,7 +89,7 @@ export default function Testimonial() {
                 <img
                   src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&h=800&fit=crop"
                   alt="Education consultant"
-                  className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-[320px] sm:h-[320px] md:h-[360px] lg:h-[460px] xl:h-[430px] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
@@ -105,7 +105,7 @@ export default function Testimonial() {
 
           {/* CONTENT */}
           <Reveal direction="right" delay={150} className="lg:col-span-7">
-            <div className="group relative h-full overflow-hidden rounded-[2rem] bg-[var(--primary)] p-7 shadow-xl sm:p-10 lg:p-12">
+            <div className="group relative h-full overflow-hidden lg:rounded-[2rem] rounded-none bg-[var(--primary)] p-7 shadow-xl sm:p-10 lg:p-12">
               {/* Animated outline */}
               <div className="pointer-events-none absolute inset-3 rounded-[1.5rem] border border-white/20 transition-all duration-500 group-hover:inset-5 group-hover:border-white/40" />
 
@@ -172,16 +172,16 @@ export default function Testimonial() {
                       type="button"
                       onClick={goPrev}
                       aria-label="Previous testimonial"
-                      className="group/btn flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-white transition-all duration-300 hover:bg-white hover:text-[var(--primary)]"
+                      className="group/btn flex h-10 w-10 items-center justify-center rounded-full border border-white/30 lg:text-white text-black bg-white lg:bg-transparent transition-all duration-300 hover:bg-white hover:text-[var(--primary)]"
                     >
-                      <ArrowLeft className="h-4 w-4 transition-transform duration-300 group-hover/btn:-translate-x-0.5" />
+                      <ArrowLeft className="h-4 w-4 transition-transform duration-300 group-hover/btn:-translate-x-0.5 cursor-pointer " />
                     </button>
 
                     <button
                       type="button"
                       onClick={goNext}
                       aria-label="Next testimonial"
-                      className="group/btn flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-white transition-all duration-300 hover:bg-white hover:text-[var(--primary)]"
+                      className="group/btn flex h-10 w-10 items-center justify-center rounded-full border border-white/30 lg:text-white text-black bg-white lg:bg-transparent cursor-pointer transition-all duration-300 hover:bg-white hover:text-[var(--primary)]"
                     >
                       <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-0.5" />
                     </button>

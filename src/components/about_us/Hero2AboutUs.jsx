@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Hero2AboutUs() {
   return (
-    <section className="w-full bg-white py-14 px-5 sm:px-8 lg:px-16">
+    <section className="w-full bg-white py-14">
       <style>{`
         @keyframes spin-slow {
           from { transform: rotate(0deg); }
@@ -16,7 +16,7 @@ export default function Hero2AboutUs() {
         }
       `}</style>
 
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 lg:gap-12 items-center lg:items-start">
+      <div className="max-w-[1320px] mx-auto px-6 lg:px-8 flex flex-col lg:flex-row gap-10 lg:gap-12 items-center lg:items-start">
 
         {/* =====================================================
             LEFT COLUMN: MAIN PHOTO + ROTATING BADGE

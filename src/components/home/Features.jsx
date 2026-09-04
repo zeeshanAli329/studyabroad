@@ -32,14 +32,14 @@ export default function Features() {
       className="bg-[var(--background-light)] py-12 sm:py-16 lg:py-20"
       aria-label="Studyabroad services and opportunities"
     >
-      <div className="mx-auto max-w-[1320px] px-6 lg:px-8">
+      <div className="mx-auto max-w-[1320px] lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {features.map((feature, index) => (
             <Reveal key={index} delay={index * 100}>
               <Link
                 href={feature.link}
                 aria-label={`${feature.title} - Studyabroad`}
-                className="group rounded-2xl bg-white p-8 border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:bg-[var(--primary)]/5 block"
+                className="group rounded-none lg:rounded-2xl md:rounded-2xl bg-white p-8 border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:bg-[var(--primary)]/5 block"
               >
                 <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-[var(--primary)]/10 group-hover:bg-[var(--primary)]/20 transition-colors">
                   <feature.icon
@@ -48,12 +48,12 @@ export default function Features() {
                   />
                 </div>
 
-                <h3 className="mb-3 font-serif text-2xl font-semibold text-[var(--text-primary)] group-hover:text-[var(--primary)] transition-colors">
+                <h3 className="mb-3 font-serif text-2xl font-semibold line-clamp-1 text-[var(--text-primary)] group-hover:text-[var(--primary)] transition-colors">
                   <strong>{feature.title}</strong>
                 </h3>
 
                 <p
-                  className="mb-4 text-[var(--text-secondary)]"
+                  className="mb-4 text-[var(--text-secondary)] line-clamp-3"
                   dangerouslySetInnerHTML={{
                     __html: feature.description,
                   }}

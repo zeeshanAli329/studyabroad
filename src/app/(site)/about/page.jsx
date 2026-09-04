@@ -18,7 +18,7 @@ export default function RouteXAboutPage() {
       <SimpleProcess />
       <GlobalOfferSection />
       <ContactSection />
-      <CountriesCategory />
+      {/* <CountriesCategory /> */}
       <MissionVision />
 
       <style>{`

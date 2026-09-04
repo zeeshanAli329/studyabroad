@@ -106,7 +106,7 @@ export default function ContactPage() {
         <div className="absolute right-[25%] bottom-[25%] hidden h-1.5 w-1.5 rounded-full bg-[var(--primary)]/40 lg:block" />
 
         {/* Content */}
-        <div className="relative mx-auto flex min-h-[470px] max-w-[1320px] items-center px-6 py-20 sm:min-h-[500px] sm:px-10 lg:min-h-[540px] lg:px-12">
+        <div className="relative mx-auto flex min-h-[470px] max-w-[1320px] items-center px-6 py-20 sm:min-h-[500px] lg:min-h-[540px] lg:px-8">
           <div className="max-w-3xl">
             {/* Badge */}
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--primary)]/30 bg-[var(--primary)]/10 px-4 py-2">
@@ -155,7 +155,7 @@ export default function ContactPage() {
           ===================================================== */}
 
       <section className="bg-[var(--background-light)] py-16 sm:py-20">
-        <div className="mx-auto max-w-[1320px] px-6 sm:px-10 lg:px-8">
+        <div className="mx-auto max-w-[1320px] px-6 lg:px-8">
           <div className="mb-10 max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--primary)]">
               Contact Information
@@ -240,7 +240,7 @@ export default function ContactPage() {
           ===================================================== */}
 
       <section className="bg-white py-20 sm:py-24">
-        <div className="mx-auto max-w-[1320px] px-6 sm:px-10 lg:px-8">
+        <div className="mx-auto max-w-[1320px] px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.15fr_0.85fr]">
             {/* =================================================
                 FORM

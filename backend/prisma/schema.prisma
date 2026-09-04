@@ -99,6 +99,7 @@ model Scholarship {
   applicationUrl   String?
   image            String?
   featured         Boolean  @default(false)
+  isLatest         Boolean  @default(false)
   status           String   @default("PUBLISHED")
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
@@ -111,6 +112,7 @@ model Scholarship {
   @@index([status])
   @@index([deadline])
   @@index([featured])
+  @@index([isLatest])
 }
 
 model BlogPost {

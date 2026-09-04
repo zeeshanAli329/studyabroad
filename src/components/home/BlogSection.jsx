@@ -54,7 +54,7 @@ export default function BlogSection() {
 
   return (
     <section className="relative overflow-hidden bg-[var(--background-light)] py-16 sm:py-20 lg:py-24">
-      <div className="mx-auto max-w-[1320px] px-6 lg:px-8">
+      <div className="mx-auto max-w-[1320px] px-4 lg:px-8">
         {/* HEADER */}
         <Reveal direction="up" delay={0}>
           <div className="mb-10 flex items-end justify-between gap-6 sm:mb-14">
@@ -94,7 +94,7 @@ export default function BlogSection() {
         </Reveal>
 
         {/* BLOG GRID */}
-        <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 lg:gap-7 gap-14  sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post, index) => (
             <Reveal
               key={post.href}
@@ -106,14 +106,14 @@ export default function BlogSection() {
                 className="group relative block"
               >
                 {/* Outer outline */}
-                <div className="absolute -inset-2 rounded-[1.6rem] border border-transparent transition-all duration-500 group-hover:-inset-3 group-hover:border-[var(--primary)]/20" />
+                <div className="absolute -inset-3 rounded-[1.6rem] border border-[var(--primary)]/20 lg:border-transparent group-hover:shadow-2xl lg:shadow-none shadow-2xl  transition-all duration-500 group-hover:-inset-3 group-hover:border-[var(--primary)]/20" />
 
                 {/* Image */}
                 <div className="relative mb-5 aspect-[4/3] overflow-hidden rounded-2xl bg-gray-200 shadow-sm">
                   <img
                     src={post.image}
                     alt={`${post.title} - Studyabroad`}
-                    className="w-full h-[180px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-[310px] sm:h-[220px] md:h-[260px] lg:h-[320px] xl:h-[380px] object-cover transition-transform duration-700 group-hover:scale-110"
                   />
 
                   {/* Dark overlay */}
@@ -131,7 +131,7 @@ export default function BlogSection() {
                   </div>
 
                   {/* Arrow */}
-                  <div className="absolute bottom-4 right-4 flex h-11 w-11 translate-y-3 rotate-[-10deg] items-center justify-center rounded-full bg-white text-[var(--primary)] opacity-0 shadow-lg transition-all duration-500 group-hover:translate-y-0 group-hover:rotate-0 group-hover:opacity-100">
+                  <div className="absolute bottom-4 right-4 flex h-11 w-11 translate-y-3 rotate-[-0deg] items-center justify-center rounded-full bg-white text-[var(--primary)] opacity-100 lg:opacity-0 shadow-lg transition-all duration-500 group-hover:translate-y-0 group-hover:rotate-0 group-hover:opacity-100">
                     <ArrowRight className="h-4 w-4" />
                   </div>
                 </div>
@@ -150,7 +150,7 @@ export default function BlogSection() {
                 </div>
 
                 {/* Title */}
-                <h3 className="mb-4 text-base font-bold leading-snug text-[var(--text-primary)] transition-all duration-300 group-hover:translate-x-1 group-hover:text-[var(--primary)] sm:text-lg">
+                <h3 className="mb-4 text-base font-bold line-clamp-1 leading-snug text-[var(--text-primary)] transition-all duration-300 group-hover:translate-x-1 group-hover:text-[var(--primary)] sm:text-lg">
                   <strong>{post.title}</strong>
                 </h3>
 
@@ -161,7 +161,7 @@ export default function BlogSection() {
                     <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-[var(--primary)] transition-all duration-300 group-hover:w-full" />
                   </span>
 
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 lg:translate-none translate-x-l group-hover:translate-x-1" />
                 </span>
               </Link>
             </Reveal>

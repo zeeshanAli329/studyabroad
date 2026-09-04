@@ -165,7 +165,7 @@ export default function CountriesPage() {
         {/* Subtle outline */}
         <div className="pointer-events-none absolute inset-0 rounded-3xl border border-[var(--border)]/20" />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-20 sm:px-10 sm:py-28">
+        <div className="relative mx-auto max-w-[1320px] px-6 lg:px-8 py-20 sm:py-28">
 
           {/* Small label */}
           <div className="mb-5 flex items-center gap-3">

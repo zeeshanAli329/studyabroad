@@ -5,9 +5,9 @@ import { FiArrowRight } from "react-icons/fi";
 
 const Hero = () => {
   return (
-    <section className="relative mx-0 overflow-hidden rounded-none bg-[var(--secondary)] px-4 pt-10 sm:px-6 sm:pt-12 lg:mx-0 lg:rounded-none lg:pt-16">
+    <section className="relative mx-0 overflow-hidden rounded-none bg-[var(--secondary)] px-0 pt-10 sm:px-6 sm:pt-12 lg:mx-0 lg:rounded-none lg:pt-16">
       {/* Main content */}
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-start lg:px-5 gap-8 sm:gap-10 lg:flex-row lg:justify-between lg:items-center lg:gap-12">
+      <div className="relative z-10 mx-auto flex max-w-[1320px] flex-col items-start px-6 lg:px-8 gap-8 sm:gap-10 lg:flex-row lg:justify-between lg:items-center lg:gap-12">
         <div className="max-w-xl text-start lg:text-left">
           <h1 className="font-serif text-4xl leading-[1.15] text-white sm:text-5xl lg:text-[3.4rem] text-start lg:text-start">
             Turn Your Dreams Into Global Study Opportunities

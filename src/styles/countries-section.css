@@ -7,17 +7,25 @@
   width: 100%;
   padding: 65px 0;
   overflow: hidden;
-  background: var(--background-light);
+  background-color: #0b1c33;
 }
 
 .countries-section__container {
   position: relative;
-  width: min(1450px, calc(100% - 48px));
+  max-width: 1320px;
+  width: 100%;
   margin: 0 auto;
-  padding: 52px 80px 55px;
+  padding: 0 24px;
+  /* padding: 52px 80px 55px; */
   overflow: hidden;
   border-radius: 30px;
-  background: var(--primary-dark);
+  /* background: var(--primary-dark); */
+}
+
+@media (min-width: 1024px) {
+  .countries-section__container {
+    padding: 0 32px;
+  }
 }
 
 
@@ -76,7 +84,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-
+  /* background-color: aquamarin; */
   margin-bottom: 34px;
 }
 
@@ -693,6 +701,63 @@
 
 
 /* =========================================================
+   SKELETON LOADING (SHIMMER)
+========================================================= */
+
+.skeleton {
+  position: relative;
+  display: block;
+  background: #16294a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%
+  );
+  animation: shimmer 1.6s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.skeleton--eyebrow {
+  width: 110px;
+  height: 12px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+}
+
+.skeleton--title-line {
+  width: 70%;
+  height: 32px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+}
+
+.skeleton--title-line-short {
+  width: 45%;
+}
+
+.skeleton--card {
+  flex: 1 1 0;
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+}
+
+
+/* =========================================================
    TABLET
 ========================================================= */
 
@@ -775,17 +840,30 @@
   .countries-section__header {
     align-items: flex-start;
 
+    flex-direction: column;
+
     gap: 25px;
 
     margin-bottom: 25px;
   }
 
+  .countries-section__heading {
+    max-width: 100%;
+    width: 100%;
+  }
+
   .countries-section__header h2 {
+    width: 100%;
+
     font-size: 32px;
 
-    line-height: 1;
+    line-height: 1.05;
 
     letter-spacing: -0.8px;
+
+    white-space: normal;
+
+    word-break: break-word;
   }
 
 
@@ -1070,6 +1148,19 @@
       0 15px 35px
       rgba(0, 0, 0, 0.18);
   }
+
+
+  /* =======================================================
+     MOBILE SKELETON CARDS
+  ======================================================= */
+
+  .countries-section__cards .skeleton--card {
+    flex: 0 0 100%;
+
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+  }
 }
 
 
@@ -1089,7 +1180,7 @@
 
 
   .countries-section__header {
-    align-items: flex-end;
+    align-items: flex-start;
   }
 
 
@@ -1182,6 +1273,10 @@
   }
 
   .countries-section__loader {
+    animation: none;
+  }
+
+  .skeleton::after {
     animation: none;
   }
 }
