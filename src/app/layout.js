@@ -18,9 +18,39 @@ const playfair = Playfair_Display({
 export const metadata = {
   title: {
     default: "Study Abroad",
-    template: "%s"
+    template: "%s",
   },
-  description: "Explore study abroad opportunities, scholarships, universities, visas and international destinations with StudyAbroad.",
+
+  description:
+    "Explore study abroad opportunities, scholarships, universities, visas and international destinations with StudyAbroad.",
+
+  icons: {
+    icon: "/ch-logo1.png",
+  },
+
+  openGraph: {
+    title: "Study Abroad",
+    description:
+      "Explore study abroad opportunities, scholarships, universities, visas and international destinations with StudyAbroad.",
+    siteName: "Study Abroad",
+    type: "website",
+    images: [
+      {
+        url: "/ch-logo1.png",
+        width: 512,
+        height: 512,
+        alt: "Study Abroad Logo",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Study Abroad",
+    description:
+      "Explore study abroad opportunities, scholarships, universities, visas and international destinations with StudyAbroad.",
+    images: ["/ch-logo1.png"],
+  },
 };
 
 export default function RootLayout({ children }) {

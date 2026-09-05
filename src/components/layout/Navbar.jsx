@@ -93,7 +93,7 @@ const NavBar = () => {
             {/* HOME */}
             <Link
               href="/"
-              className="text-[15px] font-serif font-bold uppercase transition text-[var(--primary-dark)] hover:text-[var(--primary)]"
+              className="text-[15px]  font-serif font-bold uppercase transition text-[var(--primary-dark)] hover:text-[var(--primary)]"
             >
               Home
             </Link>
@@ -112,7 +112,7 @@ const NavBar = () => {
               onMouseEnter={() => setBlogOpen(true)}
               onMouseLeave={() => setBlogOpen(false)}
             >
-              <button className="flex text-[var(--primary-dark)] items-center gap-1.5 text-[15px] font-serif font-bold uppercase transition hover:text-[var(--primary)]">
+              <button className="flex text-[var(--primary-dark)] cursor-pointer items-center gap-1.5 text-[15px] font-serif font-bold uppercase transition hover:text-[var(--primary)]">
                 Blog
                 <FaChevronDown
                   className={`text-[8px] transition ${
@@ -144,7 +144,7 @@ const NavBar = () => {
               onMouseEnter={() => setVisaOpen(true)}
               onMouseLeave={() => setVisaOpen(false)}
             >
-              <button className="flex items-center gap-1.5 text-[15px] text-[var(--primary-dark)] font-serif font-bold uppercase transition hover:text-[var(--primary)]">
+              <button className="flex items-center gap-1.5 cursor-pointer text-[15px] text-[var(--primary-dark)] font-serif font-bold uppercase transition hover:text-[var(--primary)]">
                 Visa
                 <FaChevronDown
                   className={`text-[8px] transition ${
@@ -176,7 +176,7 @@ const NavBar = () => {
               onMouseEnter={() => setScholarshipOpen(true)}
               onMouseLeave={() => setScholarshipOpen(false)}
             >
-              <button className="flex text-[var(--primary-dark)] items-center gap-1.5 text-[15px] font-serif font-bold uppercase transition hover:text-[var(--primary)]">
+              <button className="flex text-[var(--primary-dark)] cursor-pointer items-center gap-1.5 text-[15px] font-serif font-bold uppercase transition hover:text-[var(--primary)]">
                 Scholarships
                 <FaChevronDown
                   className={`text-[8px] transition ${
@@ -205,7 +205,7 @@ const NavBar = () => {
 
             <Link
               href="/free-education"
-              className="text-[15px] font-serif font-bold uppercase text-[var(--primary-dark)] transition hover:text-[var(--primary)]"
+              className="text-[15px] font-serif font-bold cursor-pointer uppercase text-[var(--primary-dark)] transition hover:text-[var(--primary)]"
             >
               Free Education
             </Link>
@@ -224,7 +224,7 @@ const NavBar = () => {
           {/* ================= MOBILE MENU BUTTON ================= */}
           <button
             onClick={() => setMenuOpen(true)}
-            className="text-4xl text-[var(--secondary)] lg:hidden"
+            className="text-4xl text-[var(--secondary)] lg:hidden cursor-pointer"
           >
             <HiBars3 />
           </button>
@@ -246,9 +246,9 @@ const NavBar = () => {
       >
         <div className="flex items-center justify-between border-b p-6">
           {/* <Image src="/logo2.png" alt="Logo" width={140} height={45} /> */}
-          <img src="/logo2.svg" alt="Logo" width={140} height={45} />
+          <img src="/ch-logo.png" alt="Logo" width={140} height={45} />
 
-          <button onClick={() => setMenuOpen(false)} className="text-3xl">
+          <button onClick={() => setMenuOpen(false)} className="text-3xl cursor-pointer">
             <IoClose />
           </button>
         </div>
@@ -272,7 +272,7 @@ const NavBar = () => {
 
           <button
             onClick={() => setMobileBlog(!mobileBlog)}
-            className="flex items-center text-[var(--primary-dark)] justify-between border-b px-6 py-5 text-[16px] font-serif font-bold uppercase"
+            className="flex items-center text-[var(--primary-dark)] cursor-pointer justify-between border-b px-6 py-5 text-[16px] font-serif font-bold uppercase"
           >
             Blog
             <FaChevronDown
@@ -299,7 +299,7 @@ const NavBar = () => {
 
           <button
             onClick={() => setMobileVisa(!mobileVisa)}
-            className="flex items-center text-[var(--primary-dark)] justify-between border-b px-6 py-5 text-[16px] font-serif font-bold uppercase"
+            className="flex items-center text-[var(--primary-dark)] cursor-pointer justify-between border-b px-6 py-5 text-[16px] font-serif font-bold uppercase"
           >
             Visa
             <FaChevronDown
@@ -326,7 +326,7 @@ const NavBar = () => {
 
           <button
             onClick={() => setMobileScholarship(!mobileScholarship)}
-            className="flex text-[var(--primary-dark)] items-center justify-between border-b px-6 py-5 text-[16px] font-serif font-bold uppercase"
+            className="flex text-[var(--primary-dark)] items-center cursor-pointer justify-between border-b px-6 py-5 text-[16px] font-serif font-bold uppercase"
           >
             Scholarships
             <FaChevronDown
