@@ -9,11 +9,11 @@ import { Plus, Minus, ArrowUpRight } from "lucide-react";
 const team = [
   {
     id: "courtney",
-    name: "Courtney Henry",
+    name: "Mian Tanveer Nazeer",
     role: "Study Abroad Consultant",
     bio: "Our experienced study abroad consultants provide personalized guidance to help students choose the right country, university, course, and student visa pathway for international education.",
     image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&h=1000&fit=crop",
+      "/images/Tanveer Nazeer UniGuide.jpeg",
   },
   {
     id: "ronald",
@@ -93,7 +93,7 @@ export default function TeamSection() {
                         onClick={() => setActiveId(member.id)}
                         aria-expanded={isActive}
                         aria-controls={`consultant-bio-${member.id}`}
-                        className="relative z-10 flex w-full items-center justify-between gap-4 p-4 text-left sm:p-5"
+                        className="relative z-10 flex w-full items-center cursor-pointer justify-between gap-4 p-4 text-left sm:p-5"
                       >
                         <div className="flex items-center gap-4">
                           {/* Number */}
