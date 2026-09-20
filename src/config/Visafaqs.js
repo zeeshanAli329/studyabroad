@@ -1,333 +1,3 @@
-// export const visaFaqs = {
-//   visaConsultation: [
-//     {
-//       question: "Is the first visa consultation free?",
-//       answer:
-//         "Yes. The first consultation can be used to review your academic background, preferred destination, budget, and general visa pathway before deciding on further services.",
-//     },
-//     {
-//       question: "Do I need to choose a country before the consultation?",
-//       answer:
-//         "No. You can discuss your study goals and profile with a consultant first. We can help you understand which destinations and study pathways may suit your circumstances.",
-//     },
-//     {
-//       question: "What documents should I bring to the consultation?",
-//       answer:
-//         "If available, bring your passport, academic certificates, transcripts, English-language test results, CV, financial information, and any previous visa documents.",
-//     },
-//     {
-//       question: "How long does a visa consultation take?",
-//       answer:
-//         "A typical consultation takes around 30–45 minutes, depending on your questions, academic profile, destination, and visa requirements.",
-//     },
-//     {
-//       question: "Can I have the consultation online?",
-//       answer:
-//         "Yes. Online consultations can be arranged for students who cannot attend an in-person session.",
-//     },
-//     {
-//       question: "Can you help me understand visa requirements?",
-//       answer:
-//         "Yes. We can explain the general documentation, financial evidence, application steps, and other requirements relevant to your intended study destination.",
-//     },
-//   ],
-
-//   PathwayPrograms: [
-//     {
-//       question: "What are pathway programs?",
-//       answer:
-//         "Pathway programs are study routes designed to help students meet academic, English-language, or other entry requirements before progressing to a degree program.",
-//     },
-//     {
-//       question: "Who can benefit from a pathway program?",
-//       answer:
-//         "Students who do not currently meet the direct entry requirements of their preferred university or degree may be able to consider a pathway program.",
-//     },
-//     {
-//       question: "Can a pathway program lead to a university degree?",
-//       answer:
-//         "Yes. Depending on the institution and program, successfully completing a pathway can allow students to progress to an undergraduate or postgraduate degree.",
-//     },
-//     {
-//       question: "Do pathway programs have English-language requirements?",
-//       answer:
-//         "Many pathway programs have their own English-language requirements. The required level depends on the institution, course, and destination.",
-//     },
-//     {
-//       question: "How long do pathway programs take?",
-//       answer:
-//         "The duration varies according to the student's academic and English level and the type of pathway. Some programs may take a few months while others can take a year or longer.",
-//     },
-//     {
-//       question: "Can international students apply for a visa through a pathway program?",
-//       answer:
-//         "In many destinations, students can apply for the appropriate student visa for an eligible pathway program. Visa rules depend on the country and institution.",
-//     },
-//   ],
-
-//   ApplicationAndDocumentation: [
-//     {
-//       question: "What documents are usually required for a student visa application?",
-//       answer:
-//         "Requirements vary by country, but commonly include a valid passport, admission or enrollment documents, academic records, proof of funds, photographs, insurance where required, and visa forms.",
-//     },
-//     {
-//       question: "Can you help me prepare my visa documents?",
-//       answer:
-//         "Yes. We can help you understand the required documents, organize your application file, and identify missing or inconsistent information before submission.",
-//     },
-//     {
-//       question: "Do visa documents need to be translated?",
-//       answer:
-//         "Some countries require documents that are not in an accepted language to be translated by an approved or certified translator. The exact requirement depends on the destination.",
-//     },
-//     {
-//       question: "How should financial documents be prepared?",
-//       answer:
-//         "Financial evidence should meet the requirements of the relevant immigration authority. Depending on the destination, this may include bank statements, sponsorship evidence, income documents, or other accepted proof of funds.",
-//     },
-//     {
-//       question: "Can I apply for a visa without all my documents?",
-//       answer:
-//         "Submitting an incomplete application can create problems or delays. It is generally important to check the current official requirements and prepare the required documents before submission.",
-//     },
-//     {
-//       question: "Do you check documents before visa submission?",
-//       answer:
-//         "Yes. A document review can help identify missing information, inconsistencies, formatting issues, and other problems before the application is submitted.",
-//     },
-//   ],
-
-//   IELTSPreparation: [
-//     {
-//       question: "How long does IELTS preparation usually take?",
-//       answer:
-//         "Preparation time depends on your current English level and your target band score. Students who are already close to their target may need only a few weeks of focused practice, while students further from their target may need a longer period of English development and exam preparation.",
-//     },
-//     {
-//       question: "Can I prepare for IELTS if my English is weak?",
-//       answer:
-//         "Yes. We first identify your current level and the areas that need improvement, then build a preparation plan covering vocabulary, grammar, listening, reading, writing, and speaking.",
-//     },
-//     {
-//       question: "Does your IELTS preparation cover all four sections?",
-//       answer:
-//         "Yes. Preparation covers Listening, Reading, Writing, and Speaking, with practice focused on the question types, timing, and skills required for each section.",
-//     },
-//     {
-//       question: "Do you provide IELTS mock tests?",
-//       answer:
-//         "Yes. Mock tests help you become familiar with the test format, manage your time, identify weak areas, and track your progress toward your target band score.",
-//     },
-//     {
-//       question: "Can you help me improve my IELTS writing and speaking?",
-//       answer:
-//         "Yes. Writing and speaking practice can focus on structure, vocabulary, grammar, pronunciation, fluency, coherence, and other areas relevant to IELTS assessment.",
-//     },
-//     {
-//       question: "What IELTS band score do I need for studying abroad?",
-//       answer:
-//         "The required score depends on the university, degree program, and country. Some institutions may also set different minimum scores for individual IELTS sections.",
-//     },
-//   ],
-
-//   spouseandDependentVisa: [
-//     {
-//       question: "What is a spouse or dependent visa?",
-//       answer:
-//         "A spouse or dependent visa may allow eligible family members of an international student or visa holder to accompany or join them, subject to the immigration rules of the destination country.",
-//     },
-//     {
-//       question: "Who can usually be included as a dependent?",
-//       answer:
-//         "Depending on the country, eligible dependents may include a spouse or partner and children. The exact definition and eligibility requirements vary by immigration rules.",
-//     },
-//     {
-//       question: "Can my spouse work while I study abroad?",
-//       answer:
-//         "Work rights for spouses and partners depend on the destination country, visa type, and current immigration regulations. The applicable conditions should be checked before travel.",
-//     },
-//     {
-//       question: "What documents are required for a dependent visa?",
-//       answer:
-//         "Common documents may include passports, marriage or birth certificates, proof of relationship, financial evidence, photographs, visa forms, and documents belonging to the primary visa holder.",
-//     },
-//     {
-//       question: "Can children accompany international students?",
-//       answer:
-//         "Some countries allow eligible children to accompany international students, subject to age limits, visa conditions, financial requirements, and other immigration rules.",
-//     },
-//     {
-//       question: "Can dependents apply at the same time as the student?",
-//       answer:
-//         "In some destinations, dependents can apply together with the primary applicant, while in others they may apply separately or join later. The process depends on the country's visa rules.",
-//     },
-//   ],
-
-//   visaInterviewPreparation: [
-//     {
-//       question: "Why is visa interview preparation important?",
-//       answer:
-//         "Preparation helps students understand the types of questions they may receive and organize clear, truthful, and consistent answers about their study plans and circumstances.",
-//     },
-//     {
-//       question: "What questions are commonly asked in a student visa interview?",
-//       answer:
-//         "Questions may cover your chosen university, course, academic background, study goals, funding arrangements, future plans, and reasons for choosing the destination.",
-//     },
-//     {
-//       question: "Can you conduct a mock visa interview?",
-//       answer:
-//         "Yes. Mock interviews can help you practice answering questions clearly and identify areas where your responses may need improvement.",
-//     },
-//     {
-//       question: "How should I answer difficult visa interview questions?",
-//       answer:
-//         "Answers should be honest, concise, relevant, and consistent with your application documents. You should understand your course, university, finances, and study objectives before the interview.",
-//     },
-//     {
-//       question: "What should I take to a visa interview?",
-//       answer:
-//         "Bring the documents specifically requested by the relevant visa authority or embassy, along with your passport and other supporting documents required for your application.",
-//     },
-//     {
-//       question: "Can visa interview preparation guarantee visa approval?",
-//       answer:
-//         "No. Interview preparation can help you communicate your information clearly, but the final visa decision is made by the relevant immigration or visa authority.",
-//     },
-//   ],
-
-//   postStudyWorkVisa: [
-//     {
-//       question: "What is a post-study work visa?",
-//       answer:
-//         "A post-study work visa or graduate work route may allow eligible international graduates to remain in a country for a specified period after completing an eligible qualification.",
-//     },
-//     {
-//       question: "Can every international student get a post-study work visa?",
-//       answer:
-//         "Eligibility depends on the country, qualification, institution, visa history, graduation date, and other immigration requirements. Not every student automatically qualifies.",
-//     },
-//     {
-//       question: "How long can graduates stay after completing their studies?",
-//       answer:
-//         "The permitted period varies by destination and visa category. Students should check the current immigration rules applicable to their qualification and circumstances.",
-//     },
-//     {
-//       question: "Can I work after completing my degree?",
-//       answer:
-//         "Some countries provide post-study work routes that permit eligible graduates to work. The type and duration of work permission depend on the specific visa rules.",
-//     },
-//     {
-//       question: "Can post-study work experience help with permanent residency?",
-//       answer:
-//         "In some countries, eligible work experience may contribute toward future immigration or permanent-residency pathways. However, requirements vary and meeting one route does not guarantee permanent residency.",
-//     },
-//     {
-//       question: "When should I apply for a post-study work visa?",
-//       answer:
-//         "Application timing depends on the destination and visa category. Graduates should check the official immigration deadline and apply within the permitted period after completing their studies.",
-//     },
-//   ],
-
-//   countryRequirements: [
-//     {
-//       question: "Why are student visa requirements different by country?",
-//       answer:
-//         "Each country has its own immigration laws and student visa system. Requirements can therefore differ for finances, documents, language tests, health checks, interviews, and other conditions.",
-//     },
-//     {
-//       question: "Which documents are commonly required for student visas?",
-//       answer:
-//         "Common documents include a valid passport, university admission documents, academic records, financial evidence, photographs, visa forms, and other country-specific supporting documents.",
-//     },
-//     {
-//       question: "Are English-language requirements the same in every country?",
-//       answer:
-//         "No. English-language requirements vary by country, university, course, and visa category. Some institutions may also accept different English-language tests or exemptions.",
-//     },
-//     {
-//       question: "How much financial proof do I need?",
-//       answer:
-//         "The required financial evidence depends on the destination, visa type, tuition fees, living costs, and immigration rules in effect when you apply.",
-//     },
-//     {
-//       question: "Do student visa requirements change?",
-//       answer:
-//         "Yes. Immigration policies and visa requirements can change over time. Applicants should always verify the latest requirements through the relevant official immigration authority before submitting an application.",
-//     },
-//     {
-//       question: "Can you compare visa requirements between countries?",
-//       answer:
-//         "Yes. We can help you understand the general differences between destinations, including documentation, financial requirements, English-language requirements, and common application steps.",
-//     },
-//   ],
-
-//   PRDestinations: [
-//     {
-//       question: "What are PR destinations for international students?",
-//       answer:
-//         "PR destinations are countries where eligible international graduates may have immigration routes that can eventually lead to permanent residence, subject to meeting the relevant requirements.",
-//     },
-//     {
-//       question: "Does studying abroad automatically lead to permanent residency?",
-//       answer:
-//         "No. Completing a degree does not automatically result in permanent residency. Applicants must qualify under a specific immigration pathway and meet all applicable requirements.",
-//     },
-//     {
-//       question: "Which factors can affect permanent residency eligibility?",
-//       answer:
-//         "Factors can include age, education, occupation, work experience, language ability, salary, location, employer sponsorship, and other requirements depending on the immigration pathway.",
-//     },
-//     {
-//       question: "Can post-study work experience support a PR application?",
-//       answer:
-//         "In some countries and immigration programs, eligible local work experience may be relevant to permanent-residency applications. The value and type of experience required depend on the specific program.",
-//     },
-//     {
-//       question: "Do PR requirements change over time?",
-//       answer:
-//         "Yes. Immigration programs can change their eligibility criteria, occupation lists, points systems, quotas, and application procedures. Current official requirements should always be checked.",
-//     },
-//     {
-//       question: "Can you help me understand PR pathways before I study abroad?",
-//       answer:
-//         "Yes. We can explain the general relationship between your intended course, destination, potential post-study work options, and available immigration pathways without guaranteeing a future PR outcome.",
-//     },
-//   ],
-
-//   faqImages: {
-//     visaConsultation:
-//       "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80",
-
-//     PathwayPrograms:
-//       "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
-
-//     ApplicationAndDocumentation:
-//       "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80",
-
-//     IELTSPreparation:
-//       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIp9vIFfaGchRDej3uvbVWcUPH1omAiYhXnoEkKSQlLw&s=10",
-
-//     spouseandDependentVisa:
-//       "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80",
-
-//     visaInterviewPreparation:
-//       "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80",
-
-//     postStudyWorkVisa:
-//       "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=80",
-
-//     countryRequirements:
-//       "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80",
-
-//     PRDestinations:
-//       "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1200&q=80",
-//   },
-// };
-
-
-
 export const visaFaqs = {
   visaConsultation: [
     {
@@ -355,11 +25,7 @@ export const visaFaqs = {
       answer:
         "Yes. Online consultations can be arranged for students who cannot attend an in-person session.",
     },
-    {
-      question: "Can you help me understand visa requirements?",
-      answer:
-        "Yes. We can explain the general documentation, financial evidence, application steps, and other requirements relevant to your intended study destination.",
-    },
+ 
   ],
 
   PathwayPrograms: [
@@ -388,14 +54,10 @@ export const visaFaqs = {
       answer:
         "The duration varies according to the student's academic and English level and the type of pathway. Some programs may take a few months while others can take a year or longer.",
     },
-    {
-      question: "Can international students apply for a visa through a pathway program?",
-      answer:
-        "In many destinations, students can apply for the appropriate student visa for an eligible pathway program. Visa rules depend on the country and institution.",
-    },
+
   ],
 
-  ApplicationAndDocumentation: [
+  ApplicationAndDocumentationdata: [
     {
       question: "What documents are usually required for a student visa application?",
       answer:
@@ -411,16 +73,7 @@ export const visaFaqs = {
       answer:
         "Some countries require documents that are not in an accepted language to be translated by an approved or certified translator. The exact requirement depends on the destination.",
     },
-    {
-      question: "How should financial documents be prepared?",
-      answer:
-        "Financial evidence should meet the requirements of the relevant immigration authority. Depending on the destination, this may include bank statements, sponsorship evidence, income documents, or other accepted proof of funds.",
-    },
-    {
-      question: "Can I apply for a visa without all my documents?",
-      answer:
-        "Submitting an incomplete application can create problems or delays. It is generally important to check the current official requirements and prepare the required documents before submission.",
-    },
+
     {
       question: "Do you check documents before visa submission?",
       answer:
@@ -434,16 +87,7 @@ export const visaFaqs = {
       answer:
         "Preparation time depends on your current English level and your target band score. Students who are already close to their target may need only a few weeks of focused practice, while students further from their target may need a longer period of English development and exam preparation.",
     },
-    {
-      question: "Can I prepare for IELTS if my English is weak?",
-      answer:
-        "Yes. We first identify your current level and the areas that need improvement, then build a preparation plan covering vocabulary, grammar, listening, reading, writing, and speaking.",
-    },
-    {
-      question: "Does your IELTS preparation cover all four sections?",
-      answer:
-        "Yes. Preparation covers Listening, Reading, Writing, and Speaking, with practice focused on the question types, timing, and skills required for each section.",
-    },
+
     {
       question: "Do you provide IELTS mock tests?",
       answer:
@@ -482,16 +126,7 @@ export const visaFaqs = {
       answer:
         "Common documents may include passports, marriage or birth certificates, proof of relationship, financial evidence, photographs, visa forms, and documents belonging to the primary visa holder.",
     },
-    {
-      question: "Can children accompany international students?",
-      answer:
-        "Some countries allow eligible children to accompany international students, subject to age limits, visa conditions, financial requirements, and other immigration rules.",
-    },
-    {
-      question: "Can dependents apply at the same time as the student?",
-      answer:
-        "In some destinations, dependents can apply together with the primary applicant, while in others they may apply separately or join later. The process depends on the country's visa rules.",
-    },
+
   ],
 
   visaInterviewPreparation: [
@@ -505,16 +140,7 @@ export const visaFaqs = {
       answer:
         "Questions may cover your chosen university, course, academic background, study goals, funding arrangements, future plans, and reasons for choosing the destination.",
     },
-    {
-      question: "Can you conduct a mock visa interview?",
-      answer:
-        "Yes. Mock interviews can help you practice answering questions clearly and identify areas where your responses may need improvement.",
-    },
-    {
-      question: "How should I answer difficult visa interview questions?",
-      answer:
-        "Answers should be honest, concise, relevant, and consistent with your application documents. You should understand your course, university, finances, and study objectives before the interview.",
-    },
+ 
     {
       question: "What should I take to a visa interview?",
       answer:
@@ -538,16 +164,7 @@ export const visaFaqs = {
       answer:
         "Eligibility depends on the country, qualification, institution, visa history, graduation date, and other immigration requirements. Not every student automatically qualifies.",
     },
-    {
-      question: "How long can graduates stay after completing their studies?",
-      answer:
-        "The permitted period varies by destination and visa category. Students should check the current immigration rules applicable to their qualification and circumstances.",
-    },
-    {
-      question: "Can I work after completing my degree?",
-      answer:
-        "Some countries provide post-study work routes that permit eligible graduates to work. The type and duration of work permission depend on the specific visa rules.",
-    },
+
     {
       question: "Can post-study work experience help with permanent residency?",
       answer:
@@ -571,16 +188,7 @@ export const visaFaqs = {
       answer:
         "Common documents include a valid passport, university admission documents, academic records, financial evidence, photographs, visa forms, and other country-specific supporting documents.",
     },
-    {
-      question: "Are English-language requirements the same in every country?",
-      answer:
-        "No. English-language requirements vary by country, university, course, and visa category. Some institutions may also accept different English-language tests or exemptions.",
-    },
-    {
-      question: "How much financial proof do I need?",
-      answer:
-        "The required financial evidence depends on the destination, visa type, tuition fees, living costs, and immigration rules in effect when you apply.",
-    },
+
     {
       question: "Do student visa requirements change?",
       answer:
@@ -609,16 +217,7 @@ export const visaFaqs = {
       answer:
         "Factors can include age, education, occupation, work experience, language ability, salary, location, employer sponsorship, and other requirements depending on the immigration pathway.",
     },
-    {
-      question: "Can post-study work experience support a PR application?",
-      answer:
-        "In some countries and immigration programs, eligible local work experience may be relevant to permanent-residency applications. The value and type of experience required depend on the specific program.",
-    },
-    {
-      question: "Do PR requirements change over time?",
-      answer:
-        "Yes. Immigration programs can change their eligibility criteria, occupation lists, points systems, quotas, and application procedures. Current official requirements should always be checked.",
-    },
+
     {
       question: "Can you help me understand PR pathways before I study abroad?",
       answer:
@@ -632,7 +231,7 @@ export const visaFaqs = {
       "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80",
     PathwayPrograms:
       "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
-    ApplicationAndDocumentation:
+    ApplicationAndDocumentationdata:
       "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80",
     // NOTE: the old gstatic thumbnail URL was replaced — it 403s/expires and was a tiny thumbnail (s=10).
     // Swap this for a real hosted image (e.g. /public/ielts.jpg) when you have one.

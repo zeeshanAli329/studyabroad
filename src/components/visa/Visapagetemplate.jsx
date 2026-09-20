@@ -410,30 +410,6 @@ const VisaPageTemplate = ({ data }) => {
         }
         imageSrc={data.faqImage || undefined}
       />
-      {/* <section className="mx-auto max-w-[860px] px-6 py-16 sm:py-20 lg:px-8">
-    <div className="mb-10 text-center">
-      <span className="mb-3 inline-block font-serif text-[13px] font-bold uppercase tracking-wide text-[var(--primary)]">
-        FAQs
-      </span>
-      <h2 className="font-serif text-[24px] sm:text-[30px] font-bold text-[var(--primary-dark)]">
-        Common Questions About {data.title}
-      </h2>
-    </div>
-
-    <div className="rounded-2xl border border-[var(--border)] bg-white px-6 sm:px-8">
-      {data.faqs.map((faq, index) => (
-        <FaqItem
-          key={faq.q}
-          q={faq.q}
-          a={faq.a}
-          isOpen={openFaq === index}
-          onToggle={() =>
-            setOpenFaq(openFaq === index ? -1 : index)
-          }
-        />
-      ))}
-    </div>
-  </section> */}
       {/* ============== RELATED SERVICES ============== */}
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-8">

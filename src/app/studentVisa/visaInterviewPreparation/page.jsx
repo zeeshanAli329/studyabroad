@@ -1,5 +1,6 @@
 import VisaPageTemplate from "@/components/visa/Visapagetemplate";
 import { visaPagesData } from "@/config/Visapagesdata";
+import { visaFaqs } from "@/config/Visafaqs";
 
 export const metadata = {
   title: "Visa Interview Preparation | Study Abroad",
@@ -8,7 +9,13 @@ export const metadata = {
 };
 
 const VisaInterviewPreparationPage = () => (
-  <VisaPageTemplate data={visaPagesData.visaInterviewPreparation} />
+    <VisaPageTemplate
+    data={{
+      ...visaPagesData.visaInterviewPreparation,
+      faqs: visaFaqs.visaInterviewPreparation,
+      faqImage: visaFaqs.faqImages.visaInterviewPreparation,
+    }}
+  />
 );
 
 export default VisaInterviewPreparationPage;

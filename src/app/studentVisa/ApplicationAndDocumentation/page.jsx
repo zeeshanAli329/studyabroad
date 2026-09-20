@@ -10,9 +10,9 @@ export const metadata = {
 const ApplicationAndDocumentationPage = () => (
   <VisaPageTemplate
     data={{
-      ...visaPagesData.IELTSPreparation,
-      faqs: visaFaqs.ApplicationAndDocumentation,
-      faqImage: visaFaqs.faqImages.ApplicationAndDocumentation,
+      ...visaPagesData.applicationAndDocumentation,
+      faqs: visaFaqs.ApplicationAndDocumentationdata,
+      faqImage: visaFaqs.faqImages.ApplicationAndDocumentationdata,
     }}
   />
 );

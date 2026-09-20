@@ -7,6 +7,14 @@ export const metadata = {
     "Find universities that match your grades, budget, and career goals with expert university selection guidance from Study Abroad.",
 };
 
-const UniversitySelectionPage = () => <VisaPageTemplate data={visaPagesData.universitySelection} />;
+const UniversitySelectionPage = () => (
+  <VisaPageTemplate
+    data={{
+      ...visaPagesData.visaConsultation,
+      faqs: visaFaqs.visaConsultation,
+      faqImage: visaFaqs.faqImages.visaConsultation,
+    }}
+  />
+);
 
 export default UniversitySelectionPage;

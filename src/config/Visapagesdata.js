@@ -35,12 +35,7 @@ export const visaPagesData = {
       "CV or statement of purpose draft",
       "List of target countries or universities (if decided)",
     ],
-    faqs: [
-      { q: "Is the first consultation free?", a: "Yes, your first session with a Study Abroad consultant is a free profile assessment — we only discuss paid services once you know your options." },
-      { q: "Do I need to have chosen a country already?", a: "No. Many students come to us undecided. We help you compare countries based on your budget, grades, and career goals before recommending a path." },
-      { q: "How long does the consultation process take?", a: "A single session usually takes 30–45 minutes, though we're happy to schedule follow-ups as your plans firm up." },
-      { q: "Can I get consultation remotely?", a: "Yes, we offer both in-person and video consultations for students anywhere in Pakistan." },
-    ],
+
   },
 
   universitySelection: {
@@ -78,12 +73,7 @@ export const visaPagesData = {
       "Preferred countries or regions",
       "Career goals after graduation",
     ],
-    faqs: [
-      { q: "How many universities should I apply to?", a: "We generally recommend a mix of 4–6 universities — a couple of reach schools, a few realistic matches, and one safety option." },
-      { q: "Can you help even if my grades are average?", a: "Yes. There are strong universities and pathway programs for a wide range of academic profiles — we focus on fit, not just prestige." },
-      { q: "Do you consider scholarship availability when shortlisting?", a: "Absolutely — cost is one of the first filters we apply when building your shortlist." },
-      { q: "What if I already have a university in mind?", a: "We'll assess it honestly and add comparable alternatives so you're choosing with full information." },
-    ],
+
   },
 
   pathwayPrograms: {
@@ -119,12 +109,7 @@ export const visaPagesData = {
       "Budget for the pathway plus the main degree",
       "Passport copy",
     ],
-    faqs: [
-      { q: "Is a pathway program a downgrade from direct entry?", a: "No — it's a bridge. Many students complete pathway programs and progress directly into the second year of their target degree." },
-      { q: "How long do pathway programs usually take?", a: "Typically 3 months to 1 year, depending on the gap between your current qualifications and the entry requirements." },
-      { q: "Do pathway programs guarantee university admission?", a: "Most partner pathways offer guaranteed progression on successful completion — we only recommend ones with that guarantee." },
-      { q: "Are pathway programs more expensive overall?", a: "They add a cost, but often work out cheaper than repeating a year or facing rejection from direct applications." },
-    ],
+
   },
 
   applicationAndDocumentation: {

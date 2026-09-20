@@ -8,9 +8,9 @@ export const metadata = {
 };
 
 const CountryRequirementsPage = () => 
-    <VisaPageTemplate
+  <VisaPageTemplate
     data={{
-      ...visaPagesData.IELTSPreparation,
+      ...visaPagesData.countryRequirements,
       faqs: visaFaqs.countryRequirements,
       faqImage: visaFaqs.faqImages.countryRequirements,
     }}

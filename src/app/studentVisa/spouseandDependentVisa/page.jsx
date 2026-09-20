@@ -1,5 +1,6 @@
 import VisaPageTemplate from "@/components/visa/Visapagetemplate";
 import { visaPagesData } from "@/config/Visapagesdata";
+import { visaFaqs } from "@/config/Visafaqs";
 
 export const metadata = {
   title: "Spouse and Dependent Visa | Study Abroad",
@@ -8,7 +9,13 @@ export const metadata = {
 };
 
 const SpouseAndDependentVisaPage = () => (
-  <VisaPageTemplate data={visaPagesData.spouseandDependentVisa} />
+  <VisaPageTemplate
+    data={{
+      ...visaPagesData.spouseandDependentVisa,
+      faqs: visaFaqs.spouseandDependentVisa,
+      faqImage: visaFaqs.faqImages.spouseandDependentVisa,
+    }}
+  />
 );
 
 export default SpouseAndDependentVisaPage;
