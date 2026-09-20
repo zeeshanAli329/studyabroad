@@ -498,9 +498,9 @@ const DesktopDropdown = ({
           >
             {columnLists.map((list, col) => (
               <div key={col}>
-                {list.map((item) => (
+                {list.map((item, index) => (
                   <Link
-                    key={item.link}
+                    key={index}
                     href={item.link}
                     className="group relative flex items-center justify-between gap-3 pl-5 pr-4 py-3 text-[13px] font-serif font-semibold uppercase tracking-wide text-[var(--text-primary)] transition-all duration-200 hover:bg-gradient-to-r hover:from-[var(--background-light)] hover:to-white hover:text-[var(--primary)]"
                   >
@@ -598,21 +598,21 @@ const NavBar = () => {
   }, [menuOpen]);
 
   const visaLinks = [
-    { title: "Visa Consultation", link: "/visaConsultation" },
-    { title: "University Selection", link: "/universitySelection" },
-    { title: "Pathway Programs", link: "/pathwayPrograms" },
+    { title: "Visa Consultation", link: "/studentVisa/visaConsultation" },
+    // { title: "University Selection", link: "/studentVisa/universitySelection" },
+    { title: "Pathway Programs", link: "/studentVisa/PathwayPrograms" },
     {
       title: "Application and Documentation",
-      link: "/applicationAndDocumentation",
+      link: "/studentVisa/ApplicationAndDocumentation",
     },
-    { title: "IELTS Preparation", link: "/IELTSPreparation" },
-    { title: "Spouse and Dependent Visa", link: "/spouseandDependentVisa" },
-    { title: "Visa Interview Preparation", link: "/visaInterviewPreparation" },
-    { title: "Post Study Work Visa", link: "/postStudyWorkVisa" },
-    { title: "Country Requirements", link: "/countryRequirements" },
+    { title: "IELTS Preparation", link: "/studentVisa/IELTSPreparation" },
+    { title: "Spouse and Dependent Visa", link: "/studentVisa/spouseandDependentVisa" },
+    { title: "Visa Interview Preparation", link: "/studentVisa/visaInterviewPreparation" },
+    { title: "Post Study Work Visa", link: "/studentVisa/postStudyWorkVisa" },
+    { title: "Country Requirements", link: "/studentVisa/countryRequirements" },
     {
       title: "PR Destinations (Permanent Residency Pathways)",
-      link: "/PRDestinations",
+      link: "/studentVisa/PRDestinations",
     },
   ];
 

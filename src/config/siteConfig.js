@@ -1,7 +1,7 @@
 export const siteConfig = {
     COMPANY_NAME : "Study Abroad",
     slug: "Study Abroad",
-    LOGO: "ch-logo.png",
+    LOGO: "/ch-logo.png",
     Footer_LOGO: "ch-logo-footer.png",
     PHONE: "+92 300 1234567",
     EMAIL: "info@studyabroad.com",
