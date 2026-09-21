@@ -466,102 +466,165 @@
 //   const diff = (Date.now() - parsed.getTime()) / (1000 * 60 * 60 * 24);
 //   return diff >= 0 && diff <= days;
 // }
+
+
+
+// "use client";
+
+// import { useEffect, useState } from "react";
+
+// import ScholarshipHero from "@/components/scholarships/latestscholarships/ScholarshipHero";
+// import ScholarshipCards from "@/components/scholarships/latestscholarships/ScholarshipCards";
+// import ScholarshipCTA from "@/components/scholarships/latestscholarships/ScholarshipCTA";
+
+// const API_URL =
+//   process.env.NEXT_PUBLIC_API_URL ||
+//   "http://localhost:5000/api";
+
+// export default function Latest_Scholarships_Page() {
+//   const [scholarships, setScholarships] =
+//     useState([]);
+
+//   const [loading, setLoading] =
+//     useState(true);
+
+//   const [error, setError] =
+//     useState(null);
+
+//   useEffect(() => {
+//     const fetchScholarships = async () => {
+//       try {
+//         setLoading(true);
+//         setError(null);
+
+//         const res = await fetch(
+//           `${API_URL}/scholarships/latest`
+//         );
+
+//         if (!res.ok) {
+//           throw new Error(
+//             `Failed to fetch scholarships: ${res.statusText}`
+//           );
+//         }
+
+//         const data = await res.json();
+
+//         setScholarships(
+//           data.scholarships || []
+//         );
+
+//       } catch (err) {
+//         setError(
+//           err.message ||
+//             "Something went wrong."
+//         );
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchScholarships();
+//   }, []);
+
+//   return (
+//     <main className="min-h-screen bg-slate-50 text-slate-900">
+
+//       <ScholarshipHero
+//         count={scholarships.length}
+//       />
+
+//       {loading ? (
+//         <section className="bg-slate-50 py-20">
+//           <div className="mx-auto flex max-w-[1320px] px-6 lg:px-8 justify-center">
+//             <div className="h-11 w-11 animate-spin rounded-full border-4 border-blue-100 border-t-blue-600" />
+//           </div>
+//         </section>
+//       ) : error ? (
+//         <section className="bg-slate-50 py-20">
+//           <div className="mx-auto max-w-[1320px] px-6 lg:px-8 text-center">
+
+//             <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-red-100 font-bold text-red-600">
+//               !
+//             </div>
+
+//             <h2 className="mt-4 text-xl font-bold">
+//               Unable to load scholarships
+//             </h2>
+
+//             <p className="mt-2 text-sm text-slate-600">
+//               {error}
+//             </p>
+
+//           </div>
+//         </section>
+//       ) : (
+//         <ScholarshipCards
+//           scholarships={scholarships}
+//         />
+//       )}
+
+//       <ScholarshipCTA />
+
+//     </main>
+//   );
+// }
+
+
 "use client";
 
-import { useEffect, useState } from "react";
-
-import ScholarshipHero from "@/components/scholarships/latestscholarships/ScholarshipHero";
+import { useState, useEffect } from "react";
+import ScholarshipsHero from "@/components/scholarships/latestscholarships/ScholarshipHero";
 import ScholarshipCards from "@/components/scholarships/latestscholarships/ScholarshipCards";
-import ScholarshipCTA from "@/components/scholarships/latestscholarships/ScholarshipCTA";
+import { api } from "@/lib/api";
 
-const API_URL =
-  process.env.NEXT_PUBLIC_API_URL ||
-  "http://localhost:5000/api";
-
-export default function Latest_Scholarships_Page() {
-  const [scholarships, setScholarships] =
-    useState([]);
-
-  const [loading, setLoading] =
-    useState(true);
-
-  const [error, setError] =
-    useState(null);
+export default function LatestScholarships() {
+  const [scholarships, setScholarships] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchScholarships = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-
-        const res = await fetch(
-          `${API_URL}/scholarships/latest`
-        );
-
-        if (!res.ok) {
-          throw new Error(
-            `Failed to fetch scholarships: ${res.statusText}`
-          );
-        }
-
-        const data = await res.json();
-
-        setScholarships(
-          data.scholarships || []
-        );
-
-      } catch (err) {
-        setError(
-          err.message ||
-            "Something went wrong."
-        );
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchScholarships();
+    fetchLatest();
   }, []);
 
-  return (
-    <main className="min-h-screen bg-slate-50 text-slate-900">
+  const fetchLatest = async () => {
+    try {
+      setLoading(true);
+      // Confirm this param name matches your backend's "most recent" sort option.
+      const data = await api.getScholarships({ sort: "newest" });
+      setScholarships(data.scholarships || []);
+      setError(null);
+    } catch (err) {
+      setError("Failed to load latest scholarships");
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-      <ScholarshipHero
-        count={scholarships.length}
+  return (
+    <>
+      <ScholarshipsHero
+        image="/scalorship.jpg"
+        badge="Freshly Added"
+        titleLine1="Latest"
+        titleHighlight="Scholarships"
+        description="Newly added scholarship opportunities for Pakistani students — check back often, new listings go up regularly."
+        breadcrumbLabel="Latest Scholarships"
       />
 
-      {loading ? (
-        <section className="bg-slate-50 py-20">
-          <div className="mx-auto flex max-w-[1320px] px-6 lg:px-8 justify-center">
-            <div className="h-11 w-11 animate-spin rounded-full border-4 border-blue-100 border-t-blue-600" />
-          </div>
-        </section>
-      ) : error ? (
-        <section className="bg-slate-50 py-20">
-          <div className="mx-auto max-w-[1320px] px-6 lg:px-8 text-center">
-
-            <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-red-100 font-bold text-red-600">
-              !
-            </div>
-
-            <h2 className="mt-4 text-xl font-bold">
-              Unable to load scholarships
-            </h2>
-
-            <p className="mt-2 text-sm text-slate-600">
-              {error}
-            </p>
-
-          </div>
-        </section>
+      {error ? (
+        <div className="mx-auto w-full max-w-[1320px] px-6 py-12 text-center lg:px-8">
+          <p className="text-[var(--danger)]">{error}</p>
+          <button
+            onClick={fetchLatest}
+            className="mt-4 rounded-lg bg-[var(--primary)] px-6 py-2 text-white hover:bg-[var(--primary-dark)]"
+          >
+            Try Again
+          </button>
+        </div>
       ) : (
-        <ScholarshipCards
-          scholarships={scholarships}
-        />
+        <ScholarshipCards scholarships={scholarships} loading={loading} />
       )}
-
-      <ScholarshipCTA />
-
-    </main>
+    </>
   );
 }

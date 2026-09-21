@@ -96,9 +96,14 @@ const getData = (scholarship) => ({
     "Scholarship Opportunity",
 
   country:
-    scholarship?.country ||
+    // unwrap the populated Country object to its name
+    scholarship?.country?.name ||
     scholarship?.countryName ||
+    (typeof scholarship?.country === "string" ? scholarship.country : null) ||
     "International",
+
+  countryFlag:
+    scholarship?.country?.flag || null,
 
   level:
     scholarship?.level ||
@@ -146,6 +151,7 @@ const getData = (scholarship) => ({
     scholarship?.image ||
     scholarship?.banner ||
     scholarship?.logo ||
+    scholarship?.country?.image ||   // fallback to country's stock image if scholarship has none
     null,
 
   featured: Boolean(
